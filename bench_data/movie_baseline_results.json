@@ -1,0 +1,591 @@
+{
+  "summary": {
+    "n": 20,
+    "hit_rate": 1.0,
+    "mrr": 0.975,
+    "entity_coverage": 1.0,
+    "relation_coverage": 0.7916666666666666
+  },
+  "per_question": [
+    {
+      "id": "q001",
+      "type": "single_fact",
+      "question": "肖申克的救赎的导演是谁？",
+      "expected_entities": [
+        "肖申克的救赎"
+      ],
+      "expected_answer_keywords": [
+        "弗兰克",
+        "德拉邦特"
+      ],
+      "seed_entities": [
+        "肖申克的救赎"
+      ],
+      "matched_relations": [
+        "导演",
+        "主演",
+        "上映年份"
+      ],
+      "retrieved_entities": [
+        "肖申克的救赎",
+        "阿甘正传",
+        "教父",
+        "这个杀手不太冷",
+        "霸王别姬"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q002",
+      "type": "single_fact",
+      "question": "霸王别姬的评分是多少？",
+      "expected_entities": [
+        "霸王别姬"
+      ],
+      "expected_answer_keywords": [
+        "9.6"
+      ],
+      "seed_entities": [
+        "霸王别姬"
+      ],
+      "matched_relations": [
+        "上映年份",
+        "类型"
+      ],
+      "retrieved_entities": [
+        "霸王别姬",
+        "辛德勒的名单",
+        "大话西游之大圣娶亲",
+        "肖申克的救赎",
+        "阿甘正传"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q003",
+      "type": "single_fact",
+      "question": "千与千寻是哪个国家的电影？",
+      "expected_entities": [
+        "千与千寻"
+      ],
+      "expected_answer_keywords": [
+        "日本"
+      ],
+      "seed_entities": [
+        "千与千寻"
+      ],
+      "matched_relations": [
+        "国家",
+        "上映年份",
+        "导演",
+        "主演"
+      ],
+      "retrieved_entities": [
+        "千与千寻",
+        "龙猫",
+        "哈利·波特与魔法石",
+        "肖申克的救赎",
+        "霸王别姬"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q004",
+      "type": "reverse_link",
+      "question": "克里斯托弗·诺兰导演了哪些电影？",
+      "expected_entities": [
+        "克里斯托弗·诺兰"
+      ],
+      "expected_answer_keywords": [
+        "盗梦空间",
+        "星际穿越",
+        "黑暗骑士"
+      ],
+      "seed_entities": [
+        "克里斯托弗·诺兰"
+      ],
+      "matched_relations": [
+        "导演",
+        "上映年份",
+        "主演"
+      ],
+      "retrieved_entities": [
+        "盗梦空间",
+        "星际穿越",
+        "蝙蝠侠：黑暗骑士",
+        "泰坦尼克号",
+        "无间道"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q005",
+      "type": "reverse_link",
+      "question": "宫崎骏导演了哪些电影？",
+      "expected_entities": [
+        "宫崎骏"
+      ],
+      "expected_answer_keywords": [
+        "千与千寻",
+        "龙猫"
+      ],
+      "seed_entities": [
+        "宫崎骏"
+      ],
+      "matched_relations": [
+        "导演",
+        "上映年份",
+        "主演"
+      ],
+      "retrieved_entities": [
+        "千与千寻",
+        "龙猫",
+        "哈利·波特与魔法石",
+        "肖申克的救赎",
+        "霸王别姬"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q006",
+      "type": "reverse_link",
+      "question": "莱昂纳多·迪卡普里奥主演了哪些电影？",
+      "expected_entities": [
+        "莱昂纳多·迪卡普里奥"
+      ],
+      "expected_answer_keywords": [
+        "泰坦尼克号",
+        "盗梦空间"
+      ],
+      "seed_entities": [
+        "莱昂纳多·迪卡普里奥",
+        "卡琳娜·卡普尔"
+      ],
+      "matched_relations": [
+        "主演",
+        "导演",
+        "上映年份"
+      ],
+      "retrieved_entities": [
+        "泰坦尼克号",
+        "盗梦空间",
+        "忠犬八公的故事",
+        "三傻大闹宝莱坞",
+        "怦然心动"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q007",
+      "type": "comparison",
+      "question": "盗梦空间和星际穿越有什么共同点？",
+      "expected_entities": [
+        "盗梦空间",
+        "星际穿越"
+      ],
+      "expected_answer_keywords": [
+        "诺兰",
+        "科幻"
+      ],
+      "seed_entities": [
+        "星际穿越",
+        "盗梦空间"
+      ],
+      "matched_relations": [
+        "类型",
+        "上映年份",
+        "主演",
+        "国家"
+      ],
+      "retrieved_entities": [
+        "盗梦空间",
+        "星际穿越",
+        "泰坦尼克号",
+        "蝙蝠侠：黑暗骑士",
+        "无间道"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q008",
+      "type": "comparison",
+      "question": "霸王别姬和阿甘正传的上映年份分别是？",
+      "expected_entities": [
+        "霸王别姬",
+        "阿甘正传"
+      ],
+      "expected_answer_keywords": [
+        "1993",
+        "1994"
+      ],
+      "seed_entities": [
+        "阿甘正传",
+        "霸王别姬"
+      ],
+      "matched_relations": [
+        "上映年份",
+        "主演",
+        "类型",
+        "导演"
+      ],
+      "retrieved_entities": [
+        "霸王别姬",
+        "阿甘正传",
+        "泰坦尼克号",
+        "辛德勒的名单",
+        "怦然心动"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q009",
+      "type": "multi_hop_kg",
+      "question": "诺兰导演的科幻电影有哪些？",
+      "expected_entities": [
+        "克里斯托弗·诺兰"
+      ],
+      "expected_answer_keywords": [
+        "盗梦空间",
+        "星际穿越",
+        "黑暗骑士"
+      ],
+      "seed_entities": [
+        "科幻",
+        "克里斯托弗·诺兰"
+      ],
+      "matched_relations": [
+        "导演",
+        "上映年份",
+        "主演"
+      ],
+      "retrieved_entities": [
+        "盗梦空间",
+        "星际穿越",
+        "蝙蝠侠：黑暗骑士",
+        "黑客帝国",
+        "楚门的世界"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q010",
+      "type": "multi_hop_kg",
+      "question": "蒂姆·罗宾斯主演的犯罪类型电影是哪部？",
+      "expected_entities": [
+        "蒂姆·罗宾斯"
+      ],
+      "expected_answer_keywords": [
+        "肖申克的救赎"
+      ],
+      "seed_entities": [
+        "犯罪",
+        "蒂姆·罗宾斯",
+        "蒂姆·罗斯",
+        "罗宾·怀特"
+      ],
+      "matched_relations": [
+        "主演",
+        "上映年份",
+        "导演",
+        "类型"
+      ],
+      "retrieved_entities": [
+        "肖申克的救赎",
+        "蝙蝠侠：黑暗骑士",
+        "教父",
+        "这个杀手不太冷",
+        "无间道"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q011",
+      "type": "general_knowledge",
+      "question": "评分最高的电影是哪部？",
+      "expected_entities": [],
+      "expected_answer_keywords": [
+        "肖申克的救赎",
+        "9.7"
+      ],
+      "seed_entities": [],
+      "matched_relations": [
+        "上映年份",
+        "导演",
+        "主演"
+      ],
+      "retrieved_entities": [
+        "盗梦空间",
+        "肖申克的救赎",
+        "霸王别姬",
+        "阿甘正传",
+        "泰坦尼克号"
+      ],
+      "first_expected_rank": 2
+    },
+    {
+      "id": "q012",
+      "type": "general_knowledge",
+      "question": "1994年上映了哪些经典电影？",
+      "expected_entities": [],
+      "expected_answer_keywords": [
+        "肖申克的救赎",
+        "阿甘正传",
+        "这个杀手不太冷"
+      ],
+      "seed_entities": [
+        "1994",
+        "1993",
+        "1995",
+        "1997",
+        "1988"
+      ],
+      "matched_relations": [
+        "上映年份",
+        "主演",
+        "导演"
+      ],
+      "retrieved_entities": [
+        "肖申克的救赎",
+        "阿甘正传",
+        "这个杀手不太冷",
+        "霸王别姬",
+        "泰坦尼克号"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q013",
+      "type": "list_type",
+      "question": "请列出所有的科幻电影",
+      "expected_entities": [],
+      "expected_answer_keywords": [
+        "盗梦空间",
+        "星际穿越",
+        "黑暗骑士",
+        "楚门的世界",
+        "黑客帝国"
+      ],
+      "seed_entities": [
+        "科幻",
+        "奇幻"
+      ],
+      "matched_relations": [
+        "上映年份",
+        "导演",
+        "主演",
+        "类型",
+        "国家"
+      ],
+      "retrieved_entities": [
+        "盗梦空间",
+        "星际穿越",
+        "黑客帝国",
+        "蝙蝠侠：黑暗骑士",
+        "楚门的世界"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q014",
+      "type": "list_type",
+      "question": "请列出所有的中国电影",
+      "expected_entities": [],
+      "expected_answer_keywords": [
+        "霸王别姬",
+        "让子弹飞",
+        "大话西游",
+        "无间道",
+        "我不是药神"
+      ],
+      "seed_entities": [
+        "中国"
+      ],
+      "matched_relations": [
+        "上映年份",
+        "导演",
+        "国家",
+        "主演",
+        "类型"
+      ],
+      "retrieved_entities": [
+        "霸王别姬",
+        "让子弹飞",
+        "大话西游之大圣娶亲",
+        "无间道",
+        "我不是药神"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q015",
+      "type": "list_type",
+      "question": "请列出所有的动画电影",
+      "expected_entities": [],
+      "expected_answer_keywords": [
+        "千与千寻",
+        "龙猫"
+      ],
+      "seed_entities": [
+        "动画"
+      ],
+      "matched_relations": [
+        "上映年份",
+        "主演",
+        "导演",
+        "类型"
+      ],
+      "retrieved_entities": [
+        "千与千寻",
+        "龙猫",
+        "哈利·波特与魔法石",
+        "肖申克的救赎",
+        "霸王别姬"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q016",
+      "type": "single_fact",
+      "question": "教父的导演是谁？",
+      "expected_entities": [
+        "教父"
+      ],
+      "expected_answer_keywords": [
+        "弗朗西斯",
+        "科波拉"
+      ],
+      "seed_entities": [
+        "教父"
+      ],
+      "matched_relations": [
+        "导演",
+        "主演",
+        "上映年份"
+      ],
+      "retrieved_entities": [
+        "教父",
+        "肖申克的救赎",
+        "无间道",
+        "霸王别姬",
+        "阿甘正传"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q017",
+      "type": "multi_hop_kg",
+      "question": "张国荣主演的电影的导演是谁？",
+      "expected_entities": [
+        "张国荣"
+      ],
+      "expected_answer_keywords": [
+        "陈凯歌",
+        "霸王别姬"
+      ],
+      "seed_entities": [
+        "张国荣"
+      ],
+      "matched_relations": [
+        "导演",
+        "主演",
+        "上映年份"
+      ],
+      "retrieved_entities": [
+        "霸王别姬",
+        "辛德勒的名单",
+        "大话西游之大圣娶亲",
+        "我不是药神",
+        "肖申克的救赎"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q018",
+      "type": "comparison",
+      "question": "比较一下肖申克的救赎和霸王别姬的评分",
+      "expected_entities": [
+        "肖申克的救赎",
+        "霸王别姬"
+      ],
+      "expected_answer_keywords": [
+        "9.7",
+        "9.6"
+      ],
+      "seed_entities": [
+        "肖申克的救赎",
+        "霸王别姬"
+      ],
+      "matched_relations": [
+        "上映年份",
+        "类型",
+        "主演",
+        "导演",
+        "国家"
+      ],
+      "retrieved_entities": [
+        "肖申克的救赎",
+        "霸王别姬",
+        "阿甘正传",
+        "辛德勒的名单",
+        "无间道"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q019",
+      "type": "reverse_link",
+      "question": "美国电影有哪些？",
+      "expected_entities": [],
+      "expected_answer_keywords": [
+        "肖申克的救赎",
+        "阿甘正传",
+        "泰坦尼克号"
+      ],
+      "seed_entities": [
+        "美国"
+      ],
+      "matched_relations": [
+        "上映年份",
+        "导演",
+        "主演",
+        "国家",
+        "类型"
+      ],
+      "retrieved_entities": [
+        "肖申克的救赎",
+        "阿甘正传",
+        "泰坦尼克号",
+        "盗梦空间",
+        "星际穿越"
+      ],
+      "first_expected_rank": 1
+    },
+    {
+      "id": "q020",
+      "type": "single_fact",
+      "question": "黑客帝国的导演是谁？",
+      "expected_entities": [
+        "黑客帝国"
+      ],
+      "expected_answer_keywords": [
+        "沃卓斯基"
+      ],
+      "seed_entities": [
+        "黑客帝国"
+      ],
+      "matched_relations": [
+        "导演",
+        "主演",
+        "上映年份"
+      ],
+      "retrieved_entities": [
+        "黑客帝国",
+        "蝙蝠侠：黑暗骑士",
+        "肖申克的救赎",
+        "霸王别姬",
+        "阿甘正传"
+      ],
+      "first_expected_rank": 1
+    }
+  ]
+}

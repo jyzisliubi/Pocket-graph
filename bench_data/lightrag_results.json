@@ -1,0 +1,510 @@
+{
+  "summary": {
+    "n": 50,
+    "hit_rate": 0.82,
+    "mrr": 0.20934665496582563,
+    "config": "LightRAG hybrid, insert=qwen-long-latest, query=qwen3-235b-a22b, bge-small-zh"
+  },
+  "per_question": [
+    {
+      "id": "5a7a567255429941d65f25bd",
+      "question": "What was Iqbal F. Qadir on when he participated in an attack on a radar station located on western shore of the Okhamandal Peninsula?",
+      "expected_entities": [
+        "Iqbal F. Qadir",
+        "Dwarka"
+      ],
+      "first_rank": 3,
+      "context_len": 56518
+    },
+    {
+      "id": "5abca1a55542993a06baf937",
+      "question": "When did the park at which Tivolis Koncertsal is located open?",
+      "expected_entities": [
+        "Tivolis Koncertsal",
+        "Tivoli Gardens"
+      ],
+      "first_rank": 3,
+      "context_len": 65066
+    },
+    {
+      "id": "5ab514c05542991779162d72",
+      "question": "The school in which the Wilmslow Show is held is designated as what?",
+      "expected_entities": [
+        "Wilmslow Show",
+        "Wilmslow High School"
+      ],
+      "first_rank": 3,
+      "context_len": 67831
+    },
+    {
+      "id": "5add2b435542990d50227e11",
+      "question": "Who will Billy Howle be seen opposite in the upcoming British drama film directed by Dominic Cooke?",
+      "expected_entities": [
+        "Billy Howle",
+        "On Chesil Beach"
+      ],
+      "first_rank": 3,
+      "context_len": 73255
+    },
+    {
+      "id": "5a88d6df554299206df2b377",
+      "question": "What animated movie, starring Danny Devito, featured music written and produced by Kool Kojak?",
+      "expected_entities": [
+        "Kool Kojak",
+        "The Lorax"
+      ],
+      "first_rank": 3,
+      "context_len": 69856
+    },
+    {
+      "id": "5ae6b6065542991bbc976168",
+      "question": "Out of the actors who have played the role of Luc Deveraux in the Universal Soldier franchise, which actor has also starred in the movies Holby City, Doctor Strange, the Bourne Ultimatum and Zero Dark Thirty?",
+      "expected_entities": [
+        "Universal Soldier",
+        "Scott Adkins"
+      ],
+      "first_rank": 3,
+      "context_len": 74043
+    },
+    {
+      "id": "5ae531ee5542990ba0bbb1ff",
+      "question": "Tommy's Honour was a drama film that included the actor who found success with what 2016 BBC miniseries?",
+      "expected_entities": [
+        "Tommy's Honour",
+        "Jack Lowden"
+      ],
+      "first_rank": 3,
+      "context_len": 65158
+    },
+    {
+      "id": "5ab82d095542990e739ec853",
+      "question": "\"Tunak\", is a bhangra/pop love song by an artist born in which year ?",
+      "expected_entities": [
+        "Tunak Tunak Tun",
+        "Daler Mehndi"
+      ],
+      "first_rank": 3,
+      "context_len": 68833
+    },
+    {
+      "id": "5ae4c01e55429913cc2044f3",
+      "question": "Which Captain launched the attack which led to more casualties than any other incident in the war fought between the settlers of the nascent colony of New Netherland and the native Lenape population?",
+      "expected_entities": [
+        "Pound Ridge massacre",
+        "Kieft's War"
+      ],
+      "first_rank": 3,
+      "context_len": 73893
+    },
+    {
+      "id": "5a89fea655429970aeb701eb",
+      "question": "In which film did Emilio Estevez star in in the same year as Nightmares",
+      "expected_entities": [
+        "Nightmares",
+        "Emilio Estevez"
+      ],
+      "first_rank": 3,
+      "context_len": 67052
+    },
+    {
+      "id": "5a80cf4c55429938b61421f6",
+      "question": "What was the concept of the business Eric S .Pistorius worked for after being an attorney?",
+      "expected_entities": [
+        "Eric S. Pistorius",
+        "Circuit court"
+      ],
+      "first_rank": 3,
+      "context_len": 73576
+    },
+    {
+      "id": "5a89b1de5542992e4fca8378",
+      "question": "Which port city lies approximately 25 km north of the Lingnan Fine Arts Museum?",
+      "expected_entities": [
+        "Lingnan Fine Arts Museum",
+        "Taipei"
+      ],
+      "first_rank": 3,
+      "context_len": 76727
+    },
+    {
+      "id": "5a77897f55429949eeb29edc",
+      "question": " Jason Regler, stated that he had the idea for the flashing wristbands during a song built around which instrument ?",
+      "expected_entities": [
+        "Xyloband",
+        "Fix You"
+      ],
+      "first_rank": 3,
+      "context_len": 68849
+    },
+    {
+      "id": "5ae0132d55429925eb1afc00",
+      "question": " The Soul of Buddha is a 1918 American silent romance film shot in a borough  that is the western terminus of what?",
+      "expected_entities": [
+        "The Soul of Buddha",
+        "Fort Lee, New Jersey"
+      ],
+      "first_rank": 3,
+      "context_len": 32442
+    },
+    {
+      "id": "5a7129685542994082a3e5fa",
+      "question": "Which \"Blackzilians\" fighter is currently competing in the Middleweight division of Ultimate Fighting Championship?",
+      "expected_entities": [
+        "Blackzilians",
+        "Vitor Belfort"
+      ],
+      "first_rank": 4,
+      "context_len": 46801
+    },
+    {
+      "id": "5ae762835542997b22f6a711",
+      "question": "Were was the Mexican state after which there is Villa Unión, Sinaloa located? ",
+      "expected_entities": [
+        "Villa Unión, Sinaloa",
+        "Mazatlán"
+      ],
+      "first_rank": 3,
+      "context_len": 68506
+    },
+    {
+      "id": "5ae2f5b955429928c423957e",
+      "question": "What language, traditionally written with the ancient Libyco-Berber script, is closely related to the Tumzabt and Teggargrent languages?",
+      "expected_entities": [
+        "Tugurt language",
+        "Berber languages"
+      ],
+      "first_rank": 3,
+      "context_len": 31879
+    },
+    {
+      "id": "5a81018755429938b6142287",
+      "question": "Who is the fictional head of a British Secret Service division and for which a one-time missionary was the inspiration for?",
+      "expected_entities": [
+        "Charles Fraser-Smith",
+        "Q"
+      ],
+      "first_rank": 10,
+      "context_len": 50679
+    },
+    {
+      "id": "5ae7b271554299540e5a564d",
+      "question": "Phillip Pullman's book set in a parallel universe featuring a character named Lyra Belacqua was put into audio in what year?",
+      "expected_entities": [
+        "Northern Lights Audio",
+        "Northern Lights"
+      ],
+      "first_rank": 3,
+      "context_len": 78298
+    },
+    {
+      "id": "5a89a74e554299669944a562",
+      "question": "Who directed the second film in a British series of action comedy film parodying the James Bond secret agent genre with comedy similar to Rowan Atkinson's Mr. Bean character?",
+      "expected_entities": [
+        "Johnny English",
+        "Johnny English Reborn"
+      ],
+      "first_rank": 4,
+      "context_len": 70494
+    },
+    {
+      "id": "5a7518cb55429916b0164259",
+      "question": "What Was the name of Juan Manuel Márquez's  WBO champion holding younger brother?",
+      "expected_entities": [
+        "Rafael Márquez",
+        "Juan Manuel Márquez"
+      ],
+      "first_rank": 3,
+      "context_len": 67570
+    },
+    {
+      "id": "5ab9180b5542991b5579f0f3",
+      "question": "The Running Man Brothers is a South Korean pop duo. Kim Jong-kook is one member and he is from what country?",
+      "expected_entities": [
+        "Running Man Brothers",
+        "Kim Jong-kook"
+      ],
+      "first_rank": 3,
+      "context_len": 49763
+    },
+    {
+      "id": "5abb326055429966062416e7",
+      "question": "Ruddles Brewery is owned by a pub retailer and brewer based in what city?",
+      "expected_entities": [
+        "Ruddles Brewery",
+        "Greene King"
+      ],
+      "first_rank": 3,
+      "context_len": 64939
+    },
+    {
+      "id": "5a8ef1e35542995a26add57a",
+      "question": "The creator of the Lisa Simpson character was born in what year?",
+      "expected_entities": [
+        "Lisa Simpson",
+        "Matt Groening"
+      ],
+      "first_rank": 3,
+      "context_len": 80226
+    },
+    {
+      "id": "5adf03b35542993a75d263d3",
+      "question": "Where is the international airport which Eagle Aviation wet lease operations were based in located ",
+      "expected_entities": [
+        "Eagle Aviation France",
+        "Charles de Gaulle Airport"
+      ],
+      "first_rank": 3,
+      "context_len": 38843
+    },
+    {
+      "id": "5ab3bacc55429969a97a8197",
+      "question": "Who sang lead vocals on the Oasis hit single which had an acoustic debut in drummer Tony McCarroll's last concert ? ",
+      "expected_entities": [
+        "Definitely Maybe Tour",
+        "Don't Look Back in Anger"
+      ],
+      "first_rank": 4,
+      "context_len": 72822
+    },
+    {
+      "id": "5a7f244255429934daa2fcec",
+      "question": "St. John's College, Belize offers an education in a tradition in which what three subjects were the core?",
+      "expected_entities": [
+        "St. John's College, Belize",
+        "Liberal arts education"
+      ],
+      "first_rank": 127,
+      "context_len": 72947
+    },
+    {
+      "id": "5ac39f7b554299218029dbe7",
+      "question": "Robert Earl Holding owned an oil company that was originally founded by who?",
+      "expected_entities": [
+        "Robert Holding",
+        "Sinclair Oil Corporation"
+      ],
+      "first_rank": 7,
+      "context_len": 68641
+    },
+    {
+      "id": "5a810d7655429903bc27b915",
+      "question": "What instrument does Duff McKagan play on Macy Gray's single, Kissed It?",
+      "expected_entities": [
+        "Kissed It",
+        "Velvet Revolver"
+      ],
+      "first_rank": 3,
+      "context_len": 75326
+    },
+    {
+      "id": "5ae4cb2f55429960a22e01e8",
+      "question": "Which American popular music and country music singer recorded J. D. Souther song ",
+      "expected_entities": [
+        "J. D. Souther",
+        "Linda Ronstadt"
+      ],
+      "first_rank": 3,
+      "context_len": 69806
+    },
+    {
+      "id": "5adf1c3f5542993a75d263ec",
+      "question": "In which six Western European territories have Celtic languages or cultural traits survived?",
+      "expected_entities": [
+        "Pan Celtic Festival",
+        "Celtic nations"
+      ],
+      "first_rank": 5,
+      "context_len": 46761
+    },
+    {
+      "id": "5ab61140554299110f2199d7",
+      "question": "Who is known for composing  American Beauty: Original Motion Picture Score and many other film scores?",
+      "expected_entities": [
+        "American Beauty: Original Motion Picture Score",
+        "Thomas Newman"
+      ],
+      "first_rank": 3,
+      "context_len": 70036
+    },
+    {
+      "id": "5a738fe855429908901be2fb",
+      "question": "What film was written and directed by Joby Harold with music written by Samuel Sim?",
+      "expected_entities": [
+        "Samuel Sim",
+        "Awake"
+      ],
+      "first_rank": 3,
+      "context_len": 68719
+    },
+    {
+      "id": "5adcc3ed5542994d58a2f6c4",
+      "question": "What group did Carlene LeFevre and Rich LeFevre form in Brooklyn, New York City?",
+      "expected_entities": [
+        "Carlene LeFevre",
+        "Nathan's Hot Dog Eating Contest"
+      ],
+      "first_rank": 3,
+      "context_len": 71895
+    },
+    {
+      "id": "5ae5ffbb5542996de7b71ad4",
+      "question": "Michaël Llodra of France, called \"the best volleyer on tour\", defeated Juan Martín del Potro a professional of what nationality?",
+      "expected_entities": [
+        "Michaël Llodra",
+        "Juan Martín del Potro"
+      ],
+      "first_rank": null,
+      "context_len": 72211
+    },
+    {
+      "id": "5ae357745542992f92d8229b",
+      "question": "What company produced the 1978 movie based on a book written by a radio playwright and children's book author born in 1900?",
+      "expected_entities": [
+        "The Small One",
+        "Charles Tazewell"
+      ],
+      "first_rank": 163,
+      "context_len": 75652
+    },
+    {
+      "id": "5ae200655542994d89d5b2f4",
+      "question": "How many students were enrolled in American professional bowler Chris Barnes' high school in the 2010-2011 school year?",
+      "expected_entities": [
+        "Chris Barnes",
+        "Topeka High School"
+      ],
+      "first_rank": 8,
+      "context_len": 70890
+    },
+    {
+      "id": "5adc99cf554299438c868e0d",
+      "question": "What is the middle name of the singer who recorded Would You Like to Take a Walk? with Louis Armstrong in 1951",
+      "expected_entities": [
+        "Would You Like to Take a Walk?",
+        "Ella Fitzgerald"
+      ],
+      "first_rank": 179,
+      "context_len": 77797
+    },
+    {
+      "id": "5ab262a4554299340b5254ac",
+      "question": "What was Richard Connell's best known work The Hounds of Zaroff also published as?",
+      "expected_entities": [
+        "Seven Faces",
+        "The Most Dangerous Game"
+      ],
+      "first_rank": 138,
+      "context_len": 73095
+    },
+    {
+      "id": "5a770d785542993569682cad",
+      "question": "The Stone Book series is set in what country? ",
+      "expected_entities": [
+        "The Stone Book Quartet",
+        "Alan Garner"
+      ],
+      "first_rank": 12,
+      "context_len": 67831
+    },
+    {
+      "id": "5ab3c18b55429969a97a81b0",
+      "question": "When did Senator Ted Kennedy helped dedicate a new room at the location to his maternal grandfather, John F. Fitzgerald.",
+      "expected_entities": [
+        "Doyle's Cafe",
+        "John F. Fitzgerald"
+      ],
+      "first_rank": 142,
+      "context_len": 72304
+    },
+    {
+      "id": "5a84b0705542991dd0999d86",
+      "question": "Which 8-year old star of an epistolary novel turned musical by Alice Walker also voiced Frankie Greene in a Disney series?",
+      "expected_entities": [
+        "Diamond White",
+        "The Color Purple"
+      ],
+      "first_rank": 31,
+      "context_len": 72953
+    },
+    {
+      "id": "5abdba405542993f32c2a023",
+      "question": "Orlando Brown is best known for his role as 3J Winslow in an American sitcom that was a spin-off of what?",
+      "expected_entities": [
+        "Orlando Brown",
+        "Family Matters"
+      ],
+      "first_rank": null,
+      "context_len": 74313
+    },
+    {
+      "id": "5a80721b554299485f5985ef",
+      "question": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+      "expected_entities": [
+        "Livesey Hall War Memorial",
+        "World War II casualties"
+      ],
+      "first_rank": null,
+      "context_len": 70
+    },
+    {
+      "id": "5ab41677554299753aec5a38",
+      "question": "Where was the air-cooled version of a weapon system used on the HMAS \"Narani\" found?",
+      "expected_entities": [
+        "HMAS Narani",
+        "Vickers machine gun"
+      ],
+      "first_rank": null,
+      "context_len": 70
+    },
+    {
+      "id": "5adcf37e5542994ed6169c37",
+      "question": "BMW X5 is a mid-size version that was produced alongside which newer model, produced in 2009?",
+      "expected_entities": [
+        "BMW X5",
+        "BMW X6"
+      ],
+      "first_rank": null,
+      "context_len": 70
+    },
+    {
+      "id": "5aba510f5542994dbf0198d6",
+      "question": "Yakuza Kiwami is a remake of the first video game in what video game series that is an open world action-adventure beat 'em up video game franchise?",
+      "expected_entities": [
+        "Yakuza Kiwami",
+        "Yakuza"
+      ],
+      "first_rank": null,
+      "context_len": 70
+    },
+    {
+      "id": "5a7d1765554299452d57bade",
+      "question": " The 1919 Mississippi gubernatorial election Incumbent Democrat was a master of what?",
+      "expected_entities": [
+        "Mississippi gubernatorial election, 1919",
+        "Theodore G. Bilbo"
+      ],
+      "first_rank": null,
+      "context_len": 70
+    },
+    {
+      "id": "5abcf84d55429959677d6b86",
+      "question": "Mexican Indignados Movement is a response to a war also known as?",
+      "expected_entities": [
+        "Mexican Indignados Movement",
+        "Mexican Drug War"
+      ],
+      "first_rank": null,
+      "context_len": 70
+    },
+    {
+      "id": "5ac0714f554299294b218fe1",
+      "question": "Robert Allen \"Bob\" Case is best known for inspiring the naming of which initial area of low pressure developed off Atlantic Canada on October 29? ",
+      "expected_entities": [
+        "Robert Case",
+        "1991 Perfect Storm"
+      ],
+      "first_rank": null,
+      "context_len": 70
+    }
+  ]
+}

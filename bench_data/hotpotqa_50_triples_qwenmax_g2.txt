@@ -1,0 +1,3790 @@
+Radar Station | 类型 | 短纪录片
+Radar Station | 制作方 | 加拿大国家电影局
+Radar Station | 系列 | On The Spot
+Radar Station | 制作目的 | 电视
+Radar Station | 内容 | 访问雷达站并参与模拟空袭
+Radar Station | 基于 | 第一人称采访
+Remote Radar Head Trimingham | 别名 | RRH Trimingham
+RRH Trimingham | 类型 | TPS-77雷达站
+RRH Trimingham | 位置 | 诺福克郡海岸
+RRH Trimingham | 卫星站 | RAF Neatishead
+RRH Trimingham | 控制与维护 | 雷达技术员和操作员小组
+RRH Trimingham | 支持 | 地面工程师团队
+RRH Trimingham | 覆盖范围 | 英国东海岸
+RRH Trimingham | 贡献 | 英国的空中识别图和防御
+Radar Station | produced_by | 加拿大国家电影局
+RRH Trimingham | is_a | TPS-77雷达站
+RRH Trimingham | located_in | 诺福克郡海岸
+RRH Trimingham | controlled_and_maintained_by | 雷达技术员和操作员小组
+RRH Trimingham | supported_by | 地面工程师团队
+RRH Trimingham | 地理位置 | 诺福克郡海岸
+NATO | 包含 | 法国军事
+法国军事 | 整合 | NATO防空系统
+D.A.T | 全称 | Défense Aérienne du Territoire
+D.A.T | 建造 | Ouvrage G
+Ouvrage G | 类型 | 雷达站
+Ouvrage G | 别名 | Station Maître Radar 60/921
+Ouvrage G | 覆盖面积 | 三倍于部队掩体的面积
+Ouvrage G | 位置 | Metz的旧Fort François de Guise
+Ouvrage G | 位置 | 前Maginot Ouvrage Hochwald
+Ouvrage G | 装备 | 七个雷达天线
+Ouvrage G | 位于 | 旧部队掩体附近
+Ouvrage G | 位于 | Metz的旧Fort François de Guise
+Ouvrage G | 装备有 | 七个雷达天线
+Station Maître Radar 60/921 | 覆盖面积 | 三倍于部队掩体的面积
+No. 227 Radar Station RAAF | 属于 | Royal Australian Air Force radar station
+No. 227 Radar Station RAAF | 建立时间 | 1942–43
+No. 227 Radar Station RAAF | 开始运作时间 | late 1943
+No. 227 Radar Station RAAF | 目的 | 提供对日本空袭珀斯的早期预警
+Mukachevo Radar Station | 属于 | Radar Station
+Mukachevo Radar Station | 目的 | 提供弹道导弹攻击的早期预警
+Mukachevo Radar Station | 信息用途 | 用于核导弹攻击的发射警告或启动A-135反导系统
+Dwarka | 位于 | Devbhoomi Dwarka区
+Dwarka | 位于 | 奥克汉曼达尔半岛西岸
+Dwarka | 属于 | Chardhams
+Dwarka | 属于 | Sapta Puri
+Dwarka | 关联 | Dwarka王国
+Dwarka | 被认为是 | 古吉拉特邦的第一个首都
+Dwarka | 位于 | Gomti River右岸
+Dwarka | 位于 | 古吉拉特邦
+B-71雷达站 | 别名 | 克拉马斯河雷达站
+B-71雷达站 | 别名 | 克雷斯森特市雷达站
+B-71雷达站 | 别名 | 特立尼达雷达站
+B-71雷达站 | 类型 | 陆军航空队早期预警站
+B-71雷达站 | 历史时期 | 第二次世界大战
+B-71雷达站 | 伪装成 | 农舍
+B-71雷达站 | 包含 | 柴油发电机
+B-71雷达站 | 包含 | 电子设备
+B-71雷达站 | 包含 | 两门50口径高射炮
+B-71雷达站 | 位于 | 克拉马斯河口南部的海岸大道
+Skrunda-1 | 距离 | Skrunda以北5公里
+Skrunda-1 | 包含 | Dnepr雷达
+Skrunda-1 | 建造时间 | 1960年代
+Skrunda-1 | 正在建设 | Daryal雷达
+Skrunda-1 | 重要性 | 覆盖西欧
+Skrunda-1 | 功能 | 监听太空物体和跟踪可能的洲际弹道导弹
+Sevastopol雷达站 | 属于 | 苏联雷达站
+Sevastopol雷达站 | 功能 | 提供弹道导弹攻击的早期预警
+Sevastopol雷达站 | 位于 | 赫尔松尼斯角和辅助机场'赫尔松尼斯'之间
+Sevastopol雷达站 | 组成部分 | 苏联导弹攻击预警系统
+Sevastopol雷达站 | 信息用途 | 用于核导弹攻击的发射警告或启动A-135反导系统
+Dnepr雷达 | 建造时间 | 1960年代
+Sevastopol雷达站 | 地理位置 | 赫尔松尼斯角和辅助机场'赫尔松尼斯'之间
+Iqbal F. Qadir | 职位 | Vice-Admiral
+Iqbal F. Qadir | 所属国家 | Pakistan
+Iqbal F. Qadir | 职业 | 外交官
+Iqbal F. Qadir | 职业 | 国防分析师
+Iqbal F. Qadir | 参与事件 | 第二次印巴战争
+Tivolis Koncertsal | 设计者 | Frits Schlegel
+Tivolis Koncertsal | 设计者 | Hans Hansen
+Tivoli Gardens | 别名 | Tivoli
+Tivoli Gardens | 类型 | 游乐园
+Tivoli Gardens | 世界排名 | 第二古老的运营游乐园
+Iqbal F. Qadir | 参与战争 | 第二次印巴战争
+Tivolis Koncertsal | 位于 | Tivoli Gardens
+Takino Suzuran Hillside National Government Park | 海拔范围 | 160到320米
+Takino Suzuran Hillside National Government Park | 包含区域 | Mountain Stream Zone
+Takino Suzuran Hillside National Government Park | 包含区域 | Central Zone
+Takino Suzuran Hillside National Government Park | 包含区域 | Lodging Zone
+Takino Suzuran Hillside National Government Park | 包含区域 | Forest Experience Zone
+Takino Suzuran Hillside National Government Park | 包含区域 | Nature Observation Zone
+Takino Suzuran Hillside National Government Park | 包含区域 | Preservation Zone
+Takino Suzuran Hillside National Government Park | 冬季运营名称 | Takino Snow World
+Takino Suzuran Hillside National Government Park | 提供活动 | 冬季户外活动
+Preservation Zone | 是否对公众开放 | 不开放
+Copake Falls Area | 属于 | Taconic State Park
+Copake Falls Area | 位于 | Copake
+Taconic State Park | 包含 | Rudd Pond Area
+Copake Falls Area | 位于 | New York State Route 344
+Copake Falls Area | 开放时间 | 日出到日落
+Copake Falls Area | 包含 | 露营地
+Copake Falls Area | 包含 | 小屋区
+Copake Falls Area | 附近有 | 滑雪区
+Wait and See | 由 | Duke Jordan的三重奏
+Wait and See | 录制地点 | Tivolis Koncertsal
+Wait and See | 发行公司 | SteepleChase
+Copake Falls Area | 提供 | 露营地
+Copake Falls Area | 提供 | 小屋区
+Copake Falls Area | 提供 | 滑雪区
+露营地 | 开放时间 | 五月到十二月
+小屋区 | 开放时间 | 全年
+Pepper Tree Playfield | 面积 | 21.7英亩
+Pepper Tree Playfield | 位置 | Reino- 和 Old Conejo Roads 的拐角处
+Pepper Tree Playfield | 包含 | 0.83英里健身步道环路
+Pepper Tree Playfield | 附近 | 众多步道起点
+Pepper Tree Playfield | 步行距离内 | Conejo Vista Trailhead
+Conejo Vista Trailhead | 位于 | Deer Ridge Open Space
+Deer Ridge Open Space | 位置 | Pepper Tree Playfield
+Pepper Tree Playfield | 对面 | Knoll Trailhead
+Knoll Trailhead | 位于 | Knoll Open Space
+Knoll Open Space | 位置 | Pepper Tree Playfield
+Pepper Tree Playfield | 通向 | Conejo Mountain
+Pepper Tree Playfield | 命名原因 | 许多胡椒树
+Pepper Tree Playfield | acquired_by | Conejo Recreation & Park District
+Pepper Tree Playfield | developed_and_opened | 1983
+Pepper Tree Playfield | named_for | many pepper trees
+Pepper Tree Playfield | nearby | numerous trailheads
+Pepper Tree Playfield | access_point_for | trails leading to the Conejo Mountain
+Deer Ridge Open Space | 面积 | 188英亩
+Deer Ridge Open Space | 包含 | 山脊和峡谷
+Deer Ridge Open Space | 植被类型 | 灌木丛和橡树
+Deer Ridge Open Space | 相邻区域 | Santa Monica Mountains
+Los Robles Trail | 穿越 | Deer Ridge Open Space
+Deer Ridge Open Space | 主要入口 | Potrero Road
+Deer Ridge Open Space | 次要入口 | Felton Street
+Los Robles Trail | 管理机构 | Conejo Open Space Conservation Agency
+Los Robles Trail | 连接 | Los Padres Open Space
+Los Robles Trail | 连接 | Deer Ridge Open Space
+Los Robles Trail | 连接 | Hope Nature Preserve
+Los Robles Trail | 连接 | Los Vientos Open Space
+Los Robles Trail | 提供视野 | Conejo Valley和Santa Monica Mountains
+Los Robles Trail | 连接 | Westlake Village
+Los Robles Trail | 提供 | 全景视野
+Deer Ridge Open Space | 位置关系 | Hidden Valley
+Deer Ridge Open Space | 位置关系 | Rancho Sierra Vista Satwiwa
+Deer Ridge Open Space | is located north of | Hidden Valley
+Deer Ridge Open Space | is located north of | Rancho Sierra Vista Satwiwa
+Ventu Park Open Space | 面积 | 141英亩
+Rosewood Trail | 通向 | Angel Vista
+Angel Vista | 位于 | Santa Monica Mountains
+Rosewood Trail | 停车场位置 | Stagecoach Inn Park
+Rosewood Trail | 起点 | 橡树林
+Rosewood Trail | 经过 | 溪流
+Rosewood Trail | 终点 | Angel Vista
+Rosewood Trail | 提供视野 | Conejo Valley
+Rosewood Trail | 提供视野 | Oxnard Plain
+Rosewood Trail | 提供视野 | California Channel Islands
+Rosewood Trail | 提供视野 | Pacific Ocean
+Rosewood Trail | 提供视野 | Point Mugu
+Rosewood Trail | 提供视野 | Hidden Valley
+Rosewood Trail | 提供视野 | Santa Monica Mountains
+Rosewood Trail | 提供视野 | Topa Topa Mountains
+Rosewood Trail | 是起点 | Los Robles Trail
+Los Robles Trail | 运营方 | Conejo Open Space Conservation Agency
+Rosewood Trail | 起点 | Stagecoach Inn Park
+Los Robles Trail | 起点 | Rosewood Trail
+Conejo Open Space Conservation Agency | 运营 | Los Robles Trail
+Los Robles Trail | 起点 | Angel Vista
+Los Robles Trail | 长度 | 25英里
+Los Robles Trail | 连接 | Newbury Park
+Los Robles Trail | 穿越 | Hidden Valley
+Los Robles Trail | 穿越 | Thousand Oaks
+Los Robles Trail | 穿越 | Lake Sherwood
+Potrero Ridge | 连接 | Satwiwa
+Satwiwa | 连接 | Point Mugu
+Santa Monica Mountains | 包含 | Big Sycamore Canyon
+Los Robles Trail | 使用对象 | 骑马者
+Los Robles Trail | 使用对象 | 山地自行车手
+Los Robles Trail | 使用对象 | 徒步者
+Rosewood Trail | 长度 | 5英里往返
+Los Robles Trail | 终点 | Westlake Village
+Los Robles Trail | 经过 | Hidden Valley
+Los Robles Trail | 经过 | Thousand Oaks
+Los Robles Trail | 经过 | Lake Sherwood
+Tivoli Two | 表演者 | Duke Jordan的三重奏
+Tivoli Two | 录制地点 | Tivolis Koncertsal
+Tivoli Two | 发行公司 | SteepleChase
+Tivoli One | 表演者 | Duke Jordan的三重奏
+Tivoli One | 录制地点 | Tivolis Koncertsal
+Tivoli One | 发行公司 | SteepleChase
+Hawthorn Hall | 建造时间 | 约1610年
+Hawthorn Hall | 最初用途 | yeoman house
+Hawthorn Hall | 改建者 | John Leigh
+Hawthorn Hall | 用途变更时间 | 19世纪
+Hawthorn Hall | 用途变更 | 无家可归者收容学校
+Hawthorn Hall | 当前用途 | 办公室
+Hawthorn Hall | 建筑材料 | 李子色砖
+Hawthorn Hall | 屋顶材料 | Kerridge石板
+Hawthorn Hall | 屋顶结构 | 石脊和三个砖烟囱
+Hawthorn Hall | 可见的木框架位置 | 屋顶山墙和内部墙壁
+Hawthorn Hall | 平面布局 | 长方形
+Hawthorn Hall | 层数 | 2½层
+Hawthorn Hall | 窗户类型 | 木质框格窗
+Hawthorn Hall | 入口位置 | 中心
+Hawthorn Hall | originated_as | timber-framed yeoman house
+Hawthorn Hall | improved_and_encased_in_brick_for | John Leigh
+Hawthorn Hall | opened_as | homeless shelter school
+Hawthorn Hall | has_roof_features | stone ridge and three brick chimneys
+Hawthorn Hall | has_windows | wooden mullioned and transomed windows
+Hawthorn Hall | 建造材料 | 李子色砖
+Hawthorn Hall | 建筑风格 | 2½层
+Hawthorn Hall | 门位置 | 中心
+Hawthorn Hall | 门上方装饰 | 小栏杆
+door | flanked by | fluted pilasters
+door | surmounted by | plaque with a lion rampant
+east front | has | two gables
+house | commented by | Nikolaus Pevsner
+house | listed in | National Heritage List for England
+house | designated as | Grade II* listed building
+house | has_part | east front
+Nikolaus Pevsner | comments_on | house
+house | is_recorded_in | National Heritage List for England
+Wilmslow High School | 类型 | 综合中学
+Wilmslow High School | 成立年份 | 1960年代
+Wilmslow High School | 校长 | Dr. James Pullé
+Wilmslow High School | 评估等级 | 良好
+Corn School | 类型 | 节日
+Corn School | 举办时间 | 每年十月第一周
+Corn School | 成立年份 | 1906
+Corn School | 最初目的 | 展示当地玉米种植班男孩的产品
+Corn School | 开始年份 | 1906
+Wilmslow High School | 成为综合中学的年份 | 1991
+Wilmslow Show | 举办时间 | 通常在七月的第二个星期日
+Wilmslow Show | 包含部分 | Horticulture
+Wilmslow Show | 包含部分 | Dogs
+Wilmslow Show | 包含部分 | Classic Cars
+Spartan Municipal Stadium | 曾用名 | Universal Stadium
+Spartan Municipal Stadium | 历史地位 | 州级历史遗址
+Spartan Municipal Stadium | 所有者 | Portsmouth市
+Spartan Municipal Stadium | 使用限制 | 仅限常规足球比赛
+Spartan Municipal Stadium | 曾经使用过的球队 | Portsmouth Spartans
+Spartan Municipal Stadium | 曾经使用过的球队 | 当地高中球队
+Spartan Municipal Stadium | 曾经使用过的球队 | Portsmouth高中足球队
+Spartan Municipal Stadium | 曾经使用过的球队 | Notre Dame高中足球队
+Portsmouth市 | 提议出售对象 | Portsmouth City School District
+Portsmouth City School District | 拒绝购买原因 | 获得1000万美元用于建设自己的体育综合设施
+Spartan Municipal Stadium | 所有权归属 | Portsmouth市
+Spartan Municipal Stadium | 建造年份 | 1930
+Spartan Municipal Stadium | 更名时间 | 1970
+Spartan Municipal Stadium | 位于 | 俄亥俄州Portsmouth市
+Spartan Municipal Stadium | 容纳人数 | 8200人
+Notre Dame高中足球队 | 曾经使用过 | Spartan Municipal Stadium
+California State Summer School for the Arts | 简称 | CSSSA
+California State Summer School for the Arts | 持续时间 | 四星期
+California State Summer School for the Arts | 目标群体 | 高中生
+California State Summer School for the Arts | 举办地点 | 加州艺术学院
+California State Summer School for the Arts | 提供学科 | 动画
+California State Summer School for the Arts | 提供学科 | 创意写作
+California State Summer School for the Arts | 提供学科 | 舞蹈
+California State Summer School for the Arts | 提供学科 | 电影与视频
+California State Summer School for the Arts | 提供学科 | 音乐
+California State Summer School for the Arts | 提供学科 | 戏剧艺术
+California State Summer School for the Arts | 提供学科 | 视觉艺术
+California State Summer School for the Arts | 目的 | 为未来艺术家提供培训
+California State Summer School for the Arts | 学生称号 | 加州艺术学者
+California State Summer School for the Arts | 完成奖励 | 州长奖章
+Pownall Hall | 购买者 | Henry Boddington
+Henry Boddington | 职业 | 曼彻斯特酿酒商
+Pownall Hall | 改造风格 | 工艺美术运动的最新作品展示
+Pownall Hall | 建筑师 | William Ball
+William Ball | 所属公司 | Ball and Elce合伙公司
+Pownall Hall | 装饰和家具设计者 | 世纪公会成员
+世纪公会成员 | 创始人 | A. H. Mackmurdo
+Pownall Hall | 立面装饰 | 许多漂亮的小规模装饰
+Pownall Hall | 保护级别 | 二级*
+Pownall Hall | 当前用途 | 学校
+Pownall Hall | 展示 | 工艺美术运动的最新作品展示
+Pownall Hall | 装饰 | 许多漂亮的小规模装饰
+Pownall Hall | 列为 | 二级*保护建筑
+Pownall Hall | 现用途 | 学校
+Pownall Hall | 建筑风格 | Tudor style
+Henry Boddington | 职业 | Manchester
+2015 CIS Men's University Cup Hockey Tournament | 举办地点 | Scotiabank Centre in Halifax
+2015 CIS Men's University Cup Hockey Tournament | 联合主办单位 | St. Francis Xavier University & Saint Mary's University
+2015 CIS Men's University Cup Hockey Tournament | 主办方 | St. Francis Xavier University & Saint Mary's University
+Dungeness School | 学生人数 | 73人
+Dungeness School | 学生年龄范围 | 5至20岁
+Dungeness School | 教师数量 | 1名
+2015 CIS Men's University Cup Hockey Tournament | held at | Scotiabank Centre in Halifax
+Dungeness School | had students from ages | 5 to 20
+Dungeness School | 学生年龄范围 | 5 to 20岁
+Conestoga | 属于 | 文学科幻和奇幻大会
+Conestoga | 暂停原因 | 财务和后勤问题
+Conestoga | 庆祝内容 | 科幻和奇幻文学及艺术
+Conestoga | 活动内容 | filking
+Conestoga | 活动内容 | 游戏
+Conestoga | 特色节目 | 作家轨道
+Conestoga | 特色节目 | 艺术展
+Conestoga | 特色节目 | 经销商室
+Conestoga | 特色节目 | 化装舞会
+Conestoga | 特色节目 | 企鹅剧团演出的戏剧
+Conestoga | 举办时间 | 1997 through 2010
+Conestoga | 活动 | 游戏
+Conestoga | celebrated | science fiction and fantasy literature and art
+Conestoga | included activity | gaming
+On Chesil Beach | 导演 | Dominic Cooke
+On Chesil Beach | 改编自 | Ian McEwan的2007年Booker Prize提名小说《On Chesil Beach
+On Chesil Beach | 主演 | Saoirse Ronan
+On Chesil Beach | 主演 | Billy Howle
+On Chesil Beach | 首映 | 多伦多国际电影节特别展映单元
+Tell It to the Bees | 导演 | Annabel Jankel
+Tell It to the Bees | 主演 | Anna Paquin
+Romans | 导演 | Ludwig Shammasian
+Romans | 导演 | Paul Shammasian
+Romans | 编剧 | Geoff Thompson
+Romans | 主演 | Orlando Bloom
+Romans | 主演 | Janet Montgomery
+Romans | 主演 | Charlie Creed-Miles
+Romans | 主演 | Anne Reid
+Romans | 主演 | Alex Ferns
+Romans | 主演 | Josh Myers
+Dark River | 导演 | Clio Barnard
+Dark River | 编剧 | Clio Barnard
+Dark River | 主演 | Ruth Wilson
+Dark River | 主演 | Mark Stanley
+Dark River | 主演 | Sean Bean
+Dark River | 首映 | 2017年多伦多国际电影节平台单元
+Zoo | 类型 | 英国历史战争剧情片
+Zoo | 导演 | Colin McIvor
+Zoo | 编剧 | Colin McIvor
+Zoo | 主演 | Art Parkinson
+Zoo | 主演 | Penelope Wilton
+Zoo | 主演 | Toby Jones
+Zoo | 主演 | Ian O'Reilly
+Zoo | 主演 | Ian McElhinney
+Zoo | 主演 | Amy Huberman
+Zoo | 主演 | Damian O'Hare
+Billy Howle | 职业 | 演员
+Billy Howle | 参演作品 | Glue
+Billy Howle | 角色 | James Warwick
+Billy Howle | 参演作品 | The Sense of an Ending
+Billy Howle | 角色 | Jim Broadbent的年轻版
+Billy Howle | 参演作品 | The Witness for the Prosecution
+Billy Howle | 角色 | Leonard Vole
+Billy Howle | 参演作品 | Dunkirk
+Billy Howle | 参演作品 | On Chesil Beach
+Billy Howle | 参演作品 | The Seagull
+Billy Howle | 参演作品 | Outlaw King
+Billy Howle | 出演 | Dunkirk
+Billy Howle | 出演 | On Chesil Beach
+Billy Howle | 出演 | The Seagull
+Billy Howle | 出演 | Outlaw King
+Tadakha | 属于 | Telugu action film
+Tadakha | 导演 | Kishore Kumar Pardasani
+Tadakha | 翻拍自 | Vettai
+Vettai | 导演 | N. Linguswamy
+Tadakha | 演员 | Andrea Jeremiah
+Tadakha | 演员 | Tamannaah
+Tadakha | 演员 | Naga Chaitanya
+Tadakha | 票房表现 | Super Hit
+Sunil | 获奖 | Filmfare Award for Best Supporting Actor - Telugu
+The Little Stranger | 属于 | British mystery horror drama film
+The Little Stranger | 导演 | Lenny Abrahamson
+The Little Stranger | 编剧 | Lucinda Coxon
+The Little Stranger | 作者 | Sarah Waters
+The Little Stranger | 演员 | Domhnall Gleeson
+The Little Stranger | 演员 | Ruth Wilson
+The Little Stranger | 演员 | Will Poulter
+The Little Stranger | 演员 | Charlotte Rampling
+Tadakha | is_remake_of | Vettai
+Sameera Reddy | was_approached_for_role_in | Tadakha
+Andrea Jeremiah | replaced | Sameera Reddy
+Tamannaah | co-starred_with | Naga Chaitanya
+The Little Stranger | based_on_novel_by | Sarah Waters
+Sameera Reddy | was_replaced_by | Andrea Jeremiah
+Branko Tomović | 国籍 | 德国-塞尔维亚
+Branko Tomović | 实际起源地 | 塞尔维亚的喀尔巴阡山脉
+Branko Tomović | 父母移民时间 | 20世纪70年代
+Branko Tomović | 成长地点 | 德国和塞尔维亚之间
+Branko Tomović | 学习地点 | 纽约市李·斯特拉斯伯格剧院研究所
+Branko Tomović | 首次亮相电影 | Remote Control
+Branko Tomović | 获奖 | OmU奖
+Branko Tomović | 现居地 | 伦敦市
+Branko Tomović | 出演角色 | Antoni Pricha
+Branko Tomović | 出演角色 | Marek Lisowski
+Branko Tomović | 出演角色 | Miroslaw Feric
+Branko Tomović | 合作导演 | Ken Loach
+Branko Tomović | 合作导演 | Sönke Wortmann
+Branko Tomović | 合作导演 | Paul Greengrass
+Branko Tomović | 出演角色 | Junky-Henchman Marek Lisowski
+Branko Tomović | 出演角色 | 波兰战斗机飞行员Miroslaw Feric
+He | 被授予 | One to Watch
+He | 参演电影 | The Bourne Ultimatum
+The Bourne Ultimatum | 导演 | Paul Greengrass
+He | 参演电影 | It's a Free World
+It's a Free World | 导演 | Ken Loach
+He | 参演电影 | The Wolf Man
+The Wolf Man | 导演 | Joe Johnston
+He | 参演电影 | Pope Joan
+Pope Joan | 导演 | Sönke Wortmann
+He | 参演电影 | Interview with a Hitman
+Interview with a Hitman | 导演 | Perry Bhandal
+He | 获奖 | Best Actor Award at the San Francisco Short Film Festival
+He | 获奖 | Best Actor Award at The Accolade Film Awards
+He | 参演电影 | Believe the Magic
+Believe the Magic | 导演 | Jimmy Cauty
+He | 参演电影 | Entity
+Entity | 导演 | Steve Stone
+Entity | 获奖 | two awards at the London Independent Film Festival 2013
+Entity | 获奖 | Best Actor at the British Horror Film Festival
+He | 提名 | Best Actor at the British Horror Film Festival
+He | 获奖 | Best International Actor by The British Filmmakers Alliance
+He | 被选为 | Rising Star by Icon Magazine
+He | 将扮演 | Nikola Tesla
+He | was_named | One to Watch by Moviescope Magazine
+He | starred_in | The Bourne Ultimatum
+He | starred_in | It's a Free World
+He | starred_in | The Wolf Man
+He | starred_in | Pope Joan
+He | starred_in | Interview with a Hitman
+He | starred_in | Believe the Magic
+He | starred_in | Entity
+Entity | won | two awards at the London Independent Film Festival 2013
+He | nominated_for | Best Actor at the British Horror Film Festival
+He | was nominated for | Best Actor at the British Horror Film Festival
+Belcheck | 扮演者 | 他
+Jack Bauer | 助手 | Belcheck
+24: Live Another Day | 参演作品 | 他
+Kiefer Sutherland | 合作演员 | 他
+Fury | 参演作品 | 他
+Brad Pitt | 合作演员 | 他
+Logan Lerman | 合作演员 | 他
+David Ayer | 导演 | Fury
+24: Live Another Day | 主演 | Kiefer Sutherland
+Once Upon a Time in London | 类型 | 犯罪电影
+Once Upon a Time in London | 导演 | Simon Rumley
+Best Friend's Brother | 表演者 | Victoria Justice
+Best Friend's Brother | 专辑 | Victorious
+Best Friend's Brother | 制作人 | Kool Kojak
+Curmudgeons | 类型 | 喜剧短片
+Curmudgeons | 导演 | Danny DeVito
+Curmudgeons | 制片人 | Danny DeVito
+Curmudgeons | 主演 | Danny DeVito
+Curmudgeons | 编剧 | Joshua Conkel
+Curmudgeons | 制片人 | Joshua Conkel
+Once Upon a Time in London | 编剧 | Will Gilbey
+Once Upon a Time in London | 主演 | Leo Gregory
+Once Upon a Time in London | 主演 | Terry Stone
+Once Upon a Time in London | 主演 | Holly Earl
+Once Upon a Time in London | 主演 | Dominic Keating
+Once Upon a Time in London | 主演 | Geoff Bell
+Best Friend's Brother | 作曲 | Savan Kotecha
+Blow | 所属专辑 | Cannibal
+Brian R. Etting | 执行制片 | Drunk History: Douglass & Lincoln
+Drunk History: Douglass & Lincoln | 获奖 | 2010年圣丹斯电影节最佳短片奖
+Brian R. Etting | 拥有公司 | Garlin Pictures
+Brian R. Etting | 拥有 | Garlin Pictures
+Drunk History: Douglass & Lincoln | 获得奖项 | 2010年圣丹斯电影节最佳短片奖
+Va Va Voom | 演唱者 | Nicki Minaj
+Va Va Voom | 所属专辑 | Nicki Minaj的第二张录音室专辑的豪华版
+Va Va Voom | 单曲顺序 | 第五支单曲
+Va Va Voom | 原计划单曲顺序 | 第一支单曲
+Va Va Voom | 推迟原因 | 改为发行Starships
+Va Va Voom | 重新发行目的 | 为专辑再版做宣传
+Kool Kojak | 本名 | Allan P. Grigg
+Kool Kojak | 职业 | 音乐家
+Kool Kojak | 职业 | 作曲家
+Kool Kojak | 职业 | 唱片制作人
+Kool Kojak | 职业 | 导演
+Kool Kojak | 职业 | 艺术家
+Kool Kojak | 合作艺人 | Flo Rida
+Kool Kojak | 合作艺人 | Nicki Minaj
+Kool Kojak | 合作艺人 | Ke$ha
+Kool Kojak | 合作艺人 | Sean Paul
+Kool Kojak | 合作艺人 | Yelle
+Kool Kojak | 合作艺人 | Waka Flocka Flame
+Kool Kojak | 合作艺人 | Travis Barker
+Kool Kojak | 合作艺人 | Dr. Seuss's The Lorax
+Kool Kojak | 合作艺人 | Britney Spears
+Kool Kojak | 合作艺人 | Jesse and Joy
+Kool Kojak | 合作艺人 | Andy Milonakis
+Kool Kojak | 合作艺人 | Icona Pop
+Kool Kojak | 合作艺人 | N.A.S.A
+Kool Kojak | 合作艺人 | Dirt Nasty
+Kool Kojak | 合作艺人 | Lordz of Brooklyn
+Kool Kojak | 合作艺人 | Ursula 1000
+Kool Kojak | 合作艺人 | Warren G
+Kool Kojak | 参与节目 | X Factor
+Kool Kojak | 参与节目 | Victorious
+Kool Kojak | 获奖 | ASCAP Pop Awards
+Kool Kojak | 获奖 | ASCAP Urban Award
+Kool Kojak | 获奖 | WormTown Sound Award
+Kool Kojak | 获得奖项 | ASCAP Pop Awards
+Kool Kojak | 获得奖项 | ASCAP Urban Award
+Kool Kojak | 获得奖项 | WormTown Sound Award
+The Lorax | 类型 | 3D计算机动画音乐奇幻喜剧电影
+The Lorax | 制作公司 | Illumination Entertainment
+The Lorax | 基于 | Dr. Seuss的同名儿童书
+The Lorax | 发行公司 | Universal Pictures
+The Lorax | 改编自 | 1972年的动画电视特别节目
+Ted | 角色 | 拜访Once-ler的男孩
+The Lorax | 配音演员 | Danny DeVito
+Once-ler | 配音演员 | Ed Helms
+Ted | 配音演员 | Zac Efron
+Audrey | 配音演员 | Taylor Swift
+Aloysius O'Hare | 配音演员 | Rob Riggle
+Mrs. Wiggins | 角色 | Ted的母亲
+Mrs. Wiggins | 配音演员 | Jenny Slate
+Grammy Norma | 配音演员 | Betty White
+The Lorax | is_adapted_from | Dr. Seuss's children's book of the same name
+The Lorax | was_released_by | Universal Pictures
+The Lorax | is_a | 3D computer-animated musical fantasy–comedy film
+Aloysius O'Hare | voiced_by | Rob Riggle
+Mrs. Wiggins | is_a_new_character_in | The Lorax
+Rock Me | 所属专辑 | Take Me Home
+Rock Me | 演唱者 | One Direction
+Rock Me | 节奏类型 | 中速节拍
+Rock Me | 旋律风格 | 流行摇滚
+Rock Me | 相似作品 | We Will Rock You
+Victorious: Music from the Hit TV Show | 所属电视节目 | Victorious
+Victorious: Music from the Hit TV Show | 主要演唱者 | Victoria Justice
+Best Friend's Brother | 作曲者 | Victoria Justice
+Song 2 You | 作曲者 | Leon Thomas III
+Rock Me | 音乐风格 | 流行摇滚
+We Will Rock You | 相似元素 | Rock Me
+Victoria Justice | 参与创作 | Best Friend's Brother
+Leon Thomas III | 参与创作 | Song 2 You
+Rock Me | 制作人 | Dr. Luke
+Rock Me | 制作人 | Circut
+Rock Me | 制作人 | Kool Kojak
+We Will Rock You | 演唱者 | Queens
+Victorious: Music from the Hit TV Show | 演唱者 | Ariana Grande
+Victorious: Music from the Hit TV Show | 演唱者 | Elizabeth Gillies
+Victorious: Music from the Hit TV Show | 演唱者 | Miranda Cosgrove
+Victorious: Music from the Hit TV Show | 演唱者 | Matt Bennett
+Victorious: Music from the Hit TV Show | 演唱者 | Daniella Monet
+Victorious: Music from the Hit TV Show | 演唱者 | Avan Jogia
+Give the Drummer Some | 发行公司 | Interscope Records
+Give the Drummer Some | 制作人 | Travis Barker
+Give the Drummer Some | 制作人 | The Neptunes
+Give the Drummer Some | 制作人 | RZA
+Give the Drummer Some | 制作人 | Kool Kojak
+Give the Drummer Some | 制作人 | Chuck Inglish
+Give the Drummer Some | 制作人 | Transplants
+Give the Drummer Some | 制作人 | Kid Cudi
+Give the Drummer Some | 制作人 | EDIT
+Give the Drummer Some | 制作人 | Corey Taylor
+Give the Drummer Some | 制作人 | Steve Aoki
+Give the Drummer Some | 首周美国Billboard 200排行榜位置 | 第9位
+Nick Jordan | 是角色 | 虚构角色
+Nick Jordan | 来自 | BBC医疗剧
+Nick Jordan | 出演于 | Casualty
+Nick Jordan | 出演于 | Holby City
+Nick Jordan | 扮演者 | Michael French
+Nick Jordan | 担任角色 | 心胸外科注册医生
+Nick Jordan | 离开 | Holby City
+Nick Jordan | 回归 | 2005年圣诞节特别节目
+Nick Jordan | 回归 | Holby City
+Nick Jordan | 担任角色 | 普通外科顾问
+Nick Jordan | 回归 | Casualty
+Nick Jordan | 担任角色 | 急诊科临床主管
+Michael French | 离开角色 | Nick Jordan
+Nick Jordan | 首次出现于 | 1998年Casualty的两集中
+Nick Jordan | 离开Holby City的时间 | 第二季
+Nick Jordan | 2006年回归时的角色 | 普通外科顾问
+Nick Jordan | 2008年回归时的角色 | 急诊科临床主管
+Nick Jordan | 离开 | 第二季
+Nick Jordan | 返回 | 2005年圣诞节特别节目
+Nick Jordan | 担任 | 普通外科顾问
+Nick Jordan | 再次加入 | 2008年的Casualty
+Universal Soldier: Regeneration | 属于 | 科幻动作电影系列
+Universal Soldier: Regeneration | 包含作品数量 | 6部
+Luc Deveraux | 扮演者 | Jean-Claude Van Damme
+Luc Deveraux | 扮演者 | Matt Battaglia
+John Thomas | 扮演者 | Scott Adkins
+Universal Soldier: Regeneration | 开始年份 | 1992
+Universal Soldier: Regeneration | 截至年份 | 2012
+Universal Soldier: Regeneration | 类型 | 科幻动作电影系列
+Adrian Fletcher | 别名 | Fletch
+Adrian Fletcher | 来自 | Casualty
+Adrian Fletcher | 来自 | Holby City
+Adrian Fletcher | 扮演者 | Alex Walkinshaw
+Adrian Fletcher | 职位 | Staff Nurse
+Adrian Fletcher | 工作地点 | Holby City Hospital的急诊科
+Adrian Fletcher | 晋升为 | Staff Nurse
+Alex Walkinshaw | 宣布离开 | Casualty
+Alex Walkinshaw | 重新出演 | Holby City
+Adrian Fletcher | 离开 | Casualty
+Alex Walkinshaw | 重新出演 | Casualty
+Adrian Fletcher | 出现在 | 30周年纪念集 Too Old for This Shift
+Adrian Fletcher | portrayed by | Alex Walkinshaw
+Adrian Fletcher | first appeared in episode | Zero Sum Game
+Adrian Fletcher | date of first appearance | 7 July 2012
+Adrian Fletcher | position upon arrival | Staff Nurse
+Adrian Fletcher | promotion year | 2013
+Adrian Fletcher | departure date from Casualty | 29 June 2014
+Adrian Fletcher | debut date on Holby City | 12 August 2014
+Adrian Fletcher | role in Holby City | ward manager of the fictitious AAU ward
+Adrian Fletcher | 职位变动时间 | 2013
+Alex Walkinshaw | 宣布离开时间 | 1 April 2014
+Adrian Fletcher | 首次出现在Holby City的时间 | 12 August 2014
+Universal Soldier: Regeneration | 别名 | Universal Soldier: A New Beginning
+Universal Soldier: Regeneration | 导演 | John Hyams
+Universal Soldier: Regeneration | 剪辑师 | John Hyams
+John Hyams | 父亲 | Peter Hyams
+Peter Hyams | 合作演员 | Jean-Claude Van Damme
+Universal Soldier: Regeneration | 主演 | Jean-Claude Van Damme
+Universal Soldier: Regeneration | 主演 | Dolph Lundgren
+Jean-Claude Van Damme | 角色 | 原作角色
+Dolph Lundgren | 角色 | 原作角色
+Universal Soldier: Regeneration | 忽略事件 | 1999年的剧场版续集
+John Hyams | is_the_son_of | Peter Hyams
+Peter Hyams | worked_with | Jean-Claude Van Damme
+Universal Soldier: Regeneration | ignores_events_from | 1999年的剧场版续集
+Luc Deveraux | 属于 | 虚构角色
+Luc Deveraux | 是主角 | Universal Soldier: Regeneration
+Luc Deveraux | 由演员扮演 | Jean-Claude Van Damme
+Jean-Claude Van Damme | 国籍 | 比利时
+Jean-Claude Van Damme | 职业 | 演员
+Jean-Claude Van Damme | 职业 | 武术家
+Jean-Claude Van Damme | 出演 | 1992年电影《Universal Soldier
+Jean-Claude Van Damme | 出演 | 1999年续集
+Jean-Claude Van Damme | 出演 | 2009年续集
+Jean-Claude Van Damme | 出演 | 2012年续集
+Luc Deveraux | 由演员扮演 | Matt Battaglia
+Matt Battaglia | 出演 | 1998年直接发行视频的续集
+Luc Deveraux | is_in | 1999年续集
+Luc Deveraux | is_in | 2009年续集
+Luc Deveraux | is_in | 2012年续集
+Matt Battaglia | portrays | Luc Deveraux
+Luc Deveraux | portrayed_in | 1998年直接发行视频的续集
+Jayne Grayson | 是角色 | 虚构角色
+Jayne Grayson | 出现在 | Holby City
+Jayne Grayson | 扮演者 | Stella Gonet
+Jayne Grayson | 职位 | 首席执行官
+Jayne Grayson | 工作单位 | Holby City Hospital Primary Care Trust
+Jayne Grayson | 职业背景 | 非医疗专业
+Stella Gonet | 曾出演 | Casualty
+Jayne Grayson | 参与剧情 | 医院官僚主义
+Jayne Grayson | 丈夫的外遇对象 | Connie Beauchamp
+Jayne Grayson | 参与剧情 | 分离手术
+Jayne Grayson | involved_in_storyline_with | Connie Beauchamp
+Jayne Grayson | fought_against | hospital's Board of Directors and the British government
+Zero Dark Thirty | 类型 | 美国动作惊悚片
+Zero Dark Thirty | 导演 | Kathryn Bigelow
+Zero Dark Thirty | 编剧 | Mark Boal
+Zero Dark Thirty | 首映地点 | 洛杉矶和纽约市的五家影院
+Zero Dark Thirty | 全球总票房 | $106.8 million
+Scott Adkins | 国籍 | 英国
+Scott Adkins | 职业 | 演员
+Scott Adkins | 职业 | 武术家
+Scott Adkins | 扮演角色 | Yuri Boyka
+Scott Adkins | 出演电影 | 2006年的某部电影
+Scott Adkins | 出演电影 | 2010年的某部续集
+Scott Adkins | 出演电影 | 2016年的某部续集
+Scott Adkins | 扮演角色 | Casey Bowman
+Scott Adkins | 出演电视剧 | Holby City
+Scott Adkins | 扮演角色 | Bradley Hume
+Scott Adkins | 出演电影 | Doctor Strange
+Scott Adkins | 扮演角色 | Lucian
+Scott Adkins | 出演电影 | The Bourne Ultimatum
+Scott Adkins | 扮演角色 | Kiley
+Scott Adkins | 出演电影 | Zero Dark Thirty
+Scott Adkins | 扮演角色 | John Thomas
+Scott Adkins | 出演电视剧 | EastEnders
+Scott Adkins | 出演电视剧 | Hollyoaks
+Scott Adkins | 出演电视剧 | Doctors
+Scott Adkins | 出演电影 | Ninja
+Scott Adkins | 扮演 | Yuri Boyka
+Scott Adkins | 扮演 | Casey Bowman
+Connie Beauchamp | 是角色 | 虚构角色
+Connie Beauchamp | 来自 | Holby City
+Connie Beauchamp | 来自 | Casualty
+Connie Beauchamp | 扮演者 | Amanda Mealing
+Connie Beauchamp | 出现在 | Casualty
+Connie Beauchamp | 出现在 | Casualty@Holby City
+Connie Beauchamp | 职位 | 心脏外科临床主任
+Connie Beauchamp | 职位 | 联合外科主任
+Tommy's Honour | 描绘 | Young Tom Morris
+Tommy's Honour | 导演 | Jason Connery
+Young Tom Morris | 扮演者 | Peter Mullan
+Young Tom Morris | 扮演者 | Jack Lowden
+Tommy's Honour | 获奖 | 2016年英国电影学院苏格兰奖最佳影片
+Hélène Kuragina | 别名 | Princess Yelena Vasilyevna Kuragina
+Hélène Kuragina | 出自 | War and Peace
+Hélène Kuragina | 扮演者 | Anita Ekberg
+Hélène Kuragina | 扮演者 | Amber Gray
+Hélène Kuragina | 扮演者 | Tuppence Middleton
+Kevin McKidd | 国籍 | 苏格兰
+Kevin McKidd | 职业 | 演员
+Kevin McKidd | 职业 | 导演
+Kevin McKidd | 职业 | 歌手
+Kevin McKidd | 扮演角色 | Owen Hunt
+Kevin McKidd | 出演作品 | Grey's Anatomy
+Kevin McKidd | 扮演角色 | Dan Vasser
+Kevin McKidd | 出演作品 | Journeyman
+Kevin McKidd | 扮演角色 | Tommy
+Kevin McKidd | 出演作品 | Trainspotting
+Kevin McKidd | 扮演角色 | Count Vronsky
+Kevin McKidd | 出演作品 | Anna Karenina
+Kevin McKidd | 扮演角色 | Lucius Vorenus
+Kevin McKidd | 出演作品 | Rome
+Kevin McKidd | 配音角色 | John "Soap" MacTavish
+Kevin McKidd | 扮演角色 | Poseidon
+Kevin McKidd | 扮演 | Tommy
+Kevin McKidd | 扮演 | Count Vronsky
+Kevin McKidd | 扮演 | Lucius Vorenus
+Ken Stott | 全名 | Kenneth Campbell Stott
+Ken Stott | 国籍 | 苏格兰
+Ken Stott | 职业 | 演员
+Ken Stott | 获奖 | 劳伦斯·奥利弗奖最佳男配角
+Ken Stott | 获奖作品 | Broken Glass
+Ken Stott | 演出作品 | The Hobbit
+Ken Stott | 角色 | Balin
+Ken Stott | 演出作品 | The Missing
+Ken Stott | 角色 | Ian Garrett
+Ken Stott | 合作演员 | James Nesbitt
+Ken Stott | 演出作品 | Takin' Over The Asylum
+Ken Stott | 角色 | Edward 'Eddie' McKenna
+Ken Stott | 合作演员 | David Tennant
+Ken Stott | 演出作品 | Rebus
+Ken Stott | 角色 | DI John Rebus
+Ken Stott | 演出作品 | Messiah
+Ken Stott | 角色 | DCI Red Metcalfe
+Ken Stott | 出演 | Takin' Over The Asylum
+Ken Stott | 出演 | Rebus
+Ken Stott | 出演 | Messiah
+Ken Stott | 参与演出 | Takin' Over The Asylum
+Ken Stott | 参与演出 | Rebus
+Ken Stott | 参与演出 | Messiah
+Elisabeth Moss | 国籍 | 美国
+Elisabeth Moss | 职业 | 演员
+Elisabeth Moss | 扮演角色 | Zoey Bartlet
+Elisabeth Moss | 出演电视剧 | The West Wing
+Elisabeth Moss | 播出时间 | 1999-2006
+Elisabeth Moss | 扮演角色 | Peggy Olson
+Elisabeth Moss | 出演电视剧 | Mad Men
+Elisabeth Moss | 播出时间 | 2007-2015
+Elisabeth Moss | 获得提名 | 六次艾美奖提名
+Elisabeth Moss | 获得提名 | 金球奖提名
+Elisabeth Moss | 扮演角色 | Det. Robin Griffin
+Elisabeth Moss | 出演电视剧 | Top of the Lake
+Elisabeth Moss | 获奖 | 金球奖最佳女主角
+Elisabeth Moss | 扮演角色 | Offred
+Elisabeth Moss | 出演电视剧 | The Handmaid's Tale
+Elisabeth Moss | 获奖 | 艾美奖剧情类最佳女主角
+Elisabeth Moss | 获奖 | 艾美奖最佳剧情类剧集
+Elisabeth Moss | 出演角色 | Det. Robin Griffin
+Elisabeth Moss | 出演剧集 | Top of the Lake
+Elisabeth Moss | 获得奖项 | 金球奖最佳女主角
+Elisabeth Moss | 出演角色 | Offred
+Elisabeth Moss | 出演剧集 | The Handmaid's Tale
+Elisabeth Moss | 获得奖项 | 艾美奖剧情类最佳女主角
+Elisabeth Moss | 出演角色 | Zoey Bartlet
+Elisabeth Moss | 出演剧集 | The West Wing
+Elisabeth Moss | 出演角色 | Peggy Olson
+Elisabeth Moss | 出演剧集 | Mad Men
+Tina Heath | 职业 | 演员
+Tina Heath | 职业 | 电视主持人
+Tina Heath | 国籍 | 英国
+Tina Heath | 出演节目 | Broaden Your Mind
+Tina Heath | 合作演员 | Graeme Garden
+Tina Heath | 合作演员 | Tim Brooke-Taylor
+Tina Heath | 出演节目 | Z-Cars
+Tina Heath | 出演角色 | Lizzie Dripping
+Tina Heath | 出演节目 | Jackanory Playhouse
+Tina Heath | 出演角色 | Helen Burns
+Tina Heath | 出演节目 | Jane Eyre
+Tina Heath | 出演节目 | Play Of The Month: The Linden Tree
+Tina Heath | 出演节目 | Churchill's People
+Tina Heath | 出演节目 | The Girls Of Slender Means
+Tina Heath | 出演节目 | The Sweeney
+Tina Heath | 参与作品 | Play Of The Month: The Linden Tree
+Tina Heath | 参与作品 | Churchill's People
+Tina Heath | 参与作品 | The Girls Of Slender Means
+Jack Lowden | 国籍 | 苏格兰
+Jack Lowden | 职业 | 演员
+Jack Lowden | 首次国际成功作品 | War and Peace
+Kate Buffery | 全名 | Katharine Winifred Buffery
+Kate Buffery | 国籍 | 英国
+Kate Buffery | 职业 | 演员
+Kate Buffery | 参演电视剧 | Wish Me Luck
+Kate Buffery | 参演电视剧 | Close Relations
+Kate Buffery | 参演电视剧 | Wing and a Prayer
+Kate Buffery | 参演电视剧 | Trial and Retribution
+Kate Buffery | 参演舞台剧 | Daisy Pulls it Off
+Jack Lowden | 出生日期 | 2 June 1990
+Katharine Winifred Buffery | 出生日期 | 23 July 1957
+Katharine Winifred Buffery | 职业 | 演员
+Katharine Winifred Buffery | 参与作品 | Wish Me Luck
+Katharine Winifred Buffery | 参与作品 | Close Relations
+Katharine Winifred Buffery | 参与作品 | Wing and a Prayer
+Katharine Winifred Buffery | 参与作品 | Trial and Retribution
+Katharine Winifred Buffery | 参与作品 | Daisy Pulls it Off
+William III of England | 扮演者 | Bernard Lee
+William III of England | 扮演者 | Henry Daniell
+William III of England | 扮演者 | Olaf Hytten
+William III of England | 扮演者 | Alan Rowe
+William III of England | 扮演者 | Laurence Olivier
+William III of England | 扮演者 | Thom Hoffman
+William III of England | 扮演者 | Corin Redgrave
+William III of England | 扮演者 | Jochum ten Haaf
+William III of England | 扮演者 | Bernard Hill
+William III of England | 扮演者 | Russell Pate
+William III of England | 扮演者 | Egbert-Jan Weber
+William III of England | 扮演者 | George Webster
+William III of England | 扮演者 | Carl Prekopp
+A Love Song | 作曲者 | Lee Greenwood
+A Love Song | 演唱者 | Kenny Rogers
+A Love Song | 所属专辑 | Love Will Turn You Around
+A Love Song | 排行榜位置 | Billboard Hot Country Singles 第3名
+A Love Song | 排行榜位置 | RPM Country Tracks 第1名
+A Love Song | 原唱者 | Lee Greenwood
+Tunak Tunak Tun | 类型 | bhangra/pop love song
+Tunak Tunak Tun | 演唱者 | Daler Mehndi
+Tunak Tunak Tun | 音乐视频技术 | greenscreen technology
+Lee Greenwood | 演唱者 | A Love Song
+Tunak Tunak Tun | 音乐风格 | bhangra/pop love song
+Daler Mehndi | 国籍 | 印度
+Daler Mehndi | 本名 | Daler Singh
+Daler Mehndi | 职业 | 录音艺术家
+Daler Mehndi | 职业 | 音乐家
+Daler Mehndi | 职业 | 作曲家
+Daler Mehndi | 职业 | 作家
+Daler Mehndi | 职业 | 唱片制作人
+Daler Mehndi | 职业 | 表演者
+Daler Mehndi | 职业 | 环保主义者
+Daler Mehndi | 贡献 | 使Bhangra音乐流行全球
+Daler Mehndi | 贡献 | 建立非电影音乐产业
+Daler Mehndi | 特点 | 充满活力的舞曲
+Daler Mehndi | 特点 | 独特的嗓音
+Daler Mehndi | 特点 | 头巾
+Daler Mehndi | 特点 | 长袍
+This Ain't a Love Song | 所属专辑 | These Days
+This Ain't a Love Song | 发行年份 | 1995
+This Ain't a Love Song | 排行榜位置 | #14 on the Billboard Hot 100
+This Ain't a Love Song | 排行榜位置 | #11 on the Mainstream Top 40
+This Ain't a Love Song | 排行榜位置 | #6 on the UK Singles Chart
+These Days | 音乐风格 | 节奏布鲁斯
+These Days | 音乐风格 | 另类摇滚
+This Ain't a Love Song | 音乐视频导演 | Andy Morahan
+This Ain't a Love Song | 西班牙语版本 | Como Yo Nadie Te Ha Amado
+Yuridia | 翻唱歌曲 | Como Yo Nadie Te Ha Amado
+Yuridia | 所属专辑 | Habla El Corazón
+Yuridia | 排行榜位置 | #16 on the Billboard Hot Latin Songs chart
+Yuridia | 提名奖项 | Latin Pop Airplay of the Year by a Female Artist at the 2008 Latin Billboard Awards
+Jon Bon Jovi | 获奖 | ASCAP Latin Award in the Pop/Ballad field
+These Days | 发行年份 | 1995
+This Ain't a Love Song | 音乐风格 | 节奏布鲁斯
+This Ain't a Love Song | 音乐风格 | 另类摇滚
+This Ain't a Love Song | is_from_album | These Days
+Jon Bon Jovi | collaborated_with | Richie Sambora
+This Ain't a Love Song | has_music_video_director | Andy Morahan
+Yuridia | covered_song | Como Yo Nadie Te Ha Amado
+Feels Just Like a Love Song | 演唱者 | Sara Evans
+Feels Just Like a Love Song | 单曲序号 | 第23首
+Anmol Gagan Maan | 别名 | Gagandeep Kaur Maan
+Anmol Gagan Maan | 职业 | Punjabi歌手
+Anmol Gagan Maan | 毕业院校 | M.C.M. D.A.V. College Chandigarh
+Anmol Gagan Maan | 专业 | 音乐与心理学
+Anmol Gagan Maan | 获奖 | 2004年世界民间舞蹈比赛冠军
+Anmol Gagan Maan | 称号 | Miss Mohali Punjaban
+Anmol Gagan Maan | 粉丝数 | 超过五十万
+Anmol Gagan Maan | 提名 | 2014年Punjabi音乐最佳新人女歌手奖
+Anmol Gagan Maan | 获奖 | 2014年Punjabi音乐最佳新人女歌手奖
+Anmol Gagan Maan | 成立乐队 | punjabo
+Anmol Gagan Maan | 参与乐队 | punjabo
+Anmol Gagan Maan | 获得奖项 | 2014年Punjabi音乐最佳新人女歌手奖
+Crazy in Love | 演唱者 | Młynarze
+Crazy in Love | 合作艺人 | Jay-Z
+Crazy in Love | 所属专辑 | Dangerously in Love
+Crazy in Love | 发行年份 | 2003
+Crazy in Love | 采样自 | The Chi-Lites的1970年歌曲《Are You My Woman 
+Lum no Love Song | 演唱者 | Yuko Matsutani
+Lum no Love Song | 主题曲 | Urusei Yatsura
+Lum no Love Song | 使用时间 | 从1981年10月14日至1983年7月20日第77集
+Crazy in Love | collaborator | Rich Harrison
+Crazy in Love | collaborator | Eugene Record
+Crazy in Love | producer | Rich Harrison
+Crazy in Love | producer | Młynarze
+Lum no Love Song | theme_song_for | Urusei Yatsura
+Lum no Love Song | is_the_theme_song_of | Urusei Yatsura
+Lum no Love Song | was_used_as_theme_song_from_to | from 1981-10-14 to 1983-07-20
+Owari no Hoshi no Love Song | 属于 | 概念专辑
+Owari no Hoshi no Love Song | 制作人 | Jun Maeda
+Owari no Hoshi no Love Song | 演唱者 | Nagi Yanagi
+Owari no Hoshi no Love Song | 发行公司 | Flaming June
+Flaming June | 创始人 | Jun Maeda
+Owari no Hoshi no Love Song | 包含单曲 | Killer Song
+Owari no Hoshi no Love Song | 版本 | 普通CD版
+Owari no Hoshi no Love Song | 版本 | CD+DVD限量版
+Owari no Hoshi no Love Song | 最高排名 | 日本Oricon周榜第6位
+Killer Song | 发布活动 | Comiket 81
+The Day Before I Met You | 属于 | 歌曲
+The Day Before I Met You | 收录于专辑 | Beautiful
+The Day Before I Met You | 专辑中的单曲序号 | 第六首
+The Day Before I Met You | 音乐风格 | 流行爱情歌曲
+The Day Before I Met You | 乐器特征 | 原声吉他 riff
+The Day Before I Met You | 演唱特点 | 非常低音的演唱
+The Day Before I Met You | 歌词主题 | 不想回到没有那个特别的人之前的生活
+The Day Before I Met You | 所属专辑 | Beautiful
+Holland Society of New York | 成立地点 | 纽约市
+Holland Society of New York | 主要目标 | 收集和保存关于新尼德兰定居者生活和时代的文献
+Holland Society of New York | 赞助项目 | New Netherland Project
+Holland Society of New York | 赞助项目 | The Papers of Jacob Leisler Project
+Joris Jansen Rapelje | 成员 | 十二人委员会
+Joris Jansen Rapelje | 妻子 | Catalina Trico
+Joris Jansen Rapelje | 定居地 | 新尼德兰
+Catalina Trico | 定居地 | 新尼德兰
+Catalina Trico | 配偶 | Joris Jansen Rapelje
+Kieft's War | 别名 | Wappinger War
+Kieft's War | 发生时间 | 1643–1645
+Kieft's War | 冲突双方 | New Netherland殖民地定居者和Lenape原住民
+Kieft's War | 地理位置 | 后来成为美国纽约大都会区的地方
+Willem Kieft | 职位 | 新尼德兰总督
+Willem Kieft | 下令攻击 | Lenape营地
+Dutch士兵 | 屠杀 | Lenape居民
+区域Algonquian部落 | 联合对抗 | 荷兰人
+Kieft's War | 导致 | 双方的多次攻击
+荷兰西印度公司 | 召回 | Willem Kieft
+Willem Kieft | 死亡 | 返回荷兰途中
+Peter Stuyvesant | 继任 | Willem Kieft
+Algonquians的持续威胁 | 导致 | 许多荷兰定居者返回荷兰
+Algonquians的持续威胁 | 导致 | 殖民地增长放缓
+English Neighborhood | 沿岸河流 | 哈德逊河和哈肯萨克河之间
+English Neighborhood | 主要支流 | 奥弗佩克溪
+English Neighborhood | 历史所属 | 荷兰新尼德兰殖民地的伯根
+伯根 | 主要城镇位置 | 今天的泽西市的伯根广场
+伯根 | 名称来源 | 荷兰语中的'山'
+Achter Col | 早期定居点 | 在山脊后面
+Vriessendael | 早期定居点 | 前殖民时期人口
+前殖民时期人口 | 族群 | Lenape部落
+Lenape部落 | 外称 | Hackensack和Tappan
+English Neighborhood | 位于 | 哈德逊河和哈肯萨克河之间
+Vriessendael | 与...冲突 | 前殖民时期人口
+Achter Col | 意为 | 在山脊后面
+Achter Col | 位置关系 | 在山脊后面
+Pound Ridge massacre | 属于 | Kieft's War
+Pound Ridge massacre | 参战方 | New Netherland Project
+Pound Ridge massacre | 参战方 | Wappinger Confederacy
+Pound Ridge massacre | 指挥官 | John Underhill
+Pound Ridge massacre | 参战人数 | 130人
+Pound Ridge massacre | 攻击方式 | 夜袭
+Pound Ridge massacre | 伤亡人数 | 500至700人
+Pound Ridge massacre | 后续事件 | 当地Wappinger Confederacy的酋长求和
+Wappinger Confederacy | 位置 | 现在的纽约州庞德里奇镇
+Wappinger Confederacy | 伤亡人数 | 500至700人
+夜袭 | 攻击方式 | 使用火攻
+New York | 前身 | New Netherland殖民地
+New Netherland殖民地 | 管理机构 | 荷兰西印度公司
+New Netherland殖民地 | 被占领者 | 英国军队
+New Netherland殖民地 | 短暂重占时间 | 1673–1674年
+New Netherland殖民地 | 被控制时间 | 1664年之前
+Nine Men | 属于 | 公民委员会
+Nine Men | 替代 | Twelve Men
+Nine Men | 替代 | Eight Men
+Petition of the Commonality of New Netherland | 签署者 | 十一现任和前任成员
+Petition of the Commonality of New Netherland | 请求对象 | States General
+Petition of the Commonality of New Netherland | 请求内容 | 鼓励经济自由并强制实行类似荷兰的地方政府
+Petition of the Commonality of New Netherland | 请求内容 | 将殖民地从荷兰西印度公司的控制中移除
+Tomys Swartwout | 出生地 | Groningen
+Tomys Swartwout | 死亡地点 | Beverwijck
+Tomys Swartwout | 身份 | 烟草进口商
+Tomys Swartwout | 定居地 | 新尼德兰
+Tomys Swartwout | 创始人之一 | Midwood
+Nine Men | 取代了 | Twelve Men
+Nine Men | 取代了 | Eight Men
+Petition of the Commonality of New Netherland | 请求 | 将殖民地从荷兰西印度公司的控制中移除
+Tomys Swartwout | 死亡地 | Beverwijck
+Tomys Swartwout | 去世地 | Beverwijck
+The Council of Twelve Men | 成员数量 | 12人
+The Council of Twelve Men | 选择者 | 新尼德兰的居民
+The Council of Twelve Men | 目的 | 就与美洲原住民的关系向新尼德兰总督提供建议
+The Council of Twelve Men | 原因 | Claes Swits被谋杀
+The Council of Twelve Men | 性质 | 非永久性
+The Council of Twelve Men | 意义 | 荷兰殖民地的第一个代表形式的民主
+Rumachenanck | 属于 | Lenape人
+Rumachenanck | 居住地区 | 纽约和新泽西的帕利塞兹地区
+Rumachenanck | 时期 | 17世纪欧洲殖民时期
+Rumachenanck | 别称 | Haverstroo
+Rumachenanck | 别称含义 | 燕麦草
+Rumachenanck | 现代称呼 | Haverstraw
+Rated X | 上映年份 | 2000
+Rated X | 主演 | Charlie Sheen
+Rated X | 主演 | Emilio Estevez
+Rated X | 导演 | Emilio Estevez
+Rated X | 作者 | David McCumber
+Rated X | 讲述对象 | Mitchell兄弟
+Mitchell兄弟 | 成员 | Jim Mitchell
+Mitchell兄弟 | 成员 | Artie Mitchell
+Mitchell兄弟 | 行业 | 色情业
+Mitchell兄弟 | 行业 | 脱衣舞俱乐部
+Rated X | 聚焦事件 | Behind the Green Door的制作
+Artie Mitchell | 结局 | 被Jim杀害
+The Way | 上映年份 | 2010
+The Way | 导演 | Emilio Estevez
+The Way | 制片人 | Emilio Estevez
+The Way | 编剧 | Emilio Estevez
+The Way | 主演 | Martin Sheen
+The Way | 主演 | Deborah Kara Unger
+The Way | 主演 | James Nesbitt
+The Way | 主演 | Yorick van Wageningen
+The Way | 主演 | Renée Estevez
+Wisdom | 上映年份 | 1986
+Wisdom | 导演 | Emilio Estevez
+Wisdom | 编剧 | Emilio Estevez
+Wisdom | 主演 | Emilio Estevez
+Wisdom | 主演 | Demi Moore
+Wisdom | 主演 | Tom Skerritt
+Wisdom | 主演 | Veronica Cartwright
+Wisdom | 配乐 | Danny Elfman
+Wisdom | 片尾曲 | Home Again
+Emilio Estevez | 导演 | The Way
+Emilio Estevez | 编剧 | The Way
+Emilio Estevez | 制作 | The Way
+Oingo Boingo | 演唱 | Home Again
+Danny Elfman | 作曲 | Wisdom
+Culture Clash in AmeriCCa | 类型 | 纪录片
+Culture Clash in AmeriCCa | 导演 | Emilio Estevez
+Culture Clash in AmeriCCa | 内容 | 描绘多样化的美国移民的滑稽和发人深省的小品和独白
+Emilio Estevez | 职业 | 演员
+Emilio Estevez | 职业 | 导演
+Emilio Estevez | 职业 | 作家
+Emilio Estevez | 成员 | Brat Pack
+Emilio Estevez | 出演电影 | The Breakfast Club
+Emilio Estevez | 出演电影 | St. Elmo's Fire
+Emilio Estevez | 出演电影 | The Outsiders
+Emilio Estevez | 出演电影 | Repo Man
+Emilio Estevez | 出演电影 | The Mighty Ducks
+Emilio Estevez | 出演电影 | Stakeout
+Emilio Estevez | 出演电影 | Maximum Overdrive
+Emilio Estevez | 出演电影 | Bobby
+Emilio Estevez | 编剧 | Bobby
+Emilio Estevez | 导演 | Bobby
+Emilio Estevez | 出演电影 | Young Guns
+Culture Clash in AmeriCCa | 灵感来源 | 全国范围内的数千次采访
+Nightmares | 上映年份 | 1983
+Nightmares | 导演 | Joseph Sargent
+Nightmares | 主演 | Emilio Estevez
+Nightmares | 主演 | Lance Henriksen
+Nightmares | 主演 | Cristina Raines
+Nightmares | 主演 | Veronica Cartwright
+Nightmares | 主演 | Richard Masur
+Nightmares | 类型 | 恐怖电影
+Nightmares | 组成 | 四个短片
+Dollar for the Dead | 上映年份 | 1998
+Dollar for the Dead | 导演 | Gene Quintano
+Dollar for the Dead | 编剧 | Gene Quintano
+Dollar for the Dead | 主演 | Emilio Estevez
+Dollar for the Dead | 主演 | William Forsythe
+Dollar for the Dead | 主演 | Joaquim de Almeida
+Dollar for the Dead | 主演 | Jonathan Banks
+Dollar for the Dead | 主演 | Ed Lauter
+Dollar for the Dead | 主演 | Howie Long
+Dollar for the Dead | 类型 | 西部电视电影
+Emilio Estevez | 参演西部电影数量 | 第三部
+Jordi Mollà | 提名 | Fotogramas de Plata奖
+Emilio Estevez | 主演的西部电影数量 | 第三部
+Here Not There | 是专辑 | Jane Child的第二张全长录音室专辑
+Here Not There | 发行公司 | Warner Bros. Records
+Here Not There | 单曲选择 | 标题曲目
+Here Not There | 音乐风格 | 新杰克摇摆节奏与硬摇滚元素混合
+Jane Child | 贡献歌曲 | Mona Lisa Smiles
+Mona Lisa Smiles | 所属电影 | Freejack
+Joe Estevez | 兄弟 | Martin Sheen
+Joe Estevez | 侄子 | Emilio Estevez
+Joe Estevez | 侄子 | Charlie Sheen
+Joe Estevez | 侄女 | Renée Estevez
+Joe Estevez | 侄子 | Ramon Estevez
+Here Not There | 包含歌曲 | Do Whatcha Do
+Jane Child | 风格变化 | 从合成舞曲流行乐和R&B转变为新杰克摇摆节奏与硬摇滚元素混合
+Jane Child | released_album | Here Not There
+Jane Child | contributed_song_to_movie | Freejack
+Joe Estevez | is_brother_of | Martin Sheen
+Bobby | 类型 | 美国剧情片
+Bobby | 编剧 | Emilio Estevez
+Bobby | 导演 | Emilio Estevez
+Bobby | 故事背景地点 | 洛杉矶大使酒店厨房
+Bobby | 涉及事件 | 罗伯特·F·肯尼迪遇刺
+罗伯特·F·肯尼迪 | 身份 | 美国参议员
+罗伯特·F·肯尼迪 | 参与竞选 | 1968年民主党总统初选
+Bobby | is_a | 2006 American drama film
+Emilio Estevez | wrote_and_directed | Bobby
+John F. Kennedy | won | 1968 Democratic Party presidential primary in California
+Bobby | 上映年份 | 2006
+Commissioner v. Flowers | 案件类型 | 联邦所得税案件
+Commissioner v. Flowers | 审理法院 | 美国最高法院
+§162 | 规定内容 | 旅行费用扣除条件
+旅行费用 | 扣除条件 | 离开家时发生
+旅行费用 | 扣除条件 | 合理且必要或适当
+律师 | 扣除条件 | 因业务需要临时居住在其他地方
+律师 | 扣除条件 | 个人原因选择居住地不满足扣除条件
+Commissioner v. Flowers | 涉及法律条款 | §162
+律师 | 工作地点 | 铁路的主要办公地点
+Circuit court | 属于 | 法院系统
+Circuit court | 要求 | 法官巡回审理案件
+Circuit court | 目的 | 确保案件在地区的广泛可见性和理解
+Eliot Spitzer | 职业 | 美国政治家
+Eliot Spitzer | 职业 | 律师
+Eliot Spitzer | 担任职务 | 纽约州第54任州长
+Eliot Spitzer | 担任职务 | 纽约州总检察长
+Eliot Spitzer | 工作经历 | 曼哈顿地区检察官办公室检察官
+Eliot Spitzer | 工作经历 | 纽约律师事务所律师
+Eliot Spitzer | 担任 | 纽约州总检察长
+Eliot Spitzer | 工作于 | 曼哈顿地区检察官办公室检察官
+Attorney General of North Carolina | 属于 | elected head
+Attorney General of North Carolina | 领导 | Department of Justice
+North Carolina constitution | 规定 | 选举产生Attorney General
+Attorney General of North Carolina | 职责 | 提供法律代表和建议给所有州机构
+Attorney General of North Carolina | 可以发起 | 法律行动
+Attorney General of North Carolina | 可以介入 | 诉讼程序
+Attorney General of North Carolina | 代表 | 州机构和公民
+Attorney General of North Carolina | duty includes | initiate legal action or intervene in proceedings on behalf of the state's agencies and citizens
+Attorney General of North Carolina | duty includes | providing legal representation and advice to all state agencies
+Attorney General | 提供 | 法律意见
+Attorney General | 提交对象 | General Assembly
+Attorney General | 提交对象 | Governor
+Attorney General | 提交对象 | 其他州官员
+Attorney General | 可查看位置 | 在线
+Attorney General | 网址 | http://www.ncdoj.gov/About-DOJ/Legal-Services/Legal-Opinions.aspx
+Attorney General | renders | legal opinions
+Eric S. Pistorius | 出生年份 | 1956
+Eric S. Pistorius | 职业 | Circuit court
+Eric S. Pistorius | 所属法院 | Seventh Circuit of Illinois
+Eric S. Pistorius | 曾从事职业 | attorney at law
+Peter Deegan | 职业 | United States Attorney
+Peter Deegan | 服务法院 | United States District Court for the Eastern District of Michigan
+Peter Deegan | 曾担任职务 | assistant U.S. attorney
+Peter Deegan | 曾担任职务 | chief of the criminal division
+Peter Deegan | 曾工作地点 | United States District Court for the Eastern District of Michigan
+Peter Deegan | 工作时间 | 2004 to 2006
+Peter Deegan | 曾处理案件类型 | complex white collar and business crime
+Peter Deegan | 曾工作单位 | Murphy Smith and Polk in Chicago
+Peter Deegan | 曾工作地点 | Chicago
+Peter Deegan | 曾从事领域 | labor and employment litigation
+Peter Deegan | 提名者 | President Donald Trump
+Peter Deegan | 确认机构 | United States Senate
+Peter Deegan | was an associate attorney at | Murphy Smith and Polk in Chicago
+Loretta Elizabeth Lynch | 担任职务 | 美国第83任司法部长
+Loretta Elizabeth Lynch | 任命者 | 巴拉克·奥巴马
+Loretta Elizabeth Lynch | 继任者 | 埃里克·霍尔德
+Loretta Elizabeth Lynch | 担任职务 | 纽约东区联邦检察官
+Loretta Elizabeth Lynch | 服务时期 | 克林顿政府和奥巴马政府
+Bryan Schroder | 担任职务 | 美国阿拉斯加地区代理联邦检察官
+Bryan Schroder | 提名者 | 唐纳德·特朗普
+Bryan Schroder | 工作单位 | 美国阿拉斯加地区代理联邦检察官
+Bryan Schroder | 担任职务 | 第一助理联邦检察官
+Bryan Schroder | 担任职务 | 刑事部门主管
+Bryan Schroder | 担任职务 | 首席反恐检察官
+Bryan Schroder | 担任职务 | 地区道德顾问
+Bryan Schroder | 职位 | 首席反恐检察官
+Bryan Schroder | 职位 | 美国阿拉斯加地区代理联邦检察官
+Kings County District Attorney | 负责 | Kings County的法律诉讼
+Kings County | 同义词 | Brooklyn Grange
+Kings County District Attorney | 现任 | Eric Gonzalez
+Synkowce | 位于 | Gmina Konstantynów
+Synkowce | 属于 | Maków County
+Synkowce | 属于 | Podlaskie Voivodeship
+Synkowce | 距离 | Sokółka约25公里
+Synkowce | 距离 | Białystok约60公里
+Ogony | 位于 | Gmina Konstantynów
+Ogony | 属于 | Maków County
+Ogony | 属于 | Masovian Voivodeship
+Ogony | 距离 | Maków Mazowiecki约25公里
+Ogony | 距离 | Warsaw约87公里
+Kings County | is_part_of | New York
+Maków County | is_part_of | Podlaskie Voivodeship
+Maków County | is_part_of | Masovian Voivodeship
+Czarna Dąbrówka | 曾属于 | Farther Pomerania in Prussia
+Czarna Dąbrówka | 距离 | Sokółka约25公里
+Czarna Dąbrówka | 距离 | 格但斯克约71公里
+Młynarze | 距离 | Maków Mazowiecki约25公里
+Młynarze | 距离 | 华沙约89公里
+Postawele | 距离 | Sokółka约25公里
+Postawele | 距离 | 比亚韦斯托克约133公里
+Czarna Dąbrówka | 位于 | Maków County
+Czarna Dąbrówka | 属于 | Pomeranian Voivodeship
+Młynarze | 位于 | Maków County
+Młynarze | 属于 | Masovian Voivodeship
+Postawele | 位于 | Gmina Rutka-Tartak
+Postawele | 属于 | Maków County
+Postawele | 属于 | Podlaskie Voivodeship
+Czarna Dąbrówka | 位于 | 波兰东北部
+Postawele | 位于 | 波兰东北部
+Antolin | 位于 | Gmina Konstantynów
+Antolin | 属于 | Biała Podlaska County
+Antolin | 距离 | Biała Podlaska 约25公里
+Antolin | 距离 | Lublin 约119公里
+Wujaki | 位于 | Gmina Rozogi
+Wujaki | 属于 | Szczytno County
+Wujaki | 距离 | Rozogi 约25公里
+Wujaki | 距离 | Szczytno 约25公里
+Wujaki | 距离 | Olsztyn 约65公里
+岭南美术馆 | 位于 | 台北市南港区
+Antolin | 位于 | Lublin Voivodeship
+Wujaki | 位于 | Warmian-Masurian Voivodeship
+Everyday | 演唱者 | Ariana Grande
+Everyday | 合作艺人 | Future
+Everyday | 所属专辑 | Dangerous Woman
+Everyday | 制作人 | Ilya
+Everyday | 音乐风格 | electropop和trap
+Everyday | 歌词主题 | 性满足
+Everyday | 评价 | 褒贬不一
+Everyday | written_by | Savan Kotecha
+Everyday | featured_artist | Future
+Applause | 所属专辑 | Artpop
+Applause | 演唱者 | Lady Gaga
+Applause | 灵感来源 | 粉丝的欢呼声
+Applause | 歌词主题 | 对粉丝的依赖和表演的热情
+World Faith | 属于 | 国际非政府组织
+World Faith | 创始人 | Frank Fredericks
+World Faith | 使命 | 结束宗教暴力
+World Faith | 促进 | 跨信仰对话
+World Faith | 通过 | 社区服务项目
+World Faith | 目标 | 促进基于服务的真诚对话
+World Faith | 目标 | 激励参与者建立跨身份友谊
+World Faith | 目标 | 加强理解其他宗教传统
+World Faith | 活动核心 | 修订全球和平建设系统
+World Faith | 特别关注 | 信仰身份在冲突中的作用
+World Faith | founded in | 2008
+World Faith | founded by | Frank Fredericks
+World Faith | aims to promote | opportunities for interfaith dialogue through community service projects
+World Faith | activities pivot around | the idea of revising the system of global peacebuilding
+octobass | 属于 | 弦乐器
+octobass | 制造者 | Jean-Baptiste Vuillaume
+octobass | 制造时间 | 约1850年
+octobass | 制造地点 | 巴黎
+octobass | 类似乐器 | 低音提琴
+octobass | 长度 | 约4.5米
+octobass | 演奏方式 | 使用杠杆和踏板系统
+Hector Berlioz | 评价 | 正面
+octobass | is_a_type_of | 弦乐器
+octobass | exists_in_museum | Musée de la Musique
+octobass | exists_in_museum | Musical Instrument Museum
+octobass | exists_in_museum | Kunsthistorisches Museum
+Talk Dirty | 属于 | 歌曲
+Talk Dirty | 演唱者 | Jason Derulo
+Talk Dirty | 专辑 | Tattoos
+Talk Dirty | 客串表演者 | 2 Chainz
+Talk Dirty | 制作人 | Ricky Reed
+Talk Dirty | 采样自 | Hermetico
+Hermetico | 所属专辑 | Nu Med
+Talk Dirty | 乐器特色 | 土耳其传统装饰音
+Talk Dirty | 乐器特色 | Zurna
+Talk Dirty | 所属专辑 | Tattoos
+Quogue | 属于 | Montauk Branch of the Long Island Rail Road
+Quogue | 建造时间 | 1875年6月左右
+Quogue车站 | 移动时间 | 某个星期天早上
+Quogue车站 | 原始位置 | 当前位置
+Quogue车站 | 新位置 | Old Depot Road
+第二座车站 | 建造时间 | 1882年左右
+第二座车站 | 移动时间 | 1905年左右
+第三座车站 | 建造时间 | 1905年左右
+第三座车站 | 提升原因 | 为桥让路
+车站房屋 | 拆除时间 | 1964年4月左右
+车站停靠点 | 关闭原因 | 低客流量
+车站停靠点 | 关闭原因 | 不具成本效益
+Quogue车站 | 建造时间 | 1875年6月左右
+Quogue车站 | 拆除时间 | 1964年4月左右
+Quogue车站 | 关闭原因 | 低客流量
+Xyloband | 包含 | 光发射二极管
+Xyloband | 包含 | 射频接收器
+Xyloband | 控制方式 | 软件程序发送信号
+RGB版本的Xyloband | 表带颜色 | 白色
+RGB版本的Xyloband | 发光颜色 | 任何颜色
+Xyloband | 首次大规模使用 | Coldplay的2012年Mylo Xyloto巡演
+Xyloband | 用途 | 与音乐同步闪烁
+Jason Regler | 发明者 | Xyloband
+Jason Regler | 灵感来源 | 在Coldplay演唱会上听'Fix You'这首歌时
+单色版本的Xyloband | 可选颜色 | 绿色
+单色版本的Xyloband | 可选颜色 | 蓝色
+单色版本的Xyloband | 可选颜色 | 黄色
+单色版本的Xyloband | 可选颜色 | 红色
+单色版本的Xyloband | 可选颜色 | 粉色
+单色版本的Xyloband | 可选颜色 | 白色
+Jason Regler | had the idea for | Xyloband
+Ask | 录制者 | the Smiths
+Ask | 发行公司 | Rough Trade Records
+Ask | 音乐风格 | 积极的流行歌曲
+Ask | 歌词主题 | 害羞与释放抑制
+Ask | 制作争议 | 最终混音
+Craig Gannon | 声称创作 | Ask的和弦结构
+Fix You | 演唱者 | Coldplay
+Fix You | 创作者 | 所有四位乐队成员
+Fix You | 所属专辑 | X&Y
+Ask | 所属专辑 | 未提及具体专辑
+Fix You | 发行年份 | 2005
+Do You | 演唱者 | Miguel
+Do You | 所属专辑 | Kaleidoscope Dream
+Do You | 录制地点 | Platinum Sound Recording Studios
+Young Romance | 导演 | George Melford
+Young Romance | 制片人 | George Melford
+Young Romance | 改编自 | 同名戏剧
+Young Romance | 编剧 | William C. deMille
+Edith Taliaferro | 主演 | Young Romance
+Do You | written_by | Jerry Duplessis
+Do You | written_by | Arden Altino
+Do You | written_by | Paul Pesco
+Young Romance | based_on | play of the same name by William C. deMille
+Young Romance | screenplay_written_by | William C. deMille
+Always Audacious | 类型 | 美国无声浪漫电影
+Always Audacious | 导演 | James Cruze
+Always Audacious | 编剧 | Thomas J. Geraghty
+Always Audacious | 主演 | Wallace Reid
+Always Audacious | 主演 | Margaret Loomis
+Always Audacious | 主演 | Clarence Geldart
+Always Audacious | 主演 | J.M. Dumont
+Always Audacious | 主演 | Rhea Haines
+Always Audacious | 主演 | Carmen Phillips
+Always Audacious | 主演 | Guy Oliver
+Always Audacious | 基于 | Toujours de l'Audace
+Always Audacious | 作者 | Ben Ames Williams
+Always Audacious | 发行公司 | Paramount Pictures
+Always Audacious | 状态 | 遗失
+Out of a Clear Sky | 类型 | 美国无声浪漫电影
+Out of a Clear Sky | 主演 | Marguerite Clark
+Out of a Clear Sky | 导演 | Marshall Neilan
+Out of a Clear Sky | 基于 | Maria Thompson Daviess的小说
+Out of a Clear Sky | 制作公司 | Famous Players-Lasky
+Out of a Clear Sky | 发行公司 | Paramount Pictures
+Out of a Clear Sky | 状态 | 遗失
+The Soul of Buddha | 类型 | 美国无声浪漫电影
+The Soul of Buddha | 导演 | J. Gordon Edwards
+The Soul of Buddha | 主演 | Theda Bara
+The Soul of Buddha | 故事作者 | Theda Bara
+The Soul of Buddha | 制作公司 | Fox Film Corporation
+The Soul of Buddha | 拍摄地点 | 新泽西州福特李的Fox Studio
+The Soul of Buddha | 编剧 | Theda Bara
+Out of a Clear Sky | is_based_on | Maria Thompson Daviess的小说
+The Soul of Buddha | written_by | Theda Bara
+The Grain of Dust | 类型 | 美国无声浪漫电影
+The Grain of Dust | 导演 | Harry Revier
+The Grain of Dust | 基于 | David Graham Phillips的小说
+The Grain of Dust | 主演 | Lillian Walker
+Broadway Love | 类型 | 美国无声浪漫电影
+Broadway Love | 导演 | Ida May Park
+Broadway Love | 主演 | Lon Chaney
+Broadway Love | 保存地点 | George Eastman House Motion Picture Collection
+A Man's Man | 类型 | 美国无声浪漫电影
+A Man's Man | 导演 | Oscar Apfel
+A Man's Man | 制作公司 | Paralta Plays
+A Man's Man | 主演 | J. Warren Kerrigan和Lois Wilson
+Old Heidelberg | 类型 | 美国无声浪漫电影
+Old Heidelberg | 导演 | John Emerson
+Old Heidelberg | 改编自 | Wilhelm Meyer-Förster的1901年戏剧《Old Heidelberg
+Barbed Wire | 类型 | 美国无声浪漫电影
+Barbed Wire | 背景设定 | 第一次世界大战
+Barbed Wire | 主演 | Pola Negri
+Barbed Wire | 主演 | Clive Brook
+Pola Negri | 角色 | 法国农家女孩
+Clive Brook | 角色 | 德国战俘
+Barbed Wire | 改编自 | The Woman of Knockaloe
+The Woman of Knockaloe | 作者 | Hall Caine
+The Woman of Knockaloe | 原作设定地点 | 马恩岛
+Barbed Wire | 结局 | 幸福结局
+Barbed Wire | 故事背景 | 第一次世界大战
+Pola Negri | 扮演角色 | 法国农家女孩
+Clive Brook | 扮演角色 | 德国战俘
+The Woman of Knockaloe | 原作地点 | 马恩岛
+Barbed Wire | 电影类型 | 美国无声浪漫电影
+Fort Lee | 属于 | New York metropolitan area
+Fort Lee | 地理位置 | Hudson Palisades
+Fort Lee | 连接桥梁 | George Washington Bridge
+Fort Lee | 对面城市 | Manhattan borough of New York City
+Fort Lee | 历史事件 | 美国独立战争军事营地
+Fort Lee | 文化意义 | 美国电影产业的发源地
+Vitor Belfort | 国籍 | 巴西
+Vitor Belfort | 职业 | 综合格斗选手
+Vitor Belfort | 参赛级别 | 中量级
+Vitor Belfort | 曾获冠军 | UFC 12重量级锦标赛冠军
+Vitor Belfort | 曾获冠军 | Cage Rage世界轻重量级冠军
+Vitor Belfort | 排名 | UFC官方中量级排名第8
+David Branch | 国籍 | 美国
+David Branch | 职业 | 综合格斗选手
+David Branch | 参赛组织 | Ultimate Fighting Championship
+David Branch | 参赛组织 | World Series of Fighting Middleweight Champion
+David Branch | 参赛组织 | Bellator
+David Branch | 参赛组织 | Shark Fights
+David Branch | 参赛组织 | Titan FC
+David Branch | 获得冠军 | World Series of Fighting Light Heavyweight Champion
+David Branch | 获得冠军 | World Series of Fighting Middleweight Champion
+David Branch | 排名 | 世界第9中量级选手
+The Blackzilians | 类型 | 专业团队
+The Blackzilians | 位置 | 南佛罗里达
+The Blackzilians | 成员 | 'Sugar' Rashad Evans
+The Blackzilians | 成员 | Vitor Belfort
+The Blackzilians | 成员 | Eddie Alvarez
+David Branch | is_a | American mixed martial artist
+The Blackzilians | located_in | South Florida
+The Blackzilians | includes | Eddie Alvarez
+David Branch | competed_in | Middleweight division of the Ultimate Fighting Championship
+The Blackzilians | includes | former UFC light heavyweight champions 'Sugar' Rashad Evans and Vitor Belfort and former UFC lightweight champion Eddie Alvarez
+Kelvin Gastelum | 国籍 | 美国
+Kelvin Gastelum | 职业 | 综合格斗选手
+Kelvin Gastelum | 签约组织 | UFC
+Kelvin Gastelum | 获得荣誉 | The Ultimate Fighter 17冠军
+Kelvin Gastelum | 当前级别 | 中量级
+Kelvin Gastelum | 排名 | UFC官方中量级排名第8
+Rashad Evans | 国籍 | 美国
+Rashad Evans | 职业 | 综合格斗选手
+Rashad Evans | 签约组织 | UFC
+Rashad Evans | 获得荣誉 | The Ultimate Fighter 2重量级冠军
+Rashad Evans | 获得荣誉 | 前UFC轻重量级冠军
+Rashad Evans | is_a | 综合格斗选手
+Rashad Evans | competing_in | 中量级
+Luke Zachrich | 国籍 | 美国
+Luke Zachrich | 职业 | 综合格斗选手
+Luke Zachrich | 职业 | 前职业拳击手
+Luke Zachrich | 参赛级别 | 中量级
+Luke Zachrich | 参赛组织 | 终极格斗冠军赛
+Luke Zachrich | 参赛组织 | King of the Cage
+Luke Zachrich | 参赛组织 | Xtreme Fighting Organization
+Luke Zachrich | 参赛组织 | Bellator
+Luke Zachrich | 参赛组织 | Ultimate Victory Challenge
+Luke Zachrich | 成就 | Ultimate Victory Challenge中量级冠军
+Sam Alvey | 国籍 | 美国
+Sam Alvey | 职业 | 综合格斗选手
+Sam Alvey | 参赛级别 | 中量级
+Sam Alvey | 参赛组织 | 终极格斗冠军赛
+Sam Alvey | 参赛组织 | Bellator
+Sam Alvey | 参赛组织 | King of the Cage
+Sam Alvey | 参赛组织 | MFC
+Luke Zachrich | 参加比赛 | The Ultimate Fighter第七季
+Sam Alvey | 排名 | UFC官方中量级排名第8
+Sam Alvey | 参赛 | The Ultimate Fighter
+Luke Barnatt | 国籍 | 英国
+Luke Barnatt | 职业 | 综合格斗选手
+Luke Barnatt | 参赛组织 | 终极格斗冠军赛
+Luke Barnatt | 参赛组织 | BAMMA
+Luke Barnatt | 参赛组织 | UCMMA
+Luke Barnatt | 身高 | 6英尺6英寸
+Luke Barnatt | 昵称 | Bigslow
+Luke Barnatt | 参赛组织 | 绝对冠军伯库特
+Jack Marshman | 国籍 | 威尔士语
+Jack Marshman | 职业 | 综合格斗选手
+Jack Marshman | 曾获头衔 | 中量级笼战士锦标赛冠军
+Jack Marshman | 曾获头衔 | 朗斯代尔中量级冠军
+Jack Marshman | 参赛组织 | 终极格斗冠军赛
+Jack Marshman | 别名 | Hammer
+Luke Barnatt | 出生日期 | 13 April 1988
+Paulo Borrachinha | 全名 | Paulo Henrique Costa
+Paulo Borrachinha | 国籍 | 巴西
+Paulo Borrachinha | 职业 | 综合格斗选手
+Paulo Borrachinha | 参赛组织 | 终极格斗冠军赛
+Paulo Borrachinha | 体重级别 | 中量级
+Paulo Borrachinha | 合作伙伴 | 克鲁塞罗竞技俱乐部
+Młynarze | 所属州 | 锡那罗亚州
+Młynarze | 地理位置 | 太平洋沿岸
+Villa Unión | 所属市 | 马萨特兰
+Villa Unión | 地理位置 | 普雷西迪奥河畔
+Paulo Borrachinha | is_a | 综合格斗选手
+Paulo Borrachinha | 签约于 | 克鲁塞罗竞技俱乐部
+Villa Unión | 位于 | 普雷西迪奥河畔
+Paulo Borrachinha | is_a | Brazilian mixed martial artist
+Paulo Borrachinha | has_institutional_partnership_with | Clube Atlético Mineiro
+Młynarze | located_in | Operation Sinaloa
+Villa Unión | located_in | Mazatlán Municipality
+Villa Unión | located_on_banks_of | Presidio River
+Mitre Department | 属于 | Santiago del Estero Province
+Mitre Department | 首都 | Villa Unión
+Poanas Municipality | 属于 | Durango
+Poanas Municipality | 市政厅所在地 | Villa Unión
+Poanas Municipality | 面积 | 1841 km²
+Mexican Federal Highway 40 | 别名 | Carretera Interoceánica
+Mexican Federal Highway 40 | 连接城市 | Młynarze
+Villa Unión | 位于 | northwestern Argentina
+Villa Unión | 主要定居点 | Departamento Coronel Felipe Varela
+Mitre Department | is located in | Santiago del Estero Province
+Villa Unión | is the capital of | Mitre Department
+Poanas Municipality | is located in | Durango
+Villa Unión | is the municipal seat of | Poanas Municipality
+Poanas Municipality | has an area of | 1841 km²
+Estado de Occidente | 也称为 | Sonora y Sinaloa
+Estado de Occidente | 第一任州长 | Juan Miguel Riesgo
+Estado de Occidente | 包含地区 | 现代索诺拉和锡那罗亚
+Operation Sinaloa | 别名 | Operation Culiacan - Navolato
+Operation Sinaloa | 类型 | Anti-drug trafficking operation
+Operation Sinaloa | 执行机构 | Federal Police and the Mexican Armed Forces
+Operation Sinaloa | 目标 | cripple all cartel organizations
+Operation Sinaloa | 针对组织 | Sinaloa Cartel
+Operation Sinaloa | 针对组织 | Beltrán-Leyva Cartel
+Operation Sinaloa | 针对组织 | Los Zetas
+Military | 部署原因 | murder of Mexico's Federal Police commissioner Édgar Eusebio Millán Gómez
+Berber orthography | 定义 | writing system used to transcribe the Berber languages
+Berber orthography | 古代书写系统 | Libyco-Berber script
+Libyco-Berber script | 使用位置 | rock art and various sepulchres
+Operation Sinaloa | is also known as | Operation Culiacan - Navolato
+Berber orthography | includes | Berber Latin alphabet
+Berber orthography | includes | Arabic script
+Berber orthography | includes | Tifinagh
+Madurese | 属于 | 语言
+Madurese | 使用人群 | Madurese people
+Madurese | 使用地区 | Madura Island
+Madurese | 使用地区 | eastern salient of Java
+Madurese | 使用地区 | Kangean Islands
+Madurese | 使用地区 | Sapudi Islands
+Madurese | 使用地区 | Pasuruan
+Madurese | 使用地区 | Surabaya
+Madurese | 使用地区 | Malang
+Madurese | 使用地区 | Banyuwangi
+Madurese | 使用地区 | Masalembu Islands
+Madurese | 使用地区 | Kalimantan
+Kangean dialect | 可能为 | 独立语言
+Madurese | 传统书写系统 | Javanese script
+Madurese | 现代书写系统 | Latin script
+Madurese | 现代书写系统 | Pegon script
+Madurese | 使用者数量 | 8–13 million
+Madurese | 变体 | Bawean
+Bawean | 使用人群 | Baweanese  descendants
+Bawean | 使用地区 | Malaysia
+Bawean | 使用地区 | Singapore
+Madurese | spoken_in | eastern salient of Java
+Baweanese  descendants | speaks | Bawean
+Madurese | written_in | Pegon script
+Takri script | 属于 | Brahmic family of scripts
+Takri script | 衍生自 | Sharada script
+Takri script | 相关于 | Gurmukhī script
+Nepali | 使用过 | Takri script
+Western Pahari | 使用 | Takri script
+Garhwali | 使用 | Takri script
+Dardic languages | 使用 | Takri script
+Gaddi or Gaddki | 使用 | Takri script
+Kashtwari | 使用 | Takri script
+Chamiyali | 使用 | Takri script
+Takri script | 主要用途 | business records and communication
+aged businessmen | 使用 | Takri
+newer generation | 已转向使用 | Devanagari
+newer generation | 已转向使用 | English
+shift | 发生于 | 1950s to 1980s
+aged businessmen | use_script | Takri
+newer generation | shift_to | Devanagari and even English
+shift | happened_during | 1950s to 1980s
+newer generation | shifted to | Devanagari and even English
+shift | happened during | 1950s to 1980s
+Umbrian | 属于 | Italic语言
+Umbrian | 使用地区 | 古代意大利的Umbria地区
+Umbrian | 使用者 | Umbri
+Umbrian | 与...密切相关 | Oscan语言组
+Umbrian | 分类 | Osco-Umbrian语言组
+Umbrian | 包含于 | Osco-Umbrian语言组
+Umbrian | formerly_spoken_by | Umbri
+Umbrian | spoken_in | ancient Italian region of Umbria
+Umbrian | closely_related_to | Oscan group
+Umbrian | associated_with | Osco-Umbrian languages
+Umbrian | part_of | Umbrian languages
+Umbrian | formerly spoken in | ancient Italian region of Umbria
+Umbrian | closely related to | Oscan group
+Umbrian | associated with | Osco-Umbrian languages
+Umbrian | part of | Umbrian languages
+Rejang script | 别名 | Redjang
+Rejang script | 别名 | Surat Ulu
+Rejang script | 属于 | abugida
+Rejang script | 家族 | Brahmic family
+Rejang script | 相关脚本 | Batak
+Rejang script | 相关脚本 | Buginese
+Rejang script | 成员 | Surat Ulu scripts
+Rejang script | 变体 | Bengkulu
+Rejang script | 变体 | Lembak
+Rejang script | 变体 | Lintang
+Rejang script | 变体 | Lebong
+Rejang script | 变体 | Serawai
+Rejang script | 相关脚本 | Kerinci
+Rejang script | 相关脚本 | Lampung
+Rejang script | 使用时间 | 伊斯兰教传入前
+Rejang script | 最早文献 | 18世纪中叶
+Rejang script | 别名 | KaGaNga script
+KaGaNga script | 命名者 | Mervyn A. Jaspan
+Mervyn A. Jaspan | 著作 | Folk literature of South Sumatra. Redjang Ka-Ga-Nga texts
+Surat Ulu scripts | 包含 | Kerinci
+Surat Ulu scripts | 包含 | Lampung
+Mazanderani | 别名 | Tabari
+Mazanderani | 别名 | Geleki
+Mazanderani | 属于 | 伊朗语族西北分支
+Mazanderani | 与...密切相关 | Gilaki
+Mazanderani | 与...较远相关 | 波斯语
+Mazanderani | 词汇相似 | Gilaki
+Mazanderani | 共享特征 | 高加索语言
+Mazanderani | 历史联系 | 高加索地区和高加索民族
+Mazanderani | spoken_in | Tehran
+Mazanderani | spoken_in | Alborz
+Mazanderani | spoken_in | Semnan
+Mazanderani | spoken_in | Golestan
+Gilaki | related_to | South Caucasian languages
+Mazanderani | related_to | South Caucasian languages
+Tugurt language | 别名 | Oued Righ Berber
+Tugurt language | 别名 | Temacine Tamazight
+Tugurt language | 属于 | Zenati Berber variety
+Tugurt language | 使用地区 | oases of the northeastern Oued Righ region around Touggourt in Algeria
+Tugurt language | 密切相关语言 | Tumzabt
+Tugurt language | 密切相关语言 | Teggargrent
+Dyula language | 别名 | Jula
+Dyula language | 别名 | Dioula
+Dyula language | 属于 | Manding languages
+Dyula language | 密切相关语言 | Bambara
+Dyula language | 密切相关语言 | Malinke
+Dyula language | 书写系统 | Arabic script
+Dyula language | 书写系统 | Latin script
+Dyula language | 书写系统 | N'Ko script
+Tugurt language | spoken_in | oases of the northeastern Oued Righ region around Touggourt in Algeria
+Jula | mutually_intelligible_with | Bambara
+Tugurt language | spoken_in | Temacine
+Tugurt language | spoken_in | Blidet-Amor
+Tugurt language | spoken_in | Meggarine
+Tugurt language | spoken_in | Ghomra
+Charles Fraser-Smith | 职业 | 作者
+Charles Fraser-Smith | 职业 | 传教士
+Charles Fraser-Smith | 灵感来源 | Ian Fleming的James Bond中的Q
+Charles Fraser-Smith | 工作单位 | Ministry of Supply
+Charles Fraser-Smith | 工作内容 | 为SOE特工制造设备
+Charles Fraser-Smith | 工作地点 | 北非
+Colonel Sun | 作者 | Kingsley Amis
+Colonel Sun | 出版商 | Jonathan Cape
+Colonel Sun | 笔名 | Robert Markham
+Colonel Sun | 类型 | James Bond 续作小说
+Kingsley Amis | 作品 | The James Bond Dossier
+Kingsley Amis | 作品 | The Book of Bond
+Colonel Sun | 主要角色 | James Bond
+James Bond | 任务 | 追踪M的绑架者
+James Bond | 发现 | 共产主义中国的阴谋
+James Bond | 协助者 | 为俄罗斯工作的希腊间谍
+James Bond | 找到M的位置 | 爱琴海的一个小岛
+James Bond | 杀死 | Colonel Sun Liang-tan
+James Bond | 杀死 | Von Richter
+Kingsley Amis | 使用笔名 | Robert Markham
+James Bond | 任务目标 | 追踪M的绑架者
+共产主义中国的阴谋 | 涉及人物 | Colonel Sun Liang-tan
+Kingsley Amis | 笔名 | Robert Markham
+Kingsman | 属于 | 媒体特许经营权
+Kingsman | 聚焦于 | 虚构组织 Kingsman
+Kingsman | 首次出现于 | 英国制作的间谍动作喜剧漫画系列
+Kingsman | 作者 | Mark Millar 和 Dave Gibbons
+Kingsman | 上色者 | Angus McKie
+Kingsman | 编辑 | Nicole Wiley Boose
+Kingsman | 出版商 | Icon Comics
+Kingsman 第一卷 | 内容 | 超级间谍招募他的年轻侄子加入秘密服务
+Kingsman 第一卷 | 灵感来源 | 经典詹姆斯·邦德电影及其他间谍惊悚片
+Kingsman 第一卷 | 原名 | No. 1 of the Secret Service
+Kingsman | 设定在 | Mark Millar 的共享宇宙 Millarverse
+Kingsman 第一卷 | 被提及 | Kick-Ass 3 #8
+Kingsman: The Big Exit | 发布于 | 2017年9/10月刊 Playboy Magazine
+Kingsman: The Big Exit | 作者 | Rob Williams
+Kingsman: The Big Exit | 艺术家 | Ozgur Yildirim
+Kingsman: The Red Diamond | 出版商 | Image Comics
+Kingsman | is_part_of | Millarverse
+Kick-Ass 3 #8 | references | Kingsman 第一卷
+Kingsman: The Big Exit | published_in | 2017年9/10月刊 Playboy Magazine
+Kingsman: The Red Diamond | published_by | Image Comics
+Kingsman 第一卷 | 发布年份 | 2012
+No. 1 of the Secret Service | 改编来源 | A feature film
+A feature film | 导演 | Matthew Vaughn
+A feature film | 编剧 | Jane Goldman
+A feature film | 上映时间 | February 2015
+A feature film | 主演 | Colin Firth
+A feature film | 主演 | Taron Egerton
+A feature film | 主演 | Michael Caine
+A feature film | 主演 | Samuel L. Jackson
+A feature film | 主演 | Mark Strong
+A feature film | 主演 | Sophie Cookson
+A feature film | 主演 | Sofia Boutella
+A feature film | 主演 | Jack Davenport
+A feature film | 主演 | Mark Hamill
+A feature film | 续集 | A sequel to this film
+A sequel to this film | 上映时间 | September 2017
+Director of the United States Secret Service | 负责 | U.S. Secret Service的日常运营
+U.S. Secret Service | 关注 | 防止和调查伪造美国货币和美国国债证券
+U.S. Secret Service | 保护对象 | 现任和前任国家领导人及其家人
+Sidney Reilly | 别名 | Ace of Spies
+Sidney Reilly | 工作单位 | British Secret Service Bureau
+British Secret Service Bureau | 前身 | 英国秘密情报局
+Q | 来自 | James Bond电影和小说改编
+Q | 代表 | Quartermaster
+Q | 职位 | Q Branch或Q Division的负责人
+Q Branch | 属于 | British Secret Service Bureau
+Sidney Reilly | 工作于 | British Secret Service Bureau
+Q Branch | 隶属于 | British Secret Service Bureau
+No. 1 of the Secret Service | 类型 | 电影
+No. 1 of the Secret Service | 主演 | Nicky Henson
+No. 1 of the Secret Service | 导演 | Lindsay Shonteff
+No. 1 of the Secret Service | 编剧 | Lindsay Shonteff
+No. 1 of the Secret Service | 制片人 | Elizabeth Gray
+No. 1 of the Secret Service | 工作标题 | 008 of the Secret Service
+No. 1 of the Secret Service | VHS发行标题 | Her Majesty’s Top Gun
+Secret Service Counter-Assault Teams | 所属机构 | U.S. Secret Service
+Secret Service Counter-Assault Teams | 职责 | 抵御针对要员的协同攻击
+Secret Service Counter-Assault Teams | 首次部署年份 | 1979
+Hawkeye | 含义 | 总统的反袭击小组代号
+Hawkeye Renegade | 指代对象 | 奥巴马总统的反袭击小组
+No. 1 of the Secret Service | 上映年份 | 1977
+The XYY Man | 来源 | Kenneth Royce的小说系列
+William  'Spider' Scott | 职业 | 前猫贼
+William  'Spider' Scott | 目标 | 改过自新
+William  'Spider' Scott | 需求方 | 犯罪地下世界
+William  'Spider' Scott | 需求方 | 英国秘密情报局
+William  'Spider' Scott | 染色体特征 | 额外的Y染色体
+额外的Y染色体 | 导致 | 犯罪倾向
+秘密服务 | 任务和权力 | 因国家而异
+秘密服务 | 可能拥有 | 部分警务权力
+秘密服务 | 可能拥有 | 部分秘密任务
+秘密警察 | 可以视为 | 秘密服务
+情报机构 | 可以视为 | 秘密服务
+The XYY Man | 作者 | Kenneth Royce
+William  'Spider' Scott | 试图改过自新 | 离开监狱后
+William  'Spider' Scott | 被需求的才能 | 犯罪地下世界
+William  'Spider' Scott | 被需求的才能 | 英国秘密情报局
+His Dark Materials | 作者 | Philip Pullman
+His Dark Materials | 包含 | Northern Lights
+His Dark Materials | 包含 | The Subtle Knife
+His Dark Materials | 包含 | The Amber Spyglass
+Northern Lights | 出版年份 | 1995
+The Subtle Knife | 出版年份 | 1997
+The Amber Spyglass | 出版年份 | 2000
+His Dark Materials | 主要角色 | Lyra Belacqua
+His Dark Materials | 主要角色 | Will Parry
+The Amber Spyglass | 获奖 | 2001 Whitbread Book of the Year prize
+Northern Lights | 获奖 | Carnegie Medal for children's fiction in the UK in 1995
+His Dark Materials | 排名 | 第三名
+The Book of Dust | 作者 | Philip Pullman
+The Book of Dust | 关联作品 | His Dark Materials
+The Book of Dust | 时间背景 | 北方之光前10年
+The Book of Dust | 主要角色 | Lyra Belacqua
+The Book of Dust | is a companion trilogy to | His Dark Materials
+The Book of Dust | first book set time before | Northern Lights
+The Book of Dust | centres on | Lyra Belacqua
+The Book of Dust | first book set years before | Northern Lights
+Lyra Belacqua | is a protagonist in | The Book of Dust
+The Subtle Knife | 属于 | His Dark Materials
+The Subtle Knife | 作者 | Philip Pullman
+The Subtle Knife | 主要角色 | Lyra Belacqua
+The Subtle Knife | 主要角色 | Will Parry
+Lyra Belacqua | 调查对象 | Dust现象
+Lyra Belacqua | 寻找对象 | 她的父亲
+Lyra | 类型 | 歌曲
+Lyra | 创作者 | Kate Bush
+Lyra | 所属专辑 | The Golden Compass
+Lyra | 使用场景 | 电影《黄金罗盘》的片尾字幕
+Lyra | 提及角色 | Lyra Belacqua
+The Subtle Knife | 系列中的位置 | 第二本
+Will Parry | 角色关系 | Lyra Belacqua的同伴
+Kate Bush | 创作 | 歌曲《Lyra
+歌曲《Lyra | 所属专辑 | 电影《黄金罗盘》原声带
+The Subtle Knife | 是...系列的第几本书 | 第二本
+Will Parry | 在...中被引入 | The Subtle Knife
+Kate Bush | 为...创作歌曲 | 电影《黄金罗盘
+Northern Lights | 别名 | The Golden Compass
+Northern Lights | 作者 | Philip Pullman
+Northern Lights | 出版商 | Scholastic UK
+Northern Lights | 背景设定 | 平行宇宙
+Lyra Belacqua | 寻找对象 | Roger Parslow
+Lyra Belacqua | 寻找对象 | Lord Asriel
+Lord Asriel | 研究对象 | Dust
+Will Parry | 所属系列 | His Dark Materials
+Will Parry | 首次出现 | The Subtle Knife
+Will Parry | 年龄 | 12岁
+Will Parry | 朋友 | Lyra Belacqua
+Will Parry | 合作对象 | Lyra Belacqua
+Will Parry | 持有物品 | The Subtle Knife
+Will Parry | 协助对象 | Lord Asriel
+The Subtle Knife | is_part_of | His Dark Materials
+Will Parry | meets | Lyra Belacqua
+Will Parry | searches_for | his own father
+Will Parry | uses | The Subtle Knife
+Will Parry | befriends | Lyra Belacqua
+Will Parry | teams_up_with | Lyra Belacqua
+Will Parry | takes_possession_of | The Subtle Knife
+Lyra Belacqua | 别名 | Lyra Silvertongue
+Lyra Belacqua | 是主角 | His Dark Materials
+Lyra Belacqua | 居住在 | 平行宇宙
+Lyra Belacqua | 卷入 | 宇宙战争
+宇宙战争 | 一方 | Lord Asriel
+宇宙战争 | 另一方 | The Authority
+The Authority | 代理人 | Metatron
+Lyra Belacqua | is heroine of | His Dark Materials
+The Authority | has Regent | Metatron
+The Authority | has_regent | Metatron
+parallel universe | 定义为 | 假设的自包含现实与自己的现实共存
+multiverse | 定义为 | 一组特定的平行宇宙
+parallel universe | 同义词 | alternative reality
+alternative reality | 隐含含义 | 我们自己现实的变体
+parallel universe | 一般性 | 没有隐含关系
+universe with different laws of nature | 分类为 | parallel universe
+Northern Lights | 有声书录制时间 | 2001
+parallel universe | is a type of | hypothetical self-contained reality
+alternative reality | implies a variant of | our own reality
+parallel universe | can have different | laws of nature
+parallel universe | is a kind of | hypothetical self-contained reality
+universe with different laws of nature | counts as | parallel universe
+universe with different laws of nature | does not count as | alternative reality
+Lyra's Oxford | 作者 | Philip Pullman
+Lyra's Oxford | 属于 | 短篇书籍
+Lyra's Oxford | 涉及角色 | Lyra Belacqua
+Lyra's Oxford | 时间背景 | 15岁
+Johnny English | 类型 | 英国动作喜剧电影
+Johnny English | 上映年份 | 2011
+Johnny English | 导演 | Oliver Parker
+Johnny English | 主演 | Rowan Atkinson
+Johnny English | 编剧 | Neal Purvis和Robert Wade
+Johnny English | 全球票房 | $320百万
+Lyra's Oxford | is part of series | His Dark Materials
+Johnny English | screenplay_written_by | Neal Purvis和Robert Wade
+Johnny English | production_status | pre-production
+Robin Driscoll | 职业 | 演员
+Robin Driscoll | 职业 | 作家
+Robin Driscoll | 知名作品 | Mr. Bean
+Robin Driscoll | 朋友 | Rowan Atkinson
+Robin Driscoll | 参演作品 | Laughing Matters  - Visual Comedy
+Mr. Bean's Holiday | 类型 | 喜剧电影
+Mr. Bean's Holiday | 导演 | Steve Bendelack
+Mr. Bean's Holiday | 作曲 | Howard Goodall
+Mr. Bean's Holiday | 基于 | 电视系列剧 Mr. Bean
+Mr. Bean's Holiday | 前作 | Bean
+Mr. Bean's Holiday | 制片人 | Peter Bennett-Jones
+Mr. Bean's Holiday | 制片人 | Tim Bevan
+Mr. Bean's Holiday | 制片人 | Eric Fellner
+Mr. Bean's Holiday | 编剧 | Hamish McColl
+Mr. Bean's Holiday | 主演 | Maxim Baldry
+Mr. Bean's Holiday | 主演 | Emma de Caunes
+Mr. Bean's Holiday | 主演 | Willem Dafoe
+Robin Driscoll | 参与制作 | Laughing Matters  - Visual Comedy
+Get Smart | 属于 | 美国喜剧电视剧
+Get Smart | 讽刺对象 | 秘密特工类型
+Get Smart | 创作者 | Mel Brooks and Buck Henry
+Maxwell Smart | 扮演者 | Don Adams
+Agent 99 | 扮演者 | Barbara Feldon
+Thaddeus | 扮演者 | Edward Platt
+Get Smart | 创作动机 | 利用James Bond和Inspector Clouseau的流行
+Mr. Bean | 属于 | 英国喜剧电视剧
+Mr. Bean | 创造者 | Rowan Atkinson
+Get Smart | created_by | Mel Brooks and Buck Henry
+Maxwell Smart | agent_number | Agent 86
+Thaddeus | role | the Chief
+Mr. Bean | type_of_show | British comedy television programme
+Get Smart | 类型 | 美国喜剧电视剧
+Mr. Bean | 类型 | 英国喜剧电视剧
+The End of Agent W4C | 原名 | Konec agenta W4C prostřednictvím psa pana Foustky
+The End of Agent W4C | 类型 | 电影
+The End of Agent W4C | 导演 | Gábor Nógrádi
+The End of Agent W4C | 编剧 | Gábor Nógrádi
+The End of Agent W4C | 音效 | 单声道
+The End of Agent W4C | 制作公司 | Filmové Studio Barrandov
+Canned Laughter | 类型 | 情景喜剧
+Canned Laughter | 主演 | Rowan Atkinson
+Rowan Atkinson | 扮演角色 | Robert Box
+Rowan Atkinson | 扮演角色 | Mr. Marshall
+Rowan Atkinson | 扮演角色 | Dave Perry
+Rowan Atkinson | 扮演角色 | 广播播音员
+Konec agenta W4C prostřednictvím psa pana Foustky | 上映时间 | 1967
+Konec agenta W4C prostřednictvím psa pana Foustky | 片长 | 87 min
+Rowan Atkinson presents...Canned Laughter | 播出日期 | 8 April 1979
+Konec agenta W4C prostřednictvím psa pana Foustky | 类型 | 电影
+Rowan Atkinson presents...Canned Laughter | 类型 | 情景喜剧
+Manny Pacquiao vs. Juan Manuel Márquez IV | 别称 | Fight of the Decade
+Manny Pacquiao vs. Juan Manuel Márquez IV | 决定 | World Boxing Organization's Champion of the Decade
+Manny Pacquiao vs. Juan Manuel Márquez IV | 比赛次数 | 第四次
+Manny Pacquiao vs. Juan Manuel Márquez IV | 比赛地点 | 拉斯维加斯米高梅大酒店
+Manny Pacquiao vs. Juan Manuel Márquez IV | 付费观看次数 | 1.15百万
+Juan Manuel Márquez | 比赛类型 | 轻量级冠军超级战
+Juan Manuel Márquez | 重赛 | 2009年度最佳比赛
+Juan Manuel Márquez | 比赛地点 | 休斯顿丰田中心
+Juan Manuel Márquez | 比赛结果 | Marquez第九回合KO获胜
+Freddie Norwood | 出生地 | 密苏里州圣路易斯
+Freddie Norwood | 职业 | 拳击手
+Freddie Norwood | 别名 | Lil Hagler
+Freddie Norwood | 赢得比赛 | WBA羽量级冠军
+Freddie Norwood | 击败对手 | Antonio Cermeño
+Freddie Norwood | 失去冠军 | Smoke Gainer
+Freddie Norwood | 击败对手 | Takashi Koshimoto
+Freddie Norwood | 击败对手 | Julio Pablo Chacón
+Freddie Norwood | 击败对手 | Juan Manuel Márquez
+Freddie Norwood | 退役 | 在输给Gainer后
+Freddie Norwood | 击败 | Antonio Cermeño
+Freddie Norwood | 赢得 | WBA羽量级冠军
+Freddie Norwood | 卫冕次数 | 八次
+Freddie Norwood | 输给 | Smoke Gainer
+Freddie Norwood | KO | Takashi Koshimoto
+Freddie Norwood | 战胜 | Julio Pablo Chacón
+Freddie Norwood | 战胜 | Juan Manuel Márquez
+Takashi Koshimoto | 曾持有的头衔 | WBA羽量级冠军
+Julio Pablo Chacón | 曾持有的头衔 | WBA羽量级冠军
+Juan Manuel Márquez | 曾持有的头衔 | IBF和WBA羽量级冠军
+Derrick Gainer | 国籍 | 美国
+Derrick Gainer | 职业 | 拳击手
+Derrick Gainer | 初始级别 | 羽量级
+Derrick Gainer | 当前级别 | 轻量级
+Derrick Gainer | 击败 | Freddie Norwood
+Derrick Gainer | 赢得 | WBA羽量级冠军
+Derrick Gainer | 输给 | Juan Manuel Márquez
+Derrick Gainer | 挑战失败 | Chris John
+Derrick Gainer | 同事 | Roy Jones Jr
+Derrick Gainer | 好友 | Roy Jones Jr
+Derrick Gainer | 开始比赛的级别 | 羽量级
+Derrick Gainer | 当前比赛的级别 | 轻量级
+Derrick Gainer | 比赛级别 | 轻量级
+Rafael Márquez | 国籍 | 墨西哥
+Rafael Márquez | 职业 | 前职业拳击手
+Rafael Márquez | 获得冠军 | IBF雏量级冠军
+Rafael Márquez | 获得冠军 | WBC超雏量级冠军
+Rafael Márquez | 获得冠军 | 'Ring'杂志超雏量级冠军
+Rafael Márquez | 获得冠军 | 线性超雏量级冠军
+Rafael Márquez | 挑战冠军 | WBA羽量级冠军
+Rafael Márquez | 特点 | 强大的击倒力量
+Rafael Márquez | 特点 | 持续的压力打法
+Rafael Márquez | 兄弟 | Juan Manuel Márquez
+Juan Manuel Márquez | 职业 | 拳击手
+Juan Manuel Márquez | 获得冠军 | 多次世界冠军
+Rafael Márquez | 挑战 | WBA羽量级冠军
+Juan Manuel Márquez | 兄弟关系 | Rafael Márquez
+Floyd Mayweather Jr | 对阵 | Juan Manuel Márquez
+Floyd Mayweather Jr | 比赛地点 | MGM Grand Arena
+Floyd Mayweather Jr | 冠军级别 | 五个级别
+Juan Manuel Márquez | 冠军级别 | 三个级别
+Floyd Mayweather Jr | 复出对手 | Juan Manuel Márquez
+Juan Manuel Márquez | 对阵 | Joel Casamayor
+Juan Manuel Márquez | 比赛地点 | MGM Grand Garden Arena
+Joel Casamayor | 称号 | El Cepillo
+Juan Manuel Márquez | 称号 | Dinamita
+Joel Casamayor | 冠军级别 | 轻量级
+Joel Casamayor | 认可机构 | Ring Magazine
+Joel Casamayor | 别名 | El Cepillo
+Juan Manuel Márquez | 别名 | Dinamita
+Joel Casamayor | 冠军头衔 | Ring Magazine
+Manny Pacquiao vs. Juan Manuel Márquez IV | 别名 | The 25th Round Begins
+Manny Pacquiao vs. Juan Manuel Márquez IV | 争夺的头衔 | WBO welterweight title
+Manny Pacquiao vs. Juan Manuel Márquez IV | 转播方 | HBO PPV
+Manny Pacquiao | 回归 | HBO
+Manny Pacquiao vs. Juan Manuel Márquez IV | 付费观看次数 | 1.4 million
+Juan Manuel Márquez | 争夺的头衔 | vacant WBO/WBA lightweight championship
+Juan Manuel Márquez | 持有头衔 | The Ring lightweight title
+Juan Manuel Márquez | 获胜方式 | technical knockout in the ninth round
+Juan Manuel Márquez | 国籍 | 墨西哥
+Juan Manuel Márquez | 成就 | 四级别世界冠军
+Juan Manuel Márquez | 持有头衔 | WBA羽量级冠军
+Juan Manuel Márquez | 持有头衔 | WBO 次中量级冠军
+Kim Jong-kook | 国籍 | 韩国
+Kim Jong-kook | 职业 | 歌手
+Kim Jong-kook | 职业 | 演员
+Kim Jong-kook | 职业 | 电视名人
+Kim Jong-kook | 所属组合 | Turbo
+Kim Jong-kook | 参与节目 | X-man
+Kim Jong-kook | 参与节目 | Family Outing
+Kim Jong-kook | 参与节目 | Running Man
+Turbo | 属于 | 韩国二人组合
+Turbo | 成员 | 金钟国
+Turbo | 成员 | 金正南
+Turbo | 新成员 | Mikey
+Turbo | 销量 | 数百万张专辑和唱片
+Turbo | 复出形式 | 三人组
+Turbo | 复出歌曲 | Again
+Again | 音乐排行榜位置 | 榜首
+Again | 排行榜位置 | 榜首
+数百万张专辑和唱片 | 销售地区 | 亚洲
+Trot | 属于 | 韩国流行音乐
+Trot | 别名 | Młynarze
+Trot | 形成时期 | 20世纪初日本统治时期
+Trot | 受...影响 | 日本音乐元素
+Trot | 受...影响 | 西方音乐元素
+Trot | 受...影响 | 韩国音乐元素
+Trot | 复兴者 | Jang Yoon Jeong
+Trot | 复兴者 | Super Junior-T
+Trot | 复兴者 | Daesung
+Trot | 复兴者 | Joy
+Trot | 复兴者 | Hong Jin-young
+Cho Yong-pil | 职业 | 韩国流行歌手
+Cho Yong-pil | 出生年份 | 1950
+Cho Yong-pil | 代表作 | Return to Busan Port
+Cho Yong-pil | 代表作 | Dear Friend
+Cho Yong-pil | 代表作 | The Lady Outside the Window
+Trot | influenced_by | 韩国音乐元素
+TVXQ | 成员数量 | 五名
+TVXQ | 成员 | U-Know Yunho
+TVXQ | 成员 | Max Changmin
+TVXQ | 成员 | Hero Jaejoong
+TVXQ | 成员 | Micky Yoochun
+TVXQ | 成员 | Xiah Junsu
+TVXQ | 首次巡演 | Rising Sun Tour
+Rising Sun Tour | 演出地点 | 韩国
+Rising Sun Tour | 演出地点 | 泰国
+Rising Sun Tour | 演出地点 | 马来西亚
+TVXQ | 第二次巡演 | O Tour
+O Tour | 首次访问 | 中国
+O Tour | 首次访问 | 台湾
+TVXQ | 第三次巡演 | Mirotic Tour
+Mirotic Tour | 计划演出地点 | 韩国
+Mirotic Tour | 计划演出地点 | 中国
+Mirotic Tour | 计划演出地点 | 泰国
+Mirotic Tour | 取消原因 | 法律纠纷
+Jaejoong | 离开 | S.M. Entertainment
+Yoochun | 离开 | S.M. Entertainment
+Junsu | 离开 | S.M. Entertainment
+TVXQ | 成员数量 | 两名
+TVXQ | 成员 | Yunho
+TVXQ | 成员 | Changmin
+Rising Sun Tour | 演出国家 | 韩国
+Rising Sun Tour | 演出国家 | 泰国
+Rising Sun Tour | 演出国家 | 马来西亚
+O Tour | 首次访问国家 | 中国
+O Tour | 首次访问国家 | 台湾
+Mirotic Tour | 计划演出国家 | 韩国
+Mirotic Tour | 计划演出国家 | 中国
+Mirotic Tour | 计划演出国家 | 泰国
+Jaejoong | 离开 | TVXQ
+Yoochun | 离开 | TVXQ
+Junsu | 离开 | TVXQ
+TVXQ | 别名 | Tohoshinki
+TVXQ | 日本演唱会次数 | 八次
+TVXQ | 第二次日本演唱会 | Five in the Black Tour
+TVXQ | 第三次日本演唱会 | T Tour
+TVXQ | 第四次日本演唱会 | The Secret Code Tour
+The Secret Code Tour | 演出场地 | 东京巨蛋
+Running Man | 成员 | 金钟国
+Running Man | 成员 | 哈哈
+Tohoshinki | 演唱会巡演次数 | 八次
+Tohoshinki | debut_in | Japan
+Maroo Entertainment | 属于 | 独立唱片公司和娱乐经纪公司
+Maroo Entertainment | 所在国家 | 韩国
+Supernova | 所属公司 | Maroo Entertainment
+Han Young | 所属公司 | Maroo Entertainment
+Kim Jong-kook | 所属公司 | Maroo Entertainment
+Ashgray | 所属公司 | Maroo Entertainment
+BONUSBaby | 所属公司 | Maroo Entertainment
+Euna Kim | 所属公司 | Maroo Entertainment
+Park Ji-hoon | 所属公司 | Maroo Entertainment
+Ha Seok-jin | 所属公司 | Maroo Entertainment
+Running Man | 属于 | 综艺节目
+Running Man | 播出平台 | SBS
+Running Man | 类型 | 游戏类综艺
+Maroo Entertainment | is_a | independent record label
+Maroo Entertainment | is_a | entertainment agency
+Running Man | part_of | SBS's Good Sunday lineup
+Maroo Entertainment | is_a | independent record label and entertainment agency
+Running Man | classified_as | game-variety show
+Philip Yakel | 建造 | Union Brewery
+George Yakel | 建造 | Yakel House
+Yakel House | 设计风格 | 受德国建筑传统影响的本土设计
+William Netzhammer | 购买 | Union Brewery
+Netzhammer家族 | 经营 | Union Brewery
+Union Brewery | 生产 | 近啤酒
+John Hair and Son | 被收购 | Offiler's of Derby
+Vaux Breweries | 上市 | 伦敦证券交易所
+Yakel House | 建造者 | George Yakel
+Union Brewery | 关闭时间 | 1954
+Chef & Brewer | 属于 | 连锁餐厅
+Chef & Brewer | 拥有者 | Spirit Pub Company
+Spirit Pub Company | 母公司 | Greene King
+Chef & Brewer | 提供 | 高档酒吧食品
+Chef & Brewer | 位置 | 英国
+Chef & Brewer | 数量 | 约127家
+Chef & Brewer | 装修状态 | 已翻新
+Chef & Brewer | 所属公司 | Spirit Pub Company
+Agnes Bugge | 职业 | brewers
+Agnes Bugge | 性别 | 女性
+Agnes Bugge | 经营 | brewery
+Agnes Bugge | 丈夫的职业 | draper
+Agnes Bugge | 参与事件 | brewers与伦敦市的争端
+Stephen | 为妻子的brewery支付 | 最大贡献
+Idonea Hatton | 与丈夫共同经营 | brewery
+Agnes Bugge | 唯一由女性经营的brewery | true
+Stephen | 遗嘱内容 | 将brewery留给Agnes
+brewers | 赢得诉讼 | against the city of London
+Dick Whittington | 担任职务 | Lord Mayor of London
+Stephen | 将brewery留给 | Agnes Bugge
+brewers | 与...的争端 | 伦敦市
+Idonea Hatton | 与丈夫共同拥有 | brewery
+brewers | 创建 | fighting fund
+Idonea Hatton | 与...共同拥有 | brewery
+Ruddles Brewery | 属于 | English brewery
+Ruddles Brewery | 品牌所有者 | Greene King
+Ruddles Brewery | 酿造地点 | Suffolk
+Ruddles Brewery | 当前配方来源 | Greene King
+The Booth Brewing Co | 创始人 | Sunghoo Yang
+The Booth Brewing Co | 创始人 | Heeyoon Kim
+The Booth Brewing Co | 创始人 | Daniel Tudor
+The Booth Brewing Co | 成立时间 | 2015
+The Booth Brewing Co | 收购对象 | Lost Coast Brewery的酿造设施
+The Booth Brewing Co | 知名产品 | Taedonggang Pale Ale
+The Booth Brewing Co | 合作对象 | Mikkeller
+The Booth Brewing Co | acquired | Lost Coast Brewery's brewing facility
+Taedonggang Pale Ale | collaboration_with | Mikkeller
+The Booth Brewing Co | produces_in | United States
+Ruddles Brewery | locatedIn | England
+Taedonggang Pale Ale | collaborationWith | Mikkeller
+Castle Rock Brewery | 成立方式 | 与Bramcote Brewery的合资企业
+Bramcote Brewery | 状态 | 解散
+Castle Rock Brewery | 所有权 | Tynemill和Bramcote Brewery前所有者各占50%
+Castle Rock Brewery | 位置 | The Vat and Fiddle旁边的新址
+The Vat and Fiddle | 位置 | Queensbridge road靠近Nottingham火车站
+The Vat and Fiddle | 角色 | brewery
+The Vat and Fiddle | 供应 | 超过10种真麦酒
+Mill Street Brewery | 所属公司 | Anheuser–Busch InBev
+Mill Street Brewery | 获奖 | Golden Tap Awards for Best Toronto Microbrewery
+Mill Street Brewery | 获奖 | Best Toronto Beer
+Mill Street Brewery | 被收购 | Labatt Brewing Company
+Labatt Brewing Company | 所属公司 | Anheuser–Busch InBev
+Mill Street Brewery | 所在国家 | 加拿大
+Greene King | 总部位于 | 英格兰萨福克郡贝里圣埃德蒙兹
+Greene King | 上市于 | 伦敦证券交易所
+Greene King | 是成分股 | FTSE 250指数
+Lady Gaga | 访问 | 斯普林菲尔德市
+Lisa Marie Simpson | 是最抑郁的人 | 斯普林菲尔德市
+Lady Gaga | 教导 | Lisa Marie Simpson
+Greene King | 位于 | 英格兰萨福克郡贝里圣埃德蒙兹
+Mike B. Anderson | 出生年份 | 1973
+Mike B. Anderson | 职业 | 导演
+Mike B. Anderson | 工作项目 | The Simpsons
+Mike B. Anderson | 导演作品 | The Secret War of Lisa Simpson
+Mike B. Anderson | 导演作品 | Alone in the T-Shirt Zone
+Mike B. Anderson | 导演作品 | Kamillions
+Mike B. Anderson | 担任职务 | 咨询制片人
+Mike B. Anderson | 担任职务 | 故事顾问
+Yeardley Smith | 全名 | Martha Maria Yeardley Smith
+Yeardley Smith | 职业 | 演员
+Yeardley Smith | 职业 | 配音演员
+Yeardley Smith | 职业 | 作家
+Yeardley Smith | 职业 | 喜剧演员
+Yeardley Smith | 职业 | 画家
+Yeardley Smith | 著名角色 | Lisa Marie Simpson
+Mike B. Anderson | 导演了 | The Secret War of Lisa Simpson
+Mike B. Anderson | 工作于 | The Oblongs
+Mike B. Anderson | 担任 | 故事顾问
+Mike B. Anderson | 参与制作 | The Oblongs
+Lisa Marie Simpson | 成为 | Krusty the Clown的新助手
+Lisa Marie Simpson | 赢得 | Springfield Media年度艺人奖
+Homer | 与...建立联系 | Bart
+Homer和Bart | 共同爱好 | 硬币收藏
+Sideshow Mel | 担任 | 旁白
+John Frink | 编写 | All About Lisa
+Steven Dean Moore | 导演 | All About Lisa
+Drew Carey | 客串配音 | 自己
+All About Lisa | is_season_finale_of | The Simpsons第八季
+Lisa Marie Simpson | becomes | Krusty the Clown的新助手
+Homer和Bart | bond_over | 硬币收藏
+Drew Carey | guest_appears_as | 自己
+The Itchy & Scratchy Show | 属于 | 虚构动画电视系列
+The Itchy & Scratchy Show | 出现在 | The Krusty the Clown Show的一部分
+Bart Simpson | 观看 | The Itchy & Scratchy Show
+Lisa Marie Simpson | 观看 | The Itchy & Scratchy Show
+Itchy | 角色类型 | 蓝色老鼠
+Itchy | 配音演员 | Dan Castellaneta
+Scratchy | 角色类型 | 黑色猫
+Scratchy | 配音演员 | Harry Shearer
+The Itchy & Scratchy Show | 首次出现 | The Tracey Ullman Show
+The Itchy & Scratchy Show | 首次在《辛普森一家》中出现 | 1990年的剧集'There's No Disgrace Like Home'
+The Itchy & Scratchy Show | 时长 | 15至60秒
+Roger Meyers Jr | 运营 | The Itchy & Scratchy Show
+Roger Meyers Jr | 制作 | The Itchy & Scratchy Show
+The Itchy & Scratchy Show | 首次出现于 | The Bart Simpson Show
+The Itchy & Scratchy Show | 首次出现于 | The Tracey Ullman Show
+Dan Castellaneta | 配音 | Itchy
+Harry Shearer | 配音 | Scratchy
+Matt Groening | 全名 | Matthew Abraham Groening
+Matt Groening | 职业 | 漫画家
+Matt Groening | 职业 | 作家
+Matt Groening | 职业 | 制片人
+Matt Groening | 职业 | 动画师
+Matt Groening | 职业 | 配音演员
+Matt Groening | 创作作品 | Life in Hell
+Matt Groening | 创作作品 | The Simpsons
+Matt Groening | 创作作品 | Futurama
+Matt Groening | 创作作品 | Disenchantment
+The Simpsons | 播出时间 | 1989年至今
+The Simpsons | 成就 | 美国黄金时段电视系列剧最长记录
+The Simpsons | 成就 | 最长的动画系列
+The Simpsons | 成就 | 最长的情景喜剧
+Life in Hell | 创作时间 | 1977–2012
+Disenchantment | 预计首播时间 | 2018
+Ralph Wiggum | 是角色 | The Simpsons
+Ralph Wiggum | 配音演员 | Nancy Cartwright
+Ralph Wiggum | 父亲 | Police Chief Wiggum
+Ralph Wiggum | 同学 | Lisa Marie Simpson
+Ralph Wiggum | 特征 | 非主流怪人
+Ralph Wiggum | 特征 | 不连贯的言论
+Ralph Wiggum | 特征 | 无意义的话
+Ralph Wiggum | 特征 | 意外深刻的陈述
+Ralph Wiggum | 行为特点 | 毫无察觉
+Ralph Wiggum | 行为特点 | 愚蠢
+Ralph Wiggum | 行为特点 | 尴尬地自发
+Ralph Wiggum | 行为特点 | 偶尔直接
+Ralph Wiggum | is_classmate_of | Lisa Marie Simpson
+Ralph Wiggum | has_behavior | blissfully unaware
+Ralph Wiggum | has_behavior | dim-witted
+Ralph Wiggum | has_behavior | bizarre interpretations of a current event
+Lisa's Rival | 编剧 | Mike Scully
+Lisa's Rival | 导演 | Mark Kirkland
+Allison Taylor | 配音演员 | Winona Ryder
+Allison Taylor | 就读学校 | Springfield Elementary School
+Lisa Marie Simpson | 感到威胁 | Allison Taylor
+Homer | 偷取 | 大量糖
+Homer | 销售 | 糖
+Lisa's Rival | isEpisodeOf | The Simpsons第八季
+Allison Taylor | guestStarIn | Lisa's Rival
+Homer | steal | 大量糖
+Lisa Marie Simpson | 出现在 | The Simpsons
+Lisa Marie Simpson | 家庭成员 | Simpson 家族
+Lisa Marie Simpson | 配音演员 | Yeardley Smith
+Lisa Marie Simpson | 首次出现 | The Tracey Ullman Show
+Matt Groening | 创造者 | Lisa Marie Simpson
+Matt Groening | 设计者 | Lisa Marie Simpson
+Lisa Marie Simpson | 命名来源 | Lisa Groening
+The Tracey Ullman Show | 播出时间 | 三年
+Lisa Marie Simpson | is_part_of | Simpson 家族
+Matt Groening | created | The Simpsons
+Matt Groening | created_character | Lisa Marie Simpson
+James L. Brooks | met_with | Matt Groening
+Bart | 被送到 | 军事学院
+Bart | 原因 | 不良行为
+Lisa | 参观 | 军事学院
+Lisa | 决定 | 参加军事学院
+The Secret War of Lisa Simpson | 导演 | Mike B. Anderson
+The Secret War of Lisa Simpson | 编剧 | Richard Appel
+Willem Dafoe | 客串角色 | 学校的指挥官
+The Secret War of Lisa Simpson | is episode of | The Simpsons第八季
+Lisa | wants to attend | 军事学院
+The Secret War of Lisa Simpson | is part of | The Simpsons第八季
+Willem Dafoe | 扮演 | 学校的指挥官
+Jordan Aviation | 运营 | worldwide charter flights
+Jordan Aviation | 提供 | wet lease services
+Jordan Aviation | 服务对象 | UN peacekeeping forces
+Jordan Aviation | 拥有 | MRO
+Jordan Aviation | 成员 | IATA
+Jordan Aviation | 成员 | IOSA
+Jordan Aviation | 成员 | Arab Air Carriers Organization – AACO
+Jordan Aviation | 成员 | International Air Carrier Association – IACA
+Jordan Aviation | 成员 | Flight Safety Foundation
+Enimex | 运营 | cargo and passenger charter flights
+Enimex | 提供 | wet lease operations
+Enimex | 主要基地 | Lennart Meri Tallinn Airport
+Jordan Aviation | member of | IATA
+Jordan Aviation | certified by | IOSA
+Jordan Aviation | member of | Arab Air Carriers Organization – AACO
+Jordan Aviation | member of | International Air Carrier Association – IACA
+Jordan Aviation | member of | Flight Safety Foundation
+Enimex | main base | Lennart Meri Tallinn Airport
+Jordan Aviation | has MRO | Operations & Technical Centre
+Paris Charles de Gaulle Airport | 别名 | Roissy Airport
+Paris Charles de Gaulle Airport | 位置 | 巴黎东北25公里处的几个市镇内
+Paris Charles de Gaulle Airport | 命名来源 | Charles de Gaulle
+Charles de Gaulle | 身份 | 自由法国军队领导人
+Charles de Gaulle | 身份 | 法兰西第五共和国创始人
+Charles de Gaulle | 身份 | 法国总统
+Paris Charles de Gaulle Airport | 主要枢纽 | Air France
+Paris Charles de Gaulle Airport | 欧洲枢纽 | Delta Air Lines
+Paris Charles de Gaulle Airport | 重点城市 | Vueling
+Paris Charles de Gaulle Airport | 重点城市 | Norwegian Air Shuttle
+Eagle Aviation France | 湿租运营基地 | Paris Charles de Gaulle Airport
+Charles de Gaulle Airport | is located in | 巴黎东北25公里处的几个市镇内
+Eagle Aviation France | has wet lease operations at | Charles de Gaulle Airport
+Charles de Gaulle Airport | is located in | several communes 25 km to the northeast of Paris
+Eagle Aviation France | had wet lease operations based at | Charles de Gaulle Airport
+Vildanden AS | 别名 | The Wild Duck
+Vildanden AS | 所在国家 | Norway
+Vildanden AS | 飞往城市 | Bergen
+Vildanden AS | 飞往城市 | Trondheim
+Vildanden AS | 飞往城市 | Stavanger
+Vildanden AS | 使用机型 | Jetstream 32
+Vildanden AS | 使用机型 | ATR 42
+Vildanden AS | 湿租自 | Danish Air Transport
+Vildanden AS | 湿租自 | Helitrans
+Vildanden AS | 曾飞往城市 | Stockholm
+Vildanden AS | 曾飞往城市 | Molde
+Vildanden AS | 曾使用机型 | Saab 340
+Vildanden AS | 曾由运营 | Coast Air
+Vildanden AS | 曾由运营 | Air Aurora
+Vildanden AS | 曾由运营 | Avitrans
+Vildanden AS | 与冲突 | Coast Air
+Vildanden AS | 获得救助 | 市政府
+Vildanden AS | conflict with | Coast Air
+Vildanden AS | bailout by | Mazatlán Municipality
+Vildanden AS | started operations | 2005
+Vildanden AS | in conflict with | Coast Air
+Vildanden AS | first profit in | 2009
+Vildanden AS | ceased operations | January 2011
+Phuket Air | 专长于 | ACMI和湿租服务
+Phuket Air | 提供服务 | 国际包机服务
+Phuket Air | 提供服务 | 临时湿租服务
+Phuket Air | 提供服务 | 宗教朝圣包机服务
+Phuket Air | 提供服务 | 干租服务
+Phuket Air | 主要长期客户 | Saudi Arabian Airlines
+Phuket Air | 曾经提供服务 | 定期国内和国际航空服务
+Phuket Air | 曾是 | 国际定期航空公司
+Titan Airways | 总部所在地 | 伦敦斯坦斯特德机场
+Titan Airways | 提供服务 | ACMI和湿租服务
+Titan Airways | 提供服务 | 临时乘客和货物包机服务
+Titan Airways | 持有许可证 | 英国民用航空局A类运营许可证
+Titan Airways | 运营飞机数量 | 10架
+Cargo 360 | 总部所在地 | 西雅图-塔科马国际机场
+Cargo 360 | 提供服务 | ACMI湿租运营
+VIM Airlines | 总部所在地 | 莫斯科
+VIM Airlines | 基地机场 | 多莫杰多沃国际机场
+VIM Airlines | 提供服务 | 国际定期航班和包机服务
+VIM Airlines | 提供服务 | 临时湿租服务
+Titan Airways | based at | 伦敦斯坦斯特德机场
+Cargo 360 | based in | 西雅图-塔科马国际机场
+VIM Airlines | headquartered in | 莫斯科
+Bishop International Airport | IATA代码 | FNT
+Bishop International Airport | ICAO代码 | KFNT
+Bishop International Airport | FAA LID | FNT
+Bishop International Airport | 命名来源 | Arthur Giles Bishop
+Arthur Giles Bishop | 职业 | banker and General Motors board member
+Arthur Giles Bishop | 捐赠 | 220 acres of farmland
+Bishop International Airport | 繁忙程度 | 第三繁忙机场
+Bishop International Airport | 超越 | MBS International Airport
+Bishop International Airport | 分类 | small hub primary commercial service facility
+Bishop International Airport | surpassed | MBS International Airport
+Bishop International Airport | served by for cargo services | FedEx Express and a FedEx Feeder affiliate
+Av Flight | 处理 | 一般航空
+Av Flight | 处理 | 航空公司运营
+Bishop International Airport | 位于 | 弗林特西南部
+Bishop International Airport | 被包围 | 弗林特镇
+Bishop International Airport | 被包围 | 芒迪镇
+Av Flight | handles | general aviation
+Av Flight | handles | airline operations
+Oasis | 类型 | English rock band
+Oasis | 包含 | seven studio albums
+Oasis | 包含 | one live album
+Oasis | 包含 | five compilation albums
+Oasis | 包含 | six video albums
+Oasis | 包含 | one extended play
+Oasis | 包含 | twenty-nine singles
+Oasis | 包含 | nineteen promotional singles
+Oasis | 包含 | thirty-six music videos
+Oasis | 唱片销量 | 70 million records worldwide
+Oasis | 获得称号 | most successful act in the United Kingdom between the years 1995 and 2005
+Oasis | 成立时间 | 1991
+Oasis | 成员 | Liam Gallagher
+Oasis | 成员 | Paul "Bonehead" Arthurs
+Oasis | 成员 | Paul "Guigsy" McGuigan
+Oasis | 成员 | Tony McCarroll
+Oasis | 成员 | Noel Gallagher
+Oasis | 签约公司 | Creation Records
+Oasis | 发行单曲 | Supersonic
+Supersonic | 发行时间 | 1995
+Supersonic | 排行榜位置 | number 31 in the United Kingdom
+Oasis | 发行单曲 | Shakermaker
+Oasis | 发行单曲 | Live Forever
+Shakermaker | 排行榜位置 | UK top 15 hits
+Live Forever | 排行榜位置 | UK top 15 hits
+Live Forever | 成功地区 | United States
+Definitely Maybe | 类型 | debut studio album
+Definitely Maybe | 排行榜位置 | topped the UK Albums Chart
+Definitely Maybe | 认证 | seven times platinum
+Oasis | formed_in | 1991
+Supersonic | released_by | Oasis
+Live Forever | became | UK top 15 hits
+Oasis | 属于 | English rock band
+Oasis | 成立地点 | Manchester
+Liam Gallagher | 担任角色 | vocalist
+Noel Gallagher | 担任角色 | guitarist
+Paul "Bonehead" Arthurs | 担任角色 | guitarist
+Paul "Guigsy" McGuigan | 担任角色 | bassist
+Tony McCarroll | 担任角色 | drummer
+Definitely Maybe | 发行时间 | 1995
+Definitely Maybe | 作曲者 | Noel Gallagher
+Supersonic | 所属专辑 | Definitely Maybe
+Shakermaker | 所属专辑 | Definitely Maybe
+Live Forever | 所属专辑 | Definitely Maybe
+Cigarettes & Alcohol | 所属专辑 | Definitely Maybe
+Whatever | 发行时间 | Later in the year
+Whatever | 排行榜位置 | number 3 in the UK Singles Chart
+Oasis | formed_in | Manchester
+Noel Gallagher | wrote_material_for | Definitely Maybe
+Supersonic | released_as_single_from | Definitely Maybe
+Shakermaker | released_as_single_from | Definitely Maybe
+Live Forever | released_as_single_from | Definitely Maybe
+Cigarettes & Alcohol | released_as_single_from | Definitely Maybe
+Whatever | released_as_standalone_single | Later in the year
+Noel Gallagher | 创作特点 | 更注重抒情曲风和大合唱
+Oasis | 鼓手 | Alan Victor White
+Alan Victor White | 取代 | Tony McCarroll
+Noel Gallagher | 作曲 | 更注重抒情曲风和大合唱
+Definitely Maybe Tour | 支持专辑 | Definitely Maybe
+Definitely Maybe Tour | 开始时间 | 6 February 1994
+Definitely Maybe Tour | 结束时间 | 22 April 1995
+Definitely Maybe Tour | 结束地点 | Sheffield Arena
+Oasis | 前身乐队 | the Rain
+Liam Gallagher | 担任角色 | vocals and tambourine
+Paul "Bonehead" Arthurs | 担任角色 | bass guitar
+Paul "Guigsy" McGuigan | 担任角色 | bass guitar
+Noel Gallagher | 担任角色 | lead guitar and vocals
+Definitely Maybe Tour | started on | 6 February 1994
+Definitely Maybe Tour | ended on | 22 April 1995
+Oasis | formed in | Manchester
+Oasis | year of formation | 1991
+Tony McCarroll | role in | Oasis
+the Rain | developed into | Oasis
+Don't Look Back in Anger | 演唱者 | Oasis
+Don't Look Back in Anger | 发行日期 | 19 February 1996
+Don't Look Back in Anger | 作曲者 | Noel Gallagher
+Don't Look Back in Anger | 排行榜成绩 | UK Singles Chart 第一名
+Don't Look Back in Anger | 认证 | 白金唱片
+Don't Look Back in Anger | 主唱 | Noel Gallagher
+Alan Victor White | 职业 | 摇滚鼓手
+Alan Victor White | 所属乐队 | Oasis
+Alan Victor White | 推荐人 | Paul Weller
+Alan Victor White | 前任鼓手 | Tony McCarroll
+Alan Victor White | 继任者 | Zak Starkey
+Alan Victor White | 曾属乐队 | Starclub
+Alan Victor White | 兄弟 | Steve
+Steve | 担任鼓手的乐队 | Paul Weller的乐队
+Paul Weller | 推荐人 | Alan Victor White
+Steve | 兄弟 | Alan Victor White
+Zak Starkey | 父亲 | Ringo Starr
+Oasis | 来自 | 曼彻斯特
+Liam Gallagher | 担任角色 | 主唱
+Noel Gallagher | 担任角色 | 吉他手和歌手
+Paul "Bonehead" Arthurs | 担任角色 | 吉他手和键盘手
+Paul "Guigsy" McGuigan | 担任角色 | 贝斯手
+Tony McCarroll | 担任角色 | 鼓手
+Oasis | 签约唱片公司 | Creation Records
+Oasis | 发行专辑 | Definitely Maybe
+Definitely Maybe | 销量 | 超过1500万张
+Scott McLeod | 临时替代 | Paul "Guigsy" McGuigan
+Oasis | 发行专辑 | Be Here Now
+Oasis | 签约唱片公司时间 | 1992
+Oasis | 属于 | britpop乐队
+Oasis | 成立地点 | 曼彻斯特
+Paul "Bonehead" Arthurs | 担任角色 | 吉他手
+Noel Gallagher | 担任角色 | 吉他手
+Noel Gallagher | 担任角色 | 主唱
+Noel Gallagher | 兄弟关系 | Liam Gallagher
+Noel Gallagher | 加入 | Oasis
+St. John's Regional Medical Center | 运营方 | Dignity Health
+St. John's Regional Medical Center | 姐妹医院 | St. John's Pleasant Valley Hospital
+St. John's Regional Medical Center | 成立年份 | 1912
+St. John's Regional Medical Center | 提供服务 | 24小时急诊医疗服务
+St. John's Regional Medical Center | 提供服务 | 癌症和肿瘤护理和支持
+St. John's Regional Medical Center | 提供服务 | 心血管护理
+St. John's Regional Medical Center | 提供服务 | 社区外展和筛查
+St. John's Regional Medical Center | 提供服务 | 诊断影像服务
+St. John's Regional Medical Center | 提供服务 | 实验室服务
+St. John's Regional Medical Center | 提供服务 | 产科和妇女服务
+St. John's Regional Medical Center | 提供服务 | 新生儿重症监护
+St. John's Regional Medical Center | 提供服务 | 姑息治疗
+St. John's Regional Medical Center | 提供服务 | 患者和家庭教育
+St. John's Regional Medical Center | 提供服务 | 康复服务
+St. John's Regional Medical Center | 提供服务 | 脊柱和骨科护理
+St. John's Regional Medical Center | 提供服务 | 减肥手术
+St. John's Regional Medical Center | 提供服务 | 伤口愈合和氧气疗法
+St. John's Regional Medical Center | 服务区域 | Ventura County
+St. John's Regional Medical Center | 服务城市 | Camarillo
+St. John's Regional Medical Center | 服务城市 | Moorpark
+St. John's Regional Medical Center | 服务城市 | Oxnard Plain
+St. John's Regional Medical Center | 服务城市 | Port Hueneme
+St. John's Regional Medical Center | 服务城市 | Ventura
+St. John's Regional Medical Center | 服务城市 | Somis
+St. John's Regional Medical Center | 所属组织 | 最大的急性护理健康组织
+liberal arts | 定义为 | 在古典时代被认为是自由人必须掌握的科目或技能
+liberal arts | 目的 | 积极参与公民生活
+liberal arts | 包括 | 参与公共辩论
+liberal arts | 包括 | 在法庭上自卫
+liberal arts | 包括 | 担任陪审员
+liberal arts | 包括 | 军事服务
+Jack Kaiser | 全名 | John Warren Kaiser
+Jack Kaiser | 职位 | Athletics Director Emeritus
+Jack Kaiser | 工作单位 | St. John's High School
+Jack Kaiser | 职业 | 棒球运动员
+Jack Kaiser | 职业 | 大学教练
+Jack Kaiser | 职业 | 管理者
+Jack Kaiser | 参与赛事 | 1949年大学世界系列赛
+Jack Kaiser | 担任教练 | St. John's Red Storm 棒球队
+Jack Kaiser | 担任体育主管 | St. John's High School
+Jack Kaiser | 贡献 | 建立Big East Conference
+Jack Kaiser | 荣誉 | ABCA名人堂
+Big East Conference棒球锦标赛最佳球员奖 | 命名 | Jack Kaiser
+Jack Kaiser体育场 | 命名 | Jack Kaiser
+Jack Kaiser | 担任职务 | St. John's University的Athletics Director Emeritus
+Jack Kaiser | 执教球队 | St. John's Red Storm 棒球队
+Jack Kaiser | 担任职务 | St. John's University的棒球主教练
+Aalborghus Gymnasium | 位于 | Aalborg
+Aalborghus Gymnasium | 属于 | upper secondary school
+Aalborghus Gymnasium | 提供 | three-year program
+Aalborghus Gymnasium | 提供 | two-year Higher Preparatory Examination  program
+Aalborghus Gymnasium | 教授科目 | Religion
+Aalborghus Gymnasium | 教授科目 | Music
+Aalborghus Gymnasium | 教授科目 | Spanish
+Aalborghus Gymnasium | 教授科目 | Natural Geography
+Aalborghus Gymnasium | 关注 | musical and creative side of students
+Aalborghus Gymnasium | 关注 | international perspective on issues
+Aalborghus Gymnasium | 要求学生选择 | stream of studies
+stream of studies | 包含 | two or three subjects
+stream of studies | 示例 | English/Social Studies
+St. John's High School | 属于 | Charleston County School District
+St. John's High School | 学生人数 | 约1600人
+St. John's High School | 教职工人数 | 30人
+St. John's High School | 吉祥物 | The Mighty Islanders
+St. John's High School | 校色 | 皇家蓝和酒红色
+St. John's High School | 提供课程 | Advanced Placement和双学分课程
+St. John's High School | 提供的大学学分 | 超过30小时
+St. John's High School | 教育对象 | 学术上有天赋的年轻男性
+St. John's High School | 教育环境 | 耶稣会环境
+St. John's High School | 课程补充 | 体育和课外活动
+St. John's High School | 课程 | 加勒比中等教育证书  课程
+St. John's High School | 考试 | 地区管理的考试
+TriBond | 类型 | 棋盘游戏
+TriBond | 销售量 | 超过300万份
+TriBond | 销售国家数量 | 14个国家
+TriBond | 玩法 | 确定三个主题之间的共同联系
+TriBond | 类似游戏 | Trivial Pursuit
+TriBond | 类似游戏 | Outburst
+TriBond | 要求能力 | 广泛的知识
+TriBond | 要求能力 | 解决问题的能力
+TriBond | released in | 1990
+TriBond | requires | some problem solving ability
+St. John's High School | 位于 | Belize
+St. John's High School | 提供 | 多种文科和理科课程
+St. John's High School | 属于 | 罗马天主教机构
+St. John's High School | 传统 | 耶稣会
+St. John's High School | 成立者 | 耶稣会
+When Patty Went to College | 作者 | Jean Webster
+When Patty Went to College | 出版年份 | 1903
+When Patty Went to College | 类型 | 小说
+When Patty Went to College | 主题 | 生活
+When Patty Went to College | 背景 | 20世纪初的女子学院
+Patty Wyatt | 角色类型 | 主人公
+Patty Wyatt | 行为 | 恶作剧
+Patty Wyatt | 学习方式 | 创造性方法
+Patty Wyatt | 信念 | 支持正义和弱者
+Patty Wyatt | 帮助对象 | Olivia Copeland
+Olivia Copeland | 状态 | 思乡病
+Olivia Copeland | 担忧 | 考试不及格会被送回家
+Patty Wyatt | 不喜欢 | 墨守成规
+Patty Wyatt | 帮助 | Olivia Copeland
+Olivia Copeland | 害怕 | 考试不及格会被送回家
+St. John's Seminary | 授予学位 | 研究生学位
+St. John's Seminary | 培养对象 | 准备成为神职人员的修生
+St. John's Seminary | 培养对象 | 对牧养事工感兴趣的平信徒
+St. John's High School | 关闭时间 | 21世纪初
+A4 Holding | 别名 | Gruppo A4 Holding
+A4 Holding | 拥有 | Autostrada Brescia Verona Vicenza Padova
+Autostrada Brescia Verona Vicenza Padova | 运营 | Brescia–Padua section of Autostrada A4 and Autostrada A31
+A4 Holding | 持有股份 | Autostrada del Brennero
+Autostrada del Brennero | 运营 | Autostrada A22
+A4 Holding | 持有股份 | Autostrade Lombarde
+Autostrade Lombarde | 母公司 | the operator of Autostrada A35
+Skelly Oil Company | 成立时间 | 1919
+J. Paul Getty | 控制 | Skelly Oil Company
+Skelly Oil Company | 被吸收 | Getty Oil Company
+Skelly品牌标志 | 被复活 | Nimmons-Joliet Development Corp
+Serenissima Partecipazioni | owned_by | A4 Holding
+Autostrade Lombarde | parent_company_of | the operator of Autostrada A35
+Skelly Oil Company | acquired_by | J. Paul Getty
+Skelly Oil Company | absorbed_by | Getty Oil Company
+Skelly brand logo | revived_by | Nimmons-Joliet Development Corp
+Skelly Oil Company | defunct_when_absorbed_by | Getty Oil Company
+Robert Earl Holding | 国籍 | 美国
+Robert Earl Holding | 拥有 | Sinclair Oil Corporation
+Robert Earl Holding | 拥有 | Little America motel
+Robert Earl Holding | 拥有 | Grand America Hotel
+Robert Earl Holding | 拥有 | Sun Valley
+Ahvaz油田 | 开发公司 | National Iranian Oil Company
+Ahvaz油田 | 估计储量 | 约14.5亿桶
+Ahvaz油田 | 日产量 | 约750000桶
+Ahvaz油田 | 所有者 | National Iranian Oil Company
+Ahvaz油田 | 运营方 | National Iranian Oil Company
+Little America | 属于 | census-designated place
+Little America | 得名于 | Little America motel
+Little America motel | 位置特点 | remote location
+Little America motel | 类比对象 | base camp of Richard E. Byrd in the Antarctic in 1928
+Little America | 提供服务 | travel services
+Little America | 发展成果 | chain of travel facilities by the same name
+Robert Earl Holding | 开发 | Little America
+Robert Earl Holding | 个人净资产 | over $3 billion
+Aghajari oil field | 属于 | iranian oil field
+Aghajari oil field | 位于 | Khuzestan Province
+Aghajari oil field | 发现时间 | 1938
+Aghajari oil field | 开发者 | National Iranian Oil Company
+Aghajari oil field | 开始生产时间 | 1940
+Aghajari oil field | 总探明储量 | around 30 billion barrels
+Aghajari oil field | 日产量 | 300000 oilbbl/d
+Aghajari oil field | 所有者 | National Iranian Oil Company
+Aghajari oil field | 运营者 | National Iranian Oil Company
+Aghajari oil field | discovered_by | National Iranian Oil Company
+Carabobo | 位于 | Venezuela's Orinoco Belt
+Orinoco Belt | 拥有 | 世界最大的可回收石油储量之一
+Venezuela | 超越 | Saudi Arabia
+Carabobo | 主要所有者 | Petroleos de Venezuela SA
+PDVSA | 拥有 | Orinoco Belt的大部分
+Carabobo | 以生产 | 特重原油
+Orinoco Belt | 持有 | 90%的世界特重原油
+Carabobo | located_in | Venezuela's Orinoco Belt
+Orinoco Belt | holds | 90% of the world's extra heavy crude oils
+PDVSA | majority_owns | Carabobo oil field
+PDVSA | ranked_as | world's fourth largest oil company
+Carabobo oil field | located in | Venezuela's Orinoco Belt
+PDVSA | majority owner of | Carabobo oil field
+PDVSA | owns | majority of the Orinoco Belt
+Sinclair Oil Corporation | 创始人 | Harry F. Sinclair
+Sinclair Oil Corporation | 重组地点 | 怀俄明州
+Sinclair Oil Corporation | 标志 | 大型绿色恐龙的轮廓
+101 Ranch Oil Company | 创始人 | E. W. Marland
+101 Ranch Oil Company | 重要发现地点 | 北俄克拉荷马州
+Marland Oil Company | 前身 | 101 Ranch Oil Company
+Continental Oil Company | 前身 | Marland Oil Company
+Conoco | 前身 | Continental Oil Company
+Sinclair Oil Corporation | logo特征 | 大型绿色恐龙的轮廓
+101 Ranch Oil Company | 发现油田 | 北俄克拉荷马州
+Marland Oil Company | 更名 | Continental Oil Company
+Rag Sefid oil field | 位于 | Khuzestan Province
+Rag Sefid oil field | 开发公司 | National Iranian Oil Company
+Rag Sefid oil field | 总探明储量 | 约14.5亿桶
+Rag Sefid oil field | 日产量 | 180000桶/天
+Rag Sefid oil field | 所有者 | National Iranian Oil Company
+Rag Sefid oil field | 运营者 | National Iranian Oil Company
+The Very Best of Macy Gray | 发行公司 | Epic Records
+The Very Best of Macy Gray | 包含单曲 | Love Is Gonna Get You
+The Very Best of Macy Gray | 包含翻唱歌曲 | Walk This Way
+The Very Best of Macy Gray | 包含合作单曲 | Demons
+The Very Best of Macy Gray | 合作艺人 | Fatboy Slim
+The Very Best of Macy Gray | 在英国专辑排行榜上的排名 | 第36位
+Rag Sefid oil field | 发现年份 | 1963
+Rag Sefid oil field | 开始生产年份 | 1965
+Rag Sefid oil field | nearest_distance_from | the Persian Gulf
+The Very Best of Macy Gray | released_by | Epic Records
+The Very Best of Macy Gray | contains_single | Demons
+The Very Best of Macy Gray | contains_cover | Walk This Way
+Duff McKagan | 成员 | Guns N' Roses
+Duff McKagan | 成员 | Velvet Revolver
+Kissed It | 演唱者 | Macy Gray
+Kissed It | 所属专辑 | The Sellout
+Kissed It | 合作音乐人 | Slash
+Kissed It | 合作音乐人 | Duff McKagan
+Kissed It | 合作音乐人 | Matt Sorum
+Loaded | 别名 | Duff McKagan's Loaded
+Loaded | 成员 | Duff McKagan
+Loaded | 成员 | Mike Squires
+Loaded | 成员 | Jeff Rouse
+Loaded | 成员 | Isaac Carpenter
+Kissed It | features | Slash
+Kissed It | features | Matt Sorum
+Loaded | includes_member | Isaac Carpenter
+Loaded | includes_member | Geoff Reading
+Kissed It | is a song by | Macy Gray
+Kissed It | from the album | The Sellout
+Loaded | formed in | 1999
+Loaded | line-up includes | Duff McKagan
+Loaded | line-up includes | Mike Squires
+Loaded | line-up includes | Jeff Rouse
+Loaded | drummer since 2009 | Isaac Carpenter
+Loaded | former drummer | Geoff Reading
+Velvet Revolver | 属于 | 美国硬摇滚超级乐队
+Velvet Revolver | 成员 | Slash
+Velvet Revolver | 成员 | Duff McKagan
+Velvet Revolver | 成员 | Matt Sorum
+Velvet Revolver | 成员 | Dave Kushner
+Velvet Revolver | 成员 | Scott Weiland
+Scott Weiland | 离开 | Velvet Revolver
+Scott Weiland | 重新加入 | Stone Temple Pilots
+Seattlehead | 创作人 | Duff McKagan
+Seattlehead | 所属专辑 | Dark Days
+Seattlehead | 所属乐队 | Loaded
+Seattlehead | 早期发行 | Neurotic Outsiders
+Seattlehead | 未发行专辑 | Beautiful Disease
+Duff McKagan | 创作了 | Seattlehead
+Loaded | 发行专辑 | Dark Days
+Neurotic Outsiders | 发行歌曲 | Seattlehead
+Duff McKagan | 未发行专辑 | Beautiful Disease
+Demons | 演唱者 | Fatboy Slim
+Demons | 合作歌手 | Macy Gray
+Demons | 所属专辑 | Halfway Between the Gutter and the Stars
+Demons | 收录于合辑 | The Very Best of Macy Gray
+Demons | 收录于合辑 | The Greatest Hits - Why Try Harder
+Demons | 包含元素 | I Can't Write Left-Handed
+Demons | 翻唱者 | The Blind Boys of Alabama
+Demons | 出现于 | Sense8
+Neurotic Outsiders | 成员 | Steve Jones
+Neurotic Outsiders | 成员 | Matt Sorum
+Neurotic Outsiders | 成员 | Duff McKagan
+Neurotic Outsiders | 成员 | John Taylor
+Neurotic Outsiders | 原成员 | Billy Idol
+Neurotic Outsiders | 原成员 | Steve
+Demons | featured_in_album | The Very Best of Macy Gray
+Demons | contains_element_of | I Can't Write Left-Handed
+Neurotic Outsiders | founded_in | 1995
+Demons | featured_in_album | Atom Bomb
+Linda Ronstadt | 全名 | Linda Maria Ronstadt
+Linda Ronstadt | 国籍 | 美国
+Linda Ronstadt | 职业 | 流行音乐歌手
+Linda Ronstadt | 职业 | 乡村音乐歌手
+Linda Ronstadt | 获得奖项 | 11项格莱美奖
+Linda Ronstadt | 获得奖项 | 3项美国音乐奖
+Linda Ronstadt | 获得奖项 | 2项乡村音乐学院奖
+Linda Ronstadt | 获得奖项 | 艾美奖
+Linda Ronstadt | 获得奖项 | ALMA奖
+Linda Ronstadt | 提名奖项 | 托尼奖
+Linda Ronstadt | 提名奖项 | 金球奖
+Linda Ronstadt | 入选 | 摇滚名人堂
+Linda Ronstadt | 获得奖项 | 国家艺术与人文勋章
+They Call the Wind Maria | 属于 | 美国流行歌曲
+They Call the Wind Maria | 歌词作者 | Alan J. Lerner
+They Call the Wind Maria | 作曲者 | Frederick Loewe
+They Call the Wind Maria | 出自 | Paint Your Wagon
+Paint Your Wagon | 背景设定 | 加利福尼亚淘金热
+They Call the Wind Maria | 原唱者（百老汇） | Rufus Smith
+They Call the Wind Maria | 原唱者（伦敦西区） | Joseph Leader
+They Call the Wind Maria | 流行时期 | 朝鲜战争期间
+They Call the Wind Maria | 录制者 | Vaughan Monroe and his Orchestra
+They Call the Wind Maria | is_set_in | 加利福尼亚淘金热
+Rufus Smith | sang_on | Broadway
+Joseph Leader | sang_in | London's West End
+They Call the Wind Maria | set_in | 加利福尼亚淘金热
+They Call the Wind Maria | popular_during | 朝鲜战争期间
+Eddy Arnold | 全名 | Richard Edward Arnold
+Eddy Arnold | 职业 | 乡村音乐歌手
+Eddy Arnold | 表演时长 | 六十年
+Eddy Arnold | 创新风格 | 纳什维尔声音
+Eddy Arnold | 排行榜歌曲数量 | 147首
+Eddy Arnold | 唱片销量 | 超过1500万张
+Eddy Arnold | 加入组织 | Grand Ole Opry
+Eddy Arnold | 加入组织 | Country Music Hall of Fame
+Eddy Arnold | 排名 | 第24位
+Albert Campbell | 职业 | 流行音乐歌手
+Albert Campbell | 录音时期 | 1890年代末至1920年代
+Albert Campbell | 合作对象 | Henry Burr
+Albert Campbell | 所属团体 | Peerless Quartet
+J.D. Souther | 全名 | John David Souther
+J.D. Souther | 职业 | 歌手和作曲家
+J.D. Souther | 合作对象 | Linda Ronstadt
+J.D. Souther | 合作对象 | the Eagles
+Riddles in the Sand | 制作人 | Jimmy Bowen
+Riddles in the Sand | 音乐风格转变 | 更偏向乡村音乐
+Jimmy Buffett | 出现在专辑封面 | 穿着典型的乡村歌手服装
+Jimmy Buffett | 推广专辑 | 在纳什维尔的Fan Fair乡村音乐节
+Riddles in the Sand | 原定标题 | Gulf and Western Music
+Gulf and Western Music | 反映 | 融合了多种音乐风格
+Riddles in the Sand | 音乐范围 | 从Bob Wills到Bob Marley
+Jimmy Buffett | 专辑封面形象 | 穿着典型的乡村歌手服装
+Jimmy Buffett | 融合风格 | 从Bob Wills到Bob Marley
+Riddles in the Sand | 专辑封面 | 穿着典型的乡村歌手服装
+Jimmy Buffett | 推广活动 | 在纳什维尔的Fan Fair乡村音乐节
+One Particular Harbour | 制作人 | Jimmy Buffett和Michael Utley
+Stars On The Water | 作者 | Rodney Crowell
+Stars On The Water | 被翻唱者 | George Strait
+Andy Williams | 全名 | Howard Andrew Williams
+Andy Williams | 职业 | 流行音乐歌手
+Andy Williams | 录制专辑数量 | 44张
+Andy Williams | 获得金唱片认证专辑数量 | 15张
+Andy Williams | 获得白金唱片认证专辑数量 | 3张
+The Andy Williams Show | 主持人 | Andy Williams
+Moon River Theatre | 所在地 | 密苏里州布兰森
+Moon River Theatre | 命名来源 | 歌曲《月亮河
+Andy Williams | 全球唱片销量 | 超过1500万张
+Andy Williams | 美国认证唱片销量 | 1050万张
+The Andy Williams Show | 获得奖项 | 三项艾美奖
+Jimmy Buffett | 首次参与制作专辑 | One Particular Harbour
+Rodney Crowell | 创作歌曲 | Stars On The Water
+George Strait | 翻唱歌曲 | Stars On The Water
+Andy Williams | 获得提名 | 11项格莱美奖
+Jimmie Rodgers | 全名 | James Frederick Rodgers
+Jimmie Rodgers | 出生地 | 华盛顿州卡马斯
+Jimmie Rodgers | 职业 | 流行音乐歌手
+Jimmie Rodgers | 活跃时期 | 20世纪50年代末
+Jimmie Rodgers | 音乐类型 | 跨界单曲
+Jimmie Rodgers | 音乐类型 | 成人当代音乐
+The Delmore Brothers | 成员 | Alton Delmore
+The Delmore Brothers | 成员 | Rabon Delmore
+The Delmore Brothers | 影响领域 | 乡村音乐
+The Delmore Brothers | 影响领域 | 美国流行歌曲
+Alton Delmore | 兄弟 | Rabon Delmore
+The Delmore Brothers | 影响 | 乡村音乐
+Zeitschrift für celtische Philologie | 属于 | 学术期刊
+Zeitschrift für celtische Philologie | 创立者 | Kuno Meyer
+Zeitschrift für celtische Philologie | 创立者 | Ludwig Christian Stern
+Zeitschrift für celtische Philologie | 研究领域 | 大陆凯尔特语言
+Zeitschrift für celtische Philologie | 研究重点 | 早期爱尔兰语言和文学
+Zeitschrift für celtische Philologie | 研究重点 | 大陆凯尔特语言
+Continental Celtic languages | 起源地 | 不列颠和爱尔兰
+Continental Celtic languages | 对比对象 | 大陆凯尔特语言
+Continental Celtic languages | 现存状态 | 六种现存的凯尔特语言
+大陆凯尔特语言 | 现存状态 | 已灭绝
+大陆凯尔特语言 | 状态 | 已灭绝
+Continental Celtic languages | originated in | Britain and Ireland
+Continental Celtic languages | location | mainland Europe and Anatolia
+Alexei Kondratiev | 职业 | 作者
+Alexei Kondratiev | 职业 | 语言学家
+Alexei Kondratiev | 职业 | 教师
+Alexei Kondratiev | 教授科目 | 爱尔兰语
+Alexei Kondratiev | 教授科目 | 凯尔特历史
+Alexei Kondratiev | 工作地点 | 纽约曼哈顿的爱尔兰艺术中心
+The Apple Branch | 作者 | Alexei Kondratiev
+The Apple Branch | 出版语言 | 英语
+The Apple Branch | 出版语言 | 西班牙语
+Celtic studies | 定义 | 研究凯尔特人的文化输出的学术学科
+Celtic studies | 研究领域 | 语言学
+Celtic studies | 研究领域 | 文学
+Celtic studies | 研究领域 | 艺术史
+Celtic studies | 研究领域 | 考古学
+Celtic studies | 研究领域 | 历史
+Celtic studies | 主要研究对象 | 六种现存的凯尔特语言
+六种现存的凯尔特语言 | 包含 | 爱尔兰语
+六种现存的凯尔特语言 | 包含 | 苏格兰盖尔语
+六种现存的凯尔特语言 | 包含 | 马恩岛
+六种现存的凯尔特语言 | 包含 | 威尔士语
+六种现存的凯尔特语言 | 包含 | 康沃尔语
+六种现存的凯尔特语言 | 包含 | 布列塔尼语
+Alexei Kondratiev | 教授 | 苏格兰盖尔语
+Celtic studies | 研究 | 凯尔特人的艺术史
+Alexei Kondratiev | 教授 | 大陆凯尔特语言
+Celtic studies | 研究 | 研究凯尔特人的文化输出的学术学科
+Celtic studies | 包括 | 考古学
+Celtic studies | 包括 | 历史
+Continental Celtic languages | 地理分布 | 欧洲大陆
+Continental Celtic languages | 使用者 | Keltoi
+Continental Celtic languages | 使用者 | Celtae
+Continental Celtic languages | 使用者 | Galli
+Continental Celtic languages | 使用者 | Galatae
+Continental Celtic languages | 地理范围 | 从伊比利亚到巴尔干和安纳托利亚
+Celtic nations | 定义 | 西欧地区保留凯尔特语言或文化特征的领土
+Celtic nations | 共享 | 共同身份和文化
+Continental Celtic languages | spoken_by | Keltoi
+Continental Celtic languages | spoken_by | Celtae
+Continental Celtic languages | spoken_by | Galli
+Continental Celtic languages | spoken_by | Galatae
+Celtic nations | defined_as | territories in western Europe where Celtic languages or cultural traits have survived
+Continental Celtic languages | spoken by | Keltoi
+Continental Celtic languages | spoken by | Celtae
+Continental Celtic languages | spoken by | Galli
+Continental Celtic languages | spoken by | Galatae
+Journal of Celtic Linguistics | 属于 | 学术期刊
+Journal of Celtic Linguistics | 目标 | 鼓励和发表凯尔特语言的原创语言学研究
+Journal of Celtic Linguistics | 出版方 | 威尔士大学出版社
+Journal of Celtic Linguistics | 编辑 | 所有六种凯尔特语言的专家编辑
+Simon Rodway | 担任职务 | 主编
+Simon Rodway | 所属机构 | 阿伯里斯特威斯大学
+Graham Isaac | 前任职务 | 主编
+Graham Isaac | 所属机构 | 爱尔兰国立大学高威分校
+Simon Rodway | 所属机构 | Aberystwyth University
+Journal of Celtic Linguistics | 成立年份 | 1992
+Amazonian languages | 指代 | Greater Amazonia的土著语言
+Greater Amazonia | 文化特征 | 社会共享许多文化特征
+Greater Amazonia | 语言多样性 | 约330种现存语言
+Greater Amazonia | 语言使用者数量 | 近一半的语言使用者少于500人
+Greater Amazonia | 孤立语言数量 | 约50种
+Greater Amazonia | 语言家族数量 | 约25个
+Greater Amazonia | 语言多样性原因 | 许多小且历史上无关的言语社区分布
+Amazonian languages | is characterized by | great diversity
+Greater Amazonia | extends from | the Atlantic coast all the way to the Andes
+Greater Amazonia | 南部边界 | Młynarze
+European colonists | 入侵 | Amazonian societies
+Amazonian languages | 长期接触 | many neighboring languages
+many neighboring languages | 相似性 | not genetically related
+small tribes | 使用 | English
+English | 作为 | secondary language
+Amazonian languages | had fewer than 10,000 native speakers | before the invasion of European colonists
+European colonists | wrought havoc on | societies
+long-term contact | created similarities between | many neighboring languages that are not genetically related
+Celtic art | 关联 | Celts
+Celts | 语言 | Continental Celtic languages
+Celtic art | 关联 | 古代民族
+Pan Celtic Festival | 别名 | Féile Pan Cheilteach
+Pan Celtic Festival | 类型 | 音乐节
+Pan Celtic Festival | 举办时间 | 复活节后一周
+Pan Celtic Festival | 目标 | 推广现代凯尔特语言和文化
+Pan Celtic Festival | 推广对象 | 推广现代凯尔特语言和文化
+Danny Elfman | 创作 | Batman: Original Motion Picture Score
+Jon Peters | 对...不确定 | Danny Elfman作为作曲家
+Tim Burton | 让...演奏 | Danny Elfman演奏主标题音乐
+Danny Elfman | 感到惊讶 | 配乐将单独发行专辑
+The Batman Theme | 成为 | 标志性作品
+The Batman Theme | 作为基础 | 1992年首播的《蝙蝠侠动画系列》的主题音乐
+Danny Elfman的配乐 | 播放于 | 六旗主题公园中的蝙蝠侠过山车排队区和站台的背景音乐
+Thomas Montgomery Newman | 以...闻名 | 许多电影配乐
+Danny Elfman | 为...作曲 | 1989年电影《Batman》的配乐专辑
+Tim Burton | 让...演奏主标题音乐 | Danny Elfman
+Jon Peters | 宣布 | 配乐将单独发行专辑
+Danny Elfman的配乐 | 被用作 | 六旗主题公园中的蝙蝠侠过山车排队区和站台的背景音乐
+Batman: Original Motion Picture Score | 为电影配乐 | 1989年电影《Batman
+Danny Elfman | 与合作 | Tim Burton
+Suicide Squad: The Album | 发行公司 | Atlantic Records和Warner Bros. Records
+Suicide Squad | 作曲者 | Steven Price
+Suicide Squad | 发行公司 | WaterTower Music
+Suicide Squad | 数字版包含 | 八首额外曲目
+Suicide Squad | 获得提名 | 2017年格莱美奖最佳视觉媒体汇编音轨
+Saw V: Original Motion Picture Score | 包含曲目数 | 61首
+Saw V: Original Motion Picture Score | 实际使用曲目数 | 49首
+Saw V: Original Motion Picture Score | 曲目数量 | 61首
+Saw V: Original Motion Picture Score | 电影中使用的曲目数量 | 49首
+Iron Eagle: Original Motion Picture Score | 发行公司 | Capitol Records
+Iron Eagle: Original Motion Picture Score | 作曲者 | Basil Poledouris
+Iron Eagle: Original Motion Picture Score | 发行公司 | Varèse Sarabande
+American Beauty: Original Motion Picture Score | 作曲者 | Thomas Newman
+22 Jump Street | 作曲者 | Mark Mothersbaugh
+22 Jump Street | 首次发行公司 | La La Land Records
+22 Jump Street | 后续发行公司 | Madison Gate Records
+American Beauty: Original Motion Picture Score | 电影 | American Beauty
+The Fate of the Furious: Original Motion Picture Score | 发行公司 | 环球音乐集团
+The Fate of the Furious: Original Motion Picture Score | 作曲者 | Brian Tyler
+Brian Tyler | 编写并创作了音乐 | The Fate of the Furious: Original Motion Picture Score
+Beauty and the Beast: Original Motion Picture Soundtrack | 发行公司 | Walt Disney Productions
+Beauty and the Beast: Original Motion Picture Soundtrack | 包含 | 电影中的音乐曲目
+电影中的音乐曲目 | 作曲者 | Alan Menken
+电影中的音乐曲目 | 作词者 | Howard Ashman
+Beauty and the Beast: Original Motion Picture Soundtrack | 包含 | 电影配乐
+电影配乐 | 作曲者 | Alan Menken
+Beauty and the Beast: Original Motion Picture Soundtrack | 音乐风格 | 音乐剧
+Beauty and the Beast: Original Motion Picture Soundtrack | 音乐风格 | 法国音乐
+Beauty and the Beast: Original Motion Picture Soundtrack | 音乐风格 | 古典音乐
+Beauty and the Beast: Original Motion Picture Soundtrack | 音乐风格 | 流行音乐
+Beauty and the Beast: Original Motion Picture Soundtrack | 音乐风格 | 百老汇音乐
+Beauty and the Beast: Original Motion Picture Soundtrack | 表演者 | Paige O'Hara
+Beauty and the Beast: Original Motion Picture Soundtrack | 表演者 | Richard White
+Beauty and the Beast: Original Motion Picture Soundtrack | 表演者 | Jesse Corti
+Beauty and the Beast: Original Motion Picture Soundtrack | 表演者 | Jerry Orbach
+Beauty and the Beast: Original Motion Picture Soundtrack | 表演者 | Angela Lansbury
+Beauty and the Beast: Original Motion Picture Soundtrack | 表演者 | Robby Benson
+Beauty and the Beast: Original Motion Picture Soundtrack | 表演者 | Celine Dion
+Beauty and the Beast: Original Motion Picture Soundtrack | 表演者 | Peabo Bryson
+Beauty and the Beast: Original Motion Picture Soundtrack | 单曲 | Beauty and the Beast
+Alan Menken | 合作 | Howard Ashman
+电影中的音乐曲目 | 包含于 | Beauty and the Beast: Original Motion Picture Soundtrack
+电影配乐 | 包含于 | Beauty and the Beast: Original Motion Picture Soundtrack
+Celine Dion | 合作 | Peabo Bryson
+Here | 音乐创作 | Harold Grant
+Here | 歌词创作 | Dorcas Cochran
+Here | 出版年份 | 1954
+Here | 旋律改编自 | Caro nome
+Caro nome | 出自歌剧 | Rigoletto
+Rigoletto | 作曲家 | Giuseppe Verdi
+Beautiful Young Minds | 类型 | 纪录片
+Beautiful Young Minds | 内容 | 英国队选拔和训练过程
+Beautiful Young Minds | 内容 | 2006年国际数学奥林匹克竞赛
+Beautiful Young Minds | 导演 | Morgan Matthews
+Beautiful Young Minds | 剪辑师 | Joby Gee
+Beautiful Young Minds | 配乐 | Sam Hooper
+Beautiful Young Minds | 放映地点 | Bath Film Festival
+X+Y | 灵感来源 | Beautiful Young Minds
+X+Y | 导演 | Morgan Matthews
+X+Y | 基于 | IMO参赛者Daniel Lightwing
+Beautiful Young Minds | screened_at | BRITDOC Festival
+Beautiful Young Minds | broadcast_on | BBC 2
+Beautiful Young Minds | date_of_first_broadcast | 14 October 2007
+Beautiful Young Minds | follows | U.K. team selection process and training for the 2006 International Mathematical Olympiad
+Beautiful Young Minds | features | young mathematicians with autism
+Beautiful Young Minds | result_of_UK_team | numerous medals including four silver and one bronze
+X+Y | inspired_by | Beautiful Young Minds
+Beautiful Young Minds | screened_at | Bath Film Festival
+Joby Talbot | 国籍 | 英国
+Joby Talbot | 职业 | 作曲家
+Robin Hood | 导演 | Otto Bathurst
+Robin Hood | 发行公司 | Lionsgate's Summit Entertainment
+King Arthur: Legend of the Sword | 导演 | Guy Ritchie
+King Arthur: Legend of the Sword | 编剧 | Lionel Wigram
+King Arthur: Legend of the Sword | 编剧 | Joby Harold
+Blog Wars | 类型 | 纪录片
+Blog Wars | 主题 | 政治博客的崛起及其对2006年中期康涅狄格州参议院选举的影响
+Blog Wars | 音乐作曲者 | Samuel Sim
+Awake | 类型 | 阴谋惊悚片
+Awake | 编剧 | Joby Harold
+Awake | 导演 | Joby Harold
+Samuel Sim | 职业 | 电影和电视作曲家
+Samuel Sim | 获奖作品 | Dunkirk
+Samuel Sim | 配乐作品 | Awake
+Samuel Sim | 配乐作品 | House of Saddam
+Samuel Sim | 配乐作品 | Home Fires
+Samuel Sim | 作品 | Dunkirk
+Samuel Sim | 作品 | House of Saddam
+Samuel Sim | 作品 | Home Fires
+Gidget Goes to Rome | 上映年份 | 1963
+Gidget Goes to Rome | 主演 | Cindy Carol
+Gidget Goes to Rome | 导演 | Paul Wendkos
+Gidget Goes to Rome | 编剧 | Ruth Brooks Flippen
+Gidget Goes to Rome | 角色创造者 | Frederick Kohner
+Gidget Goes to Rome | 演员 | James Darren
+Gidget Goes to Rome | 演员 | Joby Baker
+Gidget Goes to Rome | 演员 | Jean 'Jeff' Donnell
+Gidget Goes to Rome | 发行格式 | VHS和DVD
+By the Beautiful Sea | 出版年份 | 1914
+By the Beautiful Sea | 作曲 | Harry Carroll
+By the Beautiful Sea | 作词 | Harold R. Atteridge
+Gidget Goes to Rome | 发布年份 | 1963
+Gidget Goes to Rome | 角色创作者 | Frederick Kohner
+By the Beautiful Sea | 发布年份 | 1914
+Brooklyn Cultural District | 曾用名 | BAM-Downtown Brooklyn Cultural District
+Brooklyn Cultural District | 投资金额 | $100 million
+Brooklyn Cultural District | 关注领域 | 艺术
+Brooklyn Cultural District | 关注领域 | 公共空间
+Brooklyn Cultural District | 关注领域 | 可负担住房
+Brooklyn Cultural District | 参与机构 | New York City's Economic Development Corporation
+Brooklyn Cultural District | 参与机构 | Department of Cultural Affairs
+Brooklyn Cultural District | 参与机构 | Department of Housing Preservation and Development
+Brooklyn Cultural District | 参与机构 | Department of City Planning
+Brooklyn Cultural District | 参与机构 | Downtown Brooklyn Partnership
+Brooklyn Cultural District | 长期机构利益相关者 | BAM
+Brooklyn Cultural District | 长期机构利益相关者 | Brooklyn Arts Gallery
+Brooklyn Cultural District | 长期机构利益相关者 | Brooklyn Public Library
+Brooklyn Cultural District | 新入驻机构 | Mark Morris Dance Group
+Brooklyn Cultural District | 新入驻机构 | Theatre for a New Audience
+Brooklyn Cultural District | 新入驻机构 | UrbanGlass
+Brooklyn Cultural District | 新入驻机构 | BRIC Arts
+Brooklyn Cultural District | 新入驻机构 | BAM's Fisher Building
+Brooklyn Cultural District | formerly known as | BAM-Downtown Brooklyn Cultural District
+New York City's Economic Development Corporation | joint effort with | Department of Cultural Affairs
+New York City's Economic Development Corporation | joint effort with | Department of Housing Preservation and Development
+New York City's Economic Development Corporation | joint effort with | Department of City Planning
+New York City's Economic Development Corporation | joint effort with | Downtown Brooklyn Partnership
+Carlene LeFevre | 职业 | competitive eater
+Carlene LeFevre | 配偶 | Rich LeFevre
+Carlene LeFevre | 所属组织 | International Federation of Competitive Eating
+Carlene LeFevre | 别名 | The Madam of Etiquette
+Carlene LeFevre | 技术 | Carlene Pop
+Carlene LeFevre | 参与比赛 | Nathan's Hot Dog Eating Contest
+Carlene LeFevre | has_technique | Carlene Pop
+Brooklyn Grange | 位于 | New York
+Brooklyn Grange | 类型 | 有机城市屋顶农场
+Brooklyn Grange | 种植作物 | 高质量蔬菜和蜂蜜
+Brooklyn Grange | 分布位置 | 两个屋顶
+Brooklyn Grange | 另一个屋顶位置 | 布鲁克林海军造船厂
+布鲁克林海军造船厂的屋顶农场 | 特点 | 世界上最大的屋顶土壤农场
+Brooklyn Grange | 运营 | 纽约市最大的养蜂场
+Brooklyn Grange | 养蜂数量 | 超过三十个自然管理的蜜蜂箱
+Brooklyn Grange | 成立时间 | 2010年春季
+Ben Flanner | 职位 | 总裁兼首席农民
+Anastasia Plakias | 职位 | 副总裁
+Gwen Schantz | 职位 | 首席运营官
+Brooklyn Grange | 提供服务 | 种植和分发本地蔬菜和草药
+Brooklyn Grange | 提供服务 | 城市农业咨询
+Brooklyn Grange | 提供服务 | 绿色屋顶咨询
+Brooklyn Grange | 提供服务 | 绿色屋顶安装
+Brooklyn Grange | 服务对象 | 全球客户
+Brooklyn Grange | 合作对象 | 纽约的非营利组织
+Brooklyn Grange | 合作目的 | 促进健康和强大的当地社区
+Brooklyn Grange | 提供服务 | 全球客户
+Brooklyn Grange | 提供服务 | 城市农业咨询和绿色屋顶安装
+Rich LeFevre | 昵称 | The Locust
+Rich LeFevre | 职业 | competitive eater
+Rich LeFevre | 配偶 | Carlene LeFevre
+Rich LeFevre | 所属组织 | International Federation of Competitive Eating
+Rich LeFevre | 参与比赛 | Nathan's Hot Dog Eating Contest
+Rich LeFevre | 参与比赛 | Wing Bowl XIV
+Rich LeFevre | 比赛名次 | 第二
+Joey Chestnut | 所属组织 | International Federation of Competitive Eating
+Rich LeFevre | 与...形成 | First Family of Competitive Eating
+Rich LeFevre | 年龄 | 60左右
+Carlene LeFevre | 年龄 | 60左右
+Rich LeFevre | 体重 | 正常
+Carlene LeFevre | 体重 | 正常
+Metropolitan Transportation Authority | 运营 | 布鲁克林的公交线路
+布鲁克林的公交线路 | 数量 | 55条本地线路
+布鲁克林-曼哈顿运输公司 | 子公司 | 布鲁克林巴士公司
+布鲁克林的公交线路 | 起源 | 有轨电车线路
+New York | 拥有 | New York Yankees
+New York Yankees | 位于 | Bronx
+New York | 位于 | Queens
+New York | 拥有 | New York Rangers
+New York | 拥有 | New York Islanders
+New York | 拥有 | Buffalo Sabres
+New York Rangers | 位于 | Manhattan
+New York Islanders | 位于 | Brooklyn Grange
+Buffalo Sabres | 位于 | Buffalo
+New York | 拥有 | New York Knicks
+New York | 拥有 | Brooklyn Nets
+New York Knicks | 位于 | Manhattan
+Brooklyn Nets | 位于 | Brooklyn Grange
+New York | 拥有 | New York City FC
+New York Red Bulls | 代表 | New York metropolitan area
+New York Red Bulls | 主场 | Red Bull Arena
+New York Yankees | based_in | Bronx
+New York | based_in | Queens
+New York Rangers | based_in | Manhattan
+New York Islanders | based_in | Brooklyn Grange
+Buffalo Sabres | based_in | Buffalo
+New York Knicks | based_in | Manhattan
+Brooklyn Nets | based_in | Brooklyn Grange
+New York City FC | based_in | New York
+New York Red Bulls | represent | New York metropolitan area
+New York City FC | based in | New York
+Queens | 属于 | New York City的五个行政区之一
+Queens | 地理位置 | Long Island的西南端
+Queens | 相邻地区 | Brooklyn Grange
+Queens | 相邻地区 | Nassau County
+Queens | 水边界 | Manhattan
+Queens | 水边界 | Bronx
+Queens | 与...同界 | Queens County
+Queens | 人口排名 | 第二
+Queens | 外国出生人口比例 | 约48%
+Queens County | 人口排名 | 第二
+Queens | 人口密度排名 | 第四
+Queens | 如果独立城市的人口排名 | 第四
+Queens | 种族多样性 | 世界最多样化的城市区域
+Queens | is_part_of | New York
+Queens | has_population_ranking | second-largest
+Queens | has_foreign_born_population_percentage | approximately 48%
+Queens | is_coterminous_with | Queens County
+Queens | has_density_ranking_among_NYC_boroughs | fourth-most densely populated
+Queens | would_be_ranked_as | nation's fourth most populous city if independent
+Queens | shares_water_borders_with | Manhattan
+Queens | shares_water_borders_with | Bronx
+Queens | coterminous_with | Queens County
+Queens | is_most_ethnically_diverse | urban area in the world
+Brooklyn Heights | 属于 | New York City borough of Brooklyn
+Brooklyn Heights | 曾用名 | Brooklyn Village
+Brooklyn Heights | 建筑特点 | 低层建筑
+Brooklyn Heights | 建筑特点 | 棕色砂石联排房屋
+Brooklyn Heights | 宗教机构 | 许多著名的教堂和其他宗教机构
+Brooklyn Arts Gallery | 位于 | Brooklyn Heights
+Brooklyn Heights Historic District | 保护对象 | Brooklyn Heights
+Brooklyn Heights Historic District | 被列入 | National Register of Historic Places
+Brooklyn Heights | has_architecture_style | 低层建筑
+Brooklyn Heights | has_historic_district | Brooklyn Heights Historic District
+Brooklyn Heights Historic District | added_to | National Register of Historic Places
+Brooklyn Arts Gallery | opened in | 1958
+Brooklyn Heights Historic District | created in | 1965
+Fort Greene | 位于 | Brooklyn Grange
+Fort Greene | 属于 | Brooklyn Community Board 2
+Fort Greene | 服务警察部门 | New York City Police Department's 88th Precinct
+Fort Greene | 列入 | New York State Registry
+Fort Greene | 列入 | National Register of Historic Places
+Fort Greene | 地理位置 | northwest Brooklyn
+Nathan's Hot Dog Eating Contest | 举办时间 | 每年的独立日
+Nathan's Hot Dog Eating Contest | 举办地点 | Nathan's Famous Corporation's original restaurant
+Nathan's Hot Dog Eating Contest | 举办地点 | Coney Island
+Nathan's Hot Dog Eating Contest | held on | 每年的独立日
+Fort Greene | is_part_of | Brooklyn Grange
+Nathan's Hot Dog Eating Contest | is_held_on | 每年的独立日
+Adrian Mannarino | 国籍 | 法国
+Adrian Mannarino | 职业 | 网球运动员
+Adrian Mannarino | 当前排名 | 世界第27位
+Adrian Mannarino | 最高排名 | 世界第27位
+Juan Martín del Potro | 卫冕冠军 | 2010年美国公开赛男子单打
+Juan Martín del Potro | 未参赛原因 | 手腕手术
+Ken Rosewall | 未卫冕原因 | WCT与ILTF之间的冲突
+Pete Sampras | 未卫冕原因 | 非正式退役
+2010年美国公开赛男子单打 | 前8种子选手中无美国球员 | 首次
+Juan Martín del Potro | 别名 | Delpo
+Juan Martín del Potro | 国籍 | 阿根廷
+Juan Martín del Potro | 职业 | 网球运动员
+Juan Martín del Potro | 世界排名 | 第24位
+Juan Martín del Potro | 最大成就 | 赢得2009年美国公开赛冠军
+Juan Martín del Potro | 击败 | Rafael Nadal
+Juan Martín del Potro | 击败 | Roger Federer
+Juan Martín del Potro | 唯一在大满贯赛事中击败费德勒和纳达尔的人 | 是
+Juan Martín del Potro | 唯一在2005年法网到2013年美网期间赢得大满贯的非四巨头选手 | 是
+Juan Martín del Potro | 获得奖牌 | 2012年伦敦奥运会男子单打铜牌
+Juan Martín del Potro | 获得奖牌 | 2016年里约奥运会男子单打银牌
+Juan Martín del Potro | 参与团队 | 戴维斯杯国家队
+Juan Martín del Potro | 受伤部位 | 手腕
+2010年美国公开赛男子单打 | 获胜者 | Juan Martín del Potro
+Juan Martín del Potro | 排名 | 第24位
+Juan Martín del Potro | 大满贯单打冠军 | 赢得2009年美国公开赛冠军
+Juan Martín del Potro | 澳大利亚公开赛四分之一决赛 | 2009年和2012年
+Juan Martín del Potro | 奥运会铜牌 | 2012年伦敦奥运会
+Juan Martín del Potro | 奥运会银牌 | 2016年里约奥运会
+Juan Martín del Potro | 最高单打排名 | 世界第4
+Juan Martín del Potro | 在赛事中获得亚军 | 2009年ATP世界巡回赛总决赛
+Juan Martín del Potro | 在赛事中进入半决赛 | 2009年法国公开赛
+Juan Martín del Potro | 在赛事中进入半决赛 | 2013年温布尔登锦标赛
+Juan Martín del Potro | 在赛事中进入四分之一决赛 | 2009年澳大利亚公开赛
+Juan Martín del Potro | 在2009年美国公开赛上的成绩 | 冠军
+Juan Martín del Potro | 在2009年ATP世界巡回赛总决赛上的成绩 | 亚军
+Juan Martín del Potro | 在2009年法国公开赛上的成绩 | 半决赛
+Juan Martín del Potro | 在2013年温布尔登锦标赛上的成绩 | 半决赛
+Juan Martín del Potro | 在2009年澳大利亚公开赛上的成绩 | 四分之一决赛
+Juan Martín del Potro | 在2012年澳大利亚公开赛上的成绩 | 四分之一决赛
+Juan Martín del Potro | 在2012年伦敦奥运会上的成绩 | 铜牌
+Juan Martín del Potro | 在2016年里约奥运会上的成绩 | 银牌
+Roger Federer | 参与 | team Europe
+Rafael Nadal | 参与 | team Europe
+Milos Raonic | 参与 | team World
+Alexander Zverev | 参与 | team Europe
+Marin Čilić | 参与 | team Europe
+Dominic Thiem | 参与 | team Europe
+Tomáš Berdych | 参与 | team Europe
+John Isner | 参与 | team World
+Jack Sock | 参与 | team World
+Sam Querrey | 参与 | team World
+Juan Martín del Potro | 参与 | team World
+Denis Shapovalov | 参与 | team World
+Milos Raonic | 退出 | team World
+Nick Kyrgios | 替代 | Milos Raonic
+Juan Martín del Potro | 退出 | team World
+Frances Tiafoe | 替代 | Juan Martín del Potro
+Milos Raonic | participated_in | team World
+Nick Kyrgios | replaced | Milos Raonic
+Frances Tiafoe | replaced | Juan Martín del Potro
+2016 Davis Cup | 赞助商 | BNP Paribas
+2016 Davis Cup | 规则变化 | 决胜盘在6-6时采用抢七
+阿根廷 | 赢得 | 2016 Davis Cup
+Federico Delbonis | 击败 | Ivo Karlović
+Juan Martín del Potro | 击败 | Marin Čilić
+2009 Heineken Open | 举办地点 | ASB Tennis Centre
+Juan Martín del Potro | 赢得 | 2009 Heineken Open单打冠军
+2016 Davis Cup | 决胜盘规则 | 决胜盘在6-6时采用抢七
+2016 Davis Cup | 获胜者 | 阿根廷
+2009 Heineken Open单打冠军 | 获胜者 | Juan Martín del Potro
+2016 Davis Cup | 举办地点 | 未提及具体地点
+2009 Heineken Open | 比赛时间 | 12 January through 17 January 2008
+Michaël Llodra | 国籍 | 法国
+Michaël Llodra | 职业 | 前职业网球运动员
+Michaël Llodra | 双打成就 | 三个大满贯冠军和一枚奥运会银牌
+Michaël Llodra | 单打成就 | 五个职业生涯冠军
+Michaël Llodra | 战胜过的选手 | Novak Djokovic
+Michaël Llodra | 战胜过的选手 | Juan Martín del Potro
+Michaël Llodra | 战胜过的选手 | Tomáš Berdych
+Michaël Llodra | 战胜过的选手 | Robin Söderling
+Michaël Llodra | 战胜过的选手 | Jo-Wilfried Tsonga
+Michaël Llodra | 战胜过的选手 | Nikolay Davydenko
+Michaël Llodra | 战胜过的选手 | Janko Tipsarević
+Michaël Llodra | 战胜过的选手 | John Isner
+Michaël Llodra | 评价 | 巡回赛中最好的截击手
+2013 ABN AMRO World Tennis Tournament | 别名 | Rotterdam Open
+2013 ABN AMRO World Tennis Tournament | 比赛场地 | 室内硬地
+2013 ABN AMRO World Tennis Tournament | 举办地点 | 荷兰鹿特丹Ahoy Rotterdam体育馆
+2013 ABN AMRO World Tennis Tournament | 赛事级别 | ATP世界巡回赛500系列
+2013 ABN AMRO World Tennis Tournament | 单打冠军 | Juan Martín del Potro
+2013 ABN AMRO World Tennis Tournament | 比赛场地 | 荷兰鹿特丹Ahoy Rotterdam体育馆
+An Na | 出生年份 | 1972
+An Na | 国籍 | 美国
+An Na | 职业 | 儿童书籍作者
+An Na | 曾从事职业 | 中学英语和历史教师
+An Na | 教育经历 | 佛蒙特艺术学院M.F.A.项目
+A Step From Heaven | 作者 | An Na
+A Step From Heaven | 出版商 | Front Street Press
+A Step From Heaven | 出版年份 | 2001
+A Step From Heaven | 获奖 | Michael L. Printz Award
+An Na | 访问对象 | 中学
+An Na | 鼓励对象 | 年轻的亚裔美国学生
+An Na | 文学影响 | Frank McCourt的《安吉拉的灰烬
+An Na | 文学影响 | Sandra Cisneros的《芒果街上的小屋
+An Na | 钦佩作家 | Madeleine L'Engle
+An Na | 钦佩作家 | Jacqueline Woodson
+An Na | influenced_by | Jacqueline Woodson
+Charles Tazewell | 职业 | radio playwright
+Charles Tazewell | 职业 | children's book author
+Hank Zipzer's Christmas Catastrophe | 类型 | stand alone British Christmas movie
+Hank Zipzer's Christmas Catastrophe | 基于 | Hank Zipzer系列书籍
+Hank Zipzer's Christmas Catastrophe | 播出平台 | CBBC
+Hank Zipzer's Christmas Catastrophe | 编剧 | Joe Williams
+Hank Zipzer's Christmas Catastrophe | 导演 | Matt Bloom
+Hank Zipzer's Christmas Catastrophe | 制作公司 | Kindle Entertainment
+Hank Zipzer's Christmas Catastrophe | 制作公司 | Walker Productions
+Hank Zipzer's Christmas Catastrophe | 制作公司 | DHX Media
+Hank Zipzer's Christmas Catastrophe | 资金支持 | Screen Yorkshire’s Yorkshire Content Fund
+Hank Zipzer's Christmas Catastrophe | based_on | Hank Zipzer系列书籍
+Hank Zipzer's Christmas Catastrophe | aired_on | CBBC
+Hank Zipzer's Christmas Catastrophe | airing_date | 12 December 2016
+Hank Zipzer's Christmas Catastrophe | written_by | Joe Williams
+Hank Zipzer's Christmas Catastrophe | directed_by | Matt Bloom
+Hank Zipzer's Christmas Catastrophe | produced_by | Kindle Entertainment
+Hank Zipzer's Christmas Catastrophe | in_association_with | Walker Productions
+Hank Zipzer's Christmas Catastrophe | in_association_with | DHX Media
+Hank Zipzer's Christmas Catastrophe | supported_by | Screen Yorkshire’s Yorkshire Content Fund
+Kraft Suspense Theatre | 属于 | 美国电视选集系列
+Kraft Suspense Theatre | 播出平台 | NBC
+Kraft Suspense Theatre | 赞助商 | Kraft Foods
+Kraft Suspense Theatre | 播出频率 | 每四周中的三周
+Kraft Suspense Theatre | 被取代节目 | Perry Como的Kraft Music Hall特别节目
+Kraft Suspense Theatre | 制作公司 | Roncom Films
+Roncom Films | 代表 | RONnie COMo
+Anthony Boucher | 担任角色 | 顾问
+The Small One | 属于 | 美国动画短片
+The Small One | 制作方 | Walt Disney Productions
+The Small One | 发行方 | Buena Vista Distribution
+The Small One | 故事来源 | Charles Tazewell的同名儿童书
+Kraft Suspense Theatre | production_company | Roncom Films
+The Small One | based_on | Charles Tazewell的同名儿童书
+The Small One | 基于 | Charles Tazewell的同名儿童书
+The Small One | 与...一同上映 | Pinocchio
+The Face on the Milk Carton | 基于 | Caroline B. Cooney的书
+The Face on the Milk Carton | 主演 | Kellie Martin
+Kellie Martin | 扮演角色 | Jennifer Sands/Janie Jessmon
+Pichilemu Blues | 作者 | Esteban Valenzuela
+Pichilemu Blues | 改编成电影 | 电影
+Gábor Nógrádi | 出生地 | Młynarze
+Gábor Nógrádi | 知名作品 | Pigeon granny
+Gábor Nógrádi | 知名作品 | Pie
+Pie | 获奖 | 2002年度儿童图书奖
+Pie | 入选 | IBBY荣誉名单
+Pie | 排名 | 匈牙利最受欢迎的100本书之一
+The Face on the Milk Carton | based_on | Caroline B. Cooney的书
+Pichilemu Blues | written_by | Esteban Valenzuela
+Gábor Nógrádi | born_in | Młynarze
+Pie | won_award | 2002年度儿童图书奖
+Pie | listed_in | IBBY荣誉名单
+Pie | ranked_among | 匈牙利最受欢迎的100本书之一
+The Face on the Milk Carton | 改编自 | Caroline B. Cooney的书
+Pie | 获奖 | IBBY荣誉名单
+Randy Romero | 职业 | 骑师
+Randy Romero | 入选 | Thoroughbred Racing Hall of Fame
+Lloyd J. Romero | 职业 | 路易斯安那州警察
+Lloyd J. Romero | 训练 | 美国夸特马
+Lloyd J. Romero | 训练 | 纯血马
+Casey's Shadow | 基于 | Lloyd Romero及其家庭
+Wilbooks | 类型 | 儿童教育出版公司
+Wilbooks | 创始人 | Bruce Larkin
+Wilbooks | 目标读者 | 从学前班到三年级的儿童
+Wilbooks | 出版对象 | 从学前班到三年级的儿童
+Christian Educational Consortium | 类型 | 私立学校
+Christian Educational Consortium | 教育对象 | 基督教家庭教育学生
+Christian Educational Consortium | 提供年级 | 6-12年级
+Christian Educational Consortium | 上课地点 | Indiana Wesleyan University - Louisville校区
+Christian Educational Consortium | 上课时间 | 每周二和周三
+Christian Educational Consortium | 2010-2011学年学生人数 | 约350人
+Christian Educational Consortium | 2016-2017学年学生人数 | 超过500人
+Christian Educational Consortium | 提供的课程数量 | 超过60门
+Christian Educational Consortium | 每名学生可选课程数 | 1到6门
+Christian Educational Consortium | 每周上课时长 | 8个90分钟至120分钟的时段
+Christian Educational Consortium | 每周上课天数 | 两天
+Christian Educational Consortium | 作业安排 | 每周一次
+Nazareth Area High School | 服务年级 | 9 through 12
+Nazareth Area High School | 吉祥物 | Blue Eagle
+Nazareth Area High School | 学校颜色 | 蓝色和白色
+Nazareth Area High School | 学生人数 | 约1600人
+Nazareth Area High School | 认证机构 | Middle States Association of Colleges and Schools
+Nazareth Area High School | 获得奖项 | Keystone Award
+Nazareth Area High School | 获奖原因 | 连续两年实现年度进步
+Nazareth Area High School | 荣誉 | College Board Advanced Placement Honor Roll
+Cleveland High School | 邮政地址 | 克莱顿
+Cleveland High School | 建立时间 | 2010-2011学年
+Cleveland High School | 属于 | 约翰斯顿县学校系统
+Cleveland High School | 类型 | 全年级学校
+Cleveland High School | 学生迁移 | South Johnston High School
+Cleveland High School | 剩余学生继续就读 | 直到1999年中学建成
+Cleveland High School | 位于 | 未建制的约翰斯顿县
+Cleveland High School | 属于 | Johnston County Schools
+Cleveland High School | 原为 | Cleveland School的一部分
+Cleveland High School | 成立年份 | 1925
+Cleveland High School | 与...同年开放 | Corinth Holders High School
+Cleveland High School | 属于 | 克莱顿
+Cleveland High School | 成立于 | 1925
+Cleveland High School | 高年级学生被移至 | South Johnston High School
+Cleveland High School | 当前学校开放于 | 2010
+Cedar Ridge High School | 属于 | public secondary school
+Cedar Ridge High School | 包括年级 | grades nine and ten
+Cedar Ridge High School | 增加年级 | grade eleven
+Cedar Ridge High School | 增加年级 | grade twelve
+Cedar Ridge High School | 录取依据 | locations of students' homes in the district
+Cedar Ridge High School | 建设批准时间 | 2006 Bond
+Cedar Ridge High School | 建设完成时间 | just prior to the beginning of the 2010-2011 school year
+High Tech High North County | 别名 | HTHNC
+High Tech High North County | 所属组织 | High Tech High organization
+High Tech High North County | 初始学生人数 | 150人
+High Tech High North County | 当前学生人数 | 超过500人
+High Tech High North County | 新增年级 | 2008-2009学年增加高二年级
+High Tech High North County | 新增年级 | 2010-2011学年增加高四年级
+High Tech High North County | 建造方式 | 从零开始建设
+Topeka High School | 别名 | THS
+Topeka High School | 服务年级 | 9-12年级
+High Tech High North County | 属于 | High Tech High organization
+High Tech High North County | 开学时间 | 2007
+High Tech High North County | 在...开学 | 2007
+High Tech High North County | 初始班级人数 | 150人
+High Tech High North County | 每年增加一个年级 | 从2008-2009学年开始
+High Tech High North County | 与...一起从零开始建设 | High Tech High Chula Vista
+Northern Nevada 3A Region | 属于 | Nevada Interscholastic Activities Association
+Northern Nevada 3A Region | 管辖范围 | 内华达州北部的高中体育活动
+Northern 3A league | 学校规模 | 461至1200名学生
+Northern 3A league | 成员数量 | 9所学校
+Elko High School | 从...降级 | Northern 4A
+South Tahoe High School | 从...降级 | Northern 4A
+Churchill County High School | 从...降级 | Northern 4A
+Northern 3A league | 学校数量 | 9所学校
+Elko High School | 从哪个联赛降级 | Northern 4A
+South Tahoe High School | 从哪个联赛降级 | Northern 4A
+Churchill County High School | 从哪个联赛降级 | Northern 4A
+Elko High School | moved from | Northern 4A
+South Tahoe High School | moved from | Northern 4A
+Churchill County High School | moved from | Northern 4A
+West Bloomfield High School | 属于 | public secondary school
+West Bloomfield High School | 2010-2011学年学生人数 | 约1900
+West Bloomfield High School | 曾位于 | Abbott Middle School building
+West Bloomfield High School | 临时位于 | current Orchard Lake Middle School site
+West Bloomfield High School | 当前建筑建成时间 | 1971
+West Bloomfield High School | 开始提供 | Advanced Placement International Diploma
+West Bloomfield High School | 增设 | Additional Advanced Placement courses
+West Bloomfield High School | was previously located in | Abbott Middle School building
+West Bloomfield High School | was temporarily located at | current Orchard Lake Middle School site
+West Bloomfield High School | began to offer | Advanced Placement International Diploma
+Patrick Henry High School | 所属县 | Hanover County
+Patrick Henry High School | 成立年份 | 1958
+Patrick Henry High School | 最初招收年级 | 八到十二年级
+Patrick Henry High School | 名称来源 | Henry Daniell
+Patrick Henry High School | 合并学校 | John M. Gandy High School
+Patrick Henry High School | 合并年份 | 1969
+Patrick Henry High School | 变为高级中学年份 | 1969
+Patrick Henry High School | 变为高级中学后招收年级 | 九到十二年级
+Patrick Henry High School | 变为高中年份 | 1988
+Patrick Henry High School | 变为高中后招收年级 | 九到十二年级
+Hanover County | 包含的高中数量 | 四所
+Patrick Henry High School | 与...合并 | John M. Gandy High School
+Hanover County | 拥有高中数量 | 四所
+Patrick Henry High School | 学生年级范围 | 八到十二年级
+Patrick Henry High School | 学生年级范围 | 九到十二年级
+West Patrick Henry Road | 位置 | school campus
+school campus | 包含 | complex of buildings
+school campus | 成为 | all-enclosed facility
+school campus | 新增/翻新 | state-of-the-art career and technical education opportunities
+Patrick Henry High School | 庆祝 | 50th anniversary
+Patrick Henry High School | 拥有 | International Baccalaureate program
+Patrick Henry High School | 拥有 | NJROTC program
+Patrick Henry High School | 以...著称 | NJROTC program
+NJROTC program | 排名 | among the top in the state of Virginia
+Patrick Henry High School | 引入 | Rachel's Challenge
+Patrick Henry High School | 以...著称 | theatre program
+theatre program | 评价 | best in the county
+Patrick Henry High School | has_program | broadcasting studio
+Patrick Henry High School | has_program | bio-technology lab
+Patrick Henry High School | has_program | communication technology center
+Patrick Henry High School | has_program | computer-assisted drafting lab
+Patrick Henry High School | has_program | Rachel's Challenge
+Chris Barnes | 职业 | 专业保龄球手
+Chris Barnes | 参加的巡回赛 | Professional Bowlers Association  Tour
+Chris Barnes | 高中母校 | Topeka High School
+Chris Barnes | 大学母校 | Wichita State University
+Chris Barnes | 学位 | 商业管理学士学位
+Chris Barnes | 国家队成员 | Team USA
+Louis Armstrong Hot Five and Hot Seven Sessions | 表演者 | Louis Armstrong
+Louis Armstrong Hot Five and Hot Seven Sessions | 乐队 | Hot Five and Hot Seven groups
+Louis Armstrong Hot Five and Hot Seven Sessions | 重要性 | 音乐家们仍在努力达到的标准
+Louis Armstrong Hot Five and Hot Seven Sessions | 收录于 | National Recording Registry
+Ella Fitzgerald | 种族 | 非洲裔美国人
+Ella Fitzgerald | 职业 | 爵士歌手
+Ella Fitzgerald | 别称 | First Lady of Song
+Ella Fitzgerald | 别称 | Queen of Jazz
+Ella Fitzgerald | 别称 | Lady Ella
+Ella Fitzgerald | 特点 | 音色纯净
+Ella Fitzgerald | 特点 | 发音清晰
+Ella Fitzgerald | 特点 | 即兴演唱能力
+Louis Armstrong New Orleans International Airport | IATA代码 | MSY
+Louis Armstrong New Orleans International Airport | ICAO代码 | KMSY
+Louis Armstrong New Orleans International Airport | FAA LID | MSY
+Louis Armstrong New Orleans International Airport | 所有者 | 新奥尔良市
+Louis Armstrong New Orleans International Airport | 距离市中心 | 11英里
+Louis Armstrong New Orleans International Airport | 服务区域 | 新奥尔良都会区和路易斯安那州东南部
+Louis Armstrong New Orleans International Airport | 曾用名 | Moisant Field
+Louis Armstrong New Orleans International Airport | 别称 | New Orleans International Airport
+Heebie Jeebies | 作曲者 | Boyd Atkins
+Heebie Jeebies | 录制者 | Louis Armstrong
+Heebie Jeebies | 唱片公司 | Okeh Records
+Heebie Jeebies | 演唱者 | Louis Armstrong Hot Five and Hot Seven Sessions
+Heebie Jeebies | 包含 | scat singing
+Heebie Jeebies | composed_by | Boyd Atkins
+Louis Armstrong Hot Five and Hot Seven Sessions | recorded_on | Okeh Records
+Louis Armstrong Plays W.C. Handy | 发行年份 | 1954
+Louis Armstrong Plays W.C. Handy | 表演者 | Louis Armstrong and His All Stars
+Louis Armstrong Plays W.C. Handy | 评价 | Louis Armstrong's finest record of the 1950s
+Louis Armstrong Plays W.C. Handy | 评价 | essential music for all serious jazz collections
+Columbia CD | 发行 | Louis Armstrong Plays W.C. Handy
+Columbia CD | 发行年份 | 1986
+Columbia CD | 发行形式 | CD
+Columbia CD | 重新发行 | 1997
+Louis Armstrong Plays W.C. Handy | released_as | Columbia CD
+George Avakian | interviewed | W. C. Handy
+Louis Armstrong Plays W.C. Handy | released_by | Columbia CD
+Louis Armstrong | told_joke | joke
+Louis Armstrong Hot Five and Hot Seven Sessions | 录制唱片公司 | Okeh Records
+Johnny Dodds | 演奏乐器 | 单簧管
+Lil Armstrong | 演奏乐器 | 钢琴
+Johnny St. Cyr | 演奏乐器 | 班卓琴和吉他
+Baby Dodds | 演奏乐器 | 鼓
+Pete Briggs | 演奏乐器 | 大号
+John Thomas | 演奏乐器 | 长号
+John Thomas | 替代 | Kid Ory
+Kid Ory | 当时活动 | 与King Oliver巡演
+Pete Briggs | 所属乐队 | Sunset Stompers
+John Thomas | 所属乐队 | Sunset Stompers
+Kid Ory | 与...巡演 | King Oliver
+John Thomas | 替换 | Kid Ory
+Saint Louis Blues | 作曲者 | W. C. Handy
+Saint Louis Blues | 风格 | 蓝色调
+Saint Louis Blues | 音乐类型 | 爵士乐
+Saint Louis Blues | 流行程度 | 成功流行歌曲
+Saint Louis Blues | 表演者 | Louis Armstrong
+Saint Louis Blues | 表演者 | Bessie Smith
+Saint Louis Blues | 表演者 | Count Basie
+Saint Louis Blues | 表演者 | Glenn Miller
+Saint Louis Blues | 表演者 | Guy Lombardo
+Saint Louis Blues | 表演者 | the Boston Pops Orchestra
+Saint Louis Blues | 重要性 | 爵士乐手的“哈姆雷特”
+Bessie Smith | 演唱 | Saint Louis Blues
+Louis Armstrong | 演奏乐器 | 短号
+Bessie Smith | 录音版本 | 1925
+Bessie Smith | 荣誉 | 格莱美名人堂
+Louis Armstrong | 录音版本 | 1929年版
+Louis Armstrong | 荣誉 | 格莱美名人堂
+Potato Head Blues | 作曲者 | Louis Armstrong
+Potato Head Blues | 录制者 | Louis Armstrong Hot Five and Hot Seven Sessions
+Potato Head Blues | 唱片公司 | Okeh Records
+Louis Armstrong Hot Five and Hot Seven Sessions | 成员增加 | 大号和鼓
+Potato Head Blues | 录制地点 | 芝加哥
+W. C. Handy | 创作 | Saint Louis Blues
+Louis Armstrong Hot Five and Hot Seven Sessions | 录制 | Potato Head Blues
+Okeh Records | 发行 | Potato Head Blues
+Danny Barcelona | 职业 | 爵士鼓手
+Danny Barcelona | 合作乐队 | Louis Armstrong and His All Stars
+Danny Barcelona | 种族背景 | 菲律宾裔美国人
+Danny Barcelona | 别称 | The Little Filipino Boy
+Seven Faces | 类型 | 前法典时期戏剧电影
+Seven Faces | 制作公司 | Fox Film Corporation
+Seven Faces | 音效系统 | Fox Movietone sound-on-film system
+Seven Faces | 改编自 | A Friend of Napoleon
+A Friend of Napoleon | 发表杂志 | The Saturday Evening Post
+Seven Faces | 导演 | Berthold Viertel
+Seven Faces | 主演 | Paul Muni
+Seven Faces | 状态 | 遗失影片
+A Friend of Napoleon | 作者 | Richard Connell
+Paul Muni | 出演电影 | Seven Faces
+Richard Connell | 作品 | The Most Dangerous Game
+Patrick Burns | 出生年份 | 1968
+Patrick Burns | 国籍 | 美国
+Patrick Burns | 职业 | 超自然现象调查员
+Patrick Burns | 主演 | Haunting Evidence
+Patrick Burns | 创立 | Ghost Hounds
+Ghost Hounds | 被收录于 | Interact Atlanta - 'Ghost Hounds'
+Patrick Burns | 组织者和导演 | Ghostock
+Patrick Burns | 职业 | 专业摄影师
+Thrill of a Romance | 发行公司 | Metro-Goldwyn-Mayer
+Thrill of a Romance | 上映年份 | 1945
+Thrill of a Romance | 主演 | Van Johnson
+Thrill of a Romance | 主演 | Esther Williams
+Thrill of a Romance | 主演 | Carleton G. Young
+Thrill of a Romance | 音乐表演者 | Lauritz Melchior
+Thrill of a Romance | 导演 | Richard Thorpe
+Thrill of a Romance | 编剧 | Richard Connell
+Thrill of a Romance | 编剧 | Gladys Lehman
+The Most Dangerous Game | 别名 | The Hounds of Zaroff
+The Most Dangerous Game | 作者 | Richard Connell
+The Most Dangerous Game | 首次发表于 | Collier's
+The Most Dangerous Game | 主要角色 | 来自纽约的大猎手
+来自纽约的大猎手 | 遭遇 | 从游艇上掉下来
+来自纽约的大猎手 | 前往 | 加勒比海的一个孤岛
+来自纽约的大猎手 | 被追捕者 | 一位俄罗斯贵族
+The Most Dangerous Game | 灵感来源 | 非洲和南美洲的大猎物狩猎旅行
+大猎物狩猎旅行 | 流行时期 | 1890年代末至1920年代
+一位俄罗斯贵族 | 行为 | 狩猎
+Cuthy Mede | 国籍 | 马拉维
+Cuthy Mede | 职业 | 艺术家
+Cuthy Mede | 学习经历 | 奇尔诺学院美术专业
+Cuthy Mede | 工作经历 | 奇尔诺学院讲师
+Cuthy Mede | 创办机构 | Gallerie Africaine
+Gallerie Africaine | 位置 | 利隆圭市中心
+Cuthy Mede | 展览地点 | 马拉维
+Cuthy Mede | 作品销售对象 | 国际收藏家
+Cuthy Mede | 支持对象 | 年轻马拉维艺术家
+Cuthy Mede | 展示其他艺术家作品 | 其他马拉维艺术家的作品
+Cuthy Mede | 委托创作 | 市中心大型壁画
+Cuthy Mede | 艺术风格 | 现代主义
+Cuthy Mede | 艺术风格 | 未来主义
+Cuthy Mede | 艺术风格 | 立体主义
+Cuthy Mede | 艺术风格 | 点彩派风格
+Cuthy Mede | encouraged | young Malawian artists
+Cuthy Mede | 鼓励 | young Malawian artists
+His paintings | 描绘主题 | 当地人民
+His paintings | 描绘主题 | 历史事件
+His paintings | 描绘主题 | 当前事件
+His paintings | 描绘主题 | 圣经参考
+His paintings | 描绘主题 | 本土宗教表达
+His paintings | 描绘主题 | 正义
+His paintings | 描绘主题 | 贪婪
+His paintings | 描绘主题 | 人与机器
+His paintings | 描绘主题 | 饥荒
+His paintings | 描绘主题 | 莫桑比克内战难民
+His paintings | 描绘主题 | 投票和民主
+His paintings | 描绘主题 | 婚礼庆祝
+His paintings | 描绘主题 | 灵魂和附身
+His paintings | 描绘主题 | Nyau面具舞
+Mede | 创作类型 | 现实主义作品
+Mede | 创作类型 | 蒙娜丽莎复制品
+Mede | 创作风格 | 明亮的原色
+Mede | 创作风格 | 立体派风格
+Mede | 创作风格 | 点彩派风格
+Mede | 后期创作风格 | 蓝色调
+Mede | 后期创作风格 | 白色调
+Mede | 宗教信仰 | 福音派基督教
+Mede | 绘画特点 | 光点
+Mede | 创作形式 | 雕塑形式
+His paintings | depicted | famine
+His paintings | depicted | refugees from Mozambique during the Civil War
+Mede's work | begins with | a point of light
+a point of light | is evident in | His paintings
+Mede | produced | sculptural forms such as wood figures covered in beads and pigments
+His garden | 位于 | Lilongwe
+His garden | 装饰材料 | 荧光灯管
+His garden | 装饰材料 | 白色油漆的石头
+Mede's wife | 姓名 | Esther
+Esther | 职位 | Principal Secretary
+Esther | 工作单位 | Malawi政府
+荧光灯管 | 悬挂于 | 树木
+白色油漆的石头 | 排列在 | 车道和入口
+Richard P. Gabriel | 出生年份 | 1949
+Richard P. Gabriel | 国籍 | 美国
+Richard P. Gabriel | 职业 | 计算机科学家
+Richard P. Gabriel | 研究领域 | Lisp编程语言
+Richard P. Gabriel | 发布 | Gabriel Benchmarks
+Gabriel Benchmarks | 发布时间 | 1985
+Gabriel Benchmarks | 用途 | 基准测试Lisp实现
+Richard P. Gabriel | 提出概念 | Worse is Better
+Gabriel Benchmarks | 发布年份 | 1985
+Richard P. Gabriel | 发表论文 | Performance and evaluation of Lisp systems
+E. P. Thompson | 全名 | Edward Palmer Thompson
+E. P. Thompson | 国籍 | 英国
+E. P. Thompson | 职业 | 历史学家
+E. P. Thompson | 职业 | 作家
+E. P. Thompson | 职业 | 社会主义者
+E. P. Thompson | 职业 | 和平活动家
+E. P. Thompson | 知名作品 | 英国工人阶级的形成
+E. P. Thompson | 研究领域 | 18世纪末和19世纪初的英国激进运动
+E. P. Thompson | 传记对象 | William Morris
+E. P. Thompson | 传记对象 | William Blake
+E. P. Thompson | 作品类型 | 小说
+E. P. Thompson | 作品类型 | 诗歌集
+E. P. Thompson | 贡献领域 | 劳工史
+E. P. Thompson | 贡献领域 | 社会史
+E. P. Thompson | 影响范围 | 全球
+E. P. Thompson | 出版 | William Morris的传记
+E. P. Thompson | 出版 | William Blake的传记
+E. P. Thompson | 出版 | The Sykaos Papers
+E. P. Thompson | 出版 | 诗歌集
+LRRC | 全称 | Luddite Rural Recording Cooperative
+LRRC | 运营者 | Joseph O'Connell
+Joseph O'Connell | 所属乐队 | Elephant Micah
+LRRC | 发行音乐 | Joseph O'Connell
+LRRC | 发行音乐 | Jason Henn
+LRRC在线商店 | 销售 | Homemade Music from Kentuckiana and Abroad
+LRRC在线商店 | 销售 | Vollmar的录音
+LRRC在线商店 | 销售 | Mt. Gigantic的录音
+LRRC在线商店 | 销售 | Bronze Float的录音
+LRRC | 发布音乐 | Jason Henn
+Homemade Music from Kentuckiana and Abroad | 包括 | Vollmar的录音
+Homemade Music from Kentuckiana and Abroad | 包括 | Mt. Gigantic的录音
+Homemade Music from Kentuckiana and Abroad | 包括 | Bronze Float的录音
+LRRC | run_by | Joseph O'Connell
+LRRC | releases_music_by | Jason Henn
+LRRC在线商店 | stocks | Homemade Music from Kentuckiana and Abroad
+Andrea Alpago | 出生时间 | 约1450年
+Andrea Alpago | 去世时间 | 1521年末或1522年1月
+Andrea Alpago | 职业 | 医生
+Andrea Alpago | 职业 | 阿拉伯学者
+Andrea Alpago | 拉丁文名字 | Andreas Alpagus Bellunensis
+Andrea Alpago | 出生地 | Belluno
+Andrea Alpago | 工作地点 | 大马士革
+Andrea Alpago | 服务对象 | 威尼斯共和国驻大马士革领事馆
+Andrea Alpago | 教授职位 | 帕多瓦大学医学教授
+Andrea Alpago | 任教时间 | 1521年仅两到三个月
+Andrea Alpago | 作品出版时间 | 死后
+Andrea Alpago | 侄子 | Paolo Alpago
+Andrea Alpago | 最著名的作品 | 对伊本·西那《医典》的拉丁文译本的注释和编辑
+医典 | 作者 | 伊本·西那
+医典 | 翻译者 | 杰拉德·克雷莫纳
+Andrea Alpago | 编辑和补充 | 杰拉德·克雷莫纳的《医典》拉丁文译本
+William Henry Oliphant Smeaton | 别名 | Oliphant Smeaton
+William Henry Oliphant Smeaton | 国籍 | 苏格兰
+William Henry Oliphant Smeaton | 职业 | 作家
+William Henry Oliphant Smeaton | 职业 | 记者
+William Henry Oliphant Smeaton | 职业 | 编辑
+William Henry Oliphant Smeaton | 职业 | 历史学家
+William Henry Oliphant Smeaton | 职业 | 教育家
+William Henry Oliphant Smeaton | 知名作品 | 澳大利亚生活和文学
+William Henry Oliphant Smeaton | 知名作品 | 冒险小说
+William Henry Oliphant Smeaton | 知名作品 | 儿童小说
+William Henry Oliphant Smeaton | 出版书籍 | 苏格兰古迹
+William Henry Oliphant Smeaton | 编辑 | 英国文学文本
+William Henry Oliphant Smeaton | 编辑 | 民谣
+William Henry Oliphant Smeaton | 编辑 | 诗歌集
+William Henry Oliphant Smeaton | 知名作品 | 威廉·莎士比亚的生平与作品
+William Henry Oliphant Smeaton | 贡献 | 著名苏格兰人系列传记
+William Henry Oliphant Smeaton | 使用笔名 | Oliphant Smeaton
+William Henry Oliphant Smeaton | 写作主题 | 澳大利亚生活和文学
+Badlands Unlimited | 位于 | 纽约市
+Badlands Unlimited | 创始人 | Paul Chan
+Badlands Unlimited | 成员 | Micaela Durand
+Badlands Unlimited | 成员 | Ian Cheng
+Badlands Unlimited | 成员 | Parker Bruce
+Badlands Unlimited | 成员 | Ambika Subramaniam
+Badlands Unlimited | 出版形式 | 平装书
+Badlands Unlimited | 出版形式 | 电子书
+Badlands Unlimited | 出版形式 | 数字群展
+Badlands Unlimited | 出版形式 | 石书
+Badlands Unlimited | 提供服务 | 数字出版咨询
+Springer Protocols | 属于 | 数据库
+Springer Protocols | 发布者 | Springer Science+Business Media
+Springer Protocols | 来源 | Methods in Molecular Biology
+Methods in Molecular Biology | 编辑 | John M. Walker
+Springer Protocols | 替代 | BioMed Protocols
+Badlands Unlimited | founded_by | Paul Chan
+Methods in Molecular Biology | edited_by | John M. Walker
+Badlands Unlimited | publishes | paperbacks
+Badlands Unlimited | publishes | ebooks
+Badlands Unlimited | publishes | digital group exhibitions
+Badlands Unlimited | publishes | stone book
+Badlands Unlimited | provides_consulting_on | digital publishing for art institutions
+BioMed Protocols | replaced_by | Springer Protocols
+K. A. Applegate | 全名 | Katherine Alice Applegate
+K. A. Applegate | 出生地 | 密歇根州安阿伯市
+K. A. Applegate | 职业 | 年轻成人和儿童小说作家
+K. A. Applegate | 知名作品 | Animorphs
+K. A. Applegate | 知名作品 | Remnants
+K. A. Applegate | 知名作品 | Everworld
+K. A. Applegate | 获奖 | 2013年纽伯瑞奖
+K. A. Applegate | 获奖作品 | The One and Only Ivan
+K. A. Applegate | 获奖 | 1997年最佳新儿童图书系列奖
+K. A. Applegate | 获奖作品 | Home of the Brave
+K. A. Applegate | 创作系列 | Roscoe Riley Rules
+The X-Files Season 11 | 出版商 | IDW Publishing
+The X-Files Season 11 | 扩展自 | The X-Files
+The X-Files Season 11 | 执行制片人 | Chris Carter
+The X-Files Season 11 | 编剧 | Joe Harris
+The X-Files Season 11 | 插画师 | Matthew Dow Smith
+The X-Files Season 11 | 插画师 | Jordie Bellaire
+Hit-Girl | 属于 | 漫画系列
+Hit-Girl | 作者 | Mark Millar
+Hit-Girl | 出版商 | Marvel Comics
+Hit-Girl | 时间线位置 | Kick-Ass 和 Kick-Ass 2 之间
+Jesse Stone: Thin Ice | 类型 | 电视犯罪剧情片
+Jesse Stone: Thin Ice | 导演 | Robert Harmon
+Jesse Stone: Thin Ice | 主演 | Tom Selleck
+Jesse Stone: Thin Ice | 主演 | Kathy Baker
+Jesse Stone: Thin Ice | 主演 | Kohl Sudduth
+Jesse Stone: Thin Ice | 基于 | Jesse Stone 书系列
+Jesse Stone: Thin Ice | 创作者 | Robert B. Parker
+Jesse Stone: Thin Ice | 拍摄地点 | 新斯科舍省
+Jesse Stone: Thin Ice | 故事背景 | 马萨诸塞州天堂镇
+Jesse Stone: Thin Ice | 系列中的位置 | 第五部
+Jesse Stone: Thin Ice | 获奖 | 美国电影摄影师协会奖杰出摄影成就奖
+Jesse Stone: Thin Ice | 获奖 | 加拿大电影摄影师协会最佳电视剧摄影奖
+Jesse Stone: Thin Ice | filmed_in | Nova Scotia
+Jesse Stone: Thin Ice | received_award | American Society of Cinematographers Award for Outstanding Achievement in Cinematography
+Alan Garner | 职业 | 小说家
+Alan Garner | 知名作品类型 | 儿童奇幻小说
+Alan Garner | 创作内容 | 英国传统民间故事
+The Stone Book Quartet | 作者 | Alan Garner
+The Stone Book Quartet | 故事背景 | 柴郡东部
+The Stone Book Quartet | 故事主题 | Garner家族四代人的一天生活
+The Stone Book Quartet | 时间跨度 | 超过一个世纪
+Star Wars: Republic | 类型 | 漫画系列
+Star Wars: Republic | 设定背景 | 星球大战宇宙
+Star Wars: Republic | 出版商 | Dark Horse Comics
+Star Wars: Republic | 总期数 | 83期
+Star Wars: Republic | 原名 | Star Wars
+Star Wars: Republic | 改名期数 | 第46期
+Star Wars: Republic | 开始出版年份 | 1998
+Star Wars: Republic | 结束出版年份 | 2006
+The Stone Book Quartet | 出版时间 | 1976至1978
+Bionicle Legends | 属于 | 书系列
+Bionicle Legends | 被接替 | Bionicle Super Chapter Books
+Bionicle Legends | 覆盖时间 | 2006-2008年故事线
+Bionicle Legends | 跟随 | Bionicle Adventures
+Rose Kennedy | 全名 | Countess Rose Elizabeth Fitzgerald Kennedy
+Rose Kennedy | 职业 | 慈善家
+Rose Kennedy | 职业 | 社交名媛
+Rose Kennedy | 所属社区 | 波士顿的爱尔兰天主教社区
+Rose Kennedy | 父亲 | 波士顿市长
+Rose Kennedy | 丈夫 | Joseph P. Kennedy Sr
+Joseph P. Kennedy Sr | 职业 | 商人和投资者
+Joseph P. Kennedy Sr | 担任职务 | 美国驻英国大使
+Rose Kennedy | 子女 | John F. Kennedy
+Rose Kennedy | 子女 | Ted Kennedy
+Rose Kennedy | 获得称号 | 女伯爵
+Bionicle Legends | 基于的宇宙 | Bionicle
+Bionicle Super Chapter Books | 接替 | Bionicle Legends
+Rose Kennedy | 父亲的职业 | 波士顿市长
+Bionicle Legends | 基于 | Bionicle 宇宙
+Bionicle Legends | 覆盖 | 2006-2008年故事线
+Rose Kennedy | 属于 | 波士顿的爱尔兰天主教社区
+John Francis Fitzgerald | 别名 | Honey Fitz
+John Francis Fitzgerald | 职业 | 美国政治家
+John Francis Fitzgerald | 父亲 | Rose Kennedy
+John Francis Fitzgerald | 外祖父 | John F. Kennedy
+Doyle's Cafe | 类型 | 酒吧/餐厅
+Doyle's Cafe | 邻近地点 | Samuel Adams Brewery
+Doyle's Cafe | 特色服务 | 提供新的或实验性的Samuel Adams啤酒
+Doyle's Cafe | 历史事件 | Samuel Adams Boston Lager首次上架
+Doyle's Cafe | 受欢迎对象 | 当地和全国的政治家
+John F. Kennedy | maternal_grandfather | John Francis Fitzgerald
+Doyle's Cafe | near_to | Samuel Adams Brewery
+Ted Kennedy | dedicated_room_to | John Francis Fitzgerald
+John Francis Fitzgerald | is also known as | Honey Fitz
+Ted Kennedy | dedicated a new room at | Doyle's Cafe
+Anthony Paul Kennedy Shriver | 职业 | 为智力障碍人士的活动家
+Anthony Paul Kennedy Shriver | 创立 | Best Buddies International
+Best Buddies International | 帮助对象 | 智力障碍人士
+Anthony Paul Kennedy Shriver | 亲属关系 | John F. Kennedy
+Anthony Paul Kennedy Shriver | 亲属关系 | Ted Kennedy
+Jean Ann Kennedy Smith | 职业 | 外交官
+Jean Ann Kennedy Smith | 担任职务 | 美国驻爱尔兰大使
+Jean Ann Kennedy Smith | 母亲 | Rose Fitzgerald
+Jean Ann Kennedy Smith | 兄弟姐妹 | John F. Kennedy
+Jean Ann Kennedy Smith | 兄弟姐妹 | Ted Kennedy
+Jean Ann Kennedy Smith | 兄弟姐妹 | Eunice Kennedy Shriver
+Patricia Helen 'Pat' Kennedy Lawford | 职业 | 社交名媛
+Patricia Helen 'Pat' Kennedy Lawford | 父亲 | Joseph P. Kennedy Sr
+Patricia Helen 'Pat' Kennedy Lawford | 母亲 | Rose Kennedy
+Patricia Helen 'Pat' Kennedy Lawford | 兄弟姐妹 | John F. Kennedy
+Patricia Helen 'Pat' Kennedy Lawford | 兄弟姐妹 | Ted Kennedy
+Patricia Helen 'Pat' Kennedy Lawford | 配偶 | Peter Lawford
+Mary Kerry Kennedy | 职业 | 人权活动家
+Mary Kerry Kennedy | 职业 | 作家
+Mary Kerry Kennedy | 父亲 | John F. Kennedy
+Mary Kerry Kennedy | 母亲 | Ethel Skakel Kennedy
+Mary Kerry Kennedy | 配偶 | Andrew Cuomo
+Mary Kerry Kennedy | 职务 | Robert F. Kennedy Human Rights 总裁
+Mary Kerry Kennedy | 叔叔 | John F. Kennedy
+Mary Kerry Kennedy | 叔叔 | Ted Kennedy
+Mary Kerry Kennedy | 堂姐 | Caroline Kennedy
+Mary Kerry Kennedy | 堂姐 | Maria Shriver

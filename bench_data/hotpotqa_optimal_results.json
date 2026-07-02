@@ -1,0 +1,46 @@
+{
+  "benchmark": "hotpotqa_benchmark_v1 (50 bridge questions, HotpotQA distractor validation)",
+  "task": "HotpotQA 50题评测 + 参数优化到最优",
+  "date": "2026-07-01",
+  "optimization_journey": [
+    {"stage": "基线", "config": "mix k=5 rrf VW=0.3 (原 KG 4611 triples)", "hit_rate": 0.56, "mrr": 0.4207, "entity_coverage": 0.27},
+    {"stage": "Phase1 top_k扫描", "config": "mix k=15 rrf VW=0.3 (原 KG)", "hit_rate": 0.72, "mrr": 0.4438, "entity_coverage": 0.27},
+    {"stage": "Phase2 fusion优化", "config": "mix k=15 weighted VW=0.3 (原 KG)", "hit_rate": 0.72, "mrr": 0.4828, "entity_coverage": 0.27},
+    {"stage": "Gleaning重抽取", "config": "mix k=15 weighted VW=0.3 (gleaning KG 7407 triples)", "hit_rate": 0.76, "mrr": 0.5350, "entity_coverage": 0.32},
+    {"stage": "最终最优", "config": "mix k=20 weighted VW=0.3 (gleaning KG)", "hit_rate": 0.80, "mrr": 0.5365, "entity_coverage": 0.32, "answer_keyword_hit": 0.5762},
+    {"stage": "Hit Rate 极限", "config": "mix k=25 weighted VW=0.3 (gleaning KG)", "hit_rate": 0.82, "mrr": 0.5273, "entity_coverage": 0.32}
+  ],
+  "final_optimal": {
+    "config": "mix search_mode, top_k=20, VECTOR_WEIGHT=0.3, FUSION_STRATEGY=weighted, PAGERANK_WEIGHT=0.3, gleaning_steps=1",
+    "hit_rate": 0.80,
+    "mrr": 0.5365,
+    "entity_coverage": 0.32,
+    "answer_keyword_hit": 0.5762,
+    "improvement_vs_baseline": {
+      "hit_rate": "+0.24 (+43%)",
+      "mrr": "+0.12 (+27%)",
+      "entity_coverage": "+0.05 (+18.5%)"
+    }
+  },
+  "key_optimization_factors": {
+    "top_k_5_to_20": "Hit Rate +0.16 (最大单因素提升，更多候选=更多命中)",
+    "rrf_to_weighted_fusion": "MRR +0.04 (weighted 融合保留 KG 精确排序优势)",
+    "gleaning_steps_0_to_1": "Hit Rate +0.04, MRR +0.05 (恢复5个missing实体题，三元组+60%)",
+    "entity_threshold_sweep": "无影响 (子串匹配主导，embedding阈值非瓶颈)",
+    "pagerank_weight_sweep": "无影响 (PPR是离散top-10加成，权重不影响)"
+  },
+  "failure_analysis_final": {
+    "total_failures_at_k20": 10,
+    "still_missing_entities": 5,
+    "still_missing_detail": "HMAS Narani, Vickers machine gun, Yakuza, Theodore G. Bilbo, Robert Case (gleaning未恢复)",
+    "name_normalization": 3,
+    "name_normalization_detail": "Villa Unión Sinaloa vs Villa Unión; Mexican Indignados Movement vs Mexican; 1991 Perfect Storm vs 1991",
+    "bridge_hard": 2,
+    "bridge_hard_detail": "实体在KG但bridge问题query不含实体名，seed匹配找到泛化词"
+  },
+  "kg_extraction_stats": {
+    "original_gleaning0": {"triples": 4611, "avg_confidence": 0.960, "extraction_time_min": 13},
+    "gleaning1": {"triples": 7407, "avg_confidence": 0.927, "extraction_time_min": 15, "entity_aliases_merged": 558, "duplicates_removed": 87}
+  },
+  "configs_tested_total": 27
+}

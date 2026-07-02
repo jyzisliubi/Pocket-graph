@@ -1,0 +1,16 @@
+{
+  "mix_k20": {
+    "n": 50,
+    "hit_rate": 0.84,
+    "mrr": 0.5625940170940171,
+    "entity_coverage": 0.32,
+    "relation_coverage": 0.0
+  },
+  "mix_k25": {
+    "n": 50,
+    "hit_rate": 0.86,
+    "mrr": 0.5632808857808858,
+    "entity_coverage": 0.32,
+    "relation_coverage": 0.0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "n": 50,
+    "hit_rate": 0.8,
+    "mrr": 0.5365,
+    "entity_coverage": 0.32,
+    "relation_coverage": 0.0
+  },
+  "baseline": {
+    "hit_rate": 0.8,
+    "mrr": 0.5365,
+    "ec": 0.32
+  }
+}

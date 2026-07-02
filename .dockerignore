@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Virtual Env
+venv/
+.env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data & Index (挂载到 volume，不打包进镜像)
+data/
+index/
+*.index
+*.faiss
+
+# Test & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+benchmark_results/
+
+# Git
+.git/
+.gitignore
+.github/
+
+# Docs
+*.md
+!README.md
+
+# Logs
+*.log
+logs/
+
+# Config
+.env

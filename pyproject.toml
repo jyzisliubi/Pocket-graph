@@ -1,0 +1,176 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pocketgraphrag"
+version = "0.3.2"
+description = "A local-first GraphRAG tool that turns private docs into queryable knowledge graphs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    {name = "PocketGraphRAG Team"},
+]
+maintainers = [
+    {name = "PocketGraphRAG Team"},
+]
+keywords = [
+    "graphrag",
+    "rag",
+    "knowledge-graph",
+    "llm",
+    "embedding",
+    "faiss",
+    "ollama",
+    "chinese-embedding",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+# 核心运行时依赖：仅保证 RAG 引擎本身可用
+# （向量检索 + KG 检索 + LLM 调用 + Louvain 社区检测）
+# `pip install pocketgraphrag` 只装这些，体积最小、启动最快。
+dependencies = [
+    "sentence-transformers>=2.2.0",
+    "faiss-cpu>=1.7.0",
+    "numpy>=1.21.0",
+    "networkx>=3.0",  # Louvain 社区检测需要 >=3.0 内置 louvain_communities
+    "requests>=2.28.0",
+    "python-dotenv>=1.0.0",
+    "PyYAML>=6.0",  # Prompt 外部化配置加载
+]
+
+[project.optional-dependencies]
+# Gradio Web 界面 + FastAPI REST 服务
+web = [
+    "gradio>=4.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+    "pydantic>=2.0.0",
+]
+# 多格式文档导入：PDF / DOCX / 网页静态抓取
+docs = [
+    "python-docx>=0.8.11",
+    "pdfplumber>=0.10.0",
+    "PyPDF2>=3.0.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=4.9.0",
+    "Pillow>=10.0.0",
+]
+# Playwright 动态网页渲染（JS 重度页面）
+playwright = [
+    "playwright>=1.40.0",
+]
+pet = [
+    "PyQt5>=5.15,<5.16",
+    "PyQtWebEngine>=5.15",
+    "Pillow>=10.0.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.8.0",
+    "pre-commit>=3.0.0",
+    "reportlab>=4.0.0",
+]
+# Optional: standard RAG evaluation framework
+eval = [
+    "ragas>=0.1.0",
+]
+# Optional: modern Typer CLI with subcommands
+cli = [
+    "typer>=0.9.0",
+    "uvicorn>=0.20.0",
+]
+# Optional: Leiden 社区发现算法（层次社区摘要用，比 Louvain 质量更高）
+# 安装后 COMMUNITY_ALGORITHM=auto 会自动启用，未安装时回退 Louvain
+graph = [
+    "leidenalg>=0.10.0",
+    "igraph>=0.10.0",
+]
+# 一键安装全部可选依赖（开发/演示用）
+all = [
+    "pocketgraphrag[web,docs,playwright,dev,eval,cli,graph]",
+]
+
+[project.urls]
+Homepage = "https://github.com/pocketgraphrag/PocketGraphRAG"
+Repository = "https://github.com/pocketgraphrag/PocketGraphRAG"
+Issues = "https://github.com/pocketgraphrag/PocketGraphRAG/issues"
+Documentation = "https://pocketgraphrag.github.io/PocketGraphRAG/"
+
+[project.scripts]
+pocketgraphrag = "PocketGraphRAG.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["PocketGraphRAG*"]
+exclude = ["PocketGraphRAG.tests*", "tests*"]
+
+[tool.setuptools.package-data]
+PocketGraphRAG = ["*.py", "*.yaml"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.ruff]
+target-version = "py39"
+# line-length 用默认 88，避免与现有代码风格冲突
+
+[tool.ruff.lint]
+# 只启用 E(pycodestyle)+F(pyflakes)，不启用 B/C/I/UP/SIM 等激进规则，
+# 避免历史代码的 70+ 风格问题阻塞 CI。新代码仍受 E/F 约束。
+select = ["E", "F"]
+ignore = [
+    "E501",   # 行长由 formatter 管，check 不报
+    "E402",   # 模块导入不在顶部（项目有延迟导入惯例）
+    "E741",   # 模糊变量名（如 l, I，中文项目少量使用）
+    "F401",   # 未使用 import（部分 __init__ 重导出）
+    "F811",   # 重定义（部分装饰器场景）
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["PocketGraphRAG"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.10"
+# 增量、不强制全量检查第三方库
+ignore_missing_imports = true
+# 不跟随导入进入第三方模块（只检查 files 列出的核心模块）
+follow_imports = "skip"
+# 轻量模式：只报真实错误，不报可选类型缺失（项目大量缺注解）
+check_untyped_defs = false
+warn_unused_ignores = true
+warn_redundant_casts = true
+# 只检查核心引擎模块，web/CLI/tests 暂不强制
+files = [
+    "PocketGraphRAG/rag_system.py",
+    "PocketGraphRAG/eval_harness.py",
+    "PocketGraphRAG/core/storages/__init__.py",
+]
+
+[tool.pytest.ini_options]
+# 覆盖率门槛：当前基线 63%，设 60% 作为防回归底线
+addopts = "--strict-markers"
+testpaths = ["PocketGraphRAG/tests"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.20",
+]

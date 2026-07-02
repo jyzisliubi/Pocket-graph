@@ -1,0 +1,398 @@
+{
+  "categories": {
+    "entity_missing": 7,
+    "seed_missed": 3,
+    "name_norm": 0,
+    "bridge": 0
+  },
+  "failures": [
+    {
+      "id": "5ab82d095542990e739ec853",
+      "question": "\"Tunak\", is a bhangra/pop love song by an artist born in which year ?",
+      "expected_entities": [
+        "Tunak Tunak Tun",
+        "Daler Mehndi"
+      ],
+      "expected_answer_keywords": [
+        "1967"
+      ],
+      "seed_entities": [
+        "love",
+        "pop",
+        "pop love song",
+        "song",
+        "year"
+      ],
+      "retrieved_entities": [
+        "song",
+        "Crazy in Love",
+        "Conestoga",
+        "The Day Before I Met You",
+        "Do You",
+        "Tohoshinki",
+        "Running Man Brothers",
+        "filking",
+        "Xyloband",
+        "Jason Regler"
+      ],
+      "retrieved_texts": [
+        "【song】\nplayed_during：Jason Regler",
+        "【Crazy in Love】\n演唱者：Młynarze\nfeaturing：Jay-Z\n所属专辑：Dangerously in Love\n发行年份：2003\n词曲创作人：Młynarze\n词曲创作人：Jay-Z\n词曲创作人：Rich Ha",
+        "【Conestoga】\n类型：文学科幻与奇幻大会\n举办地点：俄克拉荷马州塔尔萨市\n终止原因：财务和后勤问题\n命名方式变更：从按年份命名改为序号命名\n序号范围：#1至#14\n核心内容：庆祝科幻与奇幻文学和艺术\n主要活动：filking\n主要活",
+        "【The Day Before I Met You】\n属于：歌曲\n演唱者：Jessica Mauboy\n所属专辑：Beautiful\n专辑版本：铂金版\n单曲顺序：第六首单曲\n第二单曲：铂金版\n作词人：Antonio Dixon\n作词人：Ke",
+        "【Do You】\n属于：歌曲\n演唱者：Miguel\n所属专辑：Kaleidoscope Dream\n作词人：Jerry Duplessis\n作词人：Arden Altino\n作词人：Paul Pesco\n作词人：Miguel\n录音地点：Pl"
+      ]
+    },
+    {
+      "id": "5ae762835542997b22f6a711",
+      "question": "Were was the Mexican state after which there is Villa Unión, Sinaloa located? ",
+      "expected_entities": [
+        "Villa Unión, Sinaloa",
+        "Mazatlán"
+      ],
+      "expected_answer_keywords": [
+        "tip",
+        "Baja",
+        "California"
+      ],
+      "seed_entities": [
+        "Villa Unión",
+        "favorite watering hole for local and national politicians",
+        "if each of New York City's boroughs were an independent city",
+        "National Register of Historic Places",
+        "California State Summer School for the Arts"
+      ],
+      "retrieved_entities": [
+        "California State Summer School for the Arts",
+        "Villa Unión",
+        "Mitre Department",
+        "Poanas Municipality",
+        "CSSSA",
+        "Little America motel",
+        "St. John's High School",
+        "Aghajari oil field",
+        "Brooklyn Heights",
+        "2016 Davis Cup"
+      ],
+      "retrieved_texts": [
+        "【California State Summer School for the Arts】\n简称：CSSSA\n举办时间：每年夏季\n举办地点：加州艺术学院\n项目时长：四周\n目标群体：高中生\n教育目标：提供超越美学与技术训练的体验与培训\n提供的",
+        "【Villa Unión】\n所属行政区：马萨特兰市镇\n在市镇中的排名：第二大城市\nis second largest town in：Mazatlán Municipality\nlocated near：Presidio River\n所在国",
+        "【Mitre Department】\n所属省份：Santiago del Estero Province\n首府：Villa Unión\nlocated in：Santiago del Estero Province\nhas capital：",
+        "【Poanas Municipality】\n所属州：Durango\n行政中心：Villa Unión\n面积：1841 km²\nlocated in：Durango\nhas area：1841 km²",
+        "【CSSSA】\nis_founded_in：1987\nis_funded_by：公私合作模式\nis_held_at：加州艺术学院\noffers_disciplines：动画\noffers_disciplines：创意写作\noffers_di"
+      ]
+    },
+    {
+      "id": "5ae2f5b955429928c423957e",
+      "question": "What language, traditionally written with the ancient Libyco-Berber script, is closely related to the Tumzabt and Teggargrent languages?",
+      "expected_entities": [
+        "Tugurt language",
+        "Berber languages"
+      ],
+      "expected_answer_keywords": [
+        "Tugurt",
+        "language"
+      ],
+      "seed_entities": [
+        "Teggargrent",
+        "Tumzabt",
+        "survival of Celtic languages or cultural traits",
+        "preference for Berber language writing systems",
+        "other ancient Italian languages"
+      ],
+      "retrieved_entities": [
+        "other ancient Italian languages",
+        "Tugurt语言",
+        "Umbrian language",
+        "Vettai",
+        "Tunak Tunak Tun",
+        "Osco-Umbrian语言",
+        "Greater Amazonia",
+        "小型部落",
+        "英语",
+        "long-term contact among many languages of Greater Amazonia"
+      ],
+      "retrieved_texts": [
+        "【other ancient Italian languages】\ngroupedBy：Umbrian language",
+        "【Tugurt语言】\n别名：Oued Righ Berber\n别名：Temacine Tamazight\n语系：Zenati Berber\n使用地区：阿尔及利亚图古尔特附近东北部奥乌德里格地区的绿洲\n主要分布区域：Temacine\n主要分布",
+        "【Umbrian language】\nisSpokenBy：Umbri\nspokenIn：Umbria\nrelatedTo：Oscan\nclassifiedWith：Osco-Umbrian语言\nhasRelatedLanguages：ot",
+        "【Vettai】\n原作类型：电影\n上映年份：2012\n导演：N. Linguswamy\n编剧：N. Linguswamy\nyear：2012\nlanguage：Tamil",
+        "【Tunak Tunak Tun】\n语言：旁遮普语\n音乐类型：Bhangra/Pop\n演唱者：Daler Mehndi\n音乐视频技术：绿幕技术\n背景元素：沙漠和山地景观\n背景元素：圣巴西尔大教堂\ngenre：Bhangra/Pop\narti"
+      ]
+    },
+    {
+      "id": "5a7f244255429934daa2fcec",
+      "question": "St. John's College, Belize offers an education in a tradition in which what three subjects were the core?",
+      "expected_entities": [
+        "St. John's College, Belize",
+        "Liberal arts education"
+      ],
+      "expected_answer_keywords": [
+        "Grammar",
+        "logic",
+        "rhetoric"
+      ],
+      "seed_entities": [
+        "Belize",
+        "St. John's High School",
+        "the largest educational institutions in Belize",
+        "four consecutive years on College Board's Advanced Placement Honor Roll",
+        "St. John's Seminary"
+      ],
+      "retrieved_entities": [
+        "St. John's High School",
+        "St. John's Seminary",
+        "liberal arts",
+        "CSEC课程",
+        "神职人员候选人",
+        "教师",
+        "Nazareth Area High School",
+        "An Na",
+        "Lisa Simpson",
+        "Ralph Wiggum"
+      ],
+      "retrieved_texts": [
+        "【St. John's High School】\n所属教育系统：Charleston County School District\n学生人数：约1600人\n教职工人数：约30万人\n校队昵称：The Mighty Islanders\n学校颜色",
+        "【St. John's Seminary】\n授予学位：研究生学位\n培养对象：神职人员候选人\n培养对象：平信徒牧灵人员\n包含名单：著名校友\n包含名单：教师\n包含名单：在校学生\noffers_degree_for：lay persons int",
+        "【liberal arts】\n定义为：古典时代认为自由人必须掌握的学科或技能\n目标：参与公共生活\n包括：公共辩论\n包括：法庭自卫\n包括：担任陪审员\n包括：军事服务\n核心内容：语法\n核心内容：逻辑\n核心内容：修辞\n次要内容：算术\n次要内容：几",
+        "【CSEC课程】\nadministeredBy：地区统考",
+        "【神职人员候选人】\n可能在其他机构接受本科教育：非圣约翰神学院"
+      ]
+    },
+    {
+      "id": "5adf1c3f5542993a75d263ec",
+      "question": "In which six Western European territories have Celtic languages or cultural traits survived?",
+      "expected_entities": [
+        "Pan Celtic Festival",
+        "Celtic nations"
+      ],
+      "expected_answer_keywords": [
+        "Brittany",
+        "Cornwall",
+        "Ireland",
+        "Isle",
+        "Man",
+        "Scotland",
+        "Wales"
+      ],
+      "seed_entities": [
+        "Western Europe",
+        "six",
+        "survival of Celtic languages or cultural traits",
+        "modern Celtic languages and cultures",
+        "six living Celtic languages"
+      ],
+      "retrieved_entities": [
+        "six living Celtic languages",
+        "Skrunda-1",
+        "Universal Soldier: Regeneration",
+        "Luc Deveraux",
+        "John Thomas",
+        "John Hyams",
+        "Peter Hyams",
+        "Jean-Claude Van Damme",
+        "Dolph Lundgren",
+        "Matt Battaglia"
+      ],
+      "retrieved_texts": [
+        "【six living Celtic languages】\nincludes：Irish\nincludes：Scottish Gaelic\nincludes：Manx\nincludes：Welsh\nincludes：Cornish\nincl",
+        "【Skrunda-1】\n地理位置：拉脱维亚拉訥基教区\n类型：废弃雷达站\n建设时间：1950年代末至1960年代\n包含设施：Dnepr雷达\n计划建设设施：Daryal雷达\n战略重要性：覆盖西欧\n功能：太空物体监听\n功能：跟踪可能的洲际弹道导弹",
+        "【Universal Soldier: Regeneration】\n属于：科学幻想动作电影系列\n起始年份：1992\n截至年份：2012\n包含影片数量：六部\n核心角色：Luc Deveraux\n新主角：John Thomas\n非正典作品：部分",
+        "【Luc Deveraux】\n扮演者：让-克劳德·范达美\n后续扮演者：马特·巴塔利亚\nplayedBy：Jean-Claude Van Damme\nplayedBy：Matt Battaglia\n主角：Universal Soldier: ",
+        "【John Thomas】\n扮演者：斯科特·阿德金斯\nplayedBy：Scott Adkins\n所属作品：Zero Dark Thirty\n参与团体：Louis Armstrong and His Hot Seven\n乐器：长号\n替代人物"
+      ]
+    },
+    {
+      "id": "5ab41677554299753aec5a38",
+      "question": "Where was the air-cooled version of a weapon system used on the HMAS \"Narani\" found?",
+      "expected_entities": [
+        "HMAS Narani",
+        "Vickers machine gun"
+      ],
+      "expected_answer_keywords": [
+        "World",
+        "War",
+        "fighter",
+        "aircraft"
+      ],
+      "seed_entities": [
+        "air transportation for UN peacekeeping forces",
+        "Wide Body and Narrow Body aircraft",
+        "Allied World War I fighter aircraft",
+        "Interact Atlanta - 'Ghost Hounds'",
+        "preference for Berber language writing systems"
+      ],
+      "retrieved_entities": [
+        "Adrian Fletcher",
+        "Clube Atlético Mineiro",
+        "Takri script",
+        "Lisa Goes Gaga",
+        "Hank Zipzer's Christmas Catastrophe",
+        "14th Marine Regiment",
+        "Air Research and Development Command",
+        "Fox Movietone sound-on-film system",
+        "German Air Force",
+        "Saudi Arabian Airlines"
+      ],
+      "retrieved_texts": [
+        "【Adrian Fletcher】\n扮演角色：Fletch\n所属剧集：Casualty\n所属剧集：Holby City\n扮演演员：Alex Walkinshaw\n首次登场：Zero Sum Game\n首次播出日期：7 July 2012\n初",
+        "【Clube Atlético Mineiro】\n合作对象：Paulo Borrachinha\nhas institutional partnership with：Paulo Borrachinha\nallows use of shiel",
+        "【Takri script】\n属于：abugida\n所属语系：Brahmic family of scripts\n与...相关：Sharada script\n与...相关：Gurmukhī script\n曾是...官方书写系统：Dogri\n",
+        "【Lisa Goes Gaga】\n所属剧集：辛普森一家》第二十三季\n剧集编号：第22集\n播出平台：福克斯广播公司\n主要角色：丽莎·辛普森\n客串嘉宾：Lady Gaga\n剧情主题：幸福的意义\n情节背景：春田镇居民普遍抑郁\nbelongs_to",
+        "【Hank Zipzer's Christmas Catastrophe】\n类型：Christmas movie\n上映时间：12 December 2016\n播出平台：CBBC\n原著系列：Hank Zipzer series of book"
+      ]
+    },
+    {
+      "id": "5aba510f5542994dbf0198d6",
+      "question": "Yakuza Kiwami is a remake of the first video game in what video game series that is an open world action-adventure beat 'em up video game franchise?",
+      "expected_entities": [
+        "Yakuza Kiwami",
+        "Yakuza"
+      ],
+      "expected_answer_keywords": [
+        "Yakuza"
+      ],
+      "seed_entities": [
+        "Kiwami",
+        "action-adventure",
+        "world",
+        "Ryū ga Gotoku: Kiwami 2",
+        "Yakuza Kiwami 2"
+      ],
+      "retrieved_entities": [
+        "Yakuza Kiwami 2",
+        "Yakuza 5",
+        "Tivoli Gardens",
+        "Dyrehavsbakken",
+        "Robin Hood",
+        "Castle Rock Brewery",
+        "Bramcote Brewery",
+        "Juan Martín del Potro",
+        "2010年美国公开赛男子单打",
+        "Joseph P. Kennedy Jr"
+      ],
+      "retrieved_texts": [
+        "【Yakuza Kiwami 2】\n类型：动作冒险游戏\n开发公司：Sega\n发行平台：PlayStation 3\n发行平台：PlayStation 4\n是...的重制版：Yakuza 5\n前作：Yakuza 5\n发行地区：欧洲\n发行地区：北",
+        "【Yakuza 5】\n别名：Ryū ga Gotoku\n类型：开放世界动作冒险游戏\n游戏类型：打斗游戏\n开发商：Sega\n创作动机：讲述日本黑帮的生活方式\n最初平台寻求困难：无合适平台\n重制版：Kiwami\n属于：动作冒险游戏\n开发与发行商",
+        "【Tivoli Gardens】\n类型：著名游乐园和休闲花园\n世界排名：第二古老的运营游乐园\n邻近公园：Dyrehavsbakken\nopened_on：15 August 1843\nis_second_oldest_operating_a",
+        "【Dyrehavsbakken】\nis_oldest_operating_amusement_park：world",
+        "【Robin Hood】\n类型：美国动作冒险电影\n导演：Otto Bathurst\n编剧：Joby Harold\n编剧：Peter Craig\n编剧：David James Kelly\n改编自：罗宾汉传说\n主演：Taron Egerton\n"
+      ]
+    },
+    {
+      "id": "5a7d1765554299452d57bade",
+      "question": " The 1919 Mississippi gubernatorial election Incumbent Democrat was a master of what?",
+      "expected_entities": [
+        "Mississippi gubernatorial election, 1919",
+        "Theodore G. Bilbo"
+      ],
+      "expected_answer_keywords": [
+        "filibuster"
+      ],
+      "seed_entities": [
+        "1919",
+        "second foreign craft brewer to produce beer in their own facility in the United States",
+        "early American Revolutionary War military encampment",
+        "wealthy Americans in the 1920s",
+        "seemingly differing interpretations over the years"
+      ],
+      "retrieved_entities": [
+        "Skelly Oil Company",
+        "Tomys Swartwout",
+        "Midwood",
+        "Council of Twelve Men",
+        "Jon Peters",
+        "Nazareth Area High School",
+        "World War II",
+        "Henry Selick",
+        "Field Artillery Branch",
+        "The Orator"
+      ],
+      "retrieved_texts": [
+        "【Skelly Oil Company】\n成立时间：1919\n创始人：William Grove  Skelly\n创始人：Chesley Coleman Herndon\n创始人：Frederick A. Pielsticker\n合并对象：G",
+        "【Tomys Swartwout】\n出生地：格罗宁根\n逝世地：贝弗威克\n职业：烟草进口商\n身份：新尼德兰早期定居者\n身份：米德伍德创始人\nwas born in：Groningen\ndied in：Beverwijck\nwas an ear",
+        "【Midwood】\nformerly known as：Midwout",
+        "【Council of Twelve Men】\n成立时间：29 August 1641\n成员构成：12 men\n设立目的：advise on relations with Native Americans\n被任命者：Willem Kieft",
+        "【Jon Peters】\nwas producer of：电影《蝙蝠侠》的配乐专辑"
+      ]
+    },
+    {
+      "id": "5abcf84d55429959677d6b86",
+      "question": "Mexican Indignados Movement is a response to a war also known as?",
+      "expected_entities": [
+        "Mexican Indignados Movement",
+        "Mexican Drug War"
+      ],
+      "expected_answer_keywords": [
+        "Mexican",
+        "War",
+        "Drugs"
+      ],
+      "seed_entities": [
+        "Islamic introduction to Rejang area",
+        "war-related disease and famine",
+        "professor of medicine in Padua",
+        "Methods in Molecular Biology",
+        "before European colonial invasion"
+      ],
+      "retrieved_entities": [
+        "war-related disease and famine",
+        "Methods in Molecular Biology",
+        "The Lorax",
+        "Kieft's War",
+        "Brooklyn Grange",
+        "Queens",
+        "Joseph P. Kennedy Jr",
+        "epistolary novel",
+        "massacre of Lenape",
+        "Sevastopol radar station"
+      ],
+      "retrieved_texts": [
+        "【war-related disease and famine】\ncontribution to civilian deaths：19 million to 28 million",
+        "【Methods in Molecular Biology】\n出版商：Humana Press\n主编：John M. Walker\n出版年份：1984\n衍生系列：多个相关书籍系列\npublished_by：Humana Press\nedit",
+        "【The Lorax】\n属于：3D计算机动画音乐奇幻喜剧电影\n制作公司：Illumination Entertainment\n改编自：Dr. Seuss的同名儿童书籍\n发行公司：Universal Pictures\n是第几部改编作品：第二部",
+        "【Kieft's War】\n别名：Wappinger War\n时间范围：1643–1645\n参与方1：新尼德兰殖民地\n参与方2：莱纳佩人\n发生地点：纽约市都会区\n命名来源：威廉·基夫\n历史意义：早期欧洲殖民者与美洲原住民冲突之一\nalso ",
+        "【Brooklyn Grange】\n位于：纽约市\n面积：2.5英亩\n类型：有机城市屋顶农场\n生产产品：高品质蔬菜\n生产产品：蜂蜜\n服务对象：本地餐厅\n服务对象：市场\n服务对象：社区支持农业\n分布位置：阿斯特利亚和长岛城之间的建筑屋顶\n分布位"
+      ]
+    },
+    {
+      "id": "5ac0714f554299294b218fe1",
+      "question": "Robert Allen \"Bob\" Case is best known for inspiring the naming of which initial area of low pressure developed off Atlantic Canada on October 29? ",
+      "expected_entities": [
+        "Robert Case",
+        "1991 Perfect Storm"
+      ],
+      "expected_answer_keywords": [
+        "1991",
+        "Perfect",
+        "Storm"
+      ],
+      "seed_entities": [
+        "Robert Wade",
+        "Bob Wills to Bob Marley",
+        "Robert Holding",
+        "Howard Andrew Williams",
+        "David James Kelly"
+      ],
+      "retrieved_entities": [
+        "Robert Holding",
+        "Howard Andrew Williams",
+        "Sun Valley ski resort",
+        "Little America",
+        "Little America motel",
+        "Sinclair Oil Corporation",
+        "Joseph P. Kennedy Jr",
+        "Tomys Swartwout",
+        "Snowbasin ski resort",
+        "The Andy Williams Show"
+      ],
+      "retrieved_texts": [
+        "【Robert Holding】\n国籍：美国\n拥有：Sinclair Oil Corporation\n拥有：Little America motel\n拥有：Grand America Hotel\n拥有：Sun Valley ski reso",
+        "【Howard Andrew Williams】\n身份：美国流行音乐歌手\n职业生涯专辑数量：44张\n金唱片认证专辑数量：15张\n白金唱片认证专辑数量：3张\n主持电视节目：The Andy Williams Show\n最著名歌曲：Moon R",
+        "【Sun Valley ski resort】\n位于：中央爱达荷州\nlocated in：central Idaho",
+        "【Little America】\n得名原因：Little America motel\n地理位置特征：位于横跨美国的公路沿线\n发展结果：催生同名连锁旅行设施",
+        "【Little America motel】\n设立目的：作为避难所\nwas purposefully located in：a remote location\nserved as：a haven\ninspired：the name of a"
+      ]
+    }
+  ]
+}

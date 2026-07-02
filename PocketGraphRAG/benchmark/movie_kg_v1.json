@@ -1,0 +1,221 @@
+{
+  "name": "movie_kg_benchmark_v1",
+  "description": "电影知识图谱问答评测集 v1.0 - 基于 22 部经典电影的公开数据，覆盖单事实、反向链接、对比、多跳、开放问答、列表型 6 种问题类型。每题含 ground_truth 参考答案，可用于 RAGAS context_recall 评测。",
+  "version": "1.0",
+  "domain": "movie_kg",
+  "total_questions": 20,
+  "questions": [
+    {
+      "id": "q001",
+      "question": "肖申克的救赎的导演是谁？",
+      "expected_entities": ["肖申克的救赎"],
+      "expected_relations": ["导演"],
+      "expected_answer_keywords": ["弗兰克", "德拉邦特"],
+      "ground_truth": "肖申克的救赎的导演是弗兰克·德拉邦特。",
+      "type": "single_fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q002",
+      "question": "霸王别姬的评分是多少？",
+      "expected_entities": ["霸王别姬"],
+      "expected_relations": ["评分"],
+      "expected_answer_keywords": ["9.6"],
+      "ground_truth": "霸王别姬的评分是 9.6。",
+      "type": "single_fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q003",
+      "question": "千与千寻是哪个国家的电影？",
+      "expected_entities": ["千与千寻"],
+      "expected_relations": ["国家"],
+      "expected_answer_keywords": ["日本"],
+      "ground_truth": "千与千寻是日本的电影。",
+      "type": "single_fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q004",
+      "question": "克里斯托弗·诺兰导演了哪些电影？",
+      "expected_entities": ["克里斯托弗·诺兰"],
+      "expected_relations": ["导演"],
+      "expected_answer_keywords": ["盗梦空间", "星际穿越", "黑暗骑士"],
+      "ground_truth": "克里斯托弗·诺兰导演了盗梦空间、星际穿越、蝙蝠侠：黑暗骑士。",
+      "type": "reverse_link",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q005",
+      "question": "宫崎骏导演了哪些电影？",
+      "expected_entities": ["宫崎骏"],
+      "expected_relations": ["导演"],
+      "expected_answer_keywords": ["千与千寻", "龙猫"],
+      "ground_truth": "宫崎骏导演了千与千寻和龙猫。",
+      "type": "reverse_link",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q006",
+      "question": "莱昂纳多·迪卡普里奥主演了哪些电影？",
+      "expected_entities": ["莱昂纳多·迪卡普里奥"],
+      "expected_relations": ["主演"],
+      "expected_answer_keywords": ["泰坦尼克号", "盗梦空间"],
+      "ground_truth": "莱昂纳多·迪卡普里奥主演了泰坦尼克号和盗梦空间。",
+      "type": "reverse_link",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q007",
+      "question": "盗梦空间和星际穿越有什么共同点？",
+      "expected_entities": ["盗梦空间", "星际穿越"],
+      "expected_relations": ["导演", "类型"],
+      "expected_answer_keywords": ["诺兰", "科幻"],
+      "ground_truth": "盗梦空间和星际穿越的导演都是克里斯托弗·诺兰，且类型都是科幻。",
+      "type": "comparison",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q008",
+      "question": "霸王别姬和阿甘正传的上映年份分别是？",
+      "expected_entities": ["霸王别姬", "阿甘正传"],
+      "expected_relations": ["上映年份"],
+      "expected_answer_keywords": ["1993", "1994"],
+      "ground_truth": "霸王别姬上映于 1993 年，阿甘正传上映于 1994 年。",
+      "type": "comparison",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q009",
+      "question": "诺兰导演的科幻电影有哪些？",
+      "expected_entities": ["克里斯托弗·诺兰"],
+      "expected_relations": ["导演", "类型"],
+      "expected_answer_keywords": ["盗梦空间", "星际穿越", "黑暗骑士"],
+      "ground_truth": "克里斯托弗·诺兰导演的科幻电影有盗梦空间、星际穿越和蝙蝠侠：黑暗骑士。",
+      "type": "multi_hop_kg",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q010",
+      "question": "蒂姆·罗宾斯主演的犯罪类型电影是哪部？",
+      "expected_entities": ["蒂姆·罗宾斯"],
+      "expected_relations": ["主演", "类型"],
+      "expected_answer_keywords": ["肖申克的救赎"],
+      "ground_truth": "蒂姆·罗宾斯主演的犯罪类型电影是肖申克的救赎。",
+      "type": "multi_hop_kg",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q011",
+      "question": "评分最高的电影是哪部？",
+      "expected_entities": [],
+      "expected_relations": ["评分"],
+      "expected_answer_keywords": ["肖申克的救赎", "9.7"],
+      "ground_truth": "评分最高的电影是肖申克的救赎，评分 9.7。",
+      "type": "general_knowledge",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q012",
+      "question": "1994年上映了哪些经典电影？",
+      "expected_entities": [],
+      "expected_relations": ["上映年份"],
+      "expected_answer_keywords": ["肖申克的救赎", "阿甘正传", "这个杀手不太冷"],
+      "ground_truth": "1994年上映的经典电影有肖申克的救赎、阿甘正传和这个杀手不太冷。",
+      "type": "general_knowledge",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q013",
+      "question": "请列出所有的科幻电影",
+      "expected_entities": [],
+      "expected_relations": ["类型"],
+      "expected_answer_keywords": ["盗梦空间", "星际穿越", "黑暗骑士", "楚门的世界", "黑客帝国"],
+      "ground_truth": "科幻电影有盗梦空间、星际穿越、蝙蝠侠：黑暗骑士、楚门的世界和黑客帝国。",
+      "type": "list_type",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q014",
+      "question": "请列出所有的中国电影",
+      "expected_entities": [],
+      "expected_relations": ["国家"],
+      "expected_answer_keywords": ["霸王别姬", "让子弹飞", "大话西游", "无间道", "我不是药神"],
+      "ground_truth": "中国电影有霸王别姬、让子弹飞、大话西游之大圣娶亲、无间道和我不是药神。",
+      "type": "list_type",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q015",
+      "question": "请列出所有的动画电影",
+      "expected_entities": [],
+      "expected_relations": ["类型"],
+      "expected_answer_keywords": ["千与千寻", "龙猫"],
+      "ground_truth": "动画电影有千与千寻和龙猫。",
+      "type": "list_type",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q016",
+      "question": "教父的导演是谁？",
+      "expected_entities": ["教父"],
+      "expected_relations": ["导演"],
+      "expected_answer_keywords": ["弗朗西斯", "科波拉"],
+      "ground_truth": "教父的导演是弗朗西斯·福特·科波拉。",
+      "type": "single_fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q017",
+      "question": "张国荣主演的电影的导演是谁？",
+      "expected_entities": ["张国荣"],
+      "expected_relations": ["主演", "导演"],
+      "expected_answer_keywords": ["陈凯歌", "霸王别姬"],
+      "ground_truth": "张国荣主演的霸王别姬的导演是陈凯歌。",
+      "type": "multi_hop_kg",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q018",
+      "question": "比较一下肖申克的救赎和霸王别姬的评分",
+      "expected_entities": ["肖申克的救赎", "霸王别姬"],
+      "expected_relations": ["评分"],
+      "expected_answer_keywords": ["9.7", "9.6"],
+      "ground_truth": "肖申克的救赎评分 9.7，霸王别姬评分 9.6，肖申克的救赎略高。",
+      "type": "comparison",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q019",
+      "question": "美国电影有哪些？",
+      "expected_entities": [],
+      "expected_relations": ["国家"],
+      "expected_answer_keywords": ["肖申克的救赎", "阿甘正传", "泰坦尼克号"],
+      "ground_truth": "美国电影包括肖申克的救赎、阿甘正传、泰坦尼克号、盗梦空间、星际穿越、蝙蝠侠：黑暗骑士、辛德勒的名单、教父、忠犬八公的故事、当幸福来敲门、怦然心动、哈利·波特与魔法石、黑客帝国、楚门的世界等。",
+      "type": "reverse_link",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q020",
+      "question": "黑客帝国的导演是谁？",
+      "expected_entities": ["黑客帝国"],
+      "expected_relations": ["导演"],
+      "expected_answer_keywords": ["沃卓斯基"],
+      "ground_truth": "黑客帝国的导演是莉莉·沃卓斯基和拉娜·沃卓斯基。",
+      "type": "single_fact",
+      "difficulty": "medium"
+    }
+  ],
+  "metrics": [
+    "recall_at_k",
+    "precision_at_k",
+    "mrr",
+    "hit_rate",
+    "entity_coverage",
+    "answer_keyword_hit",
+    "faithfulness",
+    "answer_relevancy",
+    "context_precision",
+    "context_recall"
+  ]
+}

@@ -1,0 +1,78 @@
+# PocketGraphRAG Docker Compose
+# 一键启动：docker compose up -d
+# 含 API + WebUI + Ollama 本地模型
+
+services:
+  # --- Ollama 本地 LLM（可选，云端 API 可省略此服务）---
+  ollama:
+    image: ollama/ollama:latest
+    container_name: pocketgraphrag-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    # GPU 支持：取消注释以下行（需 nvidia-container-toolkit）
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+    restart: unless-stopped
+    # 首次启动后手动拉模型：docker exec pocketgraphrag-ollama ollama pull qwen2.5:7b
+
+  # --- PocketGraphRAG API 服务 ---
+  api:
+    build: .
+    container_name: pocketgraphrag-api
+    command: >
+      python -m uvicorn PocketGraphRAG.api_server:app
+      --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./PocketGraphRAG:/app/PocketGraphRAG
+      - ./examples:/app/examples
+      - pocketgraphrag-index:/app/index
+    environment:
+      - POCKET_OLLAMA_MODEL=qwen2.5:7b
+      - POCKET_OLLAMA_API_BASE=http://ollama:11434/v1
+      - POCKET_DATA_PATH=/app/examples/rice_disease/data/rice_knowledge_graph_triples.txt
+      - POCKET_INDEX_DIR=/app/index
+      # 云端 API（二选一，取消注释并填入 key）
+      # - POCKET_SILICONFLOW_API_KEY=sk-your-key
+      # - POCKET_DEEPSEEK_API_KEY=sk-your-key
+      # API 安全（生产环境建议启用）
+      # - POCKET_API_KEY=your-secret-key
+      # - POCKET_CORS_ORIGINS=https://your-frontend.com
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  # --- PocketGraphRAG Web UI（Gradio）---
+  webui:
+    build: .
+    container_name: pocketgraphrag-webui
+    command: >
+      python -m PocketGraphRAG.webapp
+      --host 0.0.0.0 --port 7860
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./PocketGraphRAG:/app/PocketGraphRAG
+      - ./examples:/app/examples
+      - pocketgraphrag-index:/app/index
+    environment:
+      - POCKET_OLLAMA_MODEL=qwen2.5:7b
+      - POCKET_OLLAMA_API_BASE=http://ollama:11434/v1
+      - POCKET_DATA_PATH=/app/examples/rice_disease/data/rice_knowledge_graph_triples.txt
+      - POCKET_INDEX_DIR=/app/index
+    depends_on:
+      - ollama
+      - api
+    restart: unless-stopped
+
+volumes:
+  ollama-models:
+  pocketgraphrag-index:

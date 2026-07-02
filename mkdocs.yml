@@ -1,0 +1,82 @@
+site_name: PocketGraphRAG Docs
+site_description: A lightweight, local-first GraphRAG framework for vertical domains.
+site_url: https://JayZ.github.io/PocketGraphRAG/
+repo_url: https://github.com/JayZ/PocketGraphRAG
+repo_name: JayZ/PocketGraphRAG
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started.md
+      - Quick Start: quickstart.md
+  - Concepts:
+      - Architecture: architecture.md
+      - Search Modes: search-modes.md
+  - Usage:
+      - Python API: python-api.md
+      - REST API: rest-api.md
+      - CLI: cli.md
+  - Evaluation: evaluation.md
+  - Changelog: changelog.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/JayZ/PocketGraphRAG
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/pocketgraphrag/
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_source: false
+            show_root_heading: true

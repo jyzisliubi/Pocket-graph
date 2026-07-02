@@ -1,0 +1,8 @@
+# Single source of truth for dependencies lives in pyproject.toml.
+# This file installs the package (editable) together with the dev extras
+# (pytest / ruff / pre-commit / reportlab), so `pip install -r requirements.txt`
+# gives you a full development environment in one command.
+#
+# Runtime-only installs should use:  pip install pocketgraphrag
+# Or for a specific extras group:    pip install -e ".[web]"
+-e .[dev]

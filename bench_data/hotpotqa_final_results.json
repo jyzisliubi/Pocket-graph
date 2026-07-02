@@ -1,0 +1,17 @@
+{
+  "k25_retrieval_only": {
+    "n": 50,
+    "hit_rate": 0.82,
+    "mrr": 0.5273333333333333,
+    "entity_coverage": 0.32,
+    "relation_coverage": 0.0
+  },
+  "k20_with_generation": {
+    "n": 50,
+    "hit_rate": 0.8,
+    "mrr": 0.5365,
+    "entity_coverage": 0.32,
+    "relation_coverage": 0.0,
+    "answer_keyword_hit_avg": 0.5761904761904763
+  }
+}

@@ -1,0 +1,80 @@
+name: Bug Report
+description: Report something that's not working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report! Please fill in the sections below.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: A clear and concise description of what the bug is.
+      placeholder: "When I run ... I expected ... but got ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Minimal reproducer (code snippet, commands, or uploaded file).
+      placeholder: |
+        1. pip install pocketgraphrag
+        2. python -m PocketGraphRAG.webapp
+        3. Ask "..."
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: dropdown
+    id: search_mode
+    attributes:
+      label: Search mode
+      options:
+        - vector
+        - local
+        - global
+        - mix
+        - kg_only
+        - N/A
+    validations:
+      required: false
+
+  - type: input
+    id: llm_provider
+    attributes:
+      label: LLM provider
+      placeholder: "Ollama / DashScope / SiliconFlow / DeepSeek / OpenAI / None"
+
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: "3.11"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: PocketGraphRAG version
+      placeholder: "0.2.0 (or commit hash)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / traceback
+      render: shell

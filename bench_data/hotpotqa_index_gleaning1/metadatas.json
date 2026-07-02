@@ -1,0 +1,5927 @@
+[
+  {
+    "entity": "Radar Station",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "RRH Trimingham",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Type 93",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "法国",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "D.A.T",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ouvrage G",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "主要雷达",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Station Maître Radar 60/921",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "principal radars",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "No. 227 Radar Station RAAF",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mukachevo雷达站",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mukachevo radar station",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dwarka",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "B-71雷达站",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "美国西海岸沿线",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Skrunda-1",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sevastopol雷达站",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sevastopol radar station",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Iqbal F. Qadir",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tivolis Koncertsal",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tivoli Gardens",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dyrehavsbakken",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Frits Schlegel",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hans Hansen",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Takino Suzuran Hillside National Government Park",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Copake Falls Area",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Taconic State Park",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "露营地",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "小木屋区",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Wait and See",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pepper Tree Playfield",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Knoll Trailhead",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Conejo Vista Trailhead",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Deer Ridge Open Space",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Los Robles Trail",
+    "num_triples": 43,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Potrero Road",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Felton Street南端",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hidden Valley",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rancho Sierra Vista Satwiwa",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ventu Park Open Space",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rosewood Trail",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Angel Vista",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Parking for Rosewood Trail",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Stagecoach Inn Park",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Potrero Ridge",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Satwiwa",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Santa Monica Mountains",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tivoli Two",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tivoli One",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hawthorn Hall",
+    "num_triples": 35,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "门",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "东立面",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "房屋",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "房屋及部分花园围墙",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "凹槽柱",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "带有猛兽狮子的铭牌",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Wilmslow High School",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Corn School",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "印第安纳州州长弗兰克·汉利",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "州农业部长",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Wilmslow Show",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Horticulture",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dogs",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Classic Cars",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Spartan Municipal Stadium",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "City of Portsmouth",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Portsmouth City School District",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Portsmouth High School football team",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Notre Dame High School football team",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "California State Summer School for the Arts",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "CSSSA",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pownall Hall",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "亨利·博迪顿",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "威廉·巴尔",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "世纪行会成员",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Henry Boddington",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "William Ball",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ball and Elce partnership",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Century Guild",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2015 CIS Men's University Cup Hockey Tournament",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "St. Francis Xavier University",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Saint Mary's University",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dungeness School",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Conestoga",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "filking",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "On Chesil Beach",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tell It to the Bees",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Romans",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dark River",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Zoo",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Billy Howle",
+    "num_triples": 18,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "James Warwick",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Leonard Vole",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Seagull",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tadakha",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kishore Kumar Pardasani",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Vettai",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sameera Reddy",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Andrea Jeremiah",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tamannaah",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Naga Chaitanya",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sunil",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Little Stranger",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Domhnall Gleeson",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ruth Wilson",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Will Poulter",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Charlotte Rampling",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Branko Tomović",
+    "num_triples": 27,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "He",
+    "num_triples": 26,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Bourne Ultimatum",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "It's a Free World",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Wolf Man",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pope Joan",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Interview with a Hitman",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Inbetween",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Believe the Magic",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Entity",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "British Filmmakers Alliance",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Icon Magazine",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tesla",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Belcheck",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "24: Live Another Day",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Fury",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Once Upon a Time in London",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Best Friend's Brother",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Curmudgeons",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Blow",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brian R. Etting",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Drunk History: Douglass & Lincoln",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Garlin Pictures",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Va Va Voom",
+    "num_triples": 32,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kool Kojak",
+    "num_triples": 42,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Lorax",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Danny DeVito",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ed Helms",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Zac Efron",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Taylor Swift",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rob Riggle",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jenny Slate",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Betty White",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Audrey",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Aloysius O'Hare",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mrs. Wiggins",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ted's mother",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Grammy Norma",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rock Me",
+    "num_triples": 26,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Allan Grigg",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sam Hollander",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Victorious: Music from the Hit TV Show",
+    "num_triples": 27,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Song 2 You",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Give the Drummer Some",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nick Jordan",
+    "num_triples": 24,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Michael French",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Universal Soldier: Regeneration",
+    "num_triples": 24,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Luc Deveraux",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "John Thomas",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Adrian Fletcher",
+    "num_triples": 30,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "John Hyams",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Peter Hyams",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jean-Claude Van Damme",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dolph Lundgren",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Matt Battaglia",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Universal Soldier: Day of Reckoning",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Universal Soldier: The Return",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Universal Soldier: The Final Battle",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jayne Grayson",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Stella Gonet",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Zero Dark Thirty",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Scott Adkins",
+    "num_triples": 18,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Yuri Boyka",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Casey Bowman",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bradley Hume",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lucian",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kiley",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ninja",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ninja 续集",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Holby City",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Doctor Strange",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "EastEnders",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hollyoaks",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Doctors",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2006年电影",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2010年电影",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2016年电影",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Connie Beauchamp",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tommy's Honour",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "老汤姆·莫里森与小汤姆·莫里森的生平及复杂关系",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hélène Kuragina",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kevin McKidd",
+    "num_triples": 28,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ken Stott",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Broken Glass",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Hobbit film trilogy",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Missing",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Takin' Over The Asylum",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rebus",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Messiah",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Elisabeth Moss",
+    "num_triples": 25,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Zoey Bartlet",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Peggy Olson",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Det. Robin Griffin",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Offred",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Handmaid's Tale",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tina Heath",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Broaden Your Mind",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lizzie Dripping",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Helen Burns",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Linden Tree",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jack Lowden",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "War & Peace",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kate Buffery",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Wish Me Luck",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Close Relations",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Wing and a Prayer",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Trial and Retribution",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Daisy Pulls it Off",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "William III of England",
+    "num_triples": 24,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The First Churchills",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Peter the Great",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Day of the Triffids",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "A Love Song",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tunak Tunak Tun",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Daler Mehndi",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "This Ain't a Love Song",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Como Yo Nadie Te Ha Amado",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Yuridia",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Habla El Corazón",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Yuridia的《Como Yo Nadie Te Ha Amado",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jon Bon Jovi",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Yuridia's cover of Como Yo Nadie Te Ha Amado",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Feels Just Like a Love Song",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Anmol Gagan Maan",
+    "num_triples": 24,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Punjabo",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sara Evans",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Crazy in Love",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lum no Love Song",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Are You My Woman",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Urusei Yatsura",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Owari no Hoshi no Love Song",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Flaming June",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Killer Song",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Day Before I Met You",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jessica Mauboy",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Antonio Dixon",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kenneth \"Babyface\" Edmonds",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Rascals",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Holland Society of New York",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "新尼德兰项目",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joris Jansen Rapelje",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Catalina Trico",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kieft's War",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "威廉·基夫",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "荷兰士兵",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "莱纳佩人",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "区域阿尔冈昆部落联合",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "彼得·斯图伊夫桑特",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "阿尔冈昆人",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "荷兰殖民者",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "新尼德兰殖民地",
+    "num_triples": 18,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Willem Kieft",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dutch soldiers",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "massacre of Lenape",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Peter Stuyvesant",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Algonquian tribes",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New Netherland",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "English Neighborhood",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "贝根",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "阿赫特科尔",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "弗里森达尔",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "前殖民时期居民",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "伦佩族",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dutch New Netherland colony of Bergen",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bergen Square",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Achter Col",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Vriessendael",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "precolonialPopulation",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lenape",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pound Ridge massacre",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Captain John Underhill",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "新纽约殖民地",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "英国军队",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "理查德·尼科尔斯",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1673–1674年荷兰重新占领",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nine Men",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Petition of the Commonality of New Netherland",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tomys Swartwout",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Midwood",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Council of Twelve Men",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rumachenanck",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Haverstroo",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Haverstraw",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rated X",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "米切尔兄弟",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Artie Mitchell",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Way",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Wisdom",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "埃米利奥·埃斯特维兹",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "马丁·辛",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "查理·辛",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Behind the Green Door》的制作",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "詹姆斯·内斯比特",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "雷妮·埃斯特维兹",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "约里克·范·瓦根宁根",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "德博拉·卡拉·昂格",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "丹尼·艾夫曼",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Oingo Boingo",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "薇洛妮卡·卡特赖特",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "汤姆·斯凯里特",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "旧金山",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "药物成瘾",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "被Jim杀害",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Culture Clash in AmeriCCa",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Emilio Estevez",
+    "num_triples": 30,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nightmares",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dollar for the Dead",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jordi Mollà",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Here Not There",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jane Child",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mona Lisa Smiles",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joe Estevez",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bobby",
+    "num_triples": 43,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "罗伯特·F·肯尼迪",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1968年罗伯特·F·肯尼迪在洛杉矶大使酒店厨房被枪击前数小时的虚构化叙述",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "洛杉矶大使酒店厨房",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Commissioner v. Flowers",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "旅行费用扣除",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "律师",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "证据",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "traveling expenses",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Attorney General",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Circuit court",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Eliot Spitzer",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "北卡罗来纳州总检察长",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "美国司法部长埃里克·霍尔德",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "北卡罗来纳州立法法典第114章",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "legal opinions",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Eric S. Pistorius",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Peter Deegan",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Loretta Lynch",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bryan Schroder",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kings County District Attorney",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Synkowce",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ogony",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Czarna Dąbrówka",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Młynarze",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Postawele",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Antolin",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Wujaki",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lingnan Fine Arts Museum",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Everyday",
+    "num_triples": 29,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Future",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Applause",
+    "num_triples": 24,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lady Gaga",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "World Faith",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "世界信仰",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "community service projects",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "project participants",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Octobass",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jean-Baptiste Vuillaume",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hector Berlioz",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Talk Dirty",
+    "num_triples": 28,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tattoos",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hermetico",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Turkish traditional ornamentations",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Quogue",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Xyloband",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "软件程序",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jason Regler",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "software program",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "RGB version",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "single colour version",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Coldplay",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Coldplay concert",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "song",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ask",
+    "num_triples": 26,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Craig Gannon",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Fix You",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Do You",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Young Romance",
+    "num_triples": 18,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Edith Taliaferro",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Always Audacious",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Out of a Clear Sky",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Soul of Buddha",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Grain of Dust",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Broadway Love",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "A Man's Man",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "J. Warren Kerrigan",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lois Wilson",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Old Heidelberg",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1901年戏剧《Old Heidelberg",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Barbed Wire",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pola Negri",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Clive Brook",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "小说《Knockaloe的女人",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Fort Lee",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Vitor Belfort",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "David Branch",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Blackzilians",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "拉沙德·埃文斯",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "维托·贝尔福特",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "埃迪·阿尔瓦雷斯",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rashad Evans",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Eddie Alvarez",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kelvin Gastelum",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Luke Zachrich",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sam Alvey",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Luke Barnatt",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jack Marshman",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "John Maguire",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tommy Maguire",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Paulo Borrachinha",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Clube Atlético Mineiro",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "机构合作",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Villa Unión",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mitre Department",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Poanas Municipality",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mexican Federal Highway 40",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Estado de Occidente",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Operation Sinaloa",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Berber orthography",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "提菲纳格",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "柏柏尔语言",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "柏柏尔语言书写系统偏好",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tifinagh",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "North African groups",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "ideology",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "politics",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Madurese",
+    "num_triples": 26,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kangean方言",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bawean变体",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bawean variant",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Takri script",
+    "num_triples": 40,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "老一辈商人",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "年轻一代",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "书写系统转变",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Umbrian",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Osco-Umbrian语言",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Umbrian language",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "other ancient Italian languages",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rejang script",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Surat Ulu scripts",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "KaGaNga script",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "KaGaNga",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mervyn A. Jaspan",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kerinci script",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lampung script",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mazanderani",
+    "num_triples": 25,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tugurt语言",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dyula语言",
+    "num_triples": 27,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Charles Fraser-Smith",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Q-devices",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Colonel Sun",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kingsley Amis",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "詹姆斯·邦德",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "M",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Colonel Sun Liang-tan",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Von Richter",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "James Bond",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kingsman",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "漫画系列",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Icon Comics",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kingsman Volume 1",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kingsman: The Big Exit",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kingsman Volume 2",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "No. 1 of the Secret Service",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "电影",
+    "num_triples": 25,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Matthew Vaughn",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jane Goldman",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "United States Secret Service",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sidney Reilly",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "British Secret Service Bureau",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Q",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Q Branch",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Secret Service Counter-Assault Teams",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hawkeye",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hawkeye Renegade",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The XYY Man",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "William Scott",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Willie 'Spider' Scott",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "额外Y染色体",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "秘密服务",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "秘密警察",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "情报机构",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "His Dark Materials",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Northern Lights",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lyra Belacqua",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Will Parry",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Amber Spyglass",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Book of Dust",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alethiometers",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "dæmons",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Magisterium",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Subtle Knife",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lyra",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kate Bush",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "电影《The Golden Compass》片尾曲",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Philip Pullman",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lord Asriel",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dust",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Authority",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Metatron",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "平行宇宙",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "多重宇宙",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "替代现实",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "物理定律不同的宇宙",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "北方之光",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BBC与卡瓦尔卡德音频版",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BBC and Cavalcade audiobook",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "multiverse",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lyra's Oxford",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Johnny English",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Johnny English film series",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Robin Driscoll",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mr. Bean's Holiday",
+    "num_triples": 29,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mr. Bean",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Get Smart",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Maxwell Smart",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Thaddeus",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "梅尔·布鲁克斯",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "罗温·阿特金森",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The End of Agent W4C",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Canned Laughter",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rowan Atkinson",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Robert Box",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mr. Marshall",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dave Perry",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "radio announcer",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Manny Pacquiao vs. Juan Manuel Márquez IV",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Juan Manuel Márquez",
+    "num_triples": 43,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Freddie Norwood",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Derrick Gainer",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "胡安·曼努埃尔·马尔克斯",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Chris John",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rafael Márquez",
+    "num_triples": 18,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Floyd Mayweather Jr. vs. Juan Manuel Márquez",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Juan Manuel Márquez vs. Joel Casamayor",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joel Casamayor",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kim Jong-kook",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Turbo",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "金正南",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "金钟国",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Again",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kim Jung-nam",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Turbo 2015回归专辑",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Trot",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Cho Yong-pil",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "TVXQ",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rising Sun Tour",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mirotic Tour",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tohoshinki",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Secret Code Tour",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Running Man Brothers",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Maroo Entertainment",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Good Sunday",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Philip Yakel",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Union Brewery",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "George Yakel",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Yakel House",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "William Netzhammer",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Netzhammer family",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "John Hair and Son",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Vaux Breweries",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Chef & Brewer",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Spirit Pub Company",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Agnes Bugge",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1419/1420年伦敦市酿酒师纠纷",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Stephen",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Idonea Hatton",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "19 breweries",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "80% of breweries",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dick Whittington",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ruddles Brewery",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Greene King",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Booth Brewing Co",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sunghoo Yang",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Heeyoon Kim",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Daniel Tudor",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Taedonggang Pale Ale",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Castle Rock Brewery",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bramcote Brewery",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Vat and Fiddle",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mill Street Brewery",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Labatt Brewing Company",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "new company",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brewery Tap",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lisa Goes Gaga",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Springfield",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lisa Simpson",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mike B. Anderson",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Yeardley Smith",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alone in the T-Shirt Zone",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kamillions",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Secret War of Lisa Simpson",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Oblongs",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tripping the Rift",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "All About Lisa",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Homer",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bart",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Drew Carey",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Krusty the Clown",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Krusty's show",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Itchy & Scratchy Show",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Itchy",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Scratchy",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Roger Meyers Jr",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Matt Groening",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Simpsons",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ralph Wiggum",
+    "num_triples": 27,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lisa's Rival",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "温妮莎·瑞德",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "艾莉森·泰勒",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "丽莎·辛普森",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "霍默·辛普森",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Tracey Ullman Show",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lisa",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "威廉·达福",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jordan Aviation",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Enimex",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Charles de Gaulle Airport",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "查尔斯·戴高乐",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Eagle Aviation France",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Vildanden AS",
+    "num_triples": 24,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "ATR 42",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jetstream 32",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Saab 340",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Phuket Air",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Saudi Arabian Airlines",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Titan Airways",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Cargo 360",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "VIM Airlines",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bishop International Airport",
+    "num_triples": 35,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Arthur Giles Bishop",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Allegiant Air",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Southwest Airlines",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Delta Air Lines",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Delta Connection",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "United Express",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "American Eagle",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "FedEx Express",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "FedEx Feeder",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Av Flight",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "American Wings Aviation",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Oasis",
+    "num_triples": 55,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Supersonic",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Shakermaker",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Live Forever",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Definitely Maybe",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Whatever",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alan White",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tony McCarroll",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Definitely Maybe Tour",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Don't Look Back in Anger",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rain",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Noel Gallagher",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Liam Gallagher",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Steve White",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Zak Starkey",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Scott McLeod",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Paul 'Guigsy' McGuigan",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Be Here Now",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Paul \"Bonehead\" Arthurs",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "St. John's Regional Medical Center",
+    "num_triples": 35,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "liberal arts",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jack Kaiser",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "杰克·凯撒体育场",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Aalborghus Gymnasium",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "学生",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "学习方向",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "三年制课程",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "两年制高等预备考试课程",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "国际视野",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "St. John's High School",
+    "num_triples": 56,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "TriBond",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "CSEC课程",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "When Patty Went to College",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Patty Wyatt",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Olivia Copeland",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "St. John's Seminary",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "神职人员候选人",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "A4 Holding S.p.A",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Autostrada Brescia Verona Vicenza Padova",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Autostrada del Brennero",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Autostrade Lombarde",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Skelly Oil Company",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "J. Paul Getty",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nimmons-Joliet Development Corp",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Skelly brand logo",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Robert Holding",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sun Valley ski resort",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Snowbasin ski resort",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ahvaz oil field",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Little America",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Little America motel",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Aghajari oil field",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Carabobo",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "奥里诺科带",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "委内瑞拉",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "PDVSA",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Orinoco Belt",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Venezuela",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sinclair Oil Corporation",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "101 Ranch Oil Company",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Marland Oil Company",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1911年在俄克拉荷马州东北部发现石油",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Continental Oil Company",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rag Sefid oil field",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Very Best of Macy Gray",
+    "num_triples": 26,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Behind The Player: Duff McKagan",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Duff McKagan",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kissed It",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Loaded",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Isaac Carpenter",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Velvet Revolver",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Scott Weiland",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Seattlehead",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dave Kushner",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mike Squires",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jeff Rouse",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Geoff Reading",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Beautiful Disease",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Demons",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Neurotic Outsiders",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Linda Ronstadt",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "They Call the Wind Maria",
+    "num_triples": 24,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Vaughan Monroe and his Orchestra",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Eddy Arnold",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Albert Campbell",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "J. D. Souther",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Riddles in the Sand",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jimmy Buffett",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gulf and Western Music",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jim Harrison",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "One Particular Harbour",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Stars On The Water",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "George Strait",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Howard Andrew Williams",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Andy Williams Show",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Moon River",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jimmie Rodgers",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Delmore Brothers",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Zeitschrift für celtische Philologie",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Continental Celtic languages",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alexei Kondratiev",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "苹果枝",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Celtic studies",
+    "num_triples": 22,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Apple Branch",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "six living Celtic languages",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Celtic nations",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Keltoi",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Celtae",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Galli",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Galatae",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Journal of Celtic Linguistics",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Simon Rodway",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Graham Isaac",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Amazonian languages",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Greater Amazonia",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Guajiro",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "语言家族",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "欧洲殖民入侵",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Greater Amazonia语言",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "小型部落",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "英语",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "long-term contact among many languages of Greater Amazonia",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "small tribes",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "English",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Celtic art",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "凯尔特人",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pan Celtic Festival",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Batman: Original Motion Picture Score",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Danny Elfman",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "蝙蝠侠》主题曲",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Danny Elfman 的配乐",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Thomas Newman",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Batman Theme",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Batman the Ride",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jon Peters",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Suicide Squad: The Album",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Suicide Squad",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Saw V: Original Motion Picture Score",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Iron Eagle",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Iron Eagle: Original Motion Picture Soundtrack",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "American Beauty",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "American Beauty: Original Motion Picture Score",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "22 Jump Street",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Fate of the Furious: Original Motion Picture Score",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brian Tyler",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Beauty and the Beast: Original Motion Picture Soundtrack",
+    "num_triples": 24,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "电影中的音乐数",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "电影的配乐",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Celine Dion",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Peabo Bryson",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Beauty and the Beast",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Here",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Caro nome",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rigoletto",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Beautiful Young Minds",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "X+Y",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2006 International Mathematical Olympiad",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "UK team",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "autism",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joby Talbot",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Robin Hood",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "King Arthur: Legend of the Sword",
+    "num_triples": 25,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Blog Wars",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Awake",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Samuel Sim",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Home Fires",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gidget Goes to Rome",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Cindy Carol",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gidget",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "James Darren",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joby Baker",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jean \"Jeff\" Donnell",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "By the Beautiful Sea",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brooklyn Cultural District",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mark Morris Dance Group",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Theatre for a New Audience",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "UrbanGlass",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BRIC Arts",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BAM's Fisher Building",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Downtown Brooklyn Cultural District",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Carlene LeFevre",
+    "num_triples": 27,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Carlene Pop",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rich LeFevre",
+    "num_triples": 26,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brooklyn Grange",
+    "num_triples": 37,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "布鲁克林海军造船厂屋顶",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "本·弗兰纳尔",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "安妮斯塔西亚·普拉基亚斯",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "格温·桑查茨",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York City’s largest apiary",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joey Chestnut",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "MTA",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "布鲁克林公交线路",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "布鲁克林巴士公司",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "纽约市交通局",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "其余布鲁克林公交线路",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "B82",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "private company",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "streetcar lines in Brooklyn",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brooklyn Bus Corporation",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York City Board of Transportation",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "B84",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York Yankees",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York Mets",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York Rangers",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York Islanders",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Buffalo Sabres",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York Knicks",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brooklyn Nets",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York City",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "New York Red Bulls",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Queens",
+    "num_triples": 23,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "皇后县",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Queens County",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brooklyn Heights",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "褐石联排住宅",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "布鲁克林高地历史街区",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "brownstone rowhouses",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brooklyn Arts Gallery",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Brooklyn Heights Historic District",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Fort Greene",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nathan's Hot Dog Eating Contest",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Coney Island",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nathan's Famous Corporation",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nathan's Famous Corporation's original restaurant",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Adrian Mannarino",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Juan Martín del Potro",
+    "num_triples": 51,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2009年美国公开赛冠军",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ken Rosewall",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pete Sampras",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2010年美国公开赛男子单打",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Roger Federer",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2017 Laver Cup",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rafael Nadal",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alexander Zverev",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Marin Čilić",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dominic Thiem",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tomáš Berdych",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Milos Raonic",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "John Isner",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jack Sock",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sam Querrey",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Denis Shapovalov",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nick Kyrgios",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Frances Tiafoe",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2016 Davis Cup",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "阿根廷",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "费德里科·德尔波尼斯",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "胡安·马丁·德尔波特罗",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "马林·契里奇",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2009 Heineken Open",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Argentina",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Croatia",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Federico Delbonis",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Michaël Llodra",
+    "num_triples": 31,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2013 ABN AMRO World Tennis Tournament",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "An Na",
+    "num_triples": 23,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "A Step From Heaven",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Charles Tazewell",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hank Zipzer's Christmas Catastrophe",
+    "num_triples": 28,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Henry Winkler",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lin Oliver",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "DHX Media",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "TV series airing on CBBC",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kraft Suspense Theatre",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Perry Como's Kraft Music Hall",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Roncom Films",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Small One",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Anthony Boucher",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Don Bluth",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Richard Rich",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Henry Selick",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gary Goldman",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "John Pomeroy",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Face on the Milk Carton",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kellie Martin",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jennifer Sands/Janie Jessmon",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pichilemu Blues",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gábor Nógrádi",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pie",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Randy Paul Romero",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lloyd J. Romero",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Casey's Shadow",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Wilbooks",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bruce Larkin",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Christian Educational Consortium",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "教师",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nazareth Area High School",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Cleveland High School",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "约翰斯顿县学生人数增长",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "约翰斯顿县学校学区",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "高中生",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "直到1999年中学建成",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Corinth Holders High School",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Cedar Ridge High School",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "High Tech High North County",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Topeka High School",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Northern Nevada 3A Region",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Northern 3A league",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Elko High School",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "South Tahoe High School",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Churchill County High School",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "West Bloomfield High School",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Patrick Henry High School",
+    "num_triples": 27,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "新建成的学校",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "初中",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "John M. Gandy High School",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1969",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1988",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Voice",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Spark",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Orator",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "West Patrick Henry Road",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "NJROTC项目",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2001年秋季新增工程",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "2010-2011学年",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "戏剧项目",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1992",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rachel's Challenge项目",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Chris Barnes",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "路易斯·阿姆斯特朗热五与热七录音",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Louis Armstrong and His Hot Seven",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ella Fitzgerald",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Louis Armstrong New Orleans International Airport",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Runway 11/29",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Heebie Jeebies",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Louis Armstrong",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sweet and Low",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dave Barbour Orchestra",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Louis Armstrong Plays W.C. Handy",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "W.C. Handy",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Columbia CD",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1997 re-issue",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "George Avakian",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Johnny Dodds",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lil Armstrong",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Johnny St. Cyr",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Baby Dodds",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pete Briggs",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kid Ory",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "King Oliver",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Saint Louis Blues",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bessie Smith",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1925年版本",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Potato Head Blues",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hot Seven",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Danny Barcelona",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Seven Faces",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "短篇小说《拿破仑的朋友",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "理查德·康奈尔",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "保罗·穆尼",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Richard Connell",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Fox Film Corporation",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Fox Movietone sound-on-film system",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Paul Muni",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Patrick Burns",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ghost Hounds",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ghostock",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Thrill of a Romance",
+    "num_triples": 18,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Most Dangerous Game",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "大猎人",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "非洲和南美洲的大猎狩猎远征",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "big-game hunter",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Russian aristocrat",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "big-game hunting safaris in Africa and South America",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Cuthy Mede",
+    "num_triples": 28,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Lonely Planet",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gallerie Africaine",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mede",
+    "num_triples": 42,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "His garden",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Esther",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "white and light",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Richard P. Gabriel",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gabriel Benchmarks",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Performance and evaluation of Lisp systems",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "E. P. Thompson",
+    "num_triples": 30,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "LRRC",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joseph O'Connell",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jason Henn",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Homemade Music from Kentuckiana and Abroad",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Andrea Alpago",
+    "num_triples": 26,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "医典",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gerard of Cremona",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "William Henry Oliphant Smeaton",
+    "num_triples": 31,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Life and Works of William Shakespeare",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Badlands Unlimited",
+    "num_triples": 20,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Paul Chan",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Springer Protocols",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Methods in Molecular Biology",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BioMed Protocols",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "K. A. Applegate",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The X-Files Season 11",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Chris Carter",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joe Harris",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Matthew Dow Smith",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jordie Bellaire",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Roscoe Riley Rules",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Hit-Girl",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jesse Stone: Thin Ice",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jesse Stone book series",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rene Ohashi",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alan Garner",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Stone Book Quartet",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Star Wars: Republic",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bionicle Legends",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bionicle Chronicles",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rose Elizabeth Fitzgerald Kennedy",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "约瑟夫·P·肯尼迪 Sr",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Joseph P. Kennedy Jr",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Robert F. Kennedy",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Ted Kennedy",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "John F. Fitzgerald",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Doyle's Cafe",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1988年圣帕特里克节纪念室揭幕仪式",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Anthony Shriver",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Best Buddies International",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jean Kennedy Smith",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Eunice Kennedy Shriver",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Patricia Kennedy Lawford",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Mary Kerry Kennedy",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Maria Shriver",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kara Kennedy",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Patrick Kennedy",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "P. J. Kennedy",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kara Anne Kennedy Allen",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kennedy Compound",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "泰德·肯尼迪",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "紫色",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "艾丽斯·克里姆斯",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "爱迪·克里姆斯",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "爱丽丝·玛丽·克里姆斯",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "1965年7月14日儿童失踪案",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "肯尼迪庄园",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Connie Walker",
+    "num_triples": 18,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "epistolary novel",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Tobe Levin",
+    "num_triples": 21,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alice Walker",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Levin",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Maria Kiminta",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Britta Radike",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kiminta. A Maasai's Fight against Female Genital Mutilation",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Blanche Cornwall",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alice Guy-Blaché",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Warrior Marks",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pratibha Parmar",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Diamond White",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Scott Sanders",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alice Walker: Beauty in Truth",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jaimee Monae Foxworth",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Eric Brown",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Don Terry",
+    "num_triples": 15,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Orlando Brown",
+    "num_triples": 27,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Randy J. Goodwin",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Naval Commander Don Winslow",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Family Matters",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Winslow家族",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Steve Urkel",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Kellie Shanygne Williams",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Laura Lee Winslow",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Darius McCrary",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Edward 'Eddie' Winslow",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Scam",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Jazz",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Malcolm Winters",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "The Young and the Restless",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Big Shots",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Transformers",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rhoda",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Valerie Harper",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rhoda Morgenstern",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Glenn Quinn",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Angel",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Doyle",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Livesey Hall War Memorial",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alamein Memorial",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Rainham War Memorial",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Portsmouth Naval Memorial",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Freetown Memorial",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "越南战争纪念碑",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "第二次印度支那战争",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "泰勒希尔纪念碑",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "第二次世界大战扩建部分",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "英国伦敦特里尼蒂广场花园南侧",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Arras Flying Services Memorial",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Masnières Newfoundland Memorial",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "纽芬兰人夺取并防守马斯尼耶尔镇",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "纽芬兰自治领",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "World War II",
+    "num_triples": 7,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "超过8000万死亡人数",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "平民死亡人数",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "军事死亡人数",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "HMAS Narani",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "war-related disease and famine",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "German prisoner of war",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Vickers machine gun",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Goalkeeper CIWS",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "ČZ 2000",
+    "num_triples": 23,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "LADA火器原型",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "J. Denel",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Prototypa-ZM",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Pershing II Weapon System",
+    "num_triples": 5,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "德国空军",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "美国陆军导弹司令部",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "野战炮兵部门",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "German Air Force",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "U.S. Army Missile Command",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Field Artillery Branch",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "AK-630",
+    "num_triples": 29,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "M24 Sniper Weapon System",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "M24",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "14th Marine Regiment",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "M777A2榴弹炮",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Weapon System",
+    "num_triples": 3,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "WS-110",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "MX-813",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Convair XF-92",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "WS-117L",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Air Research and Development Command",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "系统方法",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "systems approach to new weapons",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Skunk Works program",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "SWARM",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BMW X6",
+    "num_triples": 4,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gladiator战术无人地面车辆",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BMW 303",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BMW 315",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BMW 329",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BMW N53",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BMW E53",
+    "num_triples": 13,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Bolzano",
+    "num_triples": 16,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Honda CB125 新型号",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "BMW X-Coupe",
+    "num_triples": 12,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Double Dragon",
+    "num_triples": 19,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Nekketsu Kōha Kunio-kun",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Yakuza 5",
+    "num_triples": 17,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Toshihiro Nagoshi",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Sony",
+    "num_triples": 1,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gekido: Urban Fighters",
+    "num_triples": 8,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Gekido",
+    "num_triples": 6,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Yakuza Kiwami 2",
+    "num_triples": 14,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Beat 'Em & Eat 'Em",
+    "num_triples": 9,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Philly Flasher",
+    "num_triples": 2,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Alien vs. Predator",
+    "num_triples": 10,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Die Hard Arcade",
+    "num_triples": 11,
+    "has_reverse_links": false
+  },
+  {
+    "entity": "Dynamite Cop",
+    "num_triples": 4,
+    "has_reverse_links": false
+  }
+]

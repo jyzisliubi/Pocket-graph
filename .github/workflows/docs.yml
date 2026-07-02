@@ -1,0 +1,42 @@
+name: Docs
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "PocketGraphRAG/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write # required for mkdocs gh-deploy to push to gh-pages
+
+jobs:
+  build-deploy:
+    name: Build and deploy docs to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history for mkdocs git-revision-date if used
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install docs dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install \
+            "mkdocs>=1.5" \
+            "mkdocs-material>=9.4" \
+            "mkdocstrings[python]>=0.24"
+
+      - name: Build site (fail-fast on broken docs)
+        run: mkdocs build --strict
+
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force --no-history

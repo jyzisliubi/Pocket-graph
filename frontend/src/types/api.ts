@@ -39,6 +39,7 @@ export interface PipelineInfo {
   search_mode: string
   query_rewritten: boolean
   multihop_used: boolean
+  multihop_auto_triggered?: boolean
   kg_path: KGPathInfo
   kg_entities_matched?: number
   top_k?: number

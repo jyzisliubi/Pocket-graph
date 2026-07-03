@@ -1,4 +1,4 @@
-﻿"""
+"""
 PocketGraphRAG REST API Server
 
 基于 FastAPI 的 HTTP API 服务，支持：
@@ -164,6 +164,7 @@ class PipelineInfo(BaseModel):
     search_mode: str = "vector"
     query_rewritten: bool = False
     multihop_used: bool = False
+    multihop_auto_triggered: Optional[bool] = None
     kg_path: KGPathInfo = KGPathInfo()
     kg_entities_matched: Optional[int] = None
     top_k: Optional[int] = None

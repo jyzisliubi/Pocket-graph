@@ -1236,6 +1236,9 @@ class PocketGraphRAG:
         q = (question or "").strip()
         if any(k in q for k in ("区别", "对比", "不同", "哪个好")):
             return "comparison"
+        # 多跳推理：需要关联多个实体才能回答（"X和Y的共同Z""X与Y之间的关系"）
+        if any(k in q for k in ("共同", "相同", "之间", "都有哪些", "都演过", "都导演过")):
+            return "multihop"
         if any(k in q for k in ("症状", "病症", "病状", "危害症状", "发病症状")):
             return "symptom"
         if any(k in q for k in ("特征", "特点", "表现", "现象")):
@@ -1588,6 +1591,17 @@ class PocketGraphRAG:
         question_type_hint = self._classify_question_type(effective_query)
         pipeline_info["question_type"] = question_type_hint
 
+        # 多跳问题自动启用多跳推理（即使用户未勾选），提升复杂问题回答质量。
+        # 仅在 LLM 可用时触发（multihop 依赖 LLM 做路径推理）。
+        if (
+            question_type_hint == "multihop"
+            and has_llm()
+            and not effective_multihop
+        ):
+            effective_multihop = True
+            pipeline_info["multihop_auto_triggered"] = True
+        pipeline_info["multihop_used"] = effective_multihop
+
         # Step 2: 检索（H4：透传，不修改实例属性）
         results, kg_path = self.retrieve(
             effective_query,
@@ -1808,6 +1822,17 @@ class PocketGraphRAG:
                 pipeline_info["query_rewritten"] = True
         question_type_hint = self._classify_question_type(effective_query)
         pipeline_info["question_type"] = question_type_hint
+
+        # 多跳问题自动启用多跳推理（即使用户未勾选），提升复杂问题回答质量。
+        # 仅在 LLM 可用时触发（multihop 依赖 LLM 做路径推理）。
+        if (
+            question_type_hint == "multihop"
+            and has_llm()
+            and not effective_multihop
+        ):
+            effective_multihop = True
+            pipeline_info["multihop_auto_triggered"] = True
+        pipeline_info["multihop_used"] = effective_multihop
 
         yield {"status": "正在检索知识库..."}
 

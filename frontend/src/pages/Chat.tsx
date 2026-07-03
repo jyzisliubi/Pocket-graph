@@ -234,6 +234,11 @@ function PipelineBadges({ info }: { info: PipelineInfo }) {
       {info.multihop_used && (
         <Badge variant="secondary" className="px-1.5 py-0 text-[10px]">
           多跳检索
+          {info.multihop_auto_triggered && (
+            <span className="ml-0.5 opacity-70" title="检测到多跳问题自动启用">
+              ⚡
+            </span>
+          )}
         </Badge>
       )}
       {info.reranker_used && (

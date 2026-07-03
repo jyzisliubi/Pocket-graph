@@ -293,6 +293,13 @@ export const ForceGraph = forwardRef<ForceGraphHandle, ForceGraphProps>(
         .attr('stroke', colors.nodeStroke)
         .attr('stroke-width', 1.5)
         .style('cursor', 'pointer')
+        // a11y：把每个节点变成可聚焦的可交互元素，屏幕阅读器可读出实体名与度数
+        .attr('role', 'button')
+        .attr('tabindex', 0)
+        .attr(
+          'aria-label',
+          (d) => `实体 ${d.name}，度数 ${d.degree}${d.pagerank != null ? `，PageRank ${d.pagerank.toFixed(4)}` : ''}`,
+        )
 
       // 节点标签（默认按度数显隐，由样式 effect 控制）
       const labelSel = labelLayer
@@ -445,6 +452,14 @@ export const ForceGraph = forwardRef<ForceGraphHandle, ForceGraphProps>(
         .on('click', function (event, d) {
           event.stopPropagation()
           onNodeClickRef.current(d)
+        })
+        // a11y：键盘触发节点选中（Enter / Space）
+        .on('keydown', function (event, d) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault()
+            event.stopPropagation()
+            onNodeClickRef.current(d)
+          }
         })
 
       // 保存状态供样式 effect 使用
@@ -623,12 +638,20 @@ export const ForceGraph = forwardRef<ForceGraphHandle, ForceGraphProps>(
     }))
 
     return (
-      <div ref={containerRef} className={className} style={{ position: 'relative' }}>
+      <div
+        ref={containerRef}
+        className={className}
+        style={{ position: 'relative' }}
+        role="application"
+        aria-label="知识图谱可视化，使用键盘 Tab 可在节点间切换，Enter 或空格键选中节点"
+      >
         <svg
           ref={svgRef}
           width="100%"
           height="100%"
           style={{ display: 'block', width: '100%', height: '100%' }}
+          role="img"
+          aria-label={`知识图谱，共 ${nodes.length} 个实体 ${links.length} 条关系`}
         />
       </div>
     )

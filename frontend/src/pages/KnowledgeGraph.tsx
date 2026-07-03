@@ -482,6 +482,7 @@ export default function KnowledgeGraphPage() {
               className="h-8 w-8"
               onClick={() => graphRef.current?.zoomOut()}
               title="缩小"
+              aria-label="缩小图谱"
             >
               <ZoomOut className="h-4 w-4" />
             </Button>
@@ -524,6 +525,8 @@ export default function KnowledgeGraphPage() {
             className="absolute bottom-3 right-3 h-8 w-8"
             onClick={() => setPanelCollapsed((v) => !v)}
             title={panelCollapsed ? '展开侧边面板' : '折叠侧边面板'}
+            aria-label={panelCollapsed ? '展开侧边面板' : '折叠侧边面板'}
+            aria-expanded={!panelCollapsed}
           >
             {panelCollapsed ? (
               <PanelRightOpen className="h-4 w-4" />
@@ -555,9 +558,9 @@ export default function KnowledgeGraphPage() {
           )}
         </div>
 
-        {/* 侧边面板 */}
+        {/* 侧边面板：移动端固定底部抽屉，桌面端右侧固定卡片 */}
         {!panelCollapsed && (
-          <Card className="flex w-80 shrink-0 flex-col overflow-hidden">
+          <Card className="flex shrink-0 flex-col overflow-hidden max-md:fixed max-md:inset-x-0 max-md:bottom-0 max-md:top-16 max-md:z-40 max-md:w-full max-md:rounded-b-none max-md:border-x-0 max-md:border-b-0 md:w-80">
             <CardContent className="flex min-h-0 flex-1 flex-col p-3">
               <GraphSidePanel
                 selectedNode={selectedNode}

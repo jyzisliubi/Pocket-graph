@@ -141,6 +141,10 @@ debug/
 # 简历等个人文档（不应入库）
 pet_tauri/*.docx
 
+# 用户上传文档与抽取的三元组（运行时数据，不应入库）
+user_docs/
+
+
 # Node.js (pet_tauri web frontend)
 pet_tauri/**/node_modules/
 **/node_modules/

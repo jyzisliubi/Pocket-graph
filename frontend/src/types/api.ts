@@ -40,6 +40,20 @@ export interface PipelineInfo {
   query_rewritten: boolean
   multihop_used: boolean
   kg_path: KGPathInfo
+  kg_entities_matched?: number
+  top_k?: number
+  response_mode?: string
+  failure_bucket?: string | null
+  fallback_reason?: string | null
+  question_type?: string | null
+  reranker_used?: boolean
+  vector_weight?: number
+  hyde_used?: boolean
+  query_routed?: boolean
+  self_check_used?: boolean
+  refused?: boolean
+  refuse_reason?: string
+  llm_error?: string
 }
 
 /** 问答响应（非流式） */

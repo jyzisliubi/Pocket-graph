@@ -1,4 +1,4 @@
-"""
+﻿"""
 配置文件 - 所有可调参数集中管理
 
 支持通过环境变量覆盖默认配置：
@@ -89,6 +89,9 @@ INDEX_DIR = _env("POCKET_INDEX_DIR", default=_DEFAULT_INDEX_DIR)
 # 用户上传文档目录（Web UI 上传的原始文档存放处）
 _DEFAULT_USER_DOCS_DIR = os.path.join(_PROJECT_ROOT, "user_docs")
 USER_DOCS_DIR = _env("POCKET_USER_DOCS_DIR", default=_DEFAULT_USER_DOCS_DIR)
+
+# 用户上传文档抽取出的三元组存放路径（build-index 会读取此文件）
+USER_TRIPLES_PATH = os.path.join(USER_DOCS_DIR, "triples.txt")
 
 # ========================
 # Embedding 模型

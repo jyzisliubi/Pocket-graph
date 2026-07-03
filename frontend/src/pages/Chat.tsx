@@ -152,12 +152,48 @@ function SourcesList({ sources }: { sources: Source[] }) {
 function PipelineBadges({ info }: { info: PipelineInfo }) {
   if (!info) return null
   const kg = info.kg_path
+  const responseModeVariant = (
+    mode?: string,
+  ): 'destructive' | 'secondary' | 'outline' => {
+    if (!mode) return 'outline'
+    if (mode === 'refused') return 'destructive'
+    if (mode.startsWith('retrieval')) return 'secondary'
+    return 'outline'
+  }
   return (
     <div className="flex flex-wrap items-center gap-1">
       <Badge variant="outline" className="gap-1 px-1.5 py-0 text-[10px]">
         <Search className="h-2.5 w-2.5" />
         {info.search_mode}
       </Badge>
+      {info.response_mode && (
+        <Badge
+          variant={responseModeVariant(info.response_mode)}
+          className="px-1.5 py-0 text-[10px]"
+        >
+          {info.response_mode}
+        </Badge>
+      )}
+      {info.refused && (
+        <Badge variant="destructive" className="px-1.5 py-0 text-[10px]">
+          已拒绝
+        </Badge>
+      )}
+      {info.fallback_reason && (
+        <Badge variant="secondary" className="px-1.5 py-0 text-[10px]">
+          回退：{info.fallback_reason}
+        </Badge>
+      )}
+      {info.failure_bucket && (
+        <Badge variant="destructive" className="px-1.5 py-0 text-[10px]">
+          {info.failure_bucket}
+        </Badge>
+      )}
+      {info.llm_error && (
+        <Badge variant="destructive" className="px-1.5 py-0 text-[10px]">
+          LLM 错误
+        </Badge>
+      )}
       {info.query_rewritten && (
         <Badge variant="secondary" className="px-1.5 py-0 text-[10px]">
           查询改写
@@ -166,6 +202,46 @@ function PipelineBadges({ info }: { info: PipelineInfo }) {
       {info.multihop_used && (
         <Badge variant="secondary" className="px-1.5 py-0 text-[10px]">
           多跳检索
+        </Badge>
+      )}
+      {info.reranker_used && (
+        <Badge variant="secondary" className="px-1.5 py-0 text-[10px]">
+          重排序
+        </Badge>
+      )}
+      {info.hyde_used && (
+        <Badge variant="secondary" className="px-1.5 py-0 text-[10px]">
+          HyDE
+        </Badge>
+      )}
+      {info.query_routed && (
+        <Badge variant="secondary" className="px-1.5 py-0 text-[10px]">
+          查询路由
+        </Badge>
+      )}
+      {info.self_check_used && (
+        <Badge variant="secondary" className="px-1.5 py-0 text-[10px]">
+          自检
+        </Badge>
+      )}
+      {info.question_type && (
+        <Badge variant="outline" className="px-1.5 py-0 text-[10px]">
+          类型：{info.question_type}
+        </Badge>
+      )}
+      {info.kg_entities_matched !== undefined && info.kg_entities_matched > 0 && (
+        <Badge variant="outline" className="px-1.5 py-0 text-[10px]">
+          命中实体：{info.kg_entities_matched}
+        </Badge>
+      )}
+      {info.top_k !== undefined && (
+        <Badge variant="outline" className="px-1.5 py-0 text-[10px]">
+          top_k：{info.top_k}
+        </Badge>
+      )}
+      {info.vector_weight !== undefined && (
+        <Badge variant="outline" className="px-1.5 py-0 text-[10px]">
+          向量权重：{info.vector_weight.toFixed(2)}
         </Badge>
       )}
       {kg?.search_type && (

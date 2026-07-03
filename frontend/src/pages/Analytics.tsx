@@ -212,7 +212,20 @@ export default function AnalyticsPage() {
 
       {/* 指标卡片网格 */}
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-        {metrics.map((m) => (
+        {loading
+          ? Array.from({ length: 6 }).map((_, i) => (
+              <Card key={`skeleton-${i}`}>
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div className="h-3 w-16 animate-pulse rounded bg-muted" />
+                    <div className="h-3 w-3 animate-pulse rounded bg-muted" />
+                  </div>
+                  <div className="mt-2 h-7 w-20 animate-pulse rounded bg-muted" />
+                  <div className="mt-1 h-2 w-12 animate-pulse rounded bg-muted" />
+                </CardContent>
+              </Card>
+            ))
+          : metrics.map((m) => (
           <Card key={m.label}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">

@@ -425,7 +425,7 @@ export default function DocumentsPage() {
             </Badge>
           </CardTitle>
         </CardHeader>
-        <CardContent className="min-h-0 flex-1 overflow-y-auto pt-0">
+        <CardContent className="min-h-0 flex-1 overflow-auto pt-0">
           {/* 加载中 */}
           {loadingDocs ? (
             <div className="flex h-40 items-center justify-center text-sm text-muted-foreground">
@@ -445,7 +445,7 @@ export default function DocumentsPage() {
             </div>
           ) : (
             /* 列表表头 */
-            <div className="overflow-hidden rounded-md border">
+            <div className="min-w-[520px] overflow-x-auto rounded-md border">
               <div className="grid grid-cols-[1fr_90px_140px_180px] items-center gap-2 border-b bg-muted/50 px-3 py-2 text-xs font-medium text-muted-foreground">
                 <span>文件名</span>
                 <span className="text-right">大小</span>

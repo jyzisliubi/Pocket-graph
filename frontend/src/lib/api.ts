@@ -100,29 +100,30 @@ export const retrieve = (req: QARequest) =>
   apiClient.post<RetrieveResponse>('/api/retrieve', req).then((r) => r.data)
 
 /**
- * SSE 流式问答
+ * SSE 流式请求通用 helper
  *
  * 通过 fetch 读取 text/event-stream，逐行解析 `data: {...}` 负载，
  * 通过 onEvent 回调把解析后的事件推给调用方。
  *
- * @returns 一个 AbortController，用于主动中断生成
+ * @returns 一个 AbortController，用于主动中断
  */
-export function askQuestionStream(
-  req: QARequest,
-  onEvent: (event: SSEEvent) => void,
+function streamSSE<TEvent>(
+  url: string,
+  body: unknown,
+  onEvent: (event: TEvent) => void,
   onError?: (err: Error) => void,
 ): AbortController {
   const controller = new AbortController()
 
   ;(async () => {
     try {
-      const resp = await fetch(`${BASE_URL}/api/qa/stream`, {
+      const resp = await fetch(`${BASE_URL}${url}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           ...(API_KEY ? { 'X-API-Key': API_KEY } : {}),
         },
-        body: JSON.stringify(req),
+        body: JSON.stringify(body),
         signal: controller.signal,
       })
 
@@ -142,7 +143,6 @@ export function askQuestionStream(
 
         // SSE 以 \n\n 分隔事件块
         const blocks = buffer.split('\n\n')
-        // 保留最后未完成的部分
         buffer = blocks.pop() ?? ''
 
         for (const block of blocks) {
@@ -151,21 +151,28 @@ export function askQuestionStream(
           const payload = line.slice(5).trim()
           if (!payload) continue
           try {
-            const event = JSON.parse(payload) as SSEEvent
-            onEvent(event)
+            onEvent(JSON.parse(payload) as TEvent)
           } catch {
             // 忽略无法解析的行
           }
         }
       }
     } catch (err) {
-      // 用户主动中断时不当作错误
       if (err instanceof DOMException && err.name === 'AbortError') return
       onError?.(err as Error)
     }
   })()
 
   return controller
+}
+
+/** SSE 流式问答 */
+export function askQuestionStream(
+  req: QARequest,
+  onEvent: (event: SSEEvent) => void,
+  onError?: (err: Error) => void,
+): AbortController {
+  return streamSSE('/api/qa/stream', req, onEvent, onError)
 }
 
 // ==========================
@@ -283,73 +290,13 @@ export const buildIndex = () =>
     .post<BuildIndexResponse>('/api/documents/build-index')
     .then((r) => r.data)
 
-/**
- * SSE 流式三元组抽取
- *
- * 通过 fetch 读取 text/event-stream，逐行解析 `data: {...}` 负载，
- * 事件结构为 {phase, message, triples_count}。
- *
- * @returns 一个 AbortController，用于主动中断抽取
- */
+/** SSE 流式三元组抽取 */
 export function extractTriples(
   filename: string,
   onEvent: (event: ExtractSSEEvent) => void,
   onError?: (err: Error) => void,
 ): AbortController {
-  const controller = new AbortController()
-
-  ;(async () => {
-    try {
-      const resp = await fetch(`${BASE_URL}/api/documents/extract`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(API_KEY ? { 'X-API-Key': API_KEY } : {}),
-        },
-        body: JSON.stringify({ filename }),
-        signal: controller.signal,
-      })
-
-      if (!resp.ok || !resp.body) {
-        const text = await resp.text().catch(() => '')
-        throw new Error(text || `HTTP ${resp.status}`)
-      }
-
-      const reader = resp.body.getReader()
-      const decoder = new TextDecoder('utf-8')
-      let buffer = ''
-
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
-        buffer += decoder.decode(value, { stream: true })
-
-        // SSE 以 \n\n 分隔事件块
-        const blocks = buffer.split('\n\n')
-        // 保留最后未完成的部分
-        buffer = blocks.pop() ?? ''
-
-        for (const block of blocks) {
-          const line = block.trim()
-          if (!line.startsWith('data:')) continue
-          const payload = line.slice(5).trim()
-          if (!payload) continue
-          try {
-            const event = JSON.parse(payload) as ExtractSSEEvent
-            onEvent(event)
-          } catch {
-            // 忽略无法解析的行
-          }
-        }
-      }
-    } catch (err) {
-      // 用户主动中断时不当作错误
-      if (err instanceof DOMException && err.name === 'AbortError') return
-      onError?.(err as Error)
-    }
-  })()
-
-  return controller
+  return streamSSE('/api/documents/extract', { filename }, onEvent, onError)
 }
 
 export default apiClient

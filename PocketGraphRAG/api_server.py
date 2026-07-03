@@ -25,7 +25,7 @@ from fastapi.security import APIKeyHeader
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from .config import DATA_PATH, INDEX_DIR, SEARCH_MODE, USER_DOCS_DIR
+from .config import DATA_PATH, INDEX_DIR, SEARCH_MODE, USER_DOCS_DIR, USER_TRIPLES_PATH
 from .kg_reasoning import KGDualRetriever
 from .llm import get_active_provider, has_llm
 from .logging_config import get_logger
@@ -114,7 +114,7 @@ app.add_middleware(
 
 
 class QARequest(BaseModel):
-    query: str = Field(..., max_length=10000, description="用户问题")
+    query: str = Field(..., min_length=1, max_length=10000, description="用户问题")
     search_mode: Optional[str] = Field(
         default=None,
         description="检索模式: vector / local / global / mix / kg_only",
@@ -165,6 +165,20 @@ class PipelineInfo(BaseModel):
     query_rewritten: bool = False
     multihop_used: bool = False
     kg_path: KGPathInfo = KGPathInfo()
+    kg_entities_matched: Optional[int] = None
+    top_k: Optional[int] = None
+    response_mode: Optional[str] = None
+    failure_bucket: Optional[str] = None
+    fallback_reason: Optional[str] = None
+    question_type: Optional[str] = None
+    reranker_used: Optional[bool] = None
+    vector_weight: Optional[float] = None
+    hyde_used: Optional[bool] = None
+    query_routed: Optional[bool] = None
+    self_check_used: Optional[bool] = None
+    refused: Optional[bool] = None
+    refuse_reason: Optional[str] = None
+    llm_error: Optional[str] = None
 
 
 class QAResponse(BaseModel):
@@ -881,43 +895,70 @@ async def extract_document(req: ExtractRequest):
 async def build_index_endpoint():
     """触发索引构建。
 
-    优先从 ``user_docs/triples.txt``（用户抽取的三元组）构建；
-    若不存在则回退到默认 ``DATA_PATH``。
+    合并主知识图谱数据（``DATA_PATH``）与用户抽取的三元组
+    （``user_docs/triples.txt``）后构建向量索引，确保检索能覆盖
+    完整知识库。若用户三元组不存在则仅使用主数据；若主数据不存在
+    则仅使用用户三元组。
     """
+    import tempfile
+
     from .config import RELATION_TEMPLATES, REVERSE_LINK_RELATIONS
     from .data_processor import KGProcessor
 
-    from .build_index import build_index_with_data
+    from .build_index import _load_triples_file, build_index_with_data
 
-    data_path = USER_TRIPLES_PATH if os.path.exists(USER_TRIPLES_PATH) else DATA_PATH
-    if not os.path.exists(data_path):
+    # 收集所有可用的三元组数据源（主 KG 优先，用户数据补充）
+    sources: list[str] = []
+    if os.path.exists(DATA_PATH):
+        sources.append(DATA_PATH)
+    if os.path.exists(USER_TRIPLES_PATH) and USER_TRIPLES_PATH not in sources:
+        sources.append(USER_TRIPLES_PATH)
+    if not sources:
         raise HTTPException(
-            status_code=404, detail=f"三元组数据文件不存在: {data_path}"
+            status_code=404, detail="未找到任何三元组数据文件"
         )
+
+    # 合并所有数据源的三元组（去重），同时保留内存副本供统计使用
+    all_triples: list[tuple[str, str, str]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for src in sources:
+        for h, r, t in _load_triples_file(src):
+            key = (h, r, t)
+            if key not in seen:
+                seen.add(key)
+                all_triples.append(key)
+
+    # 单一数据源直接使用；多源合并去重到临时文件
+    merged_tmp: str | None = None
+    if len(sources) == 1:
+        data_path = sources[0]
+    else:
+        tmp_fd, data_path = tempfile.mkstemp(
+            suffix=".txt", prefix="merged_triples_"
+        )
+        merged_tmp = data_path
+        with os.fdopen(tmp_fd, "w", encoding="utf-8") as f:
+            for h, r, t in all_triples:
+                f.write(f"{h}|{r}|{t}\n")
 
     try:
         build_index_with_data(data_path, INDEX_DIR, run_tests=False)
     except Exception as e:
         logger.exception("索引构建失败")
         raise HTTPException(status_code=500, detail=f"索引构建失败: {e}")
+    finally:
+        # 清理临时合并文件（构建已完成或失败，不再需要）
+        if merged_tmp and os.path.exists(merged_tmp):
+            try:
+                os.unlink(merged_tmp)
+            except OSError:
+                pass
 
-    # 统计实体数（头尾并集）与关系类型数
-    try:
-        processor = KGProcessor(
-            data_path,
-            reverse_link_relations=REVERSE_LINK_RELATIONS,
-            relation_templates=RELATION_TEMPLATES,
-        )
-        processor.load_triples()
-        entities_set = {t[0] for t in processor.triples} | {
-            t[2] for t in processor.triples
-        }
-        relations_set = {t[1] for t in processor.triples}
-        entities = len(entities_set)
-        relations = len(relations_set)
-    except Exception as e:
-        logger.warning("统计索引信息失败: %s", e)
-        entities, relations = 0, 0
+    # 统计实体数（头尾并集）与关系类型数——直接用内存中的三元组，避免依赖临时文件
+    entities_set = {t[0] for t in all_triples} | {t[2] for t in all_triples}
+    relations_set = {t[1] for t in all_triples}
+    entities = len(entities_set)
+    relations = len(relations_set)
 
     return BuildIndexResponse(
         message="索引构建完成",

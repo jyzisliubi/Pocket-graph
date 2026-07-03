@@ -12,7 +12,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://docs.astral.sh/ruff/)
 [![Ollama Support](https://img.shields.io/badge/Ollama-Supported-orange.svg)](https://ollama.com/)
-[![UI: Gradio](https://img.shields.io/badge/UI-Gradio-ff69b4.svg)](https://gradio.app/)
+[![UI: React](https://img.shields.io/badge/UI-React%2018%20%2B%20Vite-61DAFB.svg)](https://react.dev/)
 [![Docker](https://img.shields.io/badge/Docker-Supported-blue.svg)](https://www.docker.com/)
 [![Docs](https://img.shields.io/badge/docs-mkdocs%20material-526CFE.svg)](https://pocketgraphrag.github.io/PocketGraphRAG/)
 

@@ -17,6 +17,7 @@ import {
   FileText,
   Network,
   Sparkles,
+  Trash2,
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -50,6 +51,37 @@ const RECOMMENDED_QUESTIONS = [
   '肖申克的救赎讲了什么故事？',
   '克里斯托弗·诺兰导演了哪些电影？',
 ]
+
+/** localStorage 持久化对话历史（仅保留已完成的消息，流式/错误消息不持久化） */
+const CHAT_HISTORY_KEY = 'pocketgraphrag_chat_history'
+const CHAT_HISTORY_MAX = 50 // 最多保留最近 50 条，避免 localStorage 溢出
+
+function loadChatHistory(): ChatMessage[] {
+  try {
+    const raw = localStorage.getItem(CHAT_HISTORY_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw) as ChatMessage[]
+    if (!Array.isArray(parsed)) return []
+    // 仅恢复已完成、无错误的消息；丢弃 streaming/error 残留
+    return parsed
+      .filter((m) => !m.streaming && !m.error)
+      .slice(-CHAT_HISTORY_MAX)
+  } catch {
+    return []
+  }
+}
+
+function saveChatHistory(messages: ChatMessage[]): void {
+  try {
+    // 只持久化已完成、无错误的消息，避免恢复出半截的流式状态
+    const persistable = messages
+      .filter((m) => !m.streaming && !m.error)
+      .slice(-CHAT_HISTORY_MAX)
+    localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(persistable))
+  } catch {
+    // localStorage 满或被禁用时静默失败
+  }
+}
 
 /** 聊天消息结构 */
 interface ChatMessage {
@@ -379,7 +411,7 @@ function WelcomeScreen({ onPick }: { onPick: (q: string) => void }) {
 }
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState<ChatMessage[]>([])
+  const [messages, setMessages] = useState<ChatMessage[]>(() => loadChatHistory())
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -400,6 +432,27 @@ export default function ChatPage() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const isNearBottomRef = useRef(true)
+
+  // 持久化对话历史到 localStorage（防抖，避免流式过程中频繁写入）
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  useEffect(() => {
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
+    saveTimerRef.current = setTimeout(() => saveChatHistory(messages), 400)
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
+    }
+  }, [messages])
+
+  /** 清空对话历史 */
+  const handleClearChat = () => {
+    if (isLoading) return // 生成中不允许清空
+    setMessages([])
+    try {
+      localStorage.removeItem(CHAT_HISTORY_KEY)
+    } catch {
+      // ignore
+    }
+  }
 
   /** 局部更新某条消息 */
   const patchMsg = (id: string, patch: Partial<ChatMessage>) => {
@@ -551,6 +604,22 @@ export default function ChatPage() {
 
   return (
     <div className="flex h-[calc(100vh-6rem)] flex-col gap-3 md:h-[calc(100vh-7rem)]">
+      {/* 顶部工具栏：仅有消息时显示清空按钮 */}
+      {messages.length > 0 && !isLoading && (
+        <div className="flex justify-end">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleClearChat}
+            className="h-7 gap-1.5 text-xs text-muted-foreground hover:text-destructive"
+            aria-label="清空对话历史"
+          >
+            <Trash2 className="h-3.5 w-3.5" />
+            清空对话
+          </Button>
+        </div>
+      )}
+
       {/* 消息列表 */}
       <div
         ref={scrollRef}

@@ -1,10 +1,10 @@
-[build-system]
+﻿[build-system]
 requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pocketgraphrag"
-version = "0.3.2"
+version = "0.3.3"
 description = "A local-first GraphRAG tool that turns private docs into queryable knowledge graphs"
 readme = "README.md"
 license = "MIT"
@@ -53,9 +53,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# Gradio Web 界面 + FastAPI REST 服务
+# React Web UI (前端已预构建，clone 即用，无需 Node.js) + FastAPI REST 服务
 web = [
-    "gradio>=4.0.0",
     "fastapi>=0.100.0",
     "uvicorn>=0.20.0",
     "pydantic>=2.0.0",
@@ -107,9 +106,9 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/pocketgraphrag/PocketGraphRAG"
-Repository = "https://github.com/pocketgraphrag/PocketGraphRAG"
-Issues = "https://github.com/pocketgraphrag/PocketGraphRAG/issues"
+Homepage = "https://github.com/jyzisliubi/Pocket-graph"
+Repository = "https://github.com/jyzisliubi/Pocket-graph"
+Issues = "https://github.com/jyzisliubi/Pocket-graph/issues"
 Documentation = "https://pocketgraphrag.github.io/PocketGraphRAG/"
 
 [project.scripts]

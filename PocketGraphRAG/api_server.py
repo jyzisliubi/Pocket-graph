@@ -1,4 +1,4 @@
-"""
+﻿"""
 PocketGraphRAG REST API Server
 
 基于 FastAPI 的 HTTP API 服务，支持：
@@ -91,7 +91,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="PocketGraphRAG API",
     description="Lightweight GraphRAG API for vertical domains",
-    version="0.3.0",
+    version="0.3.3",
     lifespan=lifespan,
     # 全局鉴权：所有路由自动经过 _verify_api_key。
     # 若 POCKET_API_KEY 未设置则直接放行（本地开发模式）。
@@ -194,7 +194,7 @@ class GraphNode(BaseModel):
     name: str
     degree: int
     category: int
-    symbolSize: int
+    symbolSize: float
 
 
 class GraphLink(BaseModel):
@@ -327,7 +327,7 @@ async def health_check():
 
     return {
         "status": "ok" if _rag is not None else "initializing",
-        "version": "0.3.0",
+        "version": "0.3.3",
         "search_mode": SEARCH_MODE,
         "rag_ready": _rag is not None,
         "llm": {

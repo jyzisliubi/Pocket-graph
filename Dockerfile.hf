@@ -1,0 +1,61 @@
+# PocketGraphRAG HuggingFace Space Dockerfile
+# 与主 Dockerfile 区别：监听 7860 端口（HF 强制）、启动时自动构建索引、用 HF 镜像下载模型
+#
+# 在 HuggingFace Space 部署步骤：
+# 1. 在 huggingface.co 创建新 Space，SDK 选 Docker
+# 2. 把本仓库代码推到该 Space 仓库
+# 3. 把本文件重命名为 Dockerfile（覆盖主 Dockerfile）
+# 4. 把 README_HF.md 的 YAML frontmatter 合并到 README.md 顶部
+# 5. Space 会自动构建并启动
+
+# ==========================
+# 阶段1：构建前端（React + Vite）
+# ==========================
+FROM node:18-slim AS frontend-builder
+WORKDIR /app/frontend
+COPY frontend/package*.json ./
+RUN npm ci --registry=https://registry.npmmirror.com
+COPY frontend/ .
+RUN npm run build
+
+# ==========================
+# 阶段2：Python 后端
+# ==========================
+FROM python:3.11-slim
+
+LABEL maintainer="PocketGraphRAG Team"
+LABEL description="PocketGraphRAG - Lightweight GraphRAG Framework"
+
+WORKDIR /app
+
+# HuggingFace 镜像（国内用户加速模型下载）
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    HF_ENDPOINT=https://hf-mirror.com \
+    KMP_DUPLICATE_LIB_OK=TRUE \
+    # HuggingFace Space 强制 7860 端口
+    PORT=7860
+
+# 系统依赖
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# 前端构建产物
+COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
+
+# 项目代码
+COPY . .
+
+# 安装 Python 依赖
+RUN pip install --no-cache-dir -e ".[web,docs]"
+
+# HuggingFace Space 要求 7860 端口
+EXPOSE 7860
+
+# 启动脚本：先确保索引存在，再启动 uvicorn
+# movie_kg demo 数据自带三元组，首次启动会自动构建 FAISS 索引
+CMD ["sh", "-c", "python -m PocketGraphRAG.build_index && uvicorn PocketGraphRAG.api_server:app --host 0.0.0.0 --port 7860"]

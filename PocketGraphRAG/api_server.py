@@ -15,15 +15,17 @@ PocketGraphRAG REST API Server
 import json
 import os
 from contextlib import asynccontextmanager
+from datetime import datetime
 from typing import List, Optional
 
-from fastapi import Depends, FastAPI, HTTPException, Query, Request, status
+from fastapi import Depends, FastAPI, File, HTTPException, Query, Request, UploadFile, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.security import APIKeyHeader
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from .config import SEARCH_MODE
+from .config import DATA_PATH, INDEX_DIR, SEARCH_MODE, USER_DOCS_DIR
 from .kg_reasoning import KGDualRetriever
 from .llm import get_active_provider, has_llm
 from .logging_config import get_logger
@@ -31,7 +33,9 @@ from .rag_system import PocketGraphRAG
 from .settings_manager import (
     detect_active_provider,
     is_ollama_running,
+    list_ollama_models,
     load_llm_settings,
+    save_llm_settings,
 )
 
 logger = get_logger(__name__)
@@ -89,6 +93,9 @@ app = FastAPI(
     description="Lightweight GraphRAG API for vertical domains",
     version="0.3.0",
     lifespan=lifespan,
+    # 全局鉴权：所有路由自动经过 _verify_api_key。
+    # 若 POCKET_API_KEY 未设置则直接放行（本地开发模式）。
+    dependencies=[Depends(_verify_api_key)],
 )
 
 _cors_origins_list = [o.strip() for o in _CORS_ORIGINS.split(",") if o.strip()] if _CORS_ORIGINS != "*" else ["*"]
@@ -96,7 +103,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=_cors_origins_list,
     allow_credentials=_CORS_ALLOW_CREDENTIALS and _CORS_ORIGINS != "*",
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -107,7 +114,7 @@ app.add_middleware(
 
 
 class QARequest(BaseModel):
-    query: str = Field(..., description="用户问题")
+    query: str = Field(..., max_length=10000, description="用户问题")
     search_mode: Optional[str] = Field(
         default=None,
         description="检索模式: vector / local / global / mix / kg_only",
@@ -206,6 +213,45 @@ class EntitySearchResult(BaseModel):
     degree: int
 
 
+class ExtractRequest(BaseModel):
+    filename: str = Field(..., description="已上传的文档文件名")
+
+
+class SettingsRequest(BaseModel):
+    provider: str = Field(
+        ...,
+        description="LLM provider: ollama / siliconflow / deepseek / dashscope / openai / freellm-cn",
+    )
+    api_key: Optional[str] = Field(default=None, description="API Key（ollama 不需要）")
+    model: Optional[str] = Field(default=None, description="模型名")
+    api_base: Optional[str] = Field(
+        default=None, description="API base URL（ollama / openai 可选）"
+    )
+
+
+class DocumentInfo(BaseModel):
+    filename: str
+    size: int
+    uploaded_at: str
+
+
+class UploadResponse(BaseModel):
+    filename: str
+    path: str
+    size: int
+    message: str
+
+
+class BuildIndexStats(BaseModel):
+    entities: int
+    relations: int
+
+
+class BuildIndexResponse(BaseModel):
+    message: str
+    stats: BuildIndexStats
+
+
 # ==========================
 # Helper
 # ==========================
@@ -215,6 +261,37 @@ def _get_rag() -> PocketGraphRAG:
     if _rag is None:
         raise HTTPException(status_code=503, detail="RAG system not initialized yet")
     return _rag
+
+
+def _safe_doc_path(filename: str) -> str:
+    """拼接 USER_DOCS_DIR 与 filename，防止路径穿越。
+
+    只保留 basename，并校验归一化后的绝对路径仍位于 USER_DOCS_DIR 内。
+    """
+    base = os.path.abspath(USER_DOCS_DIR)
+    safe_name = os.path.basename(filename or "")
+    if not safe_name or safe_name in (".", ".."):
+        raise HTTPException(status_code=400, detail="非法文件名")
+    full = os.path.abspath(os.path.join(base, safe_name))
+    if full != base and not full.startswith(base + os.sep):
+        raise HTTPException(status_code=400, detail="非法文件路径")
+    return full
+
+
+def _write_triples(path: str, triples: List, append: bool = True) -> int:
+    """把三元组列表写入文件（head | relation | tail 格式），返回写入条数。"""
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    mode = "a" if append else "w"
+    count = 0
+    with open(path, mode, encoding="utf-8") as f:
+        for t in triples:
+            head = str(t[0]).replace("|", "").replace("\n", " ").strip()
+            rel = str(t[1]).replace("|", "").replace("\n", " ").strip()
+            tail = str(t[2]).replace("|", "").replace("\n", " ").strip()
+            if head and rel and tail:
+                f.write(f"{head} | {rel} | {tail}\n")
+                count += 1
+    return count
 
 
 # ==========================
@@ -451,6 +528,9 @@ async def qa_stream(request: QARequest):
             # M28：SSE 流中途异常时发 error 事件，避免客户端只看到"流断开"
             err = {"type": "error", "message": str(e)}
             yield f"data: {json.dumps(err, ensure_ascii=False)}\n\n"
+            # 异常分支也补发 done 事件，让客户端明确知道流已结束，无需死等
+            done = {"type": "done"}
+            yield f"data: {json.dumps(done, ensure_ascii=False)}\n\n"
 
     return StreamingResponse(
         event_generator(),
@@ -521,6 +601,12 @@ async def entity_subgraph(
 ):
     """Get the subgraph around a specific entity."""
     rag = _get_rag()
+    if rag.kg_retriever is None:
+        raise HTTPException(
+            status_code=503,
+            detail="KG retriever not available in vector-only mode. "
+            "Switch to mix/kg_only/local/global search mode to use KG features",
+        )
     subgraph = rag.kg_retriever.get_subgraph([name], max_hops=hops)
     return SubgraphResponse(
         nodes=[GraphNode(**n) for n in subgraph["nodes"]],
@@ -590,6 +676,12 @@ async def graph_pagerank(
 async def graph_communities():
     """Detect communities in the knowledge graph using label propagation."""
     rag = _get_rag()
+    if rag.kg_retriever is None:
+        raise HTTPException(
+            status_code=503,
+            detail="KG retriever not available in vector-only mode. "
+            "Switch to mix/kg_only/local/global search mode to use KG features",
+        )
     communities = rag.kg_retriever.detect_communities()
     return [
         CommunityResponse(entity=e, community_id=int(c)) for e, c in communities.items()
@@ -609,27 +701,415 @@ async def graph_shortest_path(
 
 
 # ==========================
-# Root
+# Document Management Endpoints
+# ==========================
+
+_ALLOWED_UPLOAD_EXTS = {".txt", ".md", ".markdown", ".pdf", ".docx"}
+
+
+@app.post(
+    "/api/documents/upload",
+    response_model=UploadResponse,
+    summary="上传文档（multipart/form-data）",
+)
+async def upload_document(file: UploadFile = File(...)):
+    """接收前端上传的文档，保存到 user_docs 目录。
+
+    支持格式：.txt / .md / .pdf / .docx
+    """
+    if not file or not file.filename:
+        raise HTTPException(status_code=400, detail="未提供文件")
+    filename = os.path.basename(file.filename)
+    ext = os.path.splitext(filename)[1].lower()
+    if ext not in _ALLOWED_UPLOAD_EXTS:
+        raise HTTPException(
+            status_code=400,
+            detail=f"不支持的文件类型: {ext}，仅支持 {', '.join(sorted(_ALLOWED_UPLOAD_EXTS))}",
+        )
+    os.makedirs(USER_DOCS_DIR, exist_ok=True)
+    dest = _safe_doc_path(filename)
+    content = await file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="文件内容为空")
+    try:
+        with open(dest, "wb") as f:
+            f.write(content)
+    except OSError as e:
+        raise HTTPException(status_code=500, detail=f"保存文件失败: {e}")
+    logger.info("文档已上传: %s (%s bytes)", dest, len(content))
+    return UploadResponse(
+        filename=filename,
+        path=dest,
+        size=len(content),
+        message="上传成功",
+    )
+
+
+@app.get(
+    "/api/documents",
+    response_model=List[DocumentInfo],
+    summary="列出已上传文档",
+)
+async def list_documents():
+    """列出 user_docs 目录下已上传的文档。"""
+    if not os.path.isdir(USER_DOCS_DIR):
+        return []
+    results = []
+    for name in sorted(os.listdir(USER_DOCS_DIR)):
+        full = os.path.join(USER_DOCS_DIR, name)
+        if not os.path.isfile(full):
+            continue
+        ext = os.path.splitext(name)[1].lower()
+        if ext not in _ALLOWED_UPLOAD_EXTS:
+            continue
+        try:
+            st = os.stat(full)
+            uploaded_at = datetime.fromtimestamp(st.st_mtime).strftime(
+                "%Y-%m-%d %H:%M:%S"
+            )
+            size = st.st_size
+        except OSError:
+            uploaded_at = ""
+            size = 0
+        results.append(
+            DocumentInfo(filename=name, size=size, uploaded_at=uploaded_at)
+        )
+    return results
+
+
+@app.delete("/api/documents/{filename}", summary="删除指定文档")
+async def delete_document(filename: str):
+    """删除 user_docs 目录下的指定文档。"""
+    target = _safe_doc_path(filename)
+    if not os.path.exists(target):
+        raise HTTPException(status_code=404, detail=f"文件不存在: {filename}")
+    try:
+        os.remove(target)
+    except OSError as e:
+        raise HTTPException(status_code=500, detail=f"删除失败: {e}")
+    logger.info("文档已删除: %s", target)
+    return {"message": "删除成功"}
+
+
+@app.post("/api/documents/extract", summary="三元组抽取（SSE 流式进度）")
+async def extract_document(req: ExtractRequest):
+    """对指定文档执行三元组抽取，返回 SSE 流式进度。
+
+    每个进度事件：``data: {"phase": "extracting", "message": "...", "triples_count": N}``
+    结束事件：``data: {"phase": "done", "total_triples": N}``
+
+    抽取完成后，三元组会追加保存到 ``user_docs/triples.txt``，供 ``/api/documents/build-index`` 使用。
+    """
+    from .data_importer import DataImporter
+    from .kg_extractor import extract_knowledge_graph_stream
+    from .llm import has_llm
+
+    doc_path = _safe_doc_path(req.filename)
+    if not os.path.exists(doc_path):
+        raise HTTPException(status_code=404, detail=f"文件不存在: {req.filename}")
+
+    importer = DataImporter()
+    doc = importer.import_file(doc_path)
+    if doc is None or not (doc.content or "").strip():
+        raise HTTPException(
+            status_code=400, detail=f"文档解析失败或内容为空: {req.filename}"
+        )
+
+    if not has_llm():
+        raise HTTPException(
+            status_code=503,
+            detail="未配置 LLM 后端，无法执行三元组抽取。请先通过 /api/settings 配置。",
+        )
+
+    content = doc.content
+
+    # 用同步生成器：Starlette 会自动放到线程池执行，避免阻塞事件循环
+    def event_generator():
+        total = 0
+        try:
+            for step in extract_knowledge_graph_stream(content):
+                message = step.get("message", "")
+                triples = step.get("triples", []) or []
+                if step.get("done"):
+                    result = step.get("result")
+                    if result is not None and result.triples:
+                        total = len(result.triples)
+                        try:
+                            _write_triples(
+                                USER_TRIPLES_PATH,
+                                [t.to_tuple() for t in result.triples],
+                                append=True,
+                            )
+                        except OSError as e:
+                            logger.warning("三元组持久化失败: %s", e)
+                        data = {"phase": "done", "total_triples": total}
+                    else:
+                        data = {
+                            "phase": "empty",
+                            "message": message or "未能抽取到任何有效三元组",
+                            "total_triples": 0,
+                        }
+                    yield f"data: {json.dumps(data, ensure_ascii=False)}\n\n"
+                    return
+                # 进度事件：抽取流程各阶段统一标记为 extracting
+                data = {
+                    "phase": "extracting",
+                    "message": message,
+                    "triples_count": len(triples),
+                }
+                yield f"data: {json.dumps(data, ensure_ascii=False)}\n\n"
+        except Exception as e:
+            err = {"phase": "error", "message": f"抽取失败: {e}"}
+            yield f"data: {json.dumps(err, ensure_ascii=False)}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+@app.post(
+    "/api/documents/build-index",
+    response_model=BuildIndexResponse,
+    summary="构建向量索引",
+)
+async def build_index_endpoint():
+    """触发索引构建。
+
+    优先从 ``user_docs/triples.txt``（用户抽取的三元组）构建；
+    若不存在则回退到默认 ``DATA_PATH``。
+    """
+    from .config import RELATION_TEMPLATES, REVERSE_LINK_RELATIONS
+    from .data_processor import KGProcessor
+
+    from .build_index import build_index_with_data
+
+    data_path = USER_TRIPLES_PATH if os.path.exists(USER_TRIPLES_PATH) else DATA_PATH
+    if not os.path.exists(data_path):
+        raise HTTPException(
+            status_code=404, detail=f"三元组数据文件不存在: {data_path}"
+        )
+
+    try:
+        build_index_with_data(data_path, INDEX_DIR, run_tests=False)
+    except Exception as e:
+        logger.exception("索引构建失败")
+        raise HTTPException(status_code=500, detail=f"索引构建失败: {e}")
+
+    # 统计实体数（头尾并集）与关系类型数
+    try:
+        processor = KGProcessor(
+            data_path,
+            reverse_link_relations=REVERSE_LINK_RELATIONS,
+            relation_templates=RELATION_TEMPLATES,
+        )
+        processor.load_triples()
+        entities_set = {t[0] for t in processor.triples} | {
+            t[2] for t in processor.triples
+        }
+        relations_set = {t[1] for t in processor.triples}
+        entities = len(entities_set)
+        relations = len(relations_set)
+    except Exception as e:
+        logger.warning("统计索引信息失败: %s", e)
+        entities, relations = 0, 0
+
+    return BuildIndexResponse(
+        message="索引构建完成",
+        stats=BuildIndexStats(entities=entities, relations=relations),
+    )
+
+
+# ==========================
+# Settings Management Endpoints
 # ==========================
 
 
-@app.get("/", summary="根路径")
-async def root():
+@app.get("/api/settings", summary="获取当前 LLM 配置")
+async def get_settings():
+    """返回当前 LLM 配置（API Key 脱敏，仅返回是否已配置 + 掩码前缀）。"""
+    settings = load_llm_settings()
+    provider = settings.get("provider", "") or detect_active_provider()
+
+    model_field_map = {
+        "ollama": "OLLAMA_MODEL",
+        "freellm-cn": "FREELM_CN_MODEL",
+        "siliconflow": "SILICONFLOW_MODEL",
+        "deepseek": "DEEPSEEK_MODEL",
+        "dashscope": "DASHSCOPE_MODEL",
+        "openai": "OPENAI_MODEL",
+    }
+    model_field = model_field_map.get(provider, "")
+    model = settings.get(model_field, "") if model_field else ""
+
+    def _key_configured(key: str) -> bool:
+        return bool(settings.get(key, ""))
+
     return {
-        "name": "PocketGraphRAG API",
-        "version": "0.3.0",
-        "docs": "/docs",
-        "endpoints": {
-            "health": "/api/health",
-            "llm_status": "/api/llm/status",
-            "qa": "/api/qa",
-            "qa_stream": "/api/qa/stream",
-            "graph_stats": "/api/graph/stats",
-            "graph_entities": "/api/graph/entities",
-            "graph_search": "/api/graph/search",
-            "graph_entity_subgraph": "/api/graph/entity/{name}/subgraph",
+        "provider": provider,
+        "provider_label": get_active_provider(),
+        "model": model,
+        "has_llm": has_llm(),
+        "ollama": {
+            "model": settings.get("OLLAMA_MODEL", ""),
+            "api_base": settings.get(
+                "OLLAMA_API_BASE", "http://localhost:11434/v1"
+            ),
+            "api_key_configured": False,
+        },
+        "freellm-cn": {
+            "model": settings.get("FREELM_CN_MODEL", ""),
+            "api_base": settings.get(
+                "FREELM_CN_API_BASE", "http://localhost:8000/v1"
+            ),
+            "api_key_configured": _key_configured("FREELM_CN_API_KEY"),
+        },
+        "siliconflow": {
+            "model": settings.get("SILICONFLOW_MODEL", ""),
+            "api_key_configured": _key_configured("SILICONFLOW_API_KEY"),
+        },
+        "deepseek": {
+            "model": settings.get("DEEPSEEK_MODEL", ""),
+            "api_key_configured": _key_configured("DEEPSEEK_API_KEY"),
+        },
+        "dashscope": {
+            "model": settings.get("DASHSCOPE_MODEL", ""),
+            "api_key_configured": _key_configured("DASHSCOPE_API_KEY"),
+        },
+        "openai": {
+            "model": settings.get("OPENAI_MODEL", ""),
+            "api_base": settings.get(
+                "OPENAI_API_BASE", "https://api.openai.com/v1"
+            ),
+            "api_key_configured": _key_configured("OPENAI_API_KEY"),
         },
     }
+
+
+@app.post("/api/settings", summary="保存 LLM 配置")
+async def save_settings(req: SettingsRequest):
+    """保存 LLM 配置到 .env 并热同步到 config 模块。
+
+    请求体示例：``{"provider": "siliconflow", "api_key": "sk-xxx", "model": "Qwen/..."}``
+    仅覆盖当前 provider 相关字段，其他 provider 配置保留。
+    """
+    provider = (req.provider or "").strip().lower()
+    valid_providers = {
+        "ollama",
+        "freellm-cn",
+        "siliconflow",
+        "deepseek",
+        "dashscope",
+        "openai",
+    }
+    if provider not in valid_providers:
+        raise HTTPException(
+            status_code=400,
+            detail=f"不支持的 provider: {provider}，可选: {', '.join(sorted(valid_providers))}",
+        )
+
+    # 以现有配置为基底，仅覆盖当前 provider 相关字段
+    values = dict(load_llm_settings())
+    values["provider"] = provider
+
+    if provider == "ollama":
+        if req.model is not None:
+            values["OLLAMA_MODEL"] = req.model.strip()
+        if req.api_base is not None:
+            values["OLLAMA_API_BASE"] = req.api_base.strip()
+    elif provider == "freellm-cn":
+        if req.api_key is not None:
+            values["FREELM_CN_API_KEY"] = req.api_key.strip()
+        if req.model is not None:
+            values["FREELM_CN_MODEL"] = req.model.strip()
+        if req.api_base is not None:
+            values["FREELM_CN_API_BASE"] = req.api_base.strip()
+    elif provider == "siliconflow":
+        if req.api_key is not None:
+            values["SILICONFLOW_API_KEY"] = req.api_key.strip()
+        if req.model is not None:
+            values["SILICONFLOW_MODEL"] = req.model.strip()
+    elif provider == "deepseek":
+        if req.api_key is not None:
+            values["DEEPSEEK_API_KEY"] = req.api_key.strip()
+        if req.model is not None:
+            values["DEEPSEEK_MODEL"] = req.model.strip()
+    elif provider == "dashscope":
+        if req.api_key is not None:
+            values["DASHSCOPE_API_KEY"] = req.api_key.strip()
+        if req.model is not None:
+            values["DASHSCOPE_MODEL"] = req.model.strip()
+    elif provider == "openai":
+        if req.api_key is not None:
+            values["OPENAI_API_KEY"] = req.api_key.strip()
+        if req.model is not None:
+            values["OPENAI_MODEL"] = req.model.strip()
+        if req.api_base is not None:
+            values["OPENAI_API_BASE"] = req.api_base.strip()
+
+    try:
+        save_llm_settings(values)
+    except Exception as e:
+        logger.exception("保存 LLM 配置失败")
+        raise HTTPException(status_code=500, detail=f"保存失败: {e}")
+
+    return {"message": "保存成功", "provider": provider}
+
+
+@app.get(
+    "/api/settings/ollama-models",
+    summary="列出 Ollama 已下载的模型",
+)
+async def list_ollama_models_endpoint():
+    """列出本地 Ollama 已下载的模型。"""
+    settings = load_llm_settings()
+    base = settings.get("OLLAMA_API_BASE", "http://localhost:11434/v1")
+    ok, models, msg = list_ollama_models(base)
+    if not ok:
+        raise HTTPException(status_code=503, detail=msg)
+    return {"models": models}
+
+
+# ==========================
+# Static Files & SPA Fallback（前端托管）
+# ==========================
+# 必须放在所有 API 路由之后：FastAPI 按注册顺序匹配，先匹配 /api/* 等具体路由，
+# 兜底路由 /{full_path:path} 才不会拦截 API 请求。
+
+FRONTEND_DIST = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)), "frontend", "dist"
+)
+
+if os.path.exists(FRONTEND_DIST):
+    # 挂载 Vite 构建产物中的静态资源（JS/CSS/图片等哈希文件）
+    _assets_dir = os.path.join(FRONTEND_DIST, "assets")
+    if os.path.isdir(_assets_dir):
+        app.mount("/assets", StaticFiles(directory=_assets_dir), name="assets")
+
+    @app.get("/{full_path:path}", include_in_schema=False, summary="SPA 前端兜底")
+    async def spa_fallback(full_path: str):
+        """所有非 /api 路径的兜底处理：返回静态文件或 index.html（SPA 路由）。"""
+        # 不拦截 /api 开头的路径：交由 FastAPI 默认 404 处理
+        if full_path.startswith("api"):
+            raise HTTPException(status_code=404, detail="Not Found")
+        # 命中 dist 下的真实静态文件（如 favicon.svg、vite.svg 等）直接返回
+        file_path = os.path.join(FRONTEND_DIST, full_path)
+        if full_path and os.path.exists(file_path) and os.path.isfile(file_path):
+            return FileResponse(file_path)
+        # 其余路径（含 "/" 和 /chat 等 SPA 路由）统一返回 index.html
+        index_html = os.path.join(FRONTEND_DIST, "index.html")
+        if os.path.exists(index_html):
+            return FileResponse(index_html)
+        raise HTTPException(status_code=404, detail="index.html not found")
+else:
+    @app.get("/", include_in_schema=False, summary="前端未构建提示")
+    async def frontend_not_built():
+        return {"message": "前端未构建。请执行：cd frontend && npm run build"}
 
 
 def main():

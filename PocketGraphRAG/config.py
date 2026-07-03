@@ -57,7 +57,9 @@ try:
     from dotenv import load_dotenv
 
     _PROJECT_ROOT_TMP = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    load_dotenv(os.path.join(_PROJECT_ROOT_TMP, ".env"), override=False)
+    # override=True：让 Web UI 修改后写入 .env 的配置在进程重启后仍能生效，
+    # 而不被进程启动时的旧环境变量覆盖。
+    load_dotenv(os.path.join(_PROJECT_ROOT_TMP, ".env"), override=True)
 except ImportError:
     pass
 
@@ -84,6 +86,10 @@ DATA_PATH = _env("POCKET_DATA_PATH", default=_DEFAULT_DATA_PATH)
 _DEFAULT_INDEX_DIR = os.path.join(_PROJECT_ROOT, "index")
 INDEX_DIR = _env("POCKET_INDEX_DIR", default=_DEFAULT_INDEX_DIR)
 
+# 用户上传文档目录（Web UI 上传的原始文档存放处）
+_DEFAULT_USER_DOCS_DIR = os.path.join(_PROJECT_ROOT, "user_docs")
+USER_DOCS_DIR = _env("POCKET_USER_DOCS_DIR", default=_DEFAULT_USER_DOCS_DIR)
+
 # ========================
 # Embedding 模型
 # ========================
@@ -94,7 +100,9 @@ _DEFAULT_EMBEDDING_MODEL = (
     _LOCAL_MODEL_PATH if os.path.exists(_LOCAL_MODEL_PATH) else "BAAI/bge-small-zh-v1.5"
 )
 EMBEDDING_MODEL = _env("POCKET_EMBEDDING_MODEL", default=_DEFAULT_EMBEDDING_MODEL)
-EMBEDDING_DIM = 512
+# 运行时由 SentenceTransformer.get_sentence_embedding_dimension() 推断；
+# 此处留 None 以避免与实际加载的模型维度不一致（如换用其他模型时 512 维硬编码会出错）。
+EMBEDDING_DIM = None
 
 # ========================
 # 检索参数

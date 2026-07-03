@@ -10,6 +10,11 @@ __pycache__/
 dist/
 build/
 
+# Frontend（在镜像内构建，避免把本地依赖/产物打包进来）
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+
 # Virtual Env
 venv/
 .env/
@@ -17,7 +22,7 @@ venv/
 
 # IDE
 .vscode/
-.idea/
+.idea
 *.swp
 *.swo
 *~

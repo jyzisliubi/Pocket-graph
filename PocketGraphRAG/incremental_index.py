@@ -306,6 +306,10 @@ def add_triples_incremental(
         faiss_index = FAISSIndex()
         faiss_index.model = model
         import numpy as _np
+        # EMBEDDING_DIM 为 None 时从模型推断维度，并创建对应维度的空索引
+        if faiss_index.dimension is None:
+            faiss_index.dimension = int(model.get_sentence_embedding_dimension())
+            faiss_index.index = faiss.IndexFlatIP(faiss_index.dimension)
         faiss_index._embeddings = _np.zeros(
             (0, faiss_index.dimension), dtype="float32"
         )

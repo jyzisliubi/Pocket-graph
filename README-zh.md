@@ -30,7 +30,7 @@ pip install -e .                         # 源码安装（当前推荐）
 # pip install "pocketgraphrag[cli]"      # 安装 `pocketgraphrag` CLI
 
 # 运行
-pocketgraphrag webui                     # Gradio Web UI，访问 http://localhost:7860
+pocketgraphrag webui                     # React Web UI，访问 http://localhost:8000
 pocketgraphrag ask "你的问题"             # 单次问答，带引用
 # 没装 CLI extra？ python -m PocketGraphRAG.webapp
 ```
@@ -106,6 +106,7 @@ pocketgraphrag ask "你的问题"             # 单次问答，带引用
 - **2026-06** — `v0.2.1` 增量索引：新上传只编码受影响实体（对标 LightRAG 的核心护城河）。26 个单测 + 旧索引迁移。
 - **2026-01** — `v0.2.0` KG 双层检索、KG 抽取 v2、VLM 多模态、PageRank、REST API，190+ 测试。
 - **2025-09** — `v0.1.0` 首发：FAISS + 实体级分块 + Gradio Web UI + Ollama。
+- **2026-07** — `v0.3.3` React 专业级 UI：Vite + TypeScript + Tailwind + shadcn/ui，替代 Gradio。Dark/Light 双主题、d3-force 力导向图、SSE 流式问答、完整文档管理。
 - 下一步：可插拔向量后端（Milvus/Qdrant）、Neo4j 适配、HuggingFace Space 在线 Demo。详见 [Roadmap](#路线图)。
 
 > 📦 **安装状态**：当前以源码安装为正式支持路径。PyPI 元数据已就绪；公开发布会等 GitHub 首发闭环打磨好之后再放开。
@@ -200,7 +201,7 @@ pip install -r requirements.txt          # 核心依赖
 
 | Extra | 安装 | 用途 |
 |-------|------|------|
-| `[web]` | gradio, fastapi, uvicorn, pydantic | Gradio Web UI + REST API |
+| `[web]` | fastapi, uvicorn, pydantic, React 18（内置） | React Web UI + REST API |
 | `[docs]` | python-docx, pdfplumber, PyPDF2, beautifulsoup4, lxml, Pillow | 多格式文档导入 |
 | `[playwright]` | playwright | 动态网页抓取 |
 | `[cli]` | typer, uvicorn | 现代子命令 CLI（`pocketgraphrag`） |
@@ -246,16 +247,16 @@ set DASHSCOPE_API_KEY=sk-your-key         # 阿里云，有免费额度 + VLM
 start_webui.bat                           # Windows（Linux/Mac 用 ./start_webui.sh）
 # 手动：
 python -m PocketGraphRAG.build_index      # 构建 FAISS 索引（自动下载 BGE 模型）
-python -m PocketGraphRAG.webapp           # Gradio Web UI，监听 :7860
+python -m PocketGraphRAG.api_server       # React Web UI，监听 :8000（或 webapp.py 走旧版 Gradio :7860）
 ```
 
-然后打开 **http://localhost:7860**。仓库自带一个示例数据集，无需准备数据。Docker：`docker-compose up -d`。
+然后打开 **http://localhost:8000**。仓库自带一个电影知识图谱示例数据集，无需准备数据。Docker：`docker-compose up -d`。
 
 > 第一次体验？建议从内置的电影 KG demo 开始。即使你还没配置 LLM，Web UI 也会照常启动，方便你先验证检索、来源和图谱状态，再决定接哪种生成后端。
 
 ### 3 分钟 Demo 路径
 
-1. 启动 Web UI → 打开 `http://localhost:7860`
+1. 启动 Web UI → 打开 `http://localhost:8000`
 2. 在示例数据上问一个内置问题
 3. 在 `Data Management` 里上传文件或导入 URL
 4. 点击 `开始抽取` → `构建索引并切换`
@@ -585,7 +586,8 @@ PocketGraphRAG/
 │   ├── evaluate.py           # 消融实验
 │   ├── eval_harness.py       # 基准 + RAGAS 评测 harness
 │   ├── app.py                # CLI 入口
-│   ├── webapp.py             # Gradio Web UI（问答 + 数据管理 + 图谱可视化）
+│   ├── webapp.py             # 旧版 Gradio Web UI（问答 + 数据管理 + 图谱可视化）
+│   ├── api_server.py         # FastAPI 服务（React SPA + REST API，监听 :8000）
 │   ├── cli.py                # 现代 Typer CLI（`pocketgraphrag`）
 │   └── tests/                # 单元测试
 ├── examples/                 # 示例数据集（movie_kg / rice / cat_encyclopedia）

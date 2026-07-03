@@ -193,27 +193,30 @@ def get_rag(
     search_mode="vector",
     data_path=None,
 ) -> PocketGraphRAG:
-    """获取或创建 RAG 实例"""
+    """获取或创建 RAG 实例（双重检查锁，线程安全）"""
     global rag
     if rag is None:
+        with _rag_lock:
+            if rag is None:  # double-check：进入锁后再确认一次，避免重复创建
+                rag = PocketGraphRAG(
+                    use_multihop=use_multihop,
+                    search_mode=search_mode,
+                    use_conversation=True,
+                    data_path=data_path,
+                )
+    return rag
+
+
+def reload_rag(use_multihop=False, search_mode="vector", data_path=None):
+    """强制重新创建 RAG 实例（切换数据集或重建索引后调用，加锁避免并发竞争）"""
+    global rag
+    with _rag_lock:
         rag = PocketGraphRAG(
             use_multihop=use_multihop,
             search_mode=search_mode,
             use_conversation=True,
             data_path=data_path,
         )
-    return rag
-
-
-def reload_rag(use_multihop=False, search_mode="vector", data_path=None):
-    """强制重新创建 RAG 实例（切换数据集或重建索引后调用）"""
-    global rag
-    rag = PocketGraphRAG(
-        use_multihop=use_multihop,
-        search_mode=search_mode,
-        use_conversation=True,
-        data_path=data_path,
-    )
     return rag
 
 

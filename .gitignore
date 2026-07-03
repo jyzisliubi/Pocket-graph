@@ -138,6 +138,9 @@ pet_tauri/**/Cargo.lock
 **/target/
 debug/
 
+# 简历等个人文档（不应入库）
+pet_tauri/*.docx
+
 # Node.js (pet_tauri web frontend)
 pet_tauri/**/node_modules/
 **/node_modules/

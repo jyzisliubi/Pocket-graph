@@ -47,8 +47,10 @@ class FAISSIndex:
 
     def __init__(self, dimension: int = EMBEDDING_DIM):
         # dimension 仅作为兜底默认值；实际 build 时会从 embeddings 形状覆盖
+        # EMBEDDING_DIM 为 None（动态化默认）时延迟创建索引，
+        # 待 build() 从模型推断维度或调用方显式设置后再创建。
         self.dimension = dimension
-        self.index = faiss.IndexFlatIP(dimension)
+        self.index = faiss.IndexFlatIP(dimension) if dimension is not None else None
         self.texts: list = []
         self.metadatas: list = []
         self.model = None

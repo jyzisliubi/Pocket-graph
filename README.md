@@ -30,7 +30,7 @@ pip install -e .                         # from source (recommended today)
 # pip install "pocketgraphrag[cli]"      # adds the `pocketgraphrag` CLI
 
 # Run
-pocketgraphrag webui                     # Gradio Web UI on http://localhost:7860
+pocketgraphrag webui                     # React Web UI on http://localhost:8000
 pocketgraphrag ask "你的问题"             # one-shot Q&A with citations
 # No CLI extra? python -m PocketGraphRAG.webapp
 ```
@@ -200,7 +200,7 @@ pip install -r requirements.txt          # core
 
 | Extra | Installs | Use |
 |-------|----------|-----|
-| `[web]` | gradio, fastapi, uvicorn, pydantic | Gradio Web UI + REST API |
+| `[web]` | fastapi, uvicorn, pydantic, React 18 (built-in) | React Web UI + REST API |
 | `[docs]` | python-docx, pdfplumber, PyPDF2, beautifulsoup4, lxml, Pillow | Multi-format document import |
 | `[playwright]` | playwright | Dynamic web page scraping |
 | `[cli]` | typer, uvicorn | Modern subcommand CLI (`pocketgraphrag`) |
@@ -239,7 +239,7 @@ The unified LLM layer tries providers in priority order and auto-falls-back.
 start_webui.bat                           # Windows (or ./start_webui.sh on Linux/Mac)
 # Manual:
 python -m PocketGraphRAG.build_index      # build FAISS index (auto-downloads BGE model)
-python -m PocketGraphRAG.webapp           # Gradio Web UI on :7860
+python -m PocketGraphRAG.api_server       # React Web UI on :8000 (or webapp.py for legacy Gradio on :7860)
 ```
 
 Then open **http://localhost:7860**. The repo ships with a rice-disease demo dataset, so no data prep is needed. Docker: `docker-compose up -d`.
@@ -574,7 +574,8 @@ PocketGraphRAG/
 │   ├── evaluate.py           # Ablation experiment
 │   ├── eval_harness.py       # Benchmark + RAGAS eval harness
 │   ├── app.py                # CLI entry point
-│   ├── webapp.py             # Gradio Web UI (Q&A + Data Mgmt + Graph Viz)
+│   ├── webapp.py             # Legacy Gradio Web UI (Q&A + Data Mgmt + Graph Viz)
+│   ├── api_server.py         # FastAPI server (React SPA + REST API on :8000)
 │   ├── cli.py                # Modern Typer CLI (`pocketgraphrag`)
 │   └── tests/                # Unit tests
 ├── examples/                 # Example datasets (movie_kg / rice / cat_encyclopedia)

@@ -149,3 +149,6 @@ pnpm-debug.log*
 # Tauri build output
 pet_tauri/**/dist/
 pet_tauri/**/build/
+
+# HuggingFace cache (large files)
+bench_data/hf_cache/

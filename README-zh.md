@@ -5,8 +5,8 @@
 **本地优先的 GraphRAG，在公开 HotpotQA 上击败 LightRAG — 查询时零 LLM 调用。**<br>
 上传文档 → 抽取三元组 → 构建私有图谱 → 带引用问答。无需 Neo4j，无需上云。
 
-[![CI](https://github.com/pocketgraphrag/PocketGraphRAG/actions/workflows/ci.yml/badge.svg)](https://github.com/pocketgraphrag/PocketGraphRAG/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/pocketgraphrag/PocketGraphRAG/branch/main/graph/badge.svg)](https://codecov.io/gh/pocketgraphrag/PocketGraphRAG)
+[![CI](https://github.com/jyzisliubi/Pocket-graph/actions/workflows/ci.yml/badge.svg)](https://github.com/jyzisliubi/Pocket-graph/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/jyzisliubi/Pocket-graph/branch/main/graph/badge.svg)](https://codecov.io/gh/jyzisliubi/Pocket-graph)
 [![Install](https://img.shields.io/badge/install-source%20first-2ea44f.svg)](#quick-start)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -78,7 +78,7 @@ pocketgraphrag ask "你的问题"             # 单次问答，带引用
 - 🎯 **确定性检索** — `cid` tie-breaker 保证 MRR 可复现。LightRAG / nano-graphrag 没有。
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/demo.gif" alt="PocketGraphRAG Demo：上传文档、构建本地图谱、带来源问答" width="880">
+  <img src="https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/demo.gif" alt="PocketGraphRAG Demo：上传文档、构建本地图谱、带来源问答" width="880">
 </p>
 
 <p align="center">
@@ -89,11 +89,11 @@ pocketgraphrag ask "你的问题"             # 单次问答，带引用
 
 | 知识图谱可视化 | 系统架构 |
 |:---:|:---:|
-| ![Knowledge Graph](https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/kg_overview.png) | ![Architecture](https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/architecture.png) |
+| ![Knowledge Graph](https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/kg_overview.png) | ![Architecture](https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/architecture.png) |
 
 | PageRank 实体重要性 | 社区发现 |
 |:---:|:---:|
-| ![Pagerank](https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/pagerank_demo.png) | ![Community Detection](https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/community_demo.png) |
+| ![Pagerank](https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/pagerank_demo.png) | ![Community Detection](https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/community_demo.png) |
 
 ---
 
@@ -190,7 +190,7 @@ graph TD
 ### 1. 安装
 
 ```bash
-git clone https://github.com/pocketgraphrag/PocketGraphRAG.git
+git clone https://github.com/jyzisliubi/Pocket-graph.git
 cd PocketGraphRAG
 pip install -r requirements.txt          # 核心依赖
 # pip install -e ".[all]"                # 贡献者：全量 extras（web/docs/cli/eval/dev）
@@ -639,7 +639,7 @@ A：现代 Typer CLI 需要安装 `[cli]` extra：`pip install "pocketgraphrag[c
 - [ ] **Langfuse / OpenTelemetry** 追踪集成
 - [ ] **Re-ranking**：cross-encoder reranker 阶段
 
-进度详见 [open issues](https://github.com/pocketgraphrag/PocketGraphRAG/issues) 和 [CHANGELOG.md](./CHANGELOG.md)。
+进度详见 [open issues](https://github.com/jyzisliubi/Pocket-graph/issues) 和 [CHANGELOG.md](./CHANGELOG.md)。
 
 ---
 
@@ -681,7 +681,7 @@ ruff format .
   title  = {PocketGraphRAG: A Lightweight, Local-First GraphRAG Framework for Vertical Domains},
   author = {PocketGraphRAG Team},
   year   = {2026},
-  url    = {https://github.com/pocketgraphrag/PocketGraphRAG},
+  url    = {https://github.com/jyzisliubi/Pocket-graph},
   note   = {Version 0.3.2, Alpha}
 }
 ```

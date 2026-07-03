@@ -5,8 +5,8 @@
 **A local-first GraphRAG that beats LightRAG on public HotpotQA — zero LLM calls at query time.**<br>
 Upload docs → extract triples → build a private graph → ask with citations. No Neo4j, no cloud required.
 
-[![CI](https://github.com/pocketgraphrag/PocketGraphRAG/actions/workflows/ci.yml/badge.svg)](https://github.com/pocketgraphrag/PocketGraphRAG/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/pocketgraphrag/PocketGraphRAG/branch/main/graph/badge.svg)](https://codecov.io/gh/pocketgraphrag/PocketGraphRAG)
+[![CI](https://github.com/jyzisliubi/Pocket-graph/actions/workflows/ci.yml/badge.svg)](https://github.com/jyzisliubi/Pocket-graph/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/jyzisliubi/Pocket-graph/branch/main/graph/badge.svg)](https://codecov.io/gh/jyzisliubi/Pocket-graph)
 [![Install](https://img.shields.io/badge/install-source%20first-2ea44f.svg)](#quick-start)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -78,7 +78,7 @@ Each row adds one technique on top of the previous. Multi-Model KG Fusion is the
 - 🎯 **Deterministic Retrieval** — A `cid` tie-breaker guarantees reproducible MRR. LightRAG / nano-graphrag do not.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/demo.gif" alt="PocketGraphRAG Demo: upload docs, build a local graph, and ask with sources" width="880">
+  <img src="https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/demo.gif" alt="PocketGraphRAG Demo: upload docs, build a local graph, and ask with sources" width="880">
 </p>
 
 <p align="center">
@@ -89,11 +89,11 @@ Each row adds one technique on top of the previous. Multi-Model KG Fusion is the
 
 | Knowledge Graph Visualization | System Architecture |
 |:---:|:---:|
-| ![Knowledge Graph](https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/kg_overview.png) | ![Architecture](https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/architecture.png) |
+| ![Knowledge Graph](https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/kg_overview.png) | ![Architecture](https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/architecture.png) |
 
 | Pagerank Entity Importance | Community Detection |
 |:---:|:---:|
-| ![Pagerank](https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/pagerank_demo.png) | ![Community Detection](https://raw.githubusercontent.com/pocketgraphrag/PocketGraphRAG/main/assets/community_demo.png) |
+| ![Pagerank](https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/pagerank_demo.png) | ![Community Detection](https://raw.githubusercontent.com/jyzisliubi/Pocket-graph/main/assets/community_demo.png) |
 
 ---
 
@@ -190,7 +190,7 @@ graph TD
 ### 1. Install
 
 ```bash
-git clone https://github.com/pocketgraphrag/PocketGraphRAG.git
+git clone https://github.com/jyzisliubi/Pocket-graph.git
 cd PocketGraphRAG
 pip install -r requirements.txt          # core
 # pip install -e ".[all]"                # contributors: full extras (web/docs/cli/eval/dev)
@@ -627,7 +627,7 @@ A: The modern Typer CLI requires the `[cli]` extra: `pip install "pocketgraphrag
 - [ ] **Langfuse / OpenTelemetry** tracing integration
 - [ ] **Re-ranking**: cross-encoder reranker stage
 
-See [open issues](https://github.com/pocketgraphrag/PocketGraphRAG/issues) and [CHANGELOG.md](./CHANGELOG.md) for progress.
+See [open issues](https://github.com/jyzisliubi/Pocket-graph/issues) and [CHANGELOG.md](./CHANGELOG.md) for progress.
 
 ---
 
@@ -669,7 +669,7 @@ If you use PocketGraphRAG in your research or project, please cite it:
   title  = {PocketGraphRAG: A Lightweight, Local-First GraphRAG Framework for Vertical Domains},
   author = {PocketGraphRAG Team},
   year   = {2026},
-  url    = {https://github.com/pocketgraphrag/PocketGraphRAG},
+  url    = {https://github.com/jyzisliubi/Pocket-graph},
   note   = {Version 0.3.2, Alpha}
 }
 ```

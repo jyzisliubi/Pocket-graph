@@ -20,6 +20,8 @@ import pytest
 
 import numpy as np
 
+from PocketGraphRAG.config import REFUSE_ANSWER_TEXT
+
 # ==========================
 # Mock 模型（避免下载 BGE）
 # ==========================
@@ -918,6 +920,33 @@ class TestAnswerFallback:
 
         assert result["pipeline_info"]["refused"] is True
         assert result["pipeline_info"]["failure_bucket"] == "no_entity_or_relation_hit"
+
+    def test_answer_refuses_when_seed_empty_but_relations_noisy(self):
+        """BUG 修复：seed_entities=[] 但 matched_relations 有噪声（如通用关系"类型"）时仍应拒答。
+
+        复现真实场景：查询"量子计算机的纠错码原理"在电影 KG 中
+        seed_entities=[] 但 matched_relations=["类型"]（向量噪声匹配），
+        原逻辑因 has_matched_rel=True 不拒答，导致 LLM 用自己知识生成幻觉答案。
+        """
+        rag = _make_rag_instance(search_mode="mix")
+        with patch.object(
+            rag,
+            "retrieve",
+            return_value=(
+                [("irrelevant movie text", 0.015, {"entity": "盗梦空间"})],
+                {
+                    "search_type": "mix",
+                    "seed_entities": [],
+                    "matched_relations": ["类型"],  # 噪声匹配
+                    "expanded_entities": ["盗梦空间", "科幻"],
+                },
+            ),
+        ):
+            result = rag.answer("量子计算机的纠错码原理")
+
+        assert result["pipeline_info"]["refused"] is True
+        assert result["pipeline_info"]["failure_bucket"] == "no_entity_or_relation_hit"
+        assert result["answer"] == REFUSE_ANSWER_TEXT
 
     def test_answer_stream_emits_structured_fallback_chunk(self):
         rag = _make_rag_instance(search_mode="mix")

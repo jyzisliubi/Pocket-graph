@@ -32,7 +32,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { cn } from '@/lib/utils'
-import { askQuestionStream } from '@/lib/api'
+import { askQuestionStream, retrieve } from '@/lib/api'
 import type { Source, PipelineInfo, SearchMode } from '@/types/api'
 
 /** 检索模式选项 */
@@ -430,6 +430,7 @@ export default function ChatPage() {
   const [useHyde, setUseHyde] = useState(false)
   const [useReranker, setUseReranker] = useState(false)
   const [useSelfCheck, setUseSelfCheck] = useState(false)
+  const [onlyRetrieve, setOnlyRetrieve] = useState(false)
   const [showAdvanced, setShowAdvanced] = useState(false)
 
   // 流式控制器 & 滚动容器
@@ -487,6 +488,57 @@ export default function ChatPage() {
     setIsLoading(true)
     setError(null)
     setStatusText('正在思考…')
+
+    // 仅检索模式：调用 /api/retrieve，不调用 LLM 生成
+    if (onlyRetrieve) {
+      setStatusText('正在检索知识库（仅检索模式，不调用 LLM）…')
+      retrieve({
+        query,
+        search_mode: searchMode,
+        top_k: topK,
+        use_reranker: useReranker,
+        vector_weight: vectorWeight,
+      })
+        .then((resp) => {
+          const kgPath = resp.kg_path
+          const seedCount = kgPath.seed_entities?.length ?? 0
+          const expandedCount = kgPath.expanded_entities?.length ?? 0
+          const matchedRelCount = kgPath.matched_relations?.length ?? 0
+          const summary =
+            resp.sources.length > 0
+              ? `**仅检索模式**：返回 ${resp.sources.length} 条来源（seed 实体 ${seedCount}，扩展实体 ${expandedCount}，命中关系 ${matchedRelCount}）。未调用 LLM 生成答案。`
+              : `**仅检索模式**：未检索到任何结果（seed 实体 ${seedCount}，命中关系 ${matchedRelCount}）。未调用 LLM 生成答案。`
+          patchMsg(aiMsgId, {
+            content: summary,
+            sources: resp.sources,
+            pipeline_info: {
+              search_mode: searchMode,
+              query_rewritten: false,
+              multihop_used: false,
+              kg_path: kgPath,
+              kg_entities_matched: seedCount,
+              top_k: topK,
+              vector_weight: vectorWeight,
+              response_mode: 'retrieval_only',
+            },
+            status: undefined,
+            streaming: false,
+          })
+          setIsLoading(false)
+          setStatusText('')
+        })
+        .catch((err: Error) => {
+          patchMsg(aiMsgId, {
+            error: err.message,
+            status: undefined,
+            streaming: false,
+          })
+          setIsLoading(false)
+          setStatusText('')
+          setError(err.message)
+        })
+      return
+    }
 
     const controller = askQuestionStream(
       {
@@ -793,6 +845,19 @@ export default function ChatPage() {
                 <Switch
                   checked={useSelfCheck}
                   onCheckedChange={setUseSelfCheck}
+                />
+              </div>
+              {/* 仅检索模式：调用 /api/retrieve，不调用 LLM 生成（Zero-LLM Query） */}
+              <div className="flex items-center justify-between">
+                <label className="text-xs">
+                  only_retrieve
+                  <span className="ml-1 text-[10px] text-muted-foreground">
+                    （仅检索，不调用 LLM）
+                  </span>
+                </label>
+                <Switch
+                  checked={onlyRetrieve}
+                  onCheckedChange={setOnlyRetrieve}
                 />
               </div>
             </div>

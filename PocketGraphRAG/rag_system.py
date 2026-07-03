@@ -1164,9 +1164,11 @@ class PocketGraphRAG:
         策略：
         1. 结果为空 → 拒答
         2. KG 模式（local/mix/kg_only）：
-           a. seed_entities 和 matched_relations 全空 → 查询未命中 KG 任何实体/关系 → 拒答
-           b. seed_entities 不为空但全部来自 embedding 匹配（无精确子串匹配），
-              且最高 embedding 相似度 < KG_SEED_REFUSE_THRESHOLD → 查询与 KG 无关 → 拒答
+           a. seed_entities 为空 → 查询未命中 KG 任何实体 → 拒答
+              （matched_relations 不作为豁免条件：通用关系如"类型"/"导演"
+              在向量检索噪声下极易误匹配，无法证明查询与 KG 相关）
+           b. seed_entities 不为空但最高 embedding 相似度 < 0.65
+              → 查询与 KG 无关 → 拒答
         3. global 模式：matched_relations 和 expanded_entities 全空 → 拒答
         4. 纯向量模式：top1 余弦相似度 < VECTOR_REFUSE_THRESHOLD → 拒答
 
@@ -1185,15 +1187,18 @@ class PocketGraphRAG:
         has_matched_rel = bool(kg_path.get("matched_relations"))
         has_expanded = bool(kg_path.get("expanded_entities"))
 
-        # 2. KG 模式：实体/关系都没命中 → 查询与 KG 无关
+        # 2. KG 模式：seed 实体未命中即拒答（matched_relations 噪声不可信）
         if st in ("local", "mix", "kg_only"):
-            if not has_seed and not has_matched_rel:
-                return True, f"{st} 模式未匹配到任何 KG 实体或关系"
+            if not has_seed:
+                return True, (
+                    f"{st} 模式未匹配到任何 KG 实体"
+                    + (f"（matched_relations={has_matched_rel} 但视为噪声）" if has_matched_rel else "")
+                )
             # seed 实体存在但最高匹配分数过低（全部来自低分 embedding 匹配，无精确子串匹配）
             # 阈值 0.65：正常领域查询的 embedding 匹配通常 >= 0.7，完全不相关的查询
             # 噪声匹配通常在 0.5~0.6 之间
             max_seed_score = kg_path.get("max_seed_score", 1.0)
-            if has_seed and max_seed_score < 0.65:
+            if max_seed_score < 0.65:
                 return True, (
                     f"{st} 模式 seed 实体最高匹配分数 {max_seed_score:.3f} 过低，"
                     f"查询可能与知识库无关"
@@ -1223,7 +1228,9 @@ class PocketGraphRAG:
         has_matched_rel = bool(kg_path.get("matched_relations"))
         has_expanded = bool(kg_path.get("expanded_entities"))
 
-        if st in ("local", "mix", "kg_only") and not has_seed and not has_matched_rel:
+        # 与 _should_refuse 保持一致：seed 实体未命中即归为此 bucket
+        # （matched_relations 在无 seed 时视为噪声，不作为豁免）
+        if st in ("local", "mix", "kg_only") and not has_seed:
             return "no_entity_or_relation_hit"
         if st == "global" and not has_matched_rel and not has_expanded:
             return "insufficient_relation_context"

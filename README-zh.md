@@ -49,6 +49,8 @@ pocketgraphrag ask "你的问题"             # 单次问答，带引用
 
 > 复现命令：`python bench_data/eval_merged.py`。数据集：`bench_data/hotpotqa_50.json`。
 
+> ⚠️ **诚实声明**：PocketGraphRAG 使用了 **多模型 KG 融合**（qwen-flash + qwen-max，10559 三元组），而 LightRAG v1.5.4 用 **单模型** 关键词抽取。所以这 *不是* 纯检索引擎的对决 —— 多模型 KG 融合本身就是 PocketGraphRAG 独有的技术。若要隔离检索层的贡献，看下方消融的 *基线* 行（单模型，4611 三元组）：Hit 0.56 / MRR 0.4207，已经是 LightRAG MRR 的 2 倍。融合是在此基础上 *进一步* 提升检索，而非凭空而来。
+
 ### 演进路径（消融）
 
 每一行在前一行基础上叠加一项技术。多模型 KG 融合是突破点。
@@ -526,6 +528,7 @@ python -m PocketGraphRAG.api_server --host 0.0.0.0 --port 8000
 |------|------|------|
 | POST | `/api/qa` | 非流式问答 |
 | POST | `/api/qa/stream` | 流式问答（SSE） |
+| POST | `/api/retrieve` | **仅检索（Zero-LLM）** — 只返回 sources + kg_path，不调用任何 LLM。等价于 LightRAG 的 `only_need_context=true`，但真正零 LLM（LightRAG 仍需 LLM 做关键词抽取）。用于检索评估、调试或节约 LLM 配额。 |
 | GET | `/api/graph/stats` | 图谱统计（实体、关系、三元组） |
 | GET | `/api/graph/entities` | 列出所有实体 |
 | GET | `/api/graph/relations` | 列出所有关系 |

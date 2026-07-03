@@ -49,6 +49,8 @@ same embedding model. Reproducible by anyone.
 
 > Reproduce with `python bench_data/eval_merged.py`. Dataset: `bench_data/hotpotqa_50.json`.
 
+> ⚠️ **Apples-to-apples disclosure**: PocketGraphRAG uses **Multi-Model KG Fusion** (qwen-flash + qwen-max, 10559 triples) while LightRAG v1.5.4 uses **single-model** keyword extraction. The comparison is therefore *not* a pure retrieval-engine duel — Multi-Model KG Fusion is itself a PocketGraphRAG-exclusive technique. To isolate the retrieval layer, see the *Baseline* row in the ablation below (single-model, 4611 triples): Hit 0.56 / MRR 0.4207, which is already 2× LightRAG's MRR. The fusion step lifts retrieval *further*, not from nothing.
+
 ### How We Got There (ablation)
 
 Each row adds one technique on top of the previous. Multi-Model KG Fusion is the breakthrough step.
@@ -514,6 +516,7 @@ python -m PocketGraphRAG.api_server --host 0.0.0.0 --port 8000
 |--------|----------|-------------|
 | POST | `/api/qa` | Non-streaming Q&A |
 | POST | `/api/qa/stream` | Streaming Q&A (SSE) |
+| POST | `/api/retrieve` | **Retrieve-only (Zero-LLM)** — returns sources + kg_path without calling any LLM. Equivalent to LightRAG's `only_need_context=true`, but truly zero-LLM (LightRAG still calls LLM for keyword extraction). Use this for retrieval evaluation, debugging, or saving LLM quota. |
 | GET | `/api/graph/stats` | Graph statistics (entities, relations, triples) |
 | GET | `/api/graph/entities` | List all entities |
 | GET | `/api/graph/relations` | List all relations |

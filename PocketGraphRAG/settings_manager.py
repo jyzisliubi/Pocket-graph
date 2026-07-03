@@ -41,6 +41,14 @@ PROVIDERS = {
         "default_base": "http://localhost:11434/v1",
         "help": "需先安装 Ollama (https://ollama.com/) 并拉取模型: ollama pull qwen2.5:7b",
     },
+    "freellm-cn": {
+        "label": "freellm-cn（本地大模型服务网关，OpenAI 兼容）",
+        "needs_key": True,
+        "fields": ["FREELM_CN_API_KEY", "FREELM_CN_MODEL", "FREELM_CN_API_BASE"],
+        "default_model": "auto",
+        "default_base": "http://localhost:8000/v1",
+        "help": "需先启动 freellm-cn 服务，运行 start_freellm_cn.bat / start_freellm_cn.sh",
+    },
     "siliconflow": {
         "label": "SiliconFlow 硅基流动（国内访问快，有免费额度）",
         "needs_key": True,
@@ -83,6 +91,8 @@ def detect_active_provider() -> str:
     """根据当前 config 判断激活的 provider（与 llm.py 的优先级一致）"""
     if config.OLLAMA_MODEL:
         return "ollama"
+    if config.FREELM_CN_API_KEY:
+        return "freellm-cn"
     if config.SILICONFLOW_API_KEY:
         return "siliconflow"
     if config.DEEPSEEK_API_KEY:
@@ -102,6 +112,10 @@ def load_llm_settings() -> dict:
         # Ollama
         "OLLAMA_MODEL": env.get("OLLAMA_MODEL", config.OLLAMA_MODEL),
         "OLLAMA_API_BASE": env.get("OLLAMA_API_BASE", config.OLLAMA_API_BASE),
+        # freellm-cn
+        "FREELM_CN_API_KEY": env.get("FREELM_CN_API_KEY", config.FREELM_CN_API_KEY),
+        "FREELM_CN_MODEL": env.get("FREELM_CN_MODEL", config.FREELM_CN_MODEL),
+        "FREELM_CN_API_BASE": env.get("FREELM_CN_API_BASE", config.FREELM_CN_API_BASE),
         # SiliconFlow
         "SILICONFLOW_API_KEY": env.get(
             "SILICONFLOW_API_KEY", config.SILICONFLOW_API_KEY
@@ -170,6 +184,9 @@ def _sync_config_from_env() -> None:
     mapping = {
         "OLLAMA_MODEL": "OLLAMA_MODEL",
         "OLLAMA_API_BASE": "OLLAMA_API_BASE",
+        "FREELM_CN_API_KEY": "FREELM_CN_API_KEY",
+        "FREELM_CN_MODEL": "FREELM_CN_MODEL",
+        "FREELM_CN_API_BASE": "FREELM_CN_API_BASE",
         "SILICONFLOW_API_KEY": "SILICONFLOW_API_KEY",
         "SILICONFLOW_MODEL": "SILICONFLOW_MODEL",
         "DEEPSEEK_API_KEY": "DEEPSEEK_API_KEY",

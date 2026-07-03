@@ -5,7 +5,7 @@ PocketGraphRAG - 轻量级、本地优先的垂直领域 GraphRAG 框架
     from PocketGraphRAG import PocketGraphRAG
 
     rag = PocketGraphRAG(search_mode="mix")
-    result = rag.answer("稻瘟病怎么防治？")
+    result = rag.answer("这部电影讲了什么？")
     print(result["answer"])
 
 模块结构:

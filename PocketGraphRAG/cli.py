@@ -14,7 +14,7 @@ PocketGraphRAG CLI — 统一命令行入口
     pocketgraphrag --help               # 查看所有命令
     pocketgraphrag doctor               # 环境诊断
     pocketgraphrag init                 # 环境检查 & 初始化向导
-    pocketgraphrag ask "稻瘟病怎么防治？"  # 单次问答
+    pocketgraphrag ask "这部电影讲了什么？"  # 单次问答
     pocketgraphrag qa "问题" --stream   # 流式问答（别名）
     pocketgraphrag extract -i doc.txt   # 从文档抽取三元组
     pocketgraphrag build                # 构建索引

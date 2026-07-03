@@ -4,7 +4,7 @@ PocketGraphRAG Benchmark 一键评测脚本
 对比不同检索配置的效果，生成评测报告和对比表格。
 
 使用方式：
-    # 使用内置水稻病害评测集
+    # 使用内置电影知识图谱评测集
     python -m PocketGraphRAG.run_benchmark
 
     # 使用自定义评测集

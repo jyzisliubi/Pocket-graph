@@ -209,13 +209,19 @@ pip install -r requirements.txt          # 核心依赖
 
 ### 2. 配置 LLM（任选其一）
 
-把 `.env.example` 复制为 `.env` 并填入一个 provider — 或者用 Ollama 完全离线运行：
+把 `.env.example` 复制为 `.env` 并填入一个 provider — 或者用 Ollama/freellm-cn 完全离线运行：
 
 ```bash
-# 本地离线（推荐）
+# 本地离线（推荐 Ollama）
 ollama pull qwen2:7b
 set OLLAMA_MODEL=qwen2:7b                 # Linux/Mac 用 export
 set OLLAMA_API_BASE=http://localhost:11434/v1
+
+# 本地离线（freellm-cn）
+# 先启动 freellm-cn 服务：运行 start_freellm_cn.bat / start_freellm_cn.sh
+set FREELM_CN_API_KEY=your-api-key        # Linux/Mac 用 export
+set FREELM_CN_API_BASE=http://localhost:8000/v1
+set FREELM_CN_MODEL=auto
 
 # 云端 API（任选一个）
 set DASHSCOPE_API_KEY=sk-your-key         # 阿里云，有免费额度 + VLM
@@ -226,6 +232,7 @@ set DASHSCOPE_API_KEY=sk-your-key         # 阿里云，有免费额度 + VLM
 | Provider | 环境变量 | 备注 |
 |----------|---------|------|
 | **Ollama（本地）** | `OLLAMA_MODEL` | 完全离线运行，`ollama pull qwen2:7b` |
+| **freellm-cn（本地）** | `FREELM_CN_API_KEY` | 本地大模型服务网关，OpenAI 兼容 |
 | SiliconFlow | `SILICONFLOW_API_KEY` | 免费 Qwen 模型 |
 | DashScope | `DASHSCOPE_API_KEY` | 有免费额度，支持 VLM |
 | DeepSeek | `DEEPSEEK_API_KEY` | 推理能力强 |
@@ -283,7 +290,7 @@ PocketGraphRAG 用薄抽象层把各后端解耦，替换后端不影响 RAG 主
 | **Embedding** | `BAAI/bge-small-zh-v1.5`（FAISS） | 任意 `SentenceTransformer` | 设置 `RICE_EMBEDDING_MODEL` |
 | **向量存储** | FAISS（进程内） | — | 无需外部数据库 |
 | **图谱存储** | 内存 dict + JSON 落盘 | — | 通过 `KGProcessor` 插拔 |
-| **LLM** | SiliconFlow / DashScope / DeepSeek / OpenAI / **Ollama** | 任意 OpenAI 兼容 endpoint | 自动 fallback 链 |
+| **LLM** | SiliconFlow / DashScope / DeepSeek / OpenAI / **Ollama** / **freellm-cn** | 任意 OpenAI 兼容 endpoint | 自动 fallback 链 |
 | **VLM（多模态）** | DashScope `qwen-vl-plus` | 任意 OpenAI 兼容 VLM | OCR + 直接 KG 抽取 |
 | **分块** | 实体级 | — | 按实体聚合知识 |
 | **融合** | RRF（默认）/ 加权 | — | 设置 `POCKET_FUSION_STRATEGY` |

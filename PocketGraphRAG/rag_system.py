@@ -802,7 +802,7 @@ class PocketGraphRAG:
         1. 精确子串包含（双向）
         2. focus token 在实体名中
         3. 实体名 token 在 query 中
-        4. 中文字符级 n-gram 重叠（≥2字共享核心语素，如"稻瘟病"↔"穗颈瘟病"共享"瘟病"）
+        4. 中文字符级 n-gram 重叠（≥2字共享核心语素，如"盗梦空间"↔"Inception"共享"盗梦"）
         """
         import re
 

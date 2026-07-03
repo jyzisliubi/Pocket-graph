@@ -66,7 +66,7 @@ def main():
     # 2. 只检索不生成（不调用 LLM，速度快）
     print("\n[2/4] 只检索不生成（/api/retrieve）...")
     retrieve_resp = _post("/api/retrieve", {
-        "query": "稻瘟病症状",
+        "query": "盗梦空间导演",
         "top_k": 3,
         "search_mode": "kg_only",
     })
@@ -78,7 +78,7 @@ def main():
     # 3. 完整问答（调用 LLM 生成）
     print("\n[3/4] 完整问答（/api/qa，调用 LLM）...")
     qa_resp = _post("/api/qa", {
-        "query": "三环唑防治稻瘟病的用量是多少？",
+        "query": "诺兰拍过哪些电影？",
         "top_k": 5,
         "search_mode": "kg_only",
     })

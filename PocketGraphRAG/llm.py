@@ -31,6 +31,9 @@ from .config import (
     DEEPSEEK_API_BASE,
     DEEPSEEK_API_KEY,
     DEEPSEEK_MODEL,
+    FREELM_CN_API_BASE,
+    FREELM_CN_API_KEY,
+    FREELM_CN_MODEL,
     OLLAMA_API_BASE,
     OLLAMA_MODEL,
     OPENAI_API_BASE,
@@ -159,7 +162,7 @@ def call_llm(
     """
     统一 LLM 调用入口，按优先级依次尝试不同后端。
 
-    优先级：Ollama → SiliconFlow → DashScope → OpenAI
+    优先级：Ollama → freellm-cn → SiliconFlow → DeepSeek → DashScope → OpenAI
 
     Args:
         system_prompt: 系统提示词
@@ -190,6 +193,23 @@ def call_llm(
             temperature,
             max_tokens,
             label="Ollama",
+            stream=stream,
+        )
+        if result is not None:
+            return result
+
+    # 备选 freellm-cn（本地大模型服务网关，OpenAI 兼容）
+    # 启动方式：运行 start_freellm_cn.bat / start_freellm_cn.sh
+    if FREELM_CN_API_KEY:
+        result = _call_openai_compatible(
+            FREELM_CN_API_BASE,
+            FREELM_CN_API_KEY,
+            model_override or FREELM_CN_MODEL,
+            system_prompt,
+            user_prompt,
+            temperature,
+            max_tokens,
+            label="freellm-cn",
             stream=stream,
         )
         if result is not None:
@@ -356,6 +376,7 @@ def has_llm() -> bool:
     """检查是否配置了至少一个 LLM 后端"""
     return bool(
         OLLAMA_MODEL
+        or FREELM_CN_API_KEY
         or SILICONFLOW_API_KEY
         or DEEPSEEK_API_KEY
         or DASHSCOPE_API_KEY
@@ -367,6 +388,8 @@ def get_active_provider() -> str:
     """获取当前激活的 LLM 提供商名称"""
     if OLLAMA_MODEL:
         return f"Ollama ({OLLAMA_MODEL})"
+    if FREELM_CN_API_KEY:
+        return f"freellm-cn ({FREELM_CN_MODEL})"
     if SILICONFLOW_API_KEY:
         return f"SiliconFlow ({SILICONFLOW_MODEL})"
     if DEEPSEEK_API_KEY:

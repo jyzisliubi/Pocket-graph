@@ -11,7 +11,7 @@
 
     # 纯内存模式
     store = JsonKVStorage()
-    store.upsert("doc_001", {"text": "稻瘟病...", "source": "manual.pdf"})
+    store.upsert("doc_001", {"text": "盗梦空间...", "source": "manual.pdf"})
 
     # 持久化模式
     store = JsonKVStorage(path="data/doc_store.json")

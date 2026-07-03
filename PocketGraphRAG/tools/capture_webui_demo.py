@@ -14,7 +14,7 @@ Prereqs:
 
 Usage:
     python -m PocketGraphRAG.tools.capture_webui_demo
-    python -m PocketGraphRAG.tools.capture_webui_demo --url http://127.0.0.1:7860 --query "稻瘟病怎么防治？"
+    python -m PocketGraphRAG.tools.capture_webui_demo --url http://127.0.0.1:7860 --query "这部电影讲了什么？"
 
 Output:
     assets/demo_qa.png
@@ -125,7 +125,7 @@ def main() -> None:
     parser.add_argument(
         "--url", default="http://127.0.0.1:7860", help="Web UI base URL"
     )
-    parser.add_argument("--query", default="稻瘟病怎么防治？", help="sample Q&A query")
+    parser.add_argument("--query", default="这部电影讲了什么？", help="sample Q&A query")
     parser.add_argument("--out", default=str(ASSETS_DIR), help="output directory")
     args = parser.parse_args()
 

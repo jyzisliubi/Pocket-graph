@@ -255,6 +255,14 @@ OPENAI_MODEL = _env("POCKET_OPENAI_MODEL", "OPENAI_MODEL", "gpt-3.5-turbo")
 OLLAMA_MODEL = _env("POCKET_OLLAMA_MODEL", "OLLAMA_MODEL", "")
 OLLAMA_API_BASE = _env("POCKET_OLLAMA_API_BASE", "OLLAMA_API_BASE", "http://localhost:11434/v1")
 
+# --- 选项 6: freellm-cn 本地大模型服务 ---
+# freellm-cn 是 OpenAI 兼容的本地大模型服务网关
+# 项目地址: https://github.com/your-org/freellm-cn
+# 启动服务后，设置环境变量: set POCKET_FREELM_CN_API_KEY="your-key"
+FREELM_CN_API_KEY = _env("POCKET_FREELM_CN_API_KEY", "FREELM_CN_API_KEY", "")
+FREELM_CN_API_BASE = _env("POCKET_FREELM_CN_API_BASE", "FREELM_CN_API_BASE", "http://localhost:8000/v1")
+FREELM_CN_MODEL = _env("POCKET_FREELM_CN_MODEL", "FREELM_CN_MODEL", "auto")
+
 # LLM 请求超时（秒）。Ollama 本地推理较慢（7B 模型首 token ~10-30s），
 # 旧默认 60s 在弱机器上频繁超时。默认 120s，可通过环境变量调整。
 # 云端 API（SiliconFlow/DeepSeek/DashScope/OpenAI）通常 30s 足够，

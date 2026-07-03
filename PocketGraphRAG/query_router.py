@@ -3,11 +3,11 @@
 核心动机：
   用户不知道该选 vector / local / global / mix / global_summary 哪个模式。
   但不同问题类型对检索模式有强偏好：
-    - "稻瘟病有什么症状" → local（实体中心，BFS 邻域找症状实体）
-    - "对比三环唑和稻瘟灵的效果" → mix（多实体 + 比较，需向量+KG）
-    - "水稻病害防治体系概述" → global_summary（归纳，走社区摘要）
-    - "稻瘟病是什么" → vector（简单事实，向量足够）
-    - "稻瘟病和纹枯病的关系" → mix（跨实体关系）
+    - "盗梦空间是谁导演的" → local（实体中心，BFS 邻域找导演实体）
+    - "对比盗梦空间和星际穿越的评分" → mix（多实体 + 比较，需向量+KG）
+    - "诺兰电影作品概览" → global_summary（归纳，走社区摘要）
+    - "盗梦空间的上映年份" → vector（简单事实，向量足够）
+    - "盗梦空间和星际穿越的关系" → mix（跨实体关系）
 
   用一次轻量 LLM 调用做分类（temperature=0 保证稳定），无 LLM 时回退默认模式。
 
@@ -57,7 +57,7 @@ class QueryRouter:
 
     用法：
         router = QueryRouter(default_mode="mix")
-        mode = router.route("稻瘟病有什么症状")  # 返回 "local"
+        mode = router.route("盗梦空间是谁导演的")  # 返回 "local"
     """
 
     def __init__(self, default_mode: str = "mix"):

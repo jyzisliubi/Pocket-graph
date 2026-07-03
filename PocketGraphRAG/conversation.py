@@ -8,7 +8,7 @@ with context from previous turns, enabling natural multi-turn dialogue.
 REWRITE_PROMPT = """你是一个查询改写助手。根据对话历史，将用户的追问改写成一个完整、独立的查询。
 
 规则：
-1. 如果追问依赖上文语境（如"用量呢"、"那纹枯病呢"），补全为完整查询
+1. 如果追问依赖上文语境（如"导演呢"、"那诺兰呢"），补全为完整查询
 2. 如果问题本身已完整，直接返回原问题
 3. 只返回改写后的查询，不要解释
 

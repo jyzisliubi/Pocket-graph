@@ -120,7 +120,7 @@ bench_data/eval_gleaning1.py
 bench_data/eval_lightrag*.py
 bench_data/eval_movie_baseline.py
 bench_data/eval_qwenmax_g2.py
-bench_data/extract_hotpotqa_kg.py
+bench_data/extract_hotpotqa_kg*.py
 bench_data/merge_kg.py
 bench_data/prepare_hotpotqa.py
 bench_data/hotpotqa_index/

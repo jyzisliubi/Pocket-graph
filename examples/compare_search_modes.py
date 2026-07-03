@@ -29,7 +29,7 @@ def main():
     print("  PocketGraphRAG 检索模式对比")
     print("=" * 60)
 
-    question = "稻瘟病怎么防治？用三环唑的用量是多少？"
+    question = "盗梦空间讲了什么？诺兰还拍过哪些电影？"
     modes = ["vector", "local", "global", "mix", "kg_only"]
 
     print(f"\n问题：{question}")

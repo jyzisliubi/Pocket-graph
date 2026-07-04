@@ -20,6 +20,25 @@ import re
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Set, Tuple
 
+# Pydantic 可选依赖：用于结构化抽取输出（v0.3.4）
+# 未安装时降级到纯 dict 校验，保持向后兼容
+try:
+    from pydantic import BaseModel, Field, ValidationError
+
+    _PYDANTIC_AVAILABLE = True
+except ImportError:
+    _PYDANTIC_AVAILABLE = False
+
+    class BaseModel:  # type: ignore[no-redef]
+        """占位基类，pydantic 未安装时使用"""
+
+    class ValidationError(Exception):
+        """占位异常类"""
+
+    def Field(*args, **kwargs):  # type: ignore[no-redef]
+        return None
+
+
 EXTRACT_PROMPT_V2 = """你是一个专业的知识图谱抽取专家。请从给定文本中抽取实体和关系，构建高质量知识图谱三元组。
 
 ## 抽取原则
@@ -229,6 +248,192 @@ class Triple:
             self.relation.strip().lower(),
             self.tail.strip().lower(),
         )
+
+
+# ========================
+# Pydantic 结构化抽取模型（v0.3.4）
+# ========================
+# 对标 fast-graphrag 的 Pydantic 结构化抽取输出：
+# 通过 OpenAI 兼容的 response_format={"type":"json_object"} 强制 LLM 输出合法 JSON，
+# 再用 Pydantic 模型校验字段类型和必填性，比纯正则解析更可靠。
+# Pydantic 未安装时降级到纯 dict 校验（_validate_triple_dict）
+
+
+if _PYDANTIC_AVAILABLE:
+
+    class TripleItem(BaseModel):
+        """单条三元组的 Pydantic 模型（结构化抽取输出）"""
+
+        head: str = Field(..., description="头实体名（简洁的名词短语）")
+        relation: str = Field(..., description="关系名（标准化的动宾结构或名词短语）")
+        tail: str = Field(..., description="尾实体名（简洁的名词短语或属性值）")
+        confidence: float = Field(
+            default=0.7, ge=0.0, le=1.0, description="置信度评分 0.0-1.0"
+        )
+        evidence: str = Field(default="", description="支持该三元组的原文片段")
+
+    class TripleList(BaseModel):
+        """三元组列表的 Pydantic 模型（结构化抽取输出的根模型）"""
+
+        triples: List[TripleItem] = Field(
+            default_factory=list, description="抽取的三元组列表"
+        )
+
+else:
+    # Pydantic 未安装时的降级占位类（实际校验走 _validate_triple_dict）
+    TripleItem = None
+    TripleList = None
+
+
+def _validate_triple_dict(item) -> Optional[dict]:
+    """纯 dict 校验：Pydantic 未安装时的降级路径。
+
+    与 TripleItem Pydantic 模型保持一致的校验逻辑：
+    - 必填字段 head/relation/tail 必须是非空字符串
+    - confidence 限制在 [0.0, 1.0]
+    - evidence 默认空字符串
+
+    兼容 LLM 可能返回的多种格式：
+    - 标准 dict: {"head": "A", "relation": "r", "tail": "B"}
+    - 中文 key dict: {"主体": "A", "关系": "r", "客体": "B"}
+    - list/tuple: ["A", "r", "B"] 或 ["A", "r", "B", 0.9] 或 ["A", "r", "B", 0.9, "evidence"]
+    """
+    # 兼容 list/tuple 格式: [head, relation, tail, (confidence), (evidence)]
+    if isinstance(item, (list, tuple)):
+        if len(item) < 3:
+            return None
+        head = str(item[0]).strip()
+        relation = str(item[1]).strip()
+        tail = str(item[2]).strip()
+        confidence = 0.7
+        evidence = ""
+        if len(item) >= 4:
+            try:
+                confidence = float(item[3])
+            except (TypeError, ValueError):
+                confidence = 0.7
+        if len(item) >= 5:
+            evidence = str(item[4]).strip()
+    elif isinstance(item, dict):
+        # 兼容中文 key（主体/客体/关系）和英文 key（head/relation/tail）
+        head = str(item.get("head") or item.get("主体") or item.get("entity") or "").strip()
+        relation = str(item.get("relation") or item.get("关系") or item.get("predicate") or "").strip()
+        tail = str(item.get("tail") or item.get("客体") or item.get("object") or item.get("value") or "").strip()
+        evidence = str(item.get("evidence") or item.get("依据") or item.get("source") or "").strip()
+        try:
+            confidence = float(item.get("confidence", item.get("置信度", 0.7)))
+        except (TypeError, ValueError):
+            confidence = 0.7
+    else:
+        return None
+
+    if not head or not relation or not tail:
+        return None
+    if len(head) > 100 or len(tail) > 200:
+        return None
+    confidence = max(0.0, min(1.0, confidence))
+    return {
+        "head": head,
+        "relation": relation,
+        "tail": tail,
+        "confidence": confidence,
+        "evidence": evidence,
+    }
+
+
+def _parse_structured_triples(
+    data: dict, schema=None, chunk_index: int = 0
+) -> List[Triple]:
+    """解析结构化抽取输出（dict → Triple 列表）。
+
+    优先用 Pydantic 模型校验（若可用），失败时降级到 dict 校验。
+    应用与 _parse_triples_result 相同的质量过滤（is_low_quality_entity）和
+    schema 归一化，保证两条路径产出一致。
+
+    Args:
+        data: 已解析的 dict（来自 call_llm_json）
+        schema: RelationSchema 实例（可选，用于归一化关系名）
+        chunk_index: 文本块索引
+
+    Returns:
+        Triple 列表；data 无效返回空列表
+    """
+    if not isinstance(data, dict):
+        return []
+
+    raw_triples = data.get("triples", [])
+    if not isinstance(raw_triples, list):
+        return []
+
+    triples: List[Triple] = []
+
+    # 优先用 Pydantic 校验整个列表（更快、类型更严格）
+    if _PYDANTIC_AVAILABLE and TripleList is not None:
+        try:
+            validated = TripleList(triples=raw_triples)
+            for item in validated.triples:
+                triple = _build_triple_from_validated(item, schema, chunk_index)
+                if triple is not None:
+                    triples.append(triple)
+            return triples
+        except ValidationError as e:
+            # Pydantic 校验失败，降级到逐条 dict 校验
+            print(f"[警告] Pydantic 校验失败，降级到 dict 校验: {e}")
+
+    # 降级路径：逐条 dict 校验
+    for item in raw_triples:
+        validated = _validate_triple_dict(item)
+        if validated is None:
+            continue
+        # 复用 JSON 解析路径的质量检查
+        if is_low_quality_entity(validated["head"]) or is_low_quality_entity(
+            validated["tail"]
+        ):
+            continue
+        relation = validated["relation"]
+        if schema:
+            relation = schema.normalize_relation(relation)
+        triples.append(
+            Triple(
+                head=validated["head"],
+                relation=relation,
+                tail=validated["tail"],
+                confidence=validated["confidence"],
+                evidence=validated["evidence"],
+                source_chunk=chunk_index,
+            )
+        )
+
+    return triples
+
+
+def _build_triple_from_validated(
+    item, schema, chunk_index: int
+) -> Optional[Triple]:
+    """从 Pydantic 校验后的 TripleItem 构建 Triple 数据类。
+
+    应用 is_low_quality_entity 过滤和 schema 归一化，保持与
+    _parse_triples_result 一致的质量控制。低质量实体的三元组返回 None。
+    """
+    head = item.head.strip()
+    relation = item.relation.strip()
+    tail = item.tail.strip()
+
+    # 质量检查（与 JSON 解析路径一致）：低质量实体直接跳过
+    if is_low_quality_entity(head) or is_low_quality_entity(tail):
+        return None
+
+    if schema:
+        relation = schema.normalize_relation(relation)
+
+    return Triple(
+        head=head,
+        relation=relation,
+        tail=tail,
+        confidence=item.confidence,
+        evidence=item.evidence.strip(),
+        source_chunk=chunk_index,
+    )
 
 
 @dataclass
@@ -571,8 +776,13 @@ def extract_triples_from_text(
 
     Returns:
         Triple 列表
+
+    v0.3.4: 当 POCKET_STRUCTURED_OUTPUT=1 时优先使用结构化抽取（call_llm_json +
+    Pydantic 校验），失败时降级到纯文本解析。结构化抽取通过 response_format
+    强制 LLM 输出合法 JSON，比正则解析更可靠。
     """
-    from .llm import call_llm, has_llm
+    from .config import STRUCTURED_OUTPUT_ENABLED
+    from .llm import call_llm, call_llm_json, has_llm
 
     if not has_llm():
         print("[错误] 未配置 LLM API Key 或 Ollama，无法进行自动抽取。")
@@ -584,6 +794,36 @@ def extract_triples_from_text(
         EXTRACT_PROMPT_V2 + schema_constraint + '\n\n待抽取文本:\n"""' + text + '"""'
     )
 
+    # ====== v0.3.4: 结构化抽取路径（优先） ======
+    if STRUCTURED_OUTPUT_ENABLED:
+        # call_llm_json 要求 system_prompt 包含 "JSON" 字样
+        system_prompt = (
+            "你是一个知识图谱抽取专家。必须只输出 JSON 格式的三元组，"
+            '格式为 {"triples": [{"head":"...","relation":"...","tail":"...",'
+            '"confidence":0.9,"evidence":"..."}]}，不要输出任何其他文字。'
+        )
+        data = call_llm_json(
+            system_prompt,
+            prompt,
+            temperature=temperature,
+            max_tokens=3000,
+            role="extract",
+        )
+        if data is not None:
+            triples = _parse_structured_triples(data, schema, chunk_index)
+            if triples:
+                # 结构化抽取成功，跳过纯文本路径
+                # 仍走 Gleaning 补漏流程
+                return _apply_gleaning(
+                    triples, text, temperature, schema, gleaning_steps, chunk_index
+                )
+            # data 非 None 但 triples 为空：可能 LLM 返回 {"triples":[]}
+            # 降级到纯文本路径重试
+            print("[结构化抽取] 返回空三元组，降级到纯文本路径")
+        else:
+            print("[结构化抽取] LLM 调用失败，降级到纯文本路径")
+
+    # ====== 纯文本路径（向后兼容 + 降级） ======
     result = call_llm(
         "你是一个知识图谱抽取专家，只输出 JSON 格式的三元组。",
         prompt,
@@ -598,6 +838,24 @@ def extract_triples_from_text(
         return []
 
     triples = _parse_triples_result(result, schema, chunk_index)
+    return _apply_gleaning(
+        triples, text, temperature, schema, gleaning_steps, chunk_index
+    )
+
+
+def _apply_gleaning(
+    triples: List[Triple],
+    text: str,
+    temperature: float,
+    schema,
+    gleaning_steps: int,
+    chunk_index: int,
+) -> List[Triple]:
+    """Gleaning 多轮追问补漏（参考 microsoft/graphrag）。
+
+    抽取自 extract_triples_from_text 的公共逻辑，被结构化路径和纯文本路径复用。
+    """
+    from .llm import call_llm
 
     # ====== Gleaning：多轮追问补漏（参考 microsoft/graphrag） ======
     if gleaning_steps > 0 and triples:
@@ -654,8 +912,11 @@ async def extract_triples_from_text_async(
 
     内部用 acall_llm（thread-based），不阻塞事件循环。
     gleaning 循环也改为 await。
+
+    v0.3.4: 支持 POCKET_STRUCTURED_OUTPUT=1 启用结构化抽取（异步版）。
     """
-    from .llm import acall_llm, has_llm
+    from .config import STRUCTURED_OUTPUT_ENABLED
+    from .llm import acall_llm, acall_llm_json, has_llm
 
     if not has_llm():
         print("[错误] 未配置 LLM API Key 或 Ollama，无法进行自动抽取。")
@@ -666,6 +927,30 @@ async def extract_triples_from_text_async(
         EXTRACT_PROMPT_V2 + schema_constraint + '\n\n待抽取文本:\n"""' + text + '"""'
     )
 
+    # ====== v0.3.4: 结构化抽取路径（优先） ======
+    if STRUCTURED_OUTPUT_ENABLED:
+        system_prompt = (
+            "你是一个知识图谱抽取专家。必须只输出 JSON 格式的三元组，"
+            '格式为 {"triples": [{"head":"...","relation":"...","tail":"...",'
+            '"confidence":0.9,"evidence":"..."}]}，不要输出任何其他文字。'
+        )
+        data = await acall_llm_json(
+            system_prompt,
+            prompt,
+            temperature=temperature,
+            max_tokens=3000,
+        )
+        if data is not None:
+            triples = _parse_structured_triples(data, schema, chunk_index)
+            if triples:
+                return await _apply_gleaning_async(
+                    triples, text, temperature, schema, gleaning_steps, chunk_index
+                )
+            print("[结构化抽取-async] 返回空三元组，降级到纯文本路径")
+        else:
+            print("[结构化抽取-async] LLM 调用失败，降级到纯文本路径")
+
+    # ====== 纯文本路径（向后兼容 + 降级） ======
     result = await acall_llm(
         "你是一个知识图谱抽取专家，只输出 JSON 格式的三元组。",
         prompt,
@@ -678,8 +963,22 @@ async def extract_triples_from_text_async(
         return []
 
     triples = _parse_triples_result(result, schema, chunk_index)
+    return await _apply_gleaning_async(
+        triples, text, temperature, schema, gleaning_steps, chunk_index
+    )
 
-    # Gleaning 循环（异步）
+
+async def _apply_gleaning_async(
+    triples: List[Triple],
+    text: str,
+    temperature: float,
+    schema,
+    gleaning_steps: int,
+    chunk_index: int,
+) -> List[Triple]:
+    """Gleaning 多轮追问补漏（异步版本）。"""
+    from .llm import acall_llm
+
     if gleaning_steps > 0 and triples:
         seen_keys = {t.key() for t in triples}
         for round_i in range(1, gleaning_steps + 1):

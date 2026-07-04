@@ -12,8 +12,11 @@ from PocketGraphRAG.kg_extractor import (
     Triple,
     _fullwidth_to_halfwidth,
     _parse_delimiter_format,
+    _parse_structured_triples,
+    _PYDANTIC_AVAILABLE,
     _rule_based_normalize,
     _split_sentences,
+    _validate_triple_dict,
     align_entities,
     chunk_text,
     deduplicate_triples,
@@ -683,3 +686,295 @@ class TestCanonicalByFrequency:
 
         # 频率相同，取最长名"水稻稻瘟病"
         assert merged.get("稻瘟病") == "水稻稻瘟病"
+
+
+# ========================
+# v0.3.4: 结构化抽取输出测试（Pydantic + JSON Mode）
+# ========================
+
+
+class TestStructuredExtraction:
+    """Pydantic 结构化抽取输出测试（对标 fast-graphrag）"""
+
+    def test_pydantic_available(self):
+        """Pydantic 应该在测试环境中可用（web extras 安装了 pydantic）"""
+        assert _PYDANTIC_AVAILABLE is True
+
+    def test_parse_structured_triples_valid(self):
+        """合法的结构化输出应正确解析为 Triple 列表"""
+        data = {
+            "triples": [
+                {
+                    "head": "盗梦空间",
+                    "relation": "导演",
+                    "tail": "诺兰",
+                    "confidence": 0.95,
+                    "evidence": "诺兰执导的科幻电影",
+                },
+                {
+                    "head": "盗梦空间",
+                    "relation": "上映年份",
+                    "tail": "2010",
+                    "confidence": 0.9,
+                    "evidence": "于2010年上映",
+                },
+            ]
+        }
+        triples = _parse_structured_triples(data)
+        assert len(triples) == 2
+        assert triples[0].head == "盗梦空间"
+        assert triples[0].relation == "导演"
+        assert triples[0].tail == "诺兰"
+        assert triples[0].confidence == 0.95
+        assert triples[0].evidence == "诺兰执导的科幻电影"
+        assert triples[0].source_chunk == 0
+
+    def test_parse_structured_triples_filters_empty_head(self):
+        """空 head 的三元组应被过滤掉"""
+        data = {
+            "triples": [
+                {"head": "", "relation": "x", "tail": "y"},
+                {"head": "valid", "relation": "r", "tail": "t"},
+            ]
+        }
+        triples = _parse_structured_triples(data)
+        assert len(triples) == 1
+        assert triples[0].head == "valid"
+
+    def test_parse_structured_triples_filters_low_quality_entity(self):
+        """低质量实体（句子片段、用法描述）应被过滤"""
+        data = {
+            "triples": [
+                # 句子片段（含句内停顿标点）
+                {"head": "电影,由诺兰执导", "relation": "r", "tail": "x"},
+                # 用法描述（含方法动词 + 数字）
+                {"head": "80%乙蒜素2000倍液浸种48小时", "relation": "r", "tail": "x"},
+                # 合法实体
+                {"head": "盗梦空间", "relation": "导演", "tail": "诺兰"},
+            ]
+        }
+        triples = _parse_structured_triples(data)
+        assert len(triples) == 1
+        assert triples[0].head == "盗梦空间"
+
+    def test_parse_structured_triples_confidence_clamped(self):
+        """confidence 超出 [0,1] 范围应被截断"""
+        data = {
+            "triples": [
+                {"head": "A", "relation": "r", "tail": "B", "confidence": 1.5},
+                {"head": "C", "relation": "r", "tail": "D", "confidence": -0.3},
+                {"head": "E", "relation": "r", "tail": "F", "confidence": 0.7},
+            ]
+        }
+        triples = _parse_structured_triples(data)
+        assert len(triples) == 3
+        assert triples[0].confidence == 1.0  # clamped from 1.5
+        assert triples[1].confidence == 0.0  # clamped from -0.3
+        assert triples[2].confidence == 0.7
+
+    def test_parse_structured_triples_default_confidence(self):
+        """缺失 confidence 字段时应使用默认值 0.7"""
+        data = {
+            "triples": [
+                {"head": "A", "relation": "r", "tail": "B"},  # no confidence
+            ]
+        }
+        triples = _parse_structured_triples(data)
+        assert len(triples) == 1
+        assert triples[0].confidence == 0.7
+
+    def test_parse_structured_triples_invalid_data(self):
+        """无效输入应返回空列表，不抛异常"""
+        assert _parse_structured_triples(None) == []
+        assert _parse_structured_triples({}) == []
+        assert _parse_structured_triples({"triples": "not a list"}) == []
+        assert _parse_structured_triples({"triples": []}) == []
+
+    def test_parse_structured_triples_with_schema(self):
+        """schema 归一化应被应用到结构化抽取结果"""
+        from PocketGraphRAG.schema import RelationSchema
+
+        schema = RelationSchema()
+        # "症状" 应被归一化为 "症状表现"
+        data = {
+            "triples": [
+                {"head": "稻瘟病", "relation": "症状", "tail": "病斑"},
+            ]
+        }
+        triples = _parse_structured_triples(data, schema=schema)
+        assert len(triples) == 1
+        assert triples[0].relation == "症状表现"
+
+    def test_validate_triple_dict_pure_dict_path(self):
+        """_validate_triple_dict 应正确校验单条 dict"""
+        item = {"head": "A", "relation": "r", "tail": "B", "confidence": 0.8}
+        result = _validate_triple_dict(item)
+        assert result is not None
+        assert result["head"] == "A"
+        assert result["confidence"] == 0.8
+
+    def test_validate_triple_dict_rejects_invalid(self):
+        """_validate_triple_dict 应拒绝无效输入"""
+        assert _validate_triple_dict(None) is None
+        assert _validate_triple_dict("not dict") is None
+        assert _validate_triple_dict({}) is None
+        assert _validate_triple_dict({"head": "", "relation": "r", "tail": "t"}) is None
+
+    def test_validate_triple_dict_list_format(self):
+        """_validate_triple_dict 应兼容 list/tuple 格式三元组"""
+        # [head, relation, tail]
+        result = _validate_triple_dict(["盗梦空间", "导演", "诺兰"])
+        assert result is not None
+        assert result["head"] == "盗梦空间"
+        assert result["relation"] == "导演"
+        assert result["tail"] == "诺兰"
+        assert result["confidence"] == 0.7  # 默认值
+
+    def test_validate_triple_dict_list_with_confidence(self):
+        """list 格式带置信度: [head, relation, tail, confidence]"""
+        result = _validate_triple_dict(["A", "r", "B", 0.95])
+        assert result is not None
+        assert result["confidence"] == 0.95
+
+    def test_validate_triple_dict_list_with_evidence(self):
+        """list 格式带依据: [head, relation, tail, confidence, evidence]"""
+        result = _validate_triple_dict(["A", "r", "B", 0.9, "原文片段"])
+        assert result is not None
+        assert result["evidence"] == "原文片段"
+
+    def test_validate_triple_dict_list_too_short(self):
+        """list 格式少于 3 个元素应拒绝"""
+        assert _validate_triple_dict(["A", "B"]) is None
+        assert _validate_triple_dict([]) is None
+
+    def test_validate_triple_dict_chinese_keys(self):
+        """_validate_triple_dict 应兼容中文 key（主体/关系/客体）"""
+        result = _validate_triple_dict({"主体": "盗梦空间", "关系": "导演", "客体": "诺兰"})
+        assert result is not None
+        assert result["head"] == "盗梦空间"
+        assert result["relation"] == "导演"
+        assert result["tail"] == "诺兰"
+
+    def test_validate_triple_dict_english_alt_keys(self):
+        """_validate_triple_dict 应兼容英文替代 key（entity/predicate/object）"""
+        result = _validate_triple_dict({"entity": "A", "predicate": "r", "object": "B"})
+        assert result is not None
+        assert result["head"] == "A"
+        assert result["relation"] == "r"
+        assert result["tail"] == "B"
+
+    def test_parse_structured_triples_list_format(self):
+        """_parse_structured_triples 应能解析 list 格式的 triples"""
+        data = {"triples": [["盗梦空间", "导演", "诺兰"], ["盗梦空间", "类型", "科幻电影"]]}
+        triples = _parse_structured_triples(data)
+        assert len(triples) == 2
+        assert triples[0].head == "盗梦空间"
+        assert triples[0].relation == "导演"
+        assert triples[0].tail == "诺兰"
+
+    def test_parse_structured_triples_mixed_format(self):
+        """_parse_structured_triples 应能解析混合格式的 triples"""
+        data = {
+            "triples": [
+                {"head": "A", "relation": "r1", "tail": "B"},
+                ["C", "r2", "D"],
+                {"主体": "E", "关系": "r3", "客体": "F"},
+            ]
+        }
+        triples = _parse_structured_triples(data)
+        assert len(triples) == 3
+        heads = {t.head for t in triples}
+        assert heads == {"A", "C", "E"}
+
+
+# ========================
+# v0.3.4: Domain spec 测试（声明式领域定义）
+# ========================
+
+
+class TestDomainSpec:
+    """声明式 Domain spec 测试（对标 fast-graphrag 的 GraphRAG(domain=...)）"""
+
+    def test_domain_spec_constructor(self):
+        """RelationSchema 应接受 domain_name/description/example_queries 参数"""
+        from PocketGraphRAG.schema import RelationSchema
+
+        schema = RelationSchema(
+            domain_name="水稻种植",
+            domain_description="关注水稻品种、病虫害防治、栽培技术等领域知识",
+            example_queries=["水稻纹枯病的防治方法？", "杂交水稻的产量表现？"],
+        )
+        assert schema.domain_name == "水稻种植"
+        assert "水稻品种" in schema.domain_description
+        assert len(schema.example_queries) == 2
+
+    def test_domain_spec_default_empty(self):
+        """默认 Domain spec 应为空（向后兼容）"""
+        from PocketGraphRAG.schema import RelationSchema
+
+        schema = RelationSchema()
+        assert schema.domain_name == ""
+        assert schema.domain_description == ""
+        assert schema.example_queries == []
+
+    def test_domain_spec_in_prompt_constraint(self):
+        """build_prompt_constraint 应包含 Domain spec 信息"""
+        from PocketGraphRAG.schema import RelationSchema
+
+        schema = RelationSchema(
+            domain_name="电影知识库",
+            domain_description="关注电影、导演、演员等领域知识",
+            example_queries=["盗梦空间的导演是谁？", "肖申克的救赎的上映年份？"],
+        )
+        prompt = schema.build_prompt_constraint()
+        # Domain spec 应出现在 prompt 中
+        assert "电影知识库" in prompt
+        assert "电影、导演、演员" in prompt
+        assert "盗梦空间的导演是谁" in prompt
+        assert "Domain Spec" in prompt or "领域定义" in prompt
+
+    def test_domain_spec_no_prompt_when_empty(self):
+        """Domain spec 为空时不应注入 prompt（向后兼容）"""
+        from PocketGraphRAG.schema import RelationSchema
+
+        schema = RelationSchema()
+        prompt = schema.build_prompt_constraint()
+        assert "Domain Spec" not in prompt
+        assert "领域定义" not in prompt
+
+    def test_domain_spec_env_var_override(self, monkeypatch):
+        """环境变量应能覆盖 Domain spec"""
+        from PocketGraphRAG.schema import RelationSchema
+
+        monkeypatch.setenv("POCKET_DOMAIN_NAME", "法律领域")
+        monkeypatch.setenv(
+            "POCKET_DOMAIN_DESCRIPTION", "关注法律条文、案例、法规等领域"
+        )
+        monkeypatch.setenv(
+            "POCKET_EXAMPLE_QUERIES", "商标侵权如何认定？;劳动仲裁时效是多久？"
+        )
+        schema = RelationSchema()
+        assert schema.domain_name == "法律领域"
+        assert "法律条文" in schema.domain_description
+        assert len(schema.example_queries) == 2
+        assert "商标侵权如何认定？" in schema.example_queries
+
+    def test_domain_spec_load_from_json(self, tmp_path):
+        """Domain spec 应能从 JSON 文件加载"""
+        from PocketGraphRAG.schema import RelationSchema
+
+        json_path = tmp_path / "test_schema.json"
+        json_path.write_text(
+            '{"domain_name": "医疗领域", '
+            '"domain_description": "关注疾病、症状、治疗方案", '
+            '"example_queries": ["高血压如何治疗？"], '
+            '"entity_types": ["疾病", "症状", "药物"], '
+            '"allowed_relations": ["治疗", "症状"]}',
+            encoding="utf-8",
+        )
+        schema = RelationSchema(schema_path=str(json_path))
+        assert schema.domain_name == "医疗领域"
+        assert "疾病" in schema.domain_description
+        assert len(schema.example_queries) == 1
+        assert schema.entity_types == ["疾病", "症状", "药物"]
+        assert "治疗" in schema.allowed_relations

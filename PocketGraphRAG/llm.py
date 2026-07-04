@@ -87,12 +87,19 @@ def _call_openai_compatible(
     max_tokens: int = 2000,
     label: str = "API",
     stream: bool = False,
+    response_format: Optional[dict] = None,
 ) -> Union[Optional[str], Generator[str, None, None]]:
     """通用 OpenAI 兼容 API 调用。
 
     流式模式下，会先 peek 第一个有效 chunk 以验证连接真正可用；
     若连接失败或没有任何 chunk，返回 None 让上层 call_llm 降级到下一个后端。
     修复了旧版"流式返回生成器对象永远非 None 导致降级失效"的 bug。
+
+    Args:
+        response_format: 可选，OpenAI 兼容的结构化输出格式，如
+            ``{"type": "json_object"}`` 启用 JSON 模式。None 表示不启用。
+            注意：并非所有 OpenAI 兼容服务都支持此参数，不支持的会返回 400 错误，
+            上层 call_llm_json 会捕获并降级到纯文本模式。
     """
     import itertools
 
@@ -111,6 +118,9 @@ def _call_openai_compatible(
         "max_tokens": max_tokens,
         "stream": stream,
     }
+    # 仅当显式传入时才附加 response_format（避免对不支持的服务造成 400）
+    if response_format is not None:
+        payload["response_format"] = response_format
 
     # 1. 发起请求：连接 / HTTP 错误在此捕获，返回 None 触发降级
     #    超时走 config.LLM_TIMEOUT（默认 120s，Ollama 7B 本地推理较慢）
@@ -399,3 +409,113 @@ def get_active_provider() -> str:
     if OPENAI_API_KEY:
         return f"OpenAI ({OPENAI_MODEL})"
     return "纯检索模式（未配置 LLM API Key 或 Ollama）"
+
+
+# ==========================
+# 结构化输出（JSON Mode）
+# ==========================
+# 对标 fast-graphrag 的 Pydantic 结构化抽取：通过 OpenAI 兼容的
+# response_format={"type": "json_object"} 强制 LLM 输出合法 JSON，
+# 再由上层用 Pydantic 模型校验。比纯文本+正则解析更可靠。
+#
+# 兼容性：OpenAI / DeepSeek / DashScope / SiliconFlow / Ollama (OpenAI 兼容端点)
+# 均支持 json_object 模式。少数旧服务可能不支持，会返回 400，调用方需捕获并降级。
+
+
+def call_llm_json(
+    system_prompt: str,
+    user_prompt: str,
+    temperature: float = 0.1,
+    max_tokens: int = 2000,
+    role: str = "extract",
+) -> Optional[dict]:
+    """调用 LLM 并返回解析后的 JSON dict。
+
+    使用 OpenAI 兼容的 ``response_format={"type": "json_object"}`` 强制
+    LLM 输出合法 JSON。system_prompt 必须显式包含 "JSON" 字样（OpenAI 要求）。
+
+    Args:
+        system_prompt: 系统提示词（必须包含 "JSON" 字样以启用 JSON 模式）
+        user_prompt: 用户提示词
+        temperature: 生成温度
+        max_tokens: 最大 token 数
+        role: LLM 角色（与 call_llm 一致）
+
+    Returns:
+        解析后的 dict；LLM 调用失败或 JSON 解析失败返回 None
+    """
+    from .config import EXTRACT_MODEL, QUERY_MODEL
+
+    model_override = EXTRACT_MODEL if role == "extract" else QUERY_MODEL
+    response_format = {"type": "json_object"}
+
+    # 按优先级尝试每个后端，带 response_format 参数
+    # 元组顺序: (label, api_key, api_base, model)
+    # 注意 Ollama 无需 api_key，传空字符串即可
+    providers = [
+        ("Ollama", "", OLLAMA_API_BASE, OLLAMA_MODEL),
+        ("freellm-cn", FREELM_CN_API_KEY, FREELM_CN_API_BASE, FREELM_CN_MODEL),
+        ("SiliconFlow", SILICONFLOW_API_KEY, SILICONFLOW_API_BASE, SILICONFLOW_MODEL),
+        ("DeepSeek", DEEPSEEK_API_KEY, DEEPSEEK_API_BASE, DEEPSEEK_MODEL),
+        (
+            "DashScope",
+            DASHSCOPE_API_KEY,
+            DASHSCOPE_API_URL.rsplit("/chat/completions", 1)[0]
+            if DASHSCOPE_API_KEY
+            else "",
+            DASHSCOPE_MODEL,
+        ),
+        ("OpenAI", OPENAI_API_KEY, OPENAI_API_BASE, OPENAI_MODEL),
+    ]
+
+    for label, cred, base, model in providers:
+        if not (model and (cred or label == "Ollama")):
+            continue
+        result = _call_openai_compatible(
+            base,
+            cred,
+            model_override or model,
+            system_prompt,
+            user_prompt,
+            temperature,
+            max_tokens,
+            label=label,
+            stream=False,
+            response_format=response_format,
+        )
+        if result is None:
+            continue
+        # 解析 JSON
+        try:
+            # 兼容 markdown 代码块包裹
+            text = result.strip()
+            if text.startswith("```json"):
+                text = text[7:].strip()
+                if text.endswith("```"):
+                    text = text[:-3].strip()
+            elif text.startswith("```"):
+                text = text[3:].strip()
+                if text.endswith("```"):
+                    text = text[:-3].strip()
+            return json.loads(text)
+        except (json.JSONDecodeError, AttributeError) as e:
+            logger.warning("[%s JSON 解析失败] %s", label, e)
+            continue
+
+    return None
+
+
+async def acall_llm_json(
+    system_prompt: str,
+    user_prompt: str,
+    temperature: float = 0.1,
+    max_tokens: int = 2000,
+) -> Optional[dict]:
+    """异步版 call_llm_json。"""
+    return await _to_thread(
+        call_llm_json,
+        system_prompt,
+        user_prompt,
+        temperature,
+        max_tokens,
+    )

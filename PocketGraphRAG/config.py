@@ -1,4 +1,4 @@
-﻿"""
+"""
 配置文件 - 所有可调参数集中管理
 
 支持通过环境变量覆盖默认配置：
@@ -177,6 +177,15 @@ SCHEMA_ENABLED = os.environ.get("POCKET_SCHEMA_ENABLED", "").lower() in (
     "on",
 )
 SCHEMA_PATH = os.environ.get("POCKET_SCHEMA_PATH", "")
+
+# 结构化抽取输出（v0.3.4：对标 fast-graphrag 的 Pydantic 结构化抽取）
+# 启用后 LLM 抽取会使用 OpenAI 兼容的 response_format={"type":"json_object"}
+# 强制输出合法 JSON，再用 Pydantic 模型校验，比纯文本+正则解析更可靠。
+# 默认关闭，向后兼容。需 LLM 后端支持 JSON 模式（OpenAI/DeepSeek/DashScope/
+# SiliconFlow/Ollama 均支持）。不支持的会自动降级到纯文本解析。
+STRUCTURED_OUTPUT_ENABLED = os.environ.get(
+    "POCKET_STRUCTURED_OUTPUT", ""
+).lower() in ("1", "true", "yes", "on")
 
 # Pagerank 在检索排序中的权重 (0.0-1.0)
 PAGERANK_WEIGHT = float(os.environ.get("POCKET_PAGERANK_WEIGHT", "0.3"))

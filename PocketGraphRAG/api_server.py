@@ -435,7 +435,7 @@ async def qa(request: QARequest):
             for s in result.get("sources", [])
         ],
         pipeline_info=PipelineInfo(
-            search_mode=pipeline_info.get("search_mode", "vector"),
+            search_mode=pipeline_info.get("search_mode") or "vector",
             query_rewritten=pipeline_info.get("query_rewritten", False),
             multihop_used=pipeline_info.get("multihop_used", False),
             multihop_auto_triggered=pipeline_info.get("multihop_auto_triggered"),

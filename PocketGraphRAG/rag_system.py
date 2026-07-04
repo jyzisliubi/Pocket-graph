@@ -1539,7 +1539,7 @@ class PocketGraphRAG:
                 "question": question or "",
                 "pipeline_info": {
                     "multihop_used": False,
-                    "search_mode": None,
+                    "search_mode": "vector",  # 不能用 None，会导致 Pydantic 验证失败
                     "kg_entities_matched": 0,
                     "query_rewritten": False,
                     "hyde_used": False,
@@ -1574,7 +1574,7 @@ class PocketGraphRAG:
 
         pipeline_info: dict[str, Any] = {
             "multihop_used": False,
-            "search_mode": None,  # 路由后回填
+            "search_mode": "vector",  # 不能用 None，路由后回填；None 会导致 Pydantic 验证失败
             "kg_entities_matched": 0,
             "query_rewritten": False,
             "hyde_used": False,
@@ -1804,7 +1804,7 @@ class PocketGraphRAG:
 
         pipeline_info: dict[str, Any] = {
             "multihop_used": False,
-            "search_mode": None,  # 路由后回填
+            "search_mode": "vector",  # 不能用 None，路由后回填；None 会导致 Pydantic 验证失败
             "kg_entities_matched": 0,
             "query_rewritten": False,
             "hyde_used": False,
@@ -1817,6 +1817,19 @@ class PocketGraphRAG:
             "fallback_reason": None,
             "question_type": None,
         }
+
+        # 空/空白 query 直接拒答（与 answer() 保持一致）
+        if not question or not question.strip():
+            pipeline_info["response_mode"] = "refused"
+            pipeline_info["failure_bucket"] = "empty_query"
+            pipeline_info["fallback_reason"] = "查询为空"
+            yield {
+                "status": "已拒绝",
+                "sources": [],
+                "pipeline_info": pipeline_info,
+            }
+            yield {"done": True, "full_answer": "请提供有效的问题。"}
+            return
 
         yield {"status": "正在理解问题..."}
 

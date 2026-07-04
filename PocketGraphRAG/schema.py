@@ -914,12 +914,25 @@ class RelationSchema:
     1. L1 正则模式：处理带年份/编号的变体（"2018年亩产" → "产量"）
     2. L2 同义词字典：处理近义关系（"症状" → "症状表现"）
 
+    v0.3.4 新增 Domain spec：domain_name / domain_description / example_queries
+    用于声明式领域定义（对标 fast-graphrag 的 ``GraphRAG(domain=...)``）。
+    这些字段会被注入到抽取 prompt 的开头，引导 LLM 理解领域上下文，
+    对垂直领域（如水稻、医疗、法律）的抽取质量有显著提升。
+
     用法::
 
         schema = RelationSchema()
         schema.normalize_relation("2018年平均亩产")  # → "产量"
         schema.normalize_relation("典型症状")        # → "症状表现"
         schema.normalize_relation("未知关系")        # → "未知关系"（保留原样）
+
+    声明式 Domain spec::
+
+        schema = RelationSchema(
+            domain_name="水稻种植",
+            domain_description="关注水稻品种、病虫害防治、栽培技术等领域知识",
+            example_queries=["水稻纹枯病的防治方法？", "杂交水稻的产量表现？"],
+        )
     """
 
     def __init__(
@@ -929,6 +942,9 @@ class RelationSchema:
         patterns: Optional[List[Tuple[str, str]]] = None,
         schema_path: Optional[str] = None,
         entity_types: Optional[List[str]] = None,
+        domain_name: Optional[str] = None,
+        domain_description: Optional[str] = None,
+        example_queries: Optional[List[str]] = None,
     ):
         """初始化 schema
 
@@ -937,12 +953,22 @@ class RelationSchema:
             synonyms: 同义词归一化字典 {原关系: 标准关系}。None 用默认
             patterns: 正则模式归一化 [(pattern, canonical), ...]。None 用默认
             schema_path: 自定义 schema JSON 文件路径，覆盖上述默认值
+            domain_name: 领域名称（如 "水稻种植"、"电影知识库"）。注入到抽取 prompt
+            domain_description: 领域范围描述，引导 LLM 聚焦领域实体
+            example_queries: 示例查询列表，帮助 LLM 理解应用场景
         """
         # 默认值
         self.allowed_relations = list(DEFAULT_ALLOWED_RELATIONS)
         self.synonyms = dict(DEFAULT_SYNONYMS)
         self.patterns = list(DEFAULT_PATTERNS)
         self.entity_types = list(DEFAULT_ENTITY_TYPES)
+        # Domain spec 字段（v0.3.4 声明式领域定义）
+        self.domain_name = domain_name or ""
+        self.domain_description = domain_description or ""
+        self.example_queries = list(example_queries) if example_queries else []
+
+        # 从环境变量加载 Domain spec（方便不修改代码快速配置）
+        self._load_domain_from_env()
 
         # 从 JSON 文件加载自定义 schema（覆盖默认）
         if schema_path and os.path.exists(schema_path):
@@ -967,12 +993,36 @@ class RelationSchema:
         # 归一化统计
         self._stats = {"normalized": 0, "unchanged": 0, "unknown": 0}
 
+    def _load_domain_from_env(self) -> None:
+        """从环境变量加载 Domain spec（不修改代码即可配置）。
+
+        支持的环境变量：
+        - POCKET_DOMAIN_NAME: 领域名称
+        - POCKET_DOMAIN_DESCRIPTION: 领域描述
+        - POCKET_EXAMPLE_QUERIES: 示例查询（分号分隔）
+        """
+        env_name = os.environ.get("POCKET_DOMAIN_NAME", "").strip()
+        env_desc = os.environ.get("POCKET_DOMAIN_DESCRIPTION", "").strip()
+        env_queries = os.environ.get("POCKET_EXAMPLE_QUERIES", "").strip()
+        if env_name:
+            self.domain_name = env_name
+        if env_desc:
+            self.domain_description = env_desc
+        if env_queries:
+            self.example_queries = [
+                q.strip() for q in env_queries.split(";") if q.strip()
+            ]
+
     def _load_from_json(self, path: str) -> None:
         """从 JSON 文件加载 schema
 
         JSON 格式::
 
             {
+                "domain_name": "水稻种植",
+                "domain_description": "关注水稻品种、病虫害防治等领域知识",
+                "example_queries": ["水稻纹枯病的防治方法？", ...],
+                "entity_types": ["病害", "品种", ...],
                 "allowed_relations": ["症状表现", "防治", ...],
                 "synonyms": {"症状": "症状表现", ...},
                 "patterns": [["\\d{4}年.*亩产", "产量"], ...]
@@ -981,6 +1031,13 @@ class RelationSchema:
         try:
             with open(path, encoding="utf-8") as f:
                 data = json.load(f)
+            # Domain spec 字段（v0.3.4）
+            if "domain_name" in data:
+                self.domain_name = str(data["domain_name"])
+            if "domain_description" in data:
+                self.domain_description = str(data["domain_description"])
+            if "example_queries" in data:
+                self.example_queries = list(data["example_queries"])
             if "entity_types" in data:
                 self.entity_types = list(data["entity_types"])
             if "allowed_relations" in data:
@@ -1044,11 +1101,29 @@ class RelationSchema:
         """构建注入 LLM 抽取 prompt 的 schema 约束文本
 
         v0.3.1: 强化为硬约束，明确要求 LLM 只使用白名单关系名，
-        减少 LLM 自由发散产生的新碎片化关系。
+            减少 LLM 自由发散产生的新碎片化关系。
+        v0.3.4: 新增 Domain spec 注入——领域名称、描述、示例查询，
+            引导 LLM 在垂直领域场景下抽取更精准的实体和关系。
 
         Returns:
-            prompt 片段，列出允许的标准关系名
+            prompt 片段，包含 Domain spec + 关系白名单 + 实体类型提示
         """
+        # Domain spec 注入（v0.3.4 声明式领域定义）
+        domain_block = ""
+        if self.domain_name or self.domain_description:
+            domain_block = "\n## 领域定义（Domain Spec）\n"
+            if self.domain_name:
+                domain_block += f"**领域**：{self.domain_name}\n"
+            if self.domain_description:
+                domain_block += f"**范围**：{self.domain_description}\n"
+            if self.example_queries:
+                examples = "\n".join(f"- {q}" for q in self.example_queries[:5])
+                domain_block += f"**典型查询示例**（理解应用场景）：\n{examples}\n"
+            domain_block += (
+                "请优先抽取与上述领域相关的核心实体和关系，"
+                "忽略与领域无关的旁支信息。\n"
+            )
+
         rels = "、".join(self.allowed_relations)
         types = "、".join(self.entity_types) if self.entity_types else ""
         entity_hint = (
@@ -1059,6 +1134,7 @@ class RelationSchema:
             f"错误示例：'80%乙蒜素2000倍液浸种48小时'、'每亩用药量100克'（应为 '乙蒜素'、'用量说明'）\n"
         ) if types else ""
         return (
+            f"{domain_block}"
             f"\n## 关系 Schema 约束（硬约束）\n"
             f"抽取三元组时，relation 字段**必须**从以下标准关系名中选择：\n"
             f"{rels}\n\n"

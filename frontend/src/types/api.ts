@@ -150,6 +150,22 @@ export interface LlmStatusResponse {
     api_base: string
     api_key: ApiKeyMasked
   }
+  langfuse?: {
+    enabled: boolean
+    host: string
+    public_key_configured: boolean
+    secret_key_configured: boolean
+  }
+  api_auth?: {
+    enabled: boolean
+    key_count: number
+  }
+  role_llm?: {
+    extract: boolean
+    query: boolean
+    keywords: boolean
+    vlm: boolean
+  }
 }
 
 /** 健康检查响应 */

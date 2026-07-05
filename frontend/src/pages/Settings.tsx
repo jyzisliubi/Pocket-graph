@@ -17,6 +17,7 @@ import {
   Loader2,
   Download,
   Key,
+  ShieldCheck,
 } from 'lucide-react'
 import {
   Card,
@@ -41,10 +42,12 @@ import {
   saveSettings,
   getOllamaModels,
   getHealth,
+  getLlmStatus,
 } from '@/lib/api'
 import type {
   SettingsResponse,
   HealthResponse,
+  LlmStatusResponse,
   SearchMode,
   SearchDefaults,
 } from '@/types/api'
@@ -231,6 +234,7 @@ function FieldLabel({
 export default function SettingsPage() {
   const [settings, setSettings] = useState<SettingsResponse | null>(null)
   const [health, setHealth] = useState<HealthResponse | null>(null)
+  const [llmStatus, setLlmStatus] = useState<LlmStatusResponse | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState<StatusMessage | null>(null)
@@ -299,12 +303,14 @@ export default function SettingsPage() {
 
   /** 刷新设置与健康状态 */
   const refreshStatus = async () => {
-    const [s, h] = await Promise.all([
+    const [s, h, l] = await Promise.all([
       getSettings(),
       getHealth().catch(() => null),
+      getLlmStatus().catch(() => null),
     ])
     applySettings(s)
     setHealth(h)
+    setLlmStatus(l)
   }
 
   /** 拉取 Ollama 模型列表 */
@@ -937,6 +943,96 @@ export default function SettingsPage() {
             <p className="text-xs text-muted-foreground">
               向量检索权重（0-1），值越大越偏向向量相似度。
             </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* 安全 & 角色 LLM（只读状态展示，配置需修改环境变量后重启） */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <ShieldCheck className="h-5 w-5" />
+            安全 & 角色 LLM
+          </CardTitle>
+          <CardDescription>
+            API 认证与多角色 LLM 配置状态（只读，修改需调整环境变量后重启服务）
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* API 认证 */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <label className="text-sm font-medium">API 认证</label>
+              <Badge
+                variant={llmStatus?.api_auth?.enabled ? 'default' : 'secondary'}
+              >
+                {llmStatus?.api_auth?.enabled
+                  ? `已启用 (${llmStatus.api_auth.key_count} 个 key)`
+                  : '未启用（本地开发模式）'}
+              </Badge>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              启用后所有 <code className="rounded bg-muted px-1">/api/*</code> 端点
+              必须带 <code className="rounded bg-muted px-1">X-API-Key</code> 或
+              <code className="rounded bg-muted px-1">Authorization: Bearer</code> 头。
+              配置：<code className="rounded bg-muted px-1">POCKET_API_KEYS=k1,k2,k3</code>
+            </p>
+          </div>
+
+          {/* Langfuse Tracing */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <label className="text-sm font-medium">Langfuse Tracing</label>
+              <Badge
+                variant={llmStatus?.langfuse?.enabled ? 'default' : 'secondary'}
+              >
+                {llmStatus?.langfuse?.enabled ? '已启用' : '未启用'}
+              </Badge>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              可选 LLM 可观测性平台（对标 LangSmith）。
+              配置：<code className="rounded bg-muted px-1">POCKET_LANGFUSE=1</code>
+              + public/secret key
+            </p>
+          </div>
+
+          {/* 角色 LLM 配置 */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium">角色 LLM（成本优化）</label>
+            <p className="text-xs text-muted-foreground">
+              为不同角色独立配置 LLM，实现"强模型抽取 + 快模型查询"的成本优化。
+              配置格式：<code className="rounded bg-muted px-1">POCKET_&lt;ROLE&gt;_LLM=provider::model</code>
+              或 <code className="rounded bg-muted px-1">POCKET_&lt;ROLE&gt;_MODEL=model</code>
+            </p>
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+              {[
+                { key: 'extract', label: 'KG 抽取', env: 'POCKET_EXTRACT_LLM' },
+                { key: 'query', label: '问答生成', env: 'POCKET_QUERY_LLM' },
+                { key: 'keywords', label: '关键词', env: 'POCKET_KEYWORDS_LLM' },
+                { key: 'vlm', label: '多模态', env: 'POCKET_VLM_LLM' },
+              ].map((role) => {
+                const configured = llmStatus?.role_llm?.[role.key as keyof typeof llmStatus.role_llm]
+                return (
+                  <div
+                    key={role.key}
+                    className="rounded-md border p-2 text-center"
+                  >
+                    <div className="text-xs text-muted-foreground">
+                      {role.label}
+                    </div>
+                    <Badge
+                      variant={configured ? 'default' : 'secondary'}
+                      className="mt-1"
+                    >
+                      {configured ? '已配置' : '默认'}
+                    </Badge>
+                    <div className="mt-1 truncate text-[10px] text-muted-foreground">
+                      {role.env}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </CardContent>
       </Card>

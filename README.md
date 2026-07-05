@@ -420,6 +420,47 @@ For vertical-domain KGs, `kg_only` often gives the highest MRR because entity-le
 | `ENTITY_SIMILARITY_THRESHOLD` | Entity match threshold | `0.5` |
 | `KG_SEARCH_HOPS` | BFS expansion depth | `2` |
 | `TOP_K` | Number of retrieved results | `5` |
+| `POCKET_EMBEDDING_MODEL` | Embedding model (supports aliases: `bge-small-zh`, `bge-m3`, `bge-large-zh`) | `BAAI/bge-small-zh-v1.5` |
+| `POCKET_API_KEYS` | API auth keys (comma-separated). Empty = auth disabled | empty |
+| `POCKET_EXTRACT_LLM` | KG extraction LLM `<provider>::<model>` | falls back to default |
+| `POCKET_QUERY_LLM` | Q&A generation LLM `<provider>::<model>` | falls back to default |
+| `POCKET_KEYWORDS_LLM` | Keyword extraction LLM `<provider>::<model>` | falls back to default |
+| `POCKET_VLM_LLM` | Multimodal/VLM LLM `<provider>::<model>` | falls back to default |
+| `POCKET_GRAPH_STORE` | Graph store backend: `memory` / `neo4j` | `memory` |
+| `POCKET_VECTOR_STORE` | Vector store backend: `faiss` / `pgvector` | `faiss` |
+| `POCKET_LANGFUSE_HOST` | Langfuse tracing host (optional) | empty |
+
+Full variable list: [.env.example](.env.example).
+
+### Security & Role-Based LLM
+
+**API Authentication (public deployment)** — set `POCKET_API_KEYS` to enable. Clients authenticate via either header:
+```
+X-API-Key: <key>
+Authorization: Bearer <key>
+```
+Public paths (no auth): `/`, `/api/health`, `/api/llm/status`, `/docs`, `/openapi.json`, `/redoc`. All other `/api/*` endpoints require a valid key. Multiple keys supported for team rotation.
+
+```bash
+# Generate a strong key
+python -c "import secrets; print(secrets.token_urlsafe(32))"
+# Set multiple keys
+set POCKET_API_KEYS=key1,key2,key3
+```
+
+**Role-Based LLM** — split extract / query / keywords / vlm into separate models for cost optimization. Use `<provider>::<model>` to switch both provider and model, or `POCKET_<ROLE>_MODEL` to switch model only.
+
+```bash
+# Strong model for KG extraction (quality-critical)
+set POCKET_EXTRACT_LLM=dashscope::qwen-max
+# Fast cheap model for Q&A and keywords
+set POCKET_QUERY_LLM=dashscope::qwen-flash
+set POCKET_KEYWORDS_LLM=dashscope::qwen-flash
+# Multimodal for image understanding
+set POCKET_VLM_LLM=dashscope::qwen-vl-max
+```
+
+Live status visible in **Settings → Security & Role LLM** card (read-only).
 
 ---
 
@@ -625,11 +666,18 @@ A: The modern Typer CLI requires the `[cli]` extra: `pip install "pocketgraphrag
 - [x] Async LLM entry point (`acall_llm`) + streaming
 - [x] **Incremental indexing** (document-level add/remove, manifest dedup, legacy migration)
 - [x] **Evaluation harness**: MultiHop-style benchmark + RAGAS integration (4 metrics, Ollama evaluator)
-- [ ] **Pluggable vector backends**: Milvus / Qdrant adapters
-- [ ] **Pluggable graph storage**: Neo4j adapter for large-scale KG
+- [x] **Multi-Model KG Fusion** (CLI `multi-extract` + API + Web UI; Hit Rate 0.80 → 0.86)
+- [x] **Langfuse / OpenTelemetry** tracing integration (optional dep, NoOp fallback)
+- [x] **Pluggable graph storage**: Neo4j adapter (with GDS fallback) + pgvector vector backend (HNSW/IVFFlat)
+- [x] **KG-aware Re-ranking**: cross-encoder reranker stage with KG entity boost
+- [x] **bge-m3 cross-lingual retrieval**: alias table + index fingerprint + dynamic dim + cross-lingual hint
+- [x] **API Key authentication**: multi-key + Bearer + public path whitelist
+- [x] **Role-based LLM config**: 4 roles (extract/query/keywords/vlm), `<provider>::<model>` switching
+- [x] **PyPI release ready**: `pocketgraphrag` wheel + sdist, `twine check` PASSED
 - [ ] **Hugging Face Space** one-click online demo
-- [ ] **Langfuse / OpenTelemetry** tracing integration
-- [ ] **Re-ranking**: cross-encoder reranker stage
+- [ ] **DRIFT Search** (Microsoft GraphRAG-style iterative retrieval)
+- [ ] **bge-m3 phase 2**: sparse + ColBERT multi-vector hybrid retrieval
+- [ ] **arXiv paper**: Multi-Model KG Fusion ablation write-up
 
 See [open issues](https://github.com/jyzisliubi/Pocket-graph/issues) and [CHANGELOG.md](./CHANGELOG.md) for progress.
 

@@ -185,17 +185,17 @@ def call_llm(
         temperature: 生成温度
         max_tokens: 最大生成 token 数
         stream: 是否流式输出
-        role: LLM 角色 "query"（问答）或 "extract"（KG 抽取）。
-            当设置了 POCKET_EXTRACT_MODEL / POCKET_QUERY_MODEL 环境变量时，
-            会用对应模型覆盖当前 provider 的默认模型，实现多角色差异化配置。
-            未设置时使用统一模型（向后兼容）。
+        role: LLM 角色 "query"/"extract"/"keywords"/"vlm"。
+            支持角色特定配置（POCKET_<ROLE>_LLM / POCKET_<ROLE>_MODEL），
+            可同时切换 provider 和 model（如 "dashscope::qwen-max"）。
+            未配置时使用统一模型（向后兼容）。
 
     Returns:
         LLM 生成的文本，所有后端均失败时返回 None
     """
-    from .config import EXTRACT_MODEL, QUERY_MODEL
-    # 根据 role 选择模型覆盖：extract 角色用 EXTRACT_MODEL，query 角色用 QUERY_MODEL
-    model_override = EXTRACT_MODEL if role == "extract" else QUERY_MODEL
+    from .config import get_role_llm_config
+    # 角色特定配置：返回 (provider_override, model_override)
+    _role_provider, model_override = get_role_llm_config(role)
     # Multi-Model Fusion 支持：临时模型覆盖（用于多模型融合抽取）
     if role == "extract" and _extract_model_override:
         model_override = _extract_model_override
@@ -495,9 +495,9 @@ def call_llm_json(
     Returns:
         解析后的 dict；LLM 调用失败或 JSON 解析失败返回 None
     """
-    from .config import EXTRACT_MODEL, QUERY_MODEL
+    from .config import get_role_llm_config
 
-    model_override = EXTRACT_MODEL if role == "extract" else QUERY_MODEL
+    _role_provider, model_override = get_role_llm_config(role)
     response_format = {"type": "json_object"}
 
     # 按优先级尝试每个后端，带 response_format 参数

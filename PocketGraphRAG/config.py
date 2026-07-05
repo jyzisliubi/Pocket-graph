@@ -284,6 +284,49 @@ LANGFUSE_HOST = os.environ.get(
 )
 
 # ========================
+# REST API 认证配置（公网部署必备，对标 LightRAG API Key）
+# ========================
+# 设为空字符串则禁用认证（仅本地开发用）；设为非空字符串则所有 /api/* 端点
+# 必须带 `Authorization: Bearer <key>` 或 `X-API-Key: <key>` 头。
+# 多个 key 用逗号分隔（轮换/团队场景）。
+# 推荐：生成强随机字符串，如 `python -c "import secrets; print(secrets.token_urlsafe(32))"`
+API_KEYS = [
+    k.strip()
+    for k in os.environ.get("POCKET_API_KEYS", "").split(",")
+    if k.strip()
+]
+# 是否启用认证（API_KEYS 非空即启用）
+API_AUTH_ENABLED = bool(API_KEYS)
+# 受保护的路径前缀（这些路径必须带认证头）
+API_PROTECTED_PREFIX = "/api/"
+# 不受认证保护的路径（健康检查、静态资源、docs）
+API_PUBLIC_PATHS = {"/", "/api/health", "/api/llm/status", "/docs", "/openapi.json", "/redoc"}
+
+# ========================
+# 角色特定 LLM 配置（成本优化：强模型抽取 + 快模型查询）
+# ========================
+# 4 个角色独立配置，未设置时回退到默认 LLM_PROVIDER/MODEL
+# 典型场景：
+#   extract   - KG 抽取，需要强推理能力 → qwen-max / deepseek-v3
+#   query     - 问答生成，速度优先     → qwen-flash / qwen-plus
+#   keywords  - 关键词抽取，简单任务   → qwen-flash
+#   vlm       - 多模态图片理解         → qwen-vl-max
+#
+# 配置格式：<provider>::<model>，如 "dashscope::qwen-max"
+# 仅设置 model 时 provider 不变：EXTRACT_LLM_MODEL = "qwen-max"
+# 同时切换 provider：EXTRACT_LLM_CONFIG = "dashscope::qwen-max"
+def _parse_role_llm(env_var: str, default: str = "") -> str:
+    """从环境变量解析角色 LLM 配置，返回 '<provider>::<model>' 或空字符串。"""
+    val = os.environ.get(env_var, "").strip()
+    return val or default
+
+
+EXTRACT_LLM_CONFIG = _parse_role_llm("POCKET_EXTRACT_LLM")  # KG 抽取
+QUERY_LLM_CONFIG = _parse_role_llm("POCKET_QUERY_LLM")  # 问答生成
+KEYWORDS_LLM_CONFIG = _parse_role_llm("POCKET_KEYWORDS_LLM")  # 关键词抽取
+VLM_LLM_CONFIG = _parse_role_llm("POCKET_VLM_LLM")  # 多模态理解
+
+# ========================
 # 社区层次摘要配置（P3：对标 MS GraphRAG Hierarchical Summaries）
 # ========================
 # 社区发现算法: "auto" 优先 Leiden（需 pip install leidenalg igraph）回退 Louvain
@@ -387,8 +430,51 @@ LLM_TIMEOUT = int(os.environ.get("POCKET_LLM_TIMEOUT", "120"))
 # 例如：用便宜的模型做抽取，用强的模型做问答
 # POCKET_EXTRACT_MODEL=Qwen/Qwen2.5-14B-Instruct  # 抽取用大模型
 # POCKET_QUERY_MODEL=Qwen/Qwen2.5-7B-Instruct     # 问答用小模型（更快）
+# POCKET_KEYWORDS_MODEL=Qwen/Qwen2.5-7B-Instruct  # 关键词抽取（简单任务）
+# POCKET_VLM_MODEL=qwen-vl-max                    # 多模态图片理解
 EXTRACT_MODEL = os.environ.get("POCKET_EXTRACT_MODEL", "")
 QUERY_MODEL = os.environ.get("POCKET_QUERY_MODEL", "")
+KEYWORDS_MODEL = os.environ.get("POCKET_KEYWORDS_MODEL", "")
+VLM_MODEL = os.environ.get("POCKET_VLM_MODEL", "")
+
+
+def get_role_llm_config(role: str) -> tuple:
+    """获取角色特定的 LLM 配置（provider, model）。
+
+    优先级（从高到低）：
+    1. POCKET_<ROLE>_LLM = "<provider>::<model>"  （同时切 provider + model）
+    2. POCKET_<ROLE>_MODEL = "<model>"            （仅切 model，provider 不变）
+    3. 当前默认 provider + 该 provider 的默认 model
+
+    Args:
+        role: "extract" / "query" / "keywords" / "vlm"
+
+    Returns:
+        (provider_or_None, model_or_None)：provider 为 None 表示用当前默认 provider
+    """
+    # 角色到环境变量映射
+    role_full_config = {
+        "extract": EXTRACT_LLM_CONFIG,
+        "query": QUERY_LLM_CONFIG,
+        "keywords": KEYWORDS_LLM_CONFIG,
+        "vlm": VLM_LLM_CONFIG,
+    }
+    role_model_only = {
+        "extract": EXTRACT_MODEL,
+        "query": QUERY_MODEL,
+        "keywords": KEYWORDS_MODEL,
+        "vlm": VLM_MODEL,
+    }
+    # 优先：完整配置 <provider>::<model>
+    full = role_full_config.get(role, "")
+    if full and "::" in full:
+        provider, model = full.split("::", 1)
+        return provider.strip(), model.strip()
+    # 次优：仅 model
+    model_only = role_model_only.get(role, "")
+    if model_only:
+        return None, model_only.strip()
+    return None, None
 
 # Gleaning 轮数（参考 microsoft/graphrag）
 # 0 = 单轮抽取（向后兼容）

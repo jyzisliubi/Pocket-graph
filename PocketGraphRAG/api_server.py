@@ -26,15 +26,23 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from .config import (
+    API_AUTH_ENABLED,
+    API_KEYS,
+    API_PROTECTED_PREFIX,
+    API_PUBLIC_PATHS,
     DATA_PATH,
+    EXTRACT_LLM_CONFIG,
     INDEX_DIR,
+    KEYWORDS_LLM_CONFIG,
     LANGFUSE_ENABLED,
     LANGFUSE_HOST,
     LANGFUSE_PUBLIC_KEY,
     LANGFUSE_SECRET_KEY,
+    QUERY_LLM_CONFIG,
     SEARCH_MODE,
     USER_DOCS_DIR,
     USER_TRIPLES_PATH,
+    VLM_LLM_CONFIG,
 )
 from .kg_reasoning import KGDualRetriever
 from .llm import get_active_provider, has_llm
@@ -54,30 +62,63 @@ logger = get_logger(__name__)
 _rag: PocketGraphRAG = None
 _kg_retriever: KGDualRetriever = None
 
-API_KEY = os.environ.get("POCKET_API_KEY", "")
+# 向后兼容：旧的单 key 环境变量 POCKET_API_KEY 仍生效
+_LEGACY_API_KEY = os.environ.get("POCKET_API_KEY", "")
+_ALL_API_KEYS = set(API_KEYS)
+if _LEGACY_API_KEY:
+    _ALL_API_KEYS.add(_LEGACY_API_KEY)
+_AUTH_ENABLED = API_AUTH_ENABLED or bool(_LEGACY_API_KEY)
+
 _CORS_ORIGINS = os.environ.get("POCKET_CORS_ORIGINS", "*")
 _CORS_ALLOW_CREDENTIALS = os.environ.get("POCKET_CORS_CREDENTIALS", "").lower() in ("1", "true", "yes")
 
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
+bearer_header = APIKeyHeader(name="Authorization", auto_error=False)
 
 
-async def _verify_api_key(request: Request, key: Optional[str] = Depends(api_key_header)):
-    """Verify API key if POCKET_API_KEY is configured.
+async def _verify_api_key(
+    request: Request,
+    x_api_key: Optional[str] = Depends(api_key_header),
+    authorization: Optional[str] = Depends(bearer_header),
+):
+    """Verify API key if POCKET_API_KEYS / POCKET_API_KEY is configured.
 
-    - If POCKET_API_KEY is not set: all requests allowed (local dev mode)
-    - If set: requests must provide X-API-Key header matching the key
-    - Health endpoint (/api/health, /) is always accessible
+    支持两种认证头（任一即可）：
+      - X-API-Key: <key>
+      - Authorization: Bearer <key>
+
+    - 未配置任何 key 时：所有请求放行（本地开发模式）
+    - 已配置：受保护路径必须带有效 key
+    - 公开路径（健康检查、docs、llm/status）始终放行
+
+    多 key 支持：POCKET_API_KEYS=k1,k2,k3 逗号分隔，便于团队/轮换场景。
     """
-    if not API_KEY:
+    if not _AUTH_ENABLED:
         return None
-    if request.url.path in ("/", "/api/health", "/docs", "/redoc", "/openapi.json"):
+    path = request.url.path
+    # 公开路径白名单
+    if path in API_PUBLIC_PATHS:
         return None
-    if key != API_KEY:
+    # 非受保护前缀放行（静态资源等）
+    if not path.startswith(API_PROTECTED_PREFIX):
+        return None
+
+    # 提取候选 key（X-API-Key 优先，其次 Bearer）
+    candidate = x_api_key
+    if not candidate and authorization:
+        # 支持 "Bearer xxx" 和裸 token 两种格式
+        if authorization.lower().startswith("bearer "):
+            candidate = authorization[7:].strip()
+        else:
+            candidate = authorization.strip()
+
+    if not candidate or candidate not in _ALL_API_KEYS:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid or missing API key. Use X-API-Key header.",
+            detail="Invalid or missing API key. Use X-API-Key or Authorization: Bearer header.",
+            headers={"WWW-Authenticate": "ApiKey"},
         )
-    return key
+    return candidate
 
 
 @asynccontextmanager
@@ -423,6 +464,17 @@ async def llm_status():
             "host": LANGFUSE_HOST,
             "public_key_configured": bool(LANGFUSE_PUBLIC_KEY),
             "secret_key_configured": bool(LANGFUSE_SECRET_KEY),
+        },
+        "api_auth": {
+            "enabled": _AUTH_ENABLED,
+            "key_count": len(_ALL_API_KEYS),
+            # 不返回 key 本身，仅返回是否配置
+        },
+        "role_llm": {
+            "extract": bool(EXTRACT_LLM_CONFIG),
+            "query": bool(QUERY_LLM_CONFIG),
+            "keywords": bool(KEYWORDS_LLM_CONFIG),
+            "vlm": bool(VLM_LLM_CONFIG),
         },
     }
 

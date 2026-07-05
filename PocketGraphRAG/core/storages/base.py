@@ -176,6 +176,17 @@ class GraphStore(ABC):
         """最短路径。未实现的后端应抛 NotImplementedError"""
         raise NotImplementedError(f"{type(self).__name__}.shortest_path 未实现")
 
+    def cleanup_orphan_entities(self) -> int:
+        """清理孤儿实体（v0.3.7：对标 graphrag v3.0.9 phantom entities 清理）
+
+        删除图中没有任何边（既非 head 也非 tail）的实体。
+        这些实体通常在三元组删除后遗留，占用存储且不影响检索质量。
+
+        Returns:
+            清理的孤儿实体数量。未实现的后端返回 0。
+        """
+        return 0
+
 
 class KVStore(ABC):
     """键值存储抽象基类。

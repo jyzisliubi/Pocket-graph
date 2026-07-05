@@ -623,6 +623,82 @@ def webui_cmd(
     _launch_webapp(host, port, share, listen)
 
 
+# ========================
+# cleanup — 清理孤儿实体（对标 graphrag v3.0.9 phantom entities）
+# ========================
+
+
+@app.command("cleanup", help="清理孤儿实体和无效索引（对标 graphrag v3.0.9）")
+def cleanup_cmd(
+    index_dir: Optional[str] = typer.Option(
+        None, "--index-dir", help="索引目录（默认用 config.INDEX_DIR）"
+    ),
+    data_path: Optional[str] = typer.Option(
+        None, "--data", "-d", help="三元组数据文件路径（默认用 config.DATA_PATH）"
+    ),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="仅统计不实际删除"
+    ),
+):
+    """清理图中没有边的孤儿实体，释放存储空间。
+
+    孤儿实体通常在三元组删除后遗留（phantom entities），
+    它们不影响检索质量但占用存储。
+    """
+    from .config import INDEX_DIR as _default_index_dir
+    from .config import DATA_PATH as _default_data_path
+    from .data_processor import KGProcessor
+
+    idx = index_dir or _default_index_dir
+    dpath = data_path or _default_data_path
+
+    typer.echo(f"索引目录: {idx}")
+    typer.echo(f"数据路径: {dpath}")
+
+    if not os.path.exists(dpath):
+        typer.secho(f"数据文件不存在: {dpath}", fg=typer.colors.RED)
+        raise typer.Exit(code=1)
+
+    processor = KGProcessor(dpath)
+    processor.load_triples()
+
+    # 用 InMemoryGraphStore 的 cleanup_orphan_entities
+    from .core.storages.in_memory_graph import InMemoryGraphStore
+
+    graph = InMemoryGraphStore(
+        processor.entity_relations, processor.reverse_relations
+    )
+    before_count = len(graph.all_entities())
+    before_triples = len(graph)
+
+    if dry_run:
+        # dry run: 只统计不删除
+        orphans = []
+        all_e = set(graph.entity_relations.keys()) | set(
+            graph.reverse_relations.keys()
+        )
+        for e in all_e:
+            if not graph.entity_relations.get(e) and not graph.reverse_relations.get(e):
+                orphans.append(e)
+        typer.secho(
+            f"[dry-run] 发现 {len(orphans)} 个孤儿实体（未删除）",
+            fg=typer.colors.YELLOW,
+        )
+        typer.echo(f"总实体: {before_count}，总三元组: {before_triples}")
+        if orphans:
+            typer.echo(f"孤儿实体示例: {orphans[:10]}")
+        return
+
+    removed = graph.cleanup_orphan_entities()
+    after_count = len(graph.all_entities())
+
+    typer.secho(
+        f"清理完成: 删除 {removed} 个孤儿实体（{before_count} → {after_count}）",
+        fg=typer.colors.GREEN,
+    )
+    typer.echo(f"总三元组: {before_triples}（不变）")
+
+
 def main():
     app()
 

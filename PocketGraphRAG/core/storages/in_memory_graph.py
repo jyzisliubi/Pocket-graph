@@ -120,6 +120,29 @@ class InMemoryGraphStore(GraphStore):
     def __len__(self) -> int:
         return len(self._triple_set)
 
+    def cleanup_orphan_entities(self) -> int:
+        """清理孤儿实体（v0.3.7：对标 graphrag v3.0.9）
+
+        删除图中没有任何边的实体（entity_relations 和 reverse_relations 中
+        对应的列表均为空的实体）。这些实体在三元组删除后遗留，是 phantom entities。
+
+        Returns:
+            清理的孤儿实体数量
+        """
+        orphans = []
+        all_entities = set(self.entity_relations.keys()) | set(
+            self.reverse_relations.keys()
+        )
+        for e in all_entities:
+            has_outgoing = bool(self.entity_relations.get(e))
+            has_incoming = bool(self.reverse_relations.get(e))
+            if not has_outgoing and not has_incoming:
+                orphans.append(e)
+        for e in orphans:
+            self.entity_relations.pop(e, None)
+            self.reverse_relations.pop(e, None)
+        return len(orphans)
+
     # ==========================
     # 图算法（基础实现，大规模图建议用 NetworkX 或 Neo4j）
     # ==========================

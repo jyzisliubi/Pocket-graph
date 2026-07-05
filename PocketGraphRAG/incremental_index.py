@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 from typing import List, Tuple
 
 import faiss
@@ -41,6 +42,12 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 
 from .logging_config import get_logger
+
+# 全局索引写入锁（v0.3.7：对标 LightRAG v1.4.3 entity-keyed locks 防竞态）
+# 防止并发 add_triples_incremental 调用导致 FAISS 索引 lost-update：
+#   Thread A load(v1) → Thread B load(v1) → A save(v2) → B save(v2') 覆盖 A
+# 加锁后整个 load-modify-save 循环串行化，保证索引一致性。
+_index_write_lock = threading.Lock()
 
 logger = get_logger(__name__)
 
@@ -209,6 +216,28 @@ def _append_embedding_index(
 
 
 def add_triples_incremental(
+    new_triples: List[Tuple[str, str, str]],
+    model: SentenceTransformer,
+    index_dir: str,
+    data_path: str,
+    reverse_link_relations=None,
+    relation_templates: dict = None,
+    schema=None,
+    doc_id: str = None,
+) -> dict:
+    """增量添加三元组到现有索引（线程安全版本，v0.3.7）。
+
+    使用全局 _index_write_lock 串行化索引写入，防止并发调用导致 lost-update。
+    内部调用 _add_triples_incremental_impl 执行实际逻辑。
+    """
+    with _index_write_lock:
+        return _add_triples_incremental_impl(
+            new_triples, model, index_dir, data_path,
+            reverse_link_relations, relation_templates, schema, doc_id,
+        )
+
+
+def _add_triples_incremental_impl(
     new_triples: List[Tuple[str, str, str]],
     model: SentenceTransformer,
     index_dir: str,
@@ -494,6 +523,23 @@ def _rebuild_entity_index_excluding(
 
 
 def remove_document_incremental(
+    doc_id: str,
+    model: SentenceTransformer,
+    index_dir: str,
+    data_path: str,
+    reverse_link_relations=None,
+    relation_templates: dict = None,
+    schema=None,
+) -> dict:
+    """按文档 ID 增量删除（线程安全版本，v0.3.7）。"""
+    with _index_write_lock:
+        return _remove_document_incremental_impl(
+            doc_id, model, index_dir, data_path,
+            reverse_link_relations, relation_templates, schema,
+        )
+
+
+def _remove_document_incremental_impl(
     doc_id: str,
     model: SentenceTransformer,
     index_dir: str,

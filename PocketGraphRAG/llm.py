@@ -200,6 +200,26 @@ def call_llm(
     if role == "extract" and _extract_model_override:
         model_override = _extract_model_override
 
+    # LLM Cache（v0.3.7：对标 LightRAG v1.4.3 Redis cache）
+    # 仅缓存非流式调用；默认仅缓存 query 角色（抽取应保持新鲜）
+    from .llm_cache import get_cache, should_cache_role, _cache_key as _llm_cache_key
+    _cache_enabled = (not stream) and should_cache_role(role)
+    _cache_inst = get_cache() if _cache_enabled else None
+    _cache_key_val = None
+    if _cache_inst is not None:
+        _cache_key_val = _llm_cache_key(
+            system_prompt, user_prompt, model_override or "",
+            temperature, max_tokens,
+        )
+        cached = _cache_inst.get(_cache_key_val)
+        if cached is not None:
+            return cached
+
+    def _save_cache(r):
+        """缓存写入辅助函数（仅写入非 None 结果）"""
+        if _cache_inst is not None and _cache_key_val and r is not None:
+            _cache_inst.set(_cache_key_val, r)
+
     # Langfuse Tracing：记录 LLM 调用
     from .tracing import is_tracing_enabled, trace_llm_call
     _tracing_enabled = is_tracing_enabled()
@@ -232,6 +252,7 @@ def call_llm(
                 _span.set_output(result if not stream else "[stream]")
             if _trace_cm is not None:
                 _trace_cm.__exit__(None, None, None)
+            _save_cache(result)
             return result
 
     # 备选 freellm-cn（本地大模型服务网关，OpenAI 兼容）
@@ -253,6 +274,7 @@ def call_llm(
                 _span.set_output(result if not stream else "[stream]")
             if _trace_cm is not None:
                 _trace_cm.__exit__(None, None, None)
+            _save_cache(result)
             return result
 
     # 备选 SiliconFlow
@@ -273,6 +295,7 @@ def call_llm(
                 _span.set_output(result if not stream else "[stream]")
             if _trace_cm is not None:
                 _trace_cm.__exit__(None, None, None)
+            _save_cache(result)
             return result
 
     # 备选 DeepSeek
@@ -293,6 +316,7 @@ def call_llm(
                 _span.set_output(result if not stream else "[stream]")
             if _trace_cm is not None:
                 _trace_cm.__exit__(None, None, None)
+            _save_cache(result)
             return result
 
     # 备选 DashScope（通义千问）
@@ -314,6 +338,7 @@ def call_llm(
                 _span.set_output(result if not stream else "[stream]")
             if _trace_cm is not None:
                 _trace_cm.__exit__(None, None, None)
+            _save_cache(result)
             return result
 
     # 备选 OpenAI 兼容 API
@@ -334,6 +359,7 @@ def call_llm(
                 _span.set_output(result if not stream else "[stream]")
             if _trace_cm is not None:
                 _trace_cm.__exit__(None, None, None)
+            _save_cache(result)
             return result
 
     # 所有后端失败

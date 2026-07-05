@@ -90,6 +90,38 @@ INDEX_DIR = _env("POCKET_INDEX_DIR", default=_DEFAULT_INDEX_DIR)
 _DEFAULT_USER_DOCS_DIR = os.path.join(_PROJECT_ROOT, "user_docs")
 USER_DOCS_DIR = _env("POCKET_USER_DOCS_DIR", default=_DEFAULT_USER_DOCS_DIR)
 
+# ========================
+# WORKSPACE 数据隔离（v0.3.7：对标 LightRAG v1.4.0 多租户/多数据集隔离）
+# ========================
+# 不同 workspace 使用独立的索引和文档目录，互不干扰。
+# 典型场景：
+#   1. 多租户：每个用户/团队一个 workspace，数据物理隔离
+#   2. 多数据集：同一台机器上跑多个 KG（如 movie_kg + rice_kg），互不污染
+#   3. 实验对比：A/B 测试不同 embedding 模型时，用不同 workspace 避免覆盖
+#
+# 配置方式：POCKET_WORKSPACE=rice  → 索引存到 index/rice/，文档存到 user_docs/rice/
+# 默认 "default"：保持向后兼容，路径不变（INDEX_DIR / USER_DOCS_DIR 原样使用）
+WORKSPACE = os.environ.get("POCKET_WORKSPACE", "default").strip() or "default"
+
+def _apply_workspace(path: str, workspace: str) -> str:
+    """若 workspace != 'default'，在 path 下追加 workspace 子目录。
+
+    仅对目录路径生效，且 workspace 名做安全过滤（只允许字母数字-_），
+    防止路径穿越（如 POCKET_WORKSPACE="../../etc"）。
+    """
+    if workspace == "default":
+        return path
+    # 安全过滤：只允许字母、数字、下划线、连字符
+    import re as _re
+    safe = _re.sub(r"[^A-Za-z0-9_\-]", "_", workspace)
+    if not safe:
+        return path
+    return os.path.join(path, safe)
+
+# 工作区隔离后的实际路径（WORKSPACE="default" 时与原路径一致，向后兼容）
+INDEX_DIR = _apply_workspace(INDEX_DIR, WORKSPACE)
+USER_DOCS_DIR = _apply_workspace(USER_DOCS_DIR, WORKSPACE)
+
 # 用户上传文档抽取出的三元组存放路径（build-index 会读取此文件）
 USER_TRIPLES_PATH = os.path.join(USER_DOCS_DIR, "triples.txt")
 

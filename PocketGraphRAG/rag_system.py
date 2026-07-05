@@ -404,6 +404,20 @@ class PocketGraphRAG:
         # DRIFT 搜索模式：独立分支，不走 multihop/_basic_retrieve
         # DRIFT 内部会调用 _basic_retrieve(local) 做局部检索
         if effective_search_mode == "drift":
+            # 检查社区摘要是否就绪：首次调用时社区摘要可能需要构建（5+ 分钟）
+            # 无社区摘要时降级到 mix 模式，避免阻塞查询
+            comm_data = self._load_community_summaries()
+            if not comm_data or not comm_data.get("communities"):
+                logger.warning(
+                    "DRIFT 模式：社区摘要未就绪，降级到 mix 模式。"
+                    "请先运行 `pocketgraphrag build-index --community` 构建社区摘要。"
+                )
+                kg_path["search_type"] = "drift_fallback_mix"
+                kg_path["drift_fallback_reason"] = "community_summary_not_ready"
+                results, _ = self._basic_retrieve(
+                    query, top_k, search_mode="mix", vector_query=vector_query
+                )
+                return results, kg_path
             results, kg_path = self._retrieve_drift(query, top_k)
             if use_reranker:
                 results = self._rerank(query, results, top_k)
@@ -1218,7 +1232,15 @@ class PocketGraphRAG:
 
         if model is not None:
             try:
-                pairs = [[query, text] for text, _, _ in results]
+                # KG-aware rerank：把 chunk 的关联实体注入 passage
+                from .core.reranker import KG_AWARE_ENABLED, _build_kg_aware_passage_for_tuple
+                pairs = []
+                for text, _, meta in results:
+                    if KG_AWARE_ENABLED and isinstance(meta, dict):
+                        passage = _build_kg_aware_passage_for_tuple(text, meta)
+                    else:
+                        passage = text
+                    pairs.append([query, passage])
                 scores = model.predict(pairs)
                 reranked = [
                     (text, float(rscore), meta)

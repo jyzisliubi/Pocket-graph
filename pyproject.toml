@@ -100,9 +100,25 @@ graph = [
     "leidenalg>=0.10.0",
     "igraph>=0.10.0",
 ]
+# Optional: Langfuse Tracing（对标 LangSmith 的开源 LLM 可观测平台）
+# 安装后设置 POCKET_LANGFUSE=1 + POCKET_LANGFUSE_PUBLIC_KEY/SECRET_KEY 启用
+langfuse = [
+    "langfuse>=2.0.0",
+]
+# Optional: Neo4j 图存储后端（百万级三元组推荐）
+# 安装后设置 POCKET_GRAPH_BACKEND=neo4j + POCKET_NEO4J_URI/USER/PASSWORD
+neo4j = [
+    "neo4j>=5.0.0",
+]
+# Optional: PostgreSQL + pgvector 向量存储后端（企业级生产部署）
+# 安装后设置 POCKET_VECTOR_BACKEND=pgvector + POCKET_PG_DSN
+pgvector = [
+    "psycopg[binary]>=3.1.0",
+    "pgvector>=0.2.0",
+]
 # 一键安装全部可选依赖（开发/演示用）
 all = [
-    "pocketgraphrag[web,docs,playwright,dev,eval,cli,graph]",
+    "pocketgraphrag[web,docs,playwright,dev,eval,cli,graph,langfuse,neo4j,pgvector]",
 ]
 
 [project.urls]

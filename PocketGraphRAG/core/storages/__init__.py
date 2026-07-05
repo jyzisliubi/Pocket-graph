@@ -11,7 +11,8 @@
   in_memory_graph.py   — InMemoryGraphStore（默认，包装 entity_relations dict）
   json_kv_store.py     — JsonKVStorage（默认，JSON 文件持久化）
   chroma_store.py      — ChromaVectorStore（可选，需 pip install chromadb）
-  pgvector_store.py    — PgVectorStore（可选，需 pip install psycopg[binary]）
+  pgvector_store.py    — PgVectorStore（可选，需 pip install psycopg[binary] pgvector）
+  neo4j_store.py       — Neo4jGraphStore（可选，需 pip install neo4j）
   factory.py           — get_vector_store / get_graph_store / get_kv_store 工厂函数
 
 使用方式：
@@ -20,6 +21,12 @@
   vs = get_vector_store(backend="faiss", model=model, dimension=512)
   gs = get_graph_store(backend="memory", entity_relations=er)
   kv = get_kv_store(backend="json", path="data/doc_store.json")
+
+  # 切换到 Neo4j 图后端（百万级三元组推荐）
+  gs = get_graph_store(backend="neo4j", uri="bolt://localhost:7687")
+
+  # 切换到 pgvector 向量后端（企业级生产部署）
+  vs = get_vector_store(backend="pgvector", dimension=512)
 
   # 或直接导入具体实现
   from PocketGraphRAG.core.storages import FAISSVectorStore, InMemoryGraphStore, JsonKVStorage

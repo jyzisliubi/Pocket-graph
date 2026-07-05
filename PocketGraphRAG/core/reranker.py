@@ -5,12 +5,16 @@
 
 中国网络环境：优先从本地路径加载（modelscope snapshot_download 预下载），
 未配置本地路径时自动从 HuggingFace 下载（建议预先设置 HF_ENDPOINT=https://hf-mirror.com）。
+
+v0.3.6 新增 KG-aware 模式：把 chunk 关联的 KG 实体/关系注入 passage，
+让 CrossEncoder 能利用图谱结构信息做精排。LightRAG 默认开启 reranker 但不利用
+KG 上下文，PocketGraphRAG 的 KG-aware 是独有增强。
 """
 
 from __future__ import annotations
 
 import os
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from ..logging_config import get_logger
 
@@ -20,6 +24,14 @@ logger = get_logger(__name__)
 # 默认 bge-reranker-v2-m3（多语言、效果优于 base）；与 config.RERANKER_MODEL 保持一致
 RERANKER_MODEL = os.environ.get("RERANKER_MODEL", "BAAI/bge-reranker-v2-m3")
 RERANKER_LOCAL_PATH = os.environ.get("RERANKER_LOCAL_PATH", "")
+
+# KG-aware 模式：把 chunk 关联的实体注入 passage 增强精排
+# 默认开启（已通过 HotpotQA 验证有效）；设为 0 关闭
+KG_AWARE_ENABLED = os.environ.get("POCKET_KG_AWARE_RERANKER", "1").lower() in (
+    "1", "true", "yes", "on"
+)
+# 注入实体的最大数量（过多会稀释 query-passage 匹配信号）
+KG_AWARE_MAX_ENTITIES = int(os.environ.get("POCKET_KG_AWARE_MAX_ENTITIES", "5"))
 
 
 class Reranker:
@@ -100,7 +112,11 @@ class Reranker:
             return []
 
         model = self._load()
-        passages = [c["text"] for c in chunks]
+        if model is None:
+            return chunks[:top_k]
+
+        # KG-aware：把 chunk 关联的实体注入 passage
+        passages = [self._build_kg_aware_passage(c) for c in chunks]
         scores = model.predict([(query, p) for p in passages])
 
         scored = []
@@ -117,7 +133,63 @@ class Reranker:
 
         return scored[:top_k]
 
+    def _build_kg_aware_passage(self, chunk: Dict) -> str:
+        """构建 KG-aware passage：把 chunk 关联的实体注入 passage 文本。
+
+        格式：原文本 + "[实体] A, B, C"
+        让 CrossEncoder 能利用图谱结构信息做精排。
+
+        无实体或 KG-aware 关闭时返回原始文本。
+        """
+        text = chunk.get("text", "")
+        if not KG_AWARE_ENABLED:
+            return text
+
+        # 从 chunk metadata 提取关联实体
+        entities = []
+        meta = chunk.get("meta") or chunk.get("metadata") or {}
+        if isinstance(meta, dict):
+            # 优先用 entity 字段
+            ent = meta.get("entity") or meta.get("entities")
+            if isinstance(ent, str) and ent:
+                entities.append(ent)
+            elif isinstance(ent, list):
+                entities.extend([str(e) for e in ent if e])
+
+        if not entities:
+            return text
+
+        # 限制数量
+        entities = entities[:KG_AWARE_MAX_ENTITIES]
+        # 注入到 passage 末尾
+        entity_str = "、".join(entities)
+        return f"{text}\n[关联实体] {entity_str}"
+
 
 def get_reranker() -> Reranker:
     """获取 Reranker 单例。"""
     return Reranker()
+
+
+def _build_kg_aware_passage_for_tuple(text: str, meta: dict) -> str:
+    """为 rag_system 的 tuple 格式 (text, score, meta) 构建 KG-aware passage。
+
+    与 Reranker._build_kg_aware_passage 逻辑一致，但接收 meta dict 而非 chunk dict。
+    """
+    if not KG_AWARE_ENABLED:
+        return text
+
+    entities = []
+    if isinstance(meta, dict):
+        ent = meta.get("entity") or meta.get("entities")
+        if isinstance(ent, str) and ent:
+            entities.append(ent)
+        elif isinstance(ent, list):
+            entities.extend([str(e) for e in ent if e])
+
+    if not entities:
+        return text
+
+    entities = entities[:KG_AWARE_MAX_ENTITIES]
+    entity_str = "、".join(entities)
+    return f"{text}\n[关联实体] {entity_str}"

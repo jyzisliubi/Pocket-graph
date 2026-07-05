@@ -204,6 +204,25 @@ export interface ExtractSSEEvent {
   triples_count: number
 }
 
+/** 多模型融合抽取单条三元组 */
+export interface MultiModelTriple {
+  head: string
+  relation: string
+  tail: string
+  confidence: number
+  evidence: string
+}
+
+/** 多模型融合抽取响应 */
+export interface MultiModelExtractResponse {
+  filename: string
+  strategy: 'union' | 'intersect'
+  models: string[]
+  model_stats: Record<string, number>
+  total_triples: number
+  triples: MultiModelTriple[]
+}
+
 // ==========================
 // 系统设置
 // ==========================

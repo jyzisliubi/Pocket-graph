@@ -16,6 +16,7 @@ import type {
   UploadResponse,
   BuildIndexResponse,
   ExtractSSEEvent,
+  MultiModelExtractResponse,
   SettingsResponse,
   SaveSettingsRequest,
   SaveSettingsResponse,
@@ -298,5 +299,21 @@ export function extractTriples(
 ): AbortController {
   return streamSSE('/api/documents/extract', { filename }, onEvent, onError)
 }
+
+/** 多模型 KG 融合抽取（PocketGraphRAG 独有） */
+export const extractMultiModel = (
+  filename: string,
+  models: string[],
+  strategy: 'union' | 'intersect' = 'union',
+  minConfidence = 0.6,
+) =>
+  apiClient
+    .post<MultiModelExtractResponse>('/api/documents/extract-multi', {
+      filename,
+      models,
+      strategy,
+      min_confidence: minConfidence,
+    })
+    .then((r) => r.data)
 
 export default apiClient

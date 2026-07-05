@@ -386,9 +386,28 @@ class TestFactory:
         g = get_graph_store(entity_relations=sample_graph_data)
         assert isinstance(g, InMemoryGraphStore)
 
-    def test_get_graph_store_neo4j_not_implemented(self):
-        with pytest.raises(NotImplementedError):
+    def test_get_graph_store_neo4j_optional_dep(self):
+        """Neo4j 后端已实现，但 neo4j 驱动是可选依赖。
+
+        未安装 neo4j 包时，工厂分发到 Neo4jGraphStore 后由其抛 ImportError
+        （可选依赖的标准行为，与 chroma/pgvector 一致）。
+        """
+        try:
             get_graph_store(backend="neo4j")
+        except ImportError as e:
+            # 未安装 neo4j 驱动：期望 ImportError 含安装提示
+            assert "neo4j" in str(e).lower()
+            assert "pip install" in str(e).lower()
+        except NotImplementedError:
+            # 旧路径残留（不应再出现），失败
+            pytest.fail(
+                "Neo4jGraphStore 已实现，不应再抛 NotImplementedError；"
+                "请检查 neo4j_store.py 实现。"
+            )
+        else:
+            # 已安装 neo4j 驱动且成功实例化（需要真实 Neo4j 服务）：
+            # 工厂分发成功即通过
+            pass
 
 
 # ==========================

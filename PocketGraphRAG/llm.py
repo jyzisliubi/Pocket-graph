@@ -24,6 +24,11 @@ from .logging_config import get_logger
 
 logger = get_logger(__name__)
 
+# Multi-Model Fusion 支持：临时模型覆盖全局变量
+# 被 extract_triples_multi_model 设置，被 call_llm 读取
+# 值为 None 时使用 EXTRACT_MODEL 默认值；非 None 时临时覆盖
+_extract_model_override: Optional[str] = None
+
 from .config import (
     DASHSCOPE_API_KEY,
     DASHSCOPE_API_URL,
@@ -191,6 +196,23 @@ def call_llm(
     from .config import EXTRACT_MODEL, QUERY_MODEL
     # 根据 role 选择模型覆盖：extract 角色用 EXTRACT_MODEL，query 角色用 QUERY_MODEL
     model_override = EXTRACT_MODEL if role == "extract" else QUERY_MODEL
+    # Multi-Model Fusion 支持：临时模型覆盖（用于多模型融合抽取）
+    if role == "extract" and _extract_model_override:
+        model_override = _extract_model_override
+
+    # Langfuse Tracing：记录 LLM 调用
+    from .tracing import is_tracing_enabled, trace_llm_call
+    _tracing_enabled = is_tracing_enabled()
+    _trace_cm = None
+    _span = None
+    if _tracing_enabled and not stream:
+        _trace_cm = trace_llm_call(
+            name=f"llm_{role}",
+            model=model_override or "unknown",
+            prompt={"system": system_prompt[:200], "user": user_prompt[:200]},
+            metadata={"role": role, "temperature": temperature},
+        )
+        _span = _trace_cm.__enter__()
 
     # 优先尝试 Ollama 本地模型
     if OLLAMA_MODEL:
@@ -206,6 +228,10 @@ def call_llm(
             stream=stream,
         )
         if result is not None:
+            if _span is not None:
+                _span.set_output(result if not stream else "[stream]")
+            if _trace_cm is not None:
+                _trace_cm.__exit__(None, None, None)
             return result
 
     # 备选 freellm-cn（本地大模型服务网关，OpenAI 兼容）
@@ -223,6 +249,10 @@ def call_llm(
             stream=stream,
         )
         if result is not None:
+            if _span is not None:
+                _span.set_output(result if not stream else "[stream]")
+            if _trace_cm is not None:
+                _trace_cm.__exit__(None, None, None)
             return result
 
     # 备选 SiliconFlow
@@ -239,6 +269,10 @@ def call_llm(
             stream=stream,
         )
         if result is not None:
+            if _span is not None:
+                _span.set_output(result if not stream else "[stream]")
+            if _trace_cm is not None:
+                _trace_cm.__exit__(None, None, None)
             return result
 
     # 备选 DeepSeek
@@ -255,6 +289,10 @@ def call_llm(
             stream=stream,
         )
         if result is not None:
+            if _span is not None:
+                _span.set_output(result if not stream else "[stream]")
+            if _trace_cm is not None:
+                _trace_cm.__exit__(None, None, None)
             return result
 
     # 备选 DashScope（通义千问）
@@ -272,6 +310,10 @@ def call_llm(
             stream=stream,
         )
         if result is not None:
+            if _span is not None:
+                _span.set_output(result if not stream else "[stream]")
+            if _trace_cm is not None:
+                _trace_cm.__exit__(None, None, None)
             return result
 
     # 备选 OpenAI 兼容 API
@@ -288,8 +330,17 @@ def call_llm(
             stream=stream,
         )
         if result is not None:
+            if _span is not None:
+                _span.set_output(result if not stream else "[stream]")
+            if _trace_cm is not None:
+                _trace_cm.__exit__(None, None, None)
             return result
 
+    # 所有后端失败
+    if _span is not None:
+        _span.set_level("ERROR")
+    if _trace_cm is not None:
+        _trace_cm.__exit__(None, None, None)
     if stream:
         return iter(())
     return None

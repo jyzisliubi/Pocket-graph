@@ -79,9 +79,12 @@ def get_graph_store(
             **kwargs,
         )
     elif backend == "neo4j":
-        # TODO: 实现 Neo4jGraphStore
-        raise NotImplementedError(
-            "Neo4j 后端尚未实现。欢迎贡献：参考 InMemoryGraphStore 实现完整接口。"
+        from .neo4j_store import Neo4jGraphStore
+
+        return Neo4jGraphStore(
+            entity_relations=entity_relations,
+            reverse_relations=reverse_relations,
+            **kwargs,
         )
     else:
         raise ValueError(f"未知图后端: {backend}。可选: memory / neo4j")

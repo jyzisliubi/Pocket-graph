@@ -11,10 +11,12 @@ import {
   FileCheck2,
   Inbox,
   X,
+  Sparkles,
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Input } from '@/components/ui/input'
 import {
   Dialog,
   DialogContent,
@@ -23,18 +25,27 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { cn } from '@/lib/utils'
 import {
   getDocuments,
   uploadDocument,
   deleteDocument,
   extractTriples,
+  extractMultiModel,
   buildIndex,
 } from '@/lib/api'
 import type {
   DocumentInfo,
   ExtractPhase,
   BuildIndexStats,
+  MultiModelExtractResponse,
 } from '@/types/api'
 
 /** 允许上传的文件扩展名 */
@@ -87,6 +98,18 @@ interface ExtractState {
   count: number
 }
 
+/** 多模型融合抽取对话框状态 */
+interface MultiExtractState {
+  open: boolean
+  filename: string
+  loading: boolean
+  error: string | null
+  result: MultiModelExtractResponse | null
+}
+
+/** 融合策略 */
+type FusionStrategy = 'union' | 'intersect'
+
 export default function DocumentsPage() {
   // ===== 文档列表 =====
   const [documents, setDocuments] = useState<DocumentInfo[]>([])
@@ -110,6 +133,18 @@ export default function DocumentsPage() {
   })
   const extractControllerRef = useRef<AbortController | null>(null)
   const extractDoneTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // ===== 多模型融合抽取 =====
+  const [multiExtract, setMultiExtract] = useState<MultiExtractState>({
+    open: false,
+    filename: '',
+    loading: false,
+    error: null,
+    result: null,
+  })
+  const [fusionModels, setFusionModels] = useState('qwen-flash,qwen-max')
+  const [fusionStrategy, setFusionStrategy] =
+    useState<FusionStrategy>('union')
 
   // ===== 删除确认 =====
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null)
@@ -273,6 +308,64 @@ export default function DocumentsPage() {
       extractDoneTimerRef.current = null
     }
     setExtract((prev) => ({ ...prev, open: false }))
+  }
+
+  /** 打开多模型融合抽取对话框 */
+  const openMultiExtract = (filename: string) => {
+    setMultiExtract({
+      open: true,
+      filename,
+      loading: false,
+      error: null,
+      result: null,
+    })
+  }
+
+  /** 执行多模型融合抽取 */
+  const handleMultiExtract = async () => {
+    const models = fusionModels
+      .split(',')
+      .map((m) => m.trim())
+      .filter(Boolean)
+    if (models.length < 2) {
+      setMultiExtract((prev) => ({
+        ...prev,
+        error: '请至少输入 2 个模型（逗号分隔）',
+      }))
+      return
+    }
+    setMultiExtract((prev) => ({
+      ...prev,
+      loading: true,
+      error: null,
+      result: null,
+    }))
+    try {
+      const res = await extractMultiModel(
+        multiExtract.filename,
+        models,
+        fusionStrategy,
+      )
+      setMultiExtract((prev) => ({
+        ...prev,
+        loading: false,
+        result: res,
+      }))
+      showNotice(
+        'success',
+        `融合抽取完成：${res.total_triples} 条三元组（${res.strategy}）`,
+      )
+    } catch (err) {
+      const msg = (err as Error).message || '融合抽取失败'
+      setMultiExtract((prev) => ({ ...prev, loading: false, error: msg }))
+      showNotice('error', msg)
+    }
+  }
+
+  /** 关闭多模型融合抽取对话框 */
+  const closeMultiExtract = () => {
+    if (multiExtract.loading) return // 抽取中不允许关闭
+    setMultiExtract((prev) => ({ ...prev, open: false }))
   }
 
   /** 确认删除 */
@@ -490,10 +583,21 @@ export default function DocumentsPage() {
                           size="sm"
                           className="h-7 gap-1.5 px-2 text-xs"
                           onClick={() => handleExtract(doc.filename)}
-                          disabled={extract.open}
+                          disabled={extract.open || multiExtract.loading}
                         >
                           <Wand2 className="h-3.5 w-3.5" />
                           <span>抽取</span>
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="h-7 gap-1.5 px-2 text-xs text-primary hover:bg-primary hover:text-primary-foreground"
+                          onClick={() => openMultiExtract(doc.filename)}
+                          disabled={extract.open || multiExtract.loading}
+                          title="多模型 KG 融合抽取（PocketGraphRAG 独有）"
+                        >
+                          <Sparkles className="h-3.5 w-3.5" />
+                          <span>融合抽取</span>
                         </Button>
                         <Button
                           variant="outline"
@@ -639,6 +743,155 @@ export default function DocumentsPage() {
               </Button>
             ) : (
               <Button onClick={closeExtract}>完成</Button>
+            )}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* 多模型融合抽取对话框 */}
+      <Dialog
+        open={multiExtract.open}
+        onOpenChange={(open) => {
+          if (!open) closeMultiExtract()
+        }}
+      >
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-primary" />
+              多模型 KG 融合抽取
+              <Badge
+                variant="outline"
+                className="ml-1 px-1.5 py-0 text-[10px] uppercase text-primary"
+              >
+                独有
+              </Badge>
+            </DialogTitle>
+            <DialogDescription className="truncate" title={multiExtract.filename}>
+              文件：{multiExtract.filename}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4">
+            {/* 配置区 */}
+            {!multiExtract.result && (
+              <>
+                <div className="space-y-2">
+                  <label className="text-xs font-medium text-muted-foreground">
+                    模型列表（逗号分隔，至少 2 个）
+                  </label>
+                  <Input
+                    value={fusionModels}
+                    onChange={(e) => setFusionModels(e.target.value)}
+                    placeholder="qwen-flash,qwen-max"
+                    disabled={multiExtract.loading}
+                  />
+                  <p className="text-[11px] text-muted-foreground">
+                    每个模型有盲点，多模型 union 能覆盖彼此遗漏的实体。
+                    实测 HotpotQA Hit Rate 0.80 → 0.86（+6%）。
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-medium text-muted-foreground">
+                    融合策略
+                  </label>
+                  <Select
+                    value={fusionStrategy}
+                    onValueChange={(v) =>
+                      setFusionStrategy(v as FusionStrategy)
+                    }
+                    disabled={multiExtract.loading}
+                  >
+                    <SelectTrigger className="h-9">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="union">
+                        union — 并集去重（推荐，高召回）
+                      </SelectItem>
+                      <SelectItem value="intersect">
+                        intersect — 交集（高精度）
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </>
+            )}
+
+            {/* 加载中 */}
+            {multiExtract.loading && (
+              <div className="flex items-center gap-2 text-sm">
+                <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                <span className="text-muted-foreground">
+                  正在用多个模型抽取并融合…（可能需要 1-2 分钟）
+                </span>
+              </div>
+            )}
+
+            {/* 错误 */}
+            {multiExtract.error && (
+              <div className="flex items-start gap-2 rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>{multiExtract.error}</span>
+              </div>
+            )}
+
+            {/* 结果 */}
+            {multiExtract.result && (
+              <div className="space-y-3">
+                <div className="flex flex-col items-center gap-2 py-2 text-center">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-success/15 text-success">
+                    <CheckCircle2 className="h-6 w-6" />
+                  </div>
+                  <p className="text-sm font-medium">融合抽取完成</p>
+                  <p className="text-xs text-muted-foreground">
+                    共{' '}
+                    <span className="font-mono font-semibold text-success">
+                      {multiExtract.result.total_triples}
+                    </span>{' '}
+                    条三元组（策略：{multiExtract.result.strategy}）
+                  </p>
+                </div>
+                {/* 各模型抽取数量 */}
+                <div className="rounded-md border bg-muted/30 p-3">
+                  <p className="mb-2 text-xs font-medium text-muted-foreground">
+                    各模型抽取数量
+                  </p>
+                  <div className="space-y-1">
+                    {Object.entries(
+                      multiExtract.result.model_stats || {},
+                    ).map(([m, n]) => (
+                      <div
+                        key={m}
+                        className="flex items-center justify-between text-xs"
+                      >
+                        <span className="font-mono">{m}</span>
+                        <span className="font-mono font-semibold text-primary">
+                          {n} 条
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <DialogFooter>
+            {multiExtract.loading ? (
+              <Button disabled>抽取中…</Button>
+            ) : multiExtract.result ? (
+              <Button onClick={closeMultiExtract}>完成</Button>
+            ) : (
+              <>
+                <Button variant="outline" onClick={closeMultiExtract}>
+                  取消
+                </Button>
+                <Button onClick={handleMultiExtract}>
+                  <Sparkles className="mr-1 h-3.5 w-3.5" />
+                  开始融合抽取
+                </Button>
+              </>
             )}
           </DialogFooter>
         </DialogContent>

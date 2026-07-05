@@ -57,9 +57,14 @@ from .config import (
     SCHEMA_PATH,
     SEARCH_MODE,
     SELF_CHECK_ENABLED,
+    STRUCTURED_OUTPUT_ENABLED,
     SYSTEM_PROMPT,
     TOP_K,
     USER_PROMPT_TEMPLATE,
+    DRIFT_MAX_ITERATIONS,
+    DRIFT_FOLLOWUP_PER_ITER,
+    DRIFT_LOCAL_TOP_K,
+    DRIFT_PRIMER_COMMUNITY_TOP_K,
     VECTOR_REFUSE_THRESHOLD,
     VECTOR_WEIGHT,
 )
@@ -72,6 +77,7 @@ from .logging_config import get_logger
 from .multihop import multi_hop_retrieve
 from .query_router import QueryRouter
 from .schema import RelationSchema
+from .drift_search import drift_search, DriftResult
 
 logger = get_logger(__name__)
 
@@ -138,7 +144,7 @@ class PocketGraphRAG:
         self.use_multihop = use_multihop
         self.use_conversation = use_conversation
         # search_mode 校验：无效值直接报错，避免静默回退到 vector（BUG #7）
-        _valid_modes = {"vector", "local", "global", "mix", "kg_only", "global_summary"}
+        _valid_modes = {"vector", "local", "global", "mix", "kg_only", "global_summary", "drift"}
         if search_mode not in _valid_modes:
             raise ValueError(
                 f"无效的 search_mode={search_mode!r}，可选值: {sorted(_valid_modes)}"
@@ -395,6 +401,14 @@ class PocketGraphRAG:
             if hyde_doc:
                 vector_query = hyde_doc
 
+        # DRIFT 搜索模式：独立分支，不走 multihop/_basic_retrieve
+        # DRIFT 内部会调用 _basic_retrieve(local) 做局部检索
+        if effective_search_mode == "drift":
+            results, kg_path = self._retrieve_drift(query, top_k)
+            if use_reranker:
+                results = self._rerank(query, results, top_k)
+            return results, kg_path
+
         # 多跳查询分解
         if effective_multihop and has_llm():
             # Multi-hop 模式下，收集所有子查询的 KG 路径
@@ -465,7 +479,7 @@ class PocketGraphRAG:
         # H4：search_mode 由参数传入，不再读 self.search_mode
         mode = search_mode or self.search_mode
         # 校验 per-call search_mode，避免无效值静默回退到 vector（BUG #7）
-        _valid_modes = {"vector", "local", "global", "mix", "kg_only", "global_summary"}
+        _valid_modes = {"vector", "local", "global", "mix", "kg_only", "global_summary", "drift"}
         if mode not in _valid_modes:
             raise ValueError(
                 f"无效的 search_mode={mode!r}，可选值: {sorted(_valid_modes)}"
@@ -630,6 +644,74 @@ class PocketGraphRAG:
             return self._tag_result_source_type(
                 self.index.search(query, top_k), "vector"
             ), kg_path
+
+    def _retrieve_drift(self, query: str, top_k: int) -> tuple:
+        """DRIFT 搜索模式：Primer 社区搜索 → 迭代局部检索 → 答案融合
+
+        对标微软 GraphRAG 的 DRIFT (Dynamic Reasoning and Inference with
+        Flexible Traversal)。适合复杂多跳问题；简单问题自动降级到 multihop。
+        """
+        kg_path: dict[str, Any] = {
+            "seed_entities": [],
+            "expanded_entities": [],
+            "matched_relations": [],
+            "search_type": "drift",
+        }
+
+        comm_data = self._load_community_summaries()
+
+        def _community_search(q: str, k: int) -> list:
+            return search_communities(q, self.model, comm_data, top_k=k)
+
+        def _local_retrieve(q: str, k: int) -> tuple:
+            return self._basic_retrieve(
+                q, k, search_mode="local", vector_query=q
+            )
+
+        try:
+            drift_result = drift_search(
+                query=query,
+                community_search_fn=_community_search,
+                local_retrieve_fn=_local_retrieve,
+                max_iterations=DRIFT_MAX_ITERATIONS,
+                n_followup=DRIFT_FOLLOWUP_PER_ITER,
+                primer_top_k=DRIFT_PRIMER_COMMUNITY_TOP_K,
+                local_top_k=DRIFT_LOCAL_TOP_K,
+            )
+        except Exception as e:
+            logger.warning("DRIFT 搜索失败，降级到 mix 模式: %s", e)
+            return self._basic_retrieve(
+                query, top_k, search_mode="mix", vector_query=query
+            )
+
+        kg_path["seed_entities"] = drift_result.all_entities
+        kg_path["expanded_entities"] = list(set(drift_result.all_entities))
+        kg_path["drift_iterations"] = drift_result.total_iterations
+        kg_path["drift_primer_answer"] = drift_result.primer_answer[:200]
+
+        results = drift_result.all_chunks[:top_k] if drift_result.all_chunks else []
+
+        if not results:
+            logger.info("DRIFT 无 chunks，降级到 global_summary 召回")
+            top_communities = search_communities(
+                query, self.model, comm_data, top_k=top_k
+            )
+            results = [
+                (
+                    c["summary"],
+                    float(c["score"]),
+                    {
+                        "entity": f"社区#L{c.get('level', 0)}-{c['id']}",
+                        "source_type": "community_summary",
+                        "level": c.get("level", 0),
+                    },
+                )
+                for c in top_communities
+            ]
+            for c in top_communities:
+                kg_path["seed_entities"].extend(c.get("entities", [])[:5])
+
+        return results, kg_path
 
     def _retrieve_pure_kg(
         self, entity_names: list, seed_entities: list, top_k: int,

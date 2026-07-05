@@ -191,6 +191,19 @@ STRUCTURED_OUTPUT_ENABLED = os.environ.get(
 PAGERANK_WEIGHT = float(os.environ.get("POCKET_PAGERANK_WEIGHT", "0.3"))
 
 # ========================
+# DRIFT Search 配置（v0.3.5：对标微软 GraphRAG DRIFT）
+# ========================
+# DRIFT = Dynamic Reasoning and Inference with Flexible Traversal
+# 三阶段：Primer（社区搜索+中间答案）→ Drift（迭代局部检索）→ Output（答案融合）
+# 适合复杂多跳问题；简单问题会自动降级到 multihop。需 LLM。
+DRIFT_MAX_ITERATIONS = int(os.environ.get("POCKET_DRIFT_MAX_ITERATIONS", "2"))
+DRIFT_FOLLOWUP_PER_ITER = int(os.environ.get("POCKET_DRIFT_FOLLOWUP_PER_ITER", "3"))
+DRIFT_LOCAL_TOP_K = int(os.environ.get("POCKET_DRIFT_LOCAL_TOP_K", "3"))
+DRIFT_PRIMER_COMMUNITY_TOP_K = int(
+    os.environ.get("POCKET_DRIFT_PRIMER_COMMUNITY_TOP_K", "3")
+)
+
+# ========================
 # 社区层次摘要配置（P3：对标 MS GraphRAG Hierarchical Summaries）
 # ========================
 # 社区发现算法: "auto" 优先 Leiden（需 pip install leidenalg igraph）回退 Louvain

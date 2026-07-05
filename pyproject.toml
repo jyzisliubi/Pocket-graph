@@ -132,7 +132,8 @@ all = [
 Homepage = "https://github.com/jyzisliubi/Pocket-graph"
 Repository = "https://github.com/jyzisliubi/Pocket-graph"
 Issues = "https://github.com/jyzisliubi/Pocket-graph/issues"
-Documentation = "https://pocketgraphrag.github.io/PocketGraphRAG/"
+Documentation = "https://jyzisliubi.github.io/Pocket-graph/"
+Changelog = "https://github.com/jyzisliubi/Pocket-graph/blob/main/CHANGELOG.md"
 
 [project.scripts]
 pocketgraphrag = "PocketGraphRAG.cli:main"

@@ -19,6 +19,58 @@ from .logging_config import get_logger
 logger = get_logger(__name__)
 
 
+def _table_to_markdown(table: List[List[Optional[str]]]) -> str:
+    """将 pdfplumber 表格转为 Markdown 格式（对标 LightRAG RAG-Anything 表格序列化）
+
+    Args:
+        table: 二维列表，第一行视为表头
+
+    Returns:
+        Markdown 表格字符串，空表返回空字符串
+    """
+    if not table or len(table) < 2:
+        return ""
+    # 清理 cell：None → 空，去掉换行
+    clean = [[(c or "").replace("\n", " ").strip() for c in row] for row in table]
+    header = clean[0]
+    body = clean[1:]
+    # 列数对齐
+    n_cols = max(len(r) for r in clean)
+    for r in clean:
+        while len(r) < n_cols:
+            r.append("")
+    md = ["| " + " | ".join(header) + " |"]
+    md.append("| " + " | ".join(["---"] * n_cols) + " |")
+    for row in body:
+        md.append("| " + " | ".join(row) + " |")
+    return "\n".join(md)
+
+
+def _extract_pdf_images_metadata(pdf_path: str) -> int:
+    """提取 PDF 内嵌图片数量（对标 LightRAG RAG-Anything 图片解析）
+
+    使用 PyMuPDF (fitz) 快速扫描图片，仅统计数量不实际导出。
+    实际图片内容解析需 VLM，由 vlm_extractor 模块负责。
+
+    Returns:
+        图片数量，PyMuPDF 不可用时返回 0
+    """
+    try:
+        import fitz  # PyMuPDF
+        doc = fitz.open(pdf_path)
+        total = 0
+        for page in doc:
+            total += len(page.get_images(full=False))
+        doc.close()
+        return total
+    except ImportError:
+        logger.debug("PyMuPDF (fitz) 未安装，跳过 PDF 图片提取")
+        return 0
+    except Exception as e:
+        logger.debug(f"PDF 图片提取异常: {e}")
+        return 0
+
+
 @dataclass
 class ExtractedDocument:
     """提取的文档内容"""
@@ -262,7 +314,13 @@ class DataImporter:
             )
 
     def _import_pdf(self, file_path: str, enable_ocr: bool = True) -> ExtractedDocument:
-        """导入 PDF 文件，支持扫描版 PDF 自动 OCR
+        """导入 PDF 文件，支持表格提取 + 图片提取 + 扫描版 OCR
+
+        三层多模态解析（对标 LightRAG 2025.06 RAG-Anything）：
+        1. 文本层：pdfplumber/PyPDF2 提取纯文本
+        2. 表格层：pdfplumber.extract_tables() 提取表格结构 → Markdown 表格
+        3. 图片层：PyMuPDF(fitz) 提取页面内嵌图片 → 可选 VLM 描述
+        4. OCR 兜底：扫描版 PDF 用 VLM 做 OCR
 
         Args:
             file_path: PDF 文件路径
@@ -271,8 +329,11 @@ class DataImporter:
         filename = os.path.basename(file_path)
         title = os.path.splitext(filename)[0]
         content_parts = []
+        tables_parts = []
         total_pages = 0
         ocr_used = False
+        num_tables = 0
+        num_images = 0
 
         try:
             import pdfplumber
@@ -280,9 +341,25 @@ class DataImporter:
             with pdfplumber.open(file_path) as pdf:
                 total_pages = len(pdf.pages)
                 for i, page in enumerate(pdf.pages):
+                    # 1. 文本层
                     text = page.extract_text() or ""
                     if text.strip():
                         content_parts.append(f"--- 第 {i + 1} 页 ---\n{text}")
+
+                    # 2. 表格层（对标 LightRAG RAG-Anything 表格解析）
+                    try:
+                        tables = page.extract_tables() or []
+                        for t_idx, table in enumerate(tables):
+                            if not table or len(table) < 2:
+                                continue
+                            md_table = _table_to_markdown(table)
+                            if md_table:
+                                tables_parts.append(
+                                    f"--- 第 {i + 1} 页 表格 {t_idx + 1} ---\n\n{md_table}"
+                                )
+                                num_tables += 1
+                    except Exception as e:
+                        logger.debug(f"第 {i + 1} 页表格提取失败: {e}")
 
         except ImportError:
             try:
@@ -302,7 +379,16 @@ class DataImporter:
                     "请安装: pip install pdfplumber 或 pip install PyPDF2"
                 )
 
-        content = "\n\n".join(content_parts)
+        # 3. 图片层（可选，对标 LightRAG RAG-Anything 图片解析）
+        try:
+            num_images = _extract_pdf_images_metadata(file_path)
+        except Exception as e:
+            logger.debug(f"PDF 图片提取失败: {e}")
+            num_images = 0
+
+        # 合并文本 + 表格
+        all_parts = content_parts + tables_parts
+        content = "\n\n".join(all_parts)
 
         # 检测是否为扫描版 PDF（文字极少）
         is_scanned = False
@@ -312,7 +398,7 @@ class DataImporter:
             if avg_chars_per_page < 50:
                 is_scanned = True
 
-        # 扫描版 PDF：用 VLM 做 OCR
+        # 4. 扫描版 PDF：用 VLM 做 OCR
         if is_scanned and enable_ocr:
             try:
                 from .vlm_extractor import has_vlm, ocr_scanned_pdf
@@ -340,6 +426,8 @@ class DataImporter:
                 "num_pages": total_pages,
                 "ocr_used": ocr_used,
                 "is_scanned": is_scanned,
+                "num_tables": num_tables,
+                "num_images": num_images,
             },
         )
 

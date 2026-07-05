@@ -678,7 +678,10 @@ A: The modern Typer CLI requires the `[cli]` extra: `pip install "pocketgraphrag
 - [x] **Multi-strategy chunking**: fixed / recursive / paragraph / semantic (aligns with LightRAG 2026.05)
 - [x] **Citation traceability**: `Source.citation_id` field + `[1][2]` annotation in answers (aligns with LightRAG 2025.03)
 - [x] **mkdocs documentation site**: Material theme + GitHub Actions auto-deploy to GitHub Pages
-- [ ] **Hugging Face Space** one-click online demo
+- [x] **Multi-modal PDF parsing**: table extraction (pdfplumber) + image metadata (PyMuPDF) + scanned OCR (VLM)
+- [x] **Setup Wizard**: interactive `.env` configuration (`python -m PocketGraphRAG.setup_wizard`)
+- [x] **Hugging Face Space** online demo: `huggingface_space/` directory, Gradio UI
+- [x] **PyPI publish workflow**: GitHub Actions OIDC trusted publishing (`.github/workflows/publish-pypi.yml`)
 - [ ] **DRIFT Search** (Microsoft GraphRAG-style iterative retrieval)
 - [ ] **bge-m3 phase 2**: sparse + ColBERT multi-vector hybrid retrieval
 - [ ] **arXiv paper**: Multi-Model KG Fusion ablation write-up

@@ -555,6 +555,162 @@ def semantic_chunk_text(
     return chunks
 
 
+def fixed_chunk_text(text: str, chunk_size: int = 1200, overlap: int = 0) -> List[str]:
+    """固定大小切分（对标 LightRAG Fix 策略）
+
+    按字符数等分，可选 overlap 重叠。简单快速，适合均匀长度的文本。
+    会在最近的句子边界对齐，避免从句中切断。
+    """
+    if not text or not text.strip():
+        return []
+    text = text.replace("\r\n", "\n").replace("\r", "\n").strip()
+    if len(text) <= chunk_size:
+        return [text]
+
+    chunks = []
+    start = 0
+    while start < len(text):
+        end = start + chunk_size
+        if end >= len(text):
+            chunks.append(text[start:])
+            break
+        # 在 chunk_size 附近找最近的句子边界
+        boundary = max(text.rfind("。", start, end), text.rfind("！", start, end),
+                       text.rfind("？", start, end), text.rfind("；", start, end),
+                       text.rfind(". ", start, end), text.rfind("\n", start, end))
+        if boundary > start + chunk_size // 2:  # 边界至少在 halfway 之后
+            end = boundary + 1
+        chunks.append(text[start:end])
+        start = end - overlap if overlap > 0 else end
+    return [c for c in chunks if c.strip()]
+
+
+def recursive_chunk_text(text: str, chunk_size: int = 1200, min_chunk_size: int = 200) -> List[str]:
+    """递归字符切分（对标 LightRAG Recursive 策略）
+
+    按分隔符优先级递归切分：\\n\\n → \\n → 句号 → 空格 → 字符。
+    保持语义完整性的同时尽量填满 chunk_size。
+    """
+    if not text or not text.strip():
+        return []
+    text = text.replace("\r\n", "\n").replace("\r", "\n").strip()
+
+    separators = ["\n\n\n", "\n\n", "\n", "。", "！", "？", "；", ". ", "? ", "! ", " ", ""]
+    return _recursive_split(text, separators, chunk_size, min_chunk_size, [])
+
+
+def _recursive_split(text: str, separators: List[str], chunk_size: int,
+                     min_chunk_size: int, accum: List[str]) -> List[str]:
+    """递归切分核心"""
+    if len(text) <= chunk_size:
+        if text.strip():
+            accum.append(text)
+        return accum
+    if not separators:
+        # 兜底：硬切
+        for i in range(0, len(text), chunk_size):
+            accum.append(text[i:i + chunk_size])
+        return accum
+    sep = separators[0]
+    rest = separators[1:]
+    parts = text.split(sep) if sep else [text]
+    buf = ""
+    for p in parts:
+        cand = (buf + sep + p) if buf else p
+        if len(cand) > chunk_size and buf:
+            if len(buf) >= min_chunk_size:
+                accum.append(buf)
+            else:
+                # 太小，尝试递归切 buf
+                _recursive_split(buf, rest, chunk_size, min_chunk_size, accum)
+            buf = p
+        else:
+            buf = cand
+    if buf.strip():
+        if len(buf) > chunk_size:
+            _recursive_split(buf, rest, chunk_size, min_chunk_size, accum)
+        elif len(buf) >= min_chunk_size:
+            accum.append(buf)
+        elif accum and len(accum[-1]) + len(buf) + 2 <= chunk_size * 1.2:
+            accum[-1] = accum[-1] + sep + buf
+        else:
+            accum.append(buf)
+    return accum
+
+
+def paragraph_chunk_text(text: str, max_chunk_size: int = 1200) -> List[str]:
+    """按段落切分（对标 LightRAG Paragraph 策略）
+
+    每个段落一个 chunk，不合并。超长段落回退到句子切分。
+    适合结构化文档（每段独立完整）。
+    """
+    if not text or not text.strip():
+        return []
+    text = text.replace("\r\n", "\n").replace("\r", "\n").strip()
+    paragraphs = re.split(r"\n\s*\n", text)
+    chunks = []
+    for p in paragraphs:
+        p = p.strip()
+        if not p:
+            continue
+        if len(p) > max_chunk_size:
+            # 超长段落回退到句子切分
+            sentences = _split_sentences(p)
+            buf = ""
+            for s in sentences:
+                if len(buf) + len(s) > max_chunk_size and buf:
+                    chunks.append(buf)
+                    buf = s
+                else:
+                    buf += s
+            if buf.strip():
+                chunks.append(buf)
+        else:
+            chunks.append(p)
+    return chunks
+
+
+def chunk_with_strategy(
+    text: str,
+    strategy: str = "semantic",
+    chunk_size: int = 1200,
+    min_chunk_size: int = 200,
+) -> List[str]:
+    """统一分块入口，支持 4 种策略（对标 LightRAG 2026.05 四种分块策略）
+
+    Args:
+        text: 输入文本
+        strategy: 分块策略
+            - fixed: 固定大小切分
+            - recursive: 递归字符切分
+            - paragraph: 按段落切分
+            - semantic: 语义切分（默认，段落+句子混合）
+        chunk_size: 每个块的最大字符数
+        min_chunk_size: 每个块的最小字符数（太小的块会合并）
+
+    Returns:
+        切分后的文本块列表
+
+    策略选择建议：
+        - 结构化文档（每段独立）→ paragraph
+        - 均匀长度的纯文本 → fixed
+        - 混合长度、需保持语义 → recursive / semantic
+    """
+    s = (strategy or "semantic").lower().strip()
+    if s == "fixed":
+        return fixed_chunk_text(text, chunk_size=chunk_size)
+    if s == "recursive":
+        return recursive_chunk_text(text, chunk_size=chunk_size, min_chunk_size=min_chunk_size)
+    if s == "paragraph":
+        return paragraph_chunk_text(text, max_chunk_size=chunk_size)
+    if s == "semantic":
+        return semantic_chunk_text(text, max_chunk_size=chunk_size, min_chunk_size=min_chunk_size)
+    # 未知策略回退到 semantic
+    import warnings
+    warnings.warn(f"未知分块策略 {s!r}，回退到 semantic", UserWarning, stacklevel=2)
+    return semantic_chunk_text(text, max_chunk_size=chunk_size, min_chunk_size=min_chunk_size)
+
+
 def _split_sentences(text: str) -> List[str]:
     """按句子切分中文/英文文本"""
     # 中文句子分隔符：。！？；
@@ -1024,6 +1180,7 @@ async def extract_knowledge_graph_async(
     schema=None,
     gleaning_steps: int = 0,
     concurrency: int = 4,
+    chunk_strategy: str = "semantic",
 ) -> ExtractionResult:
     """extract_knowledge_graph 的异步并发版本
 
@@ -1031,6 +1188,7 @@ async def extract_knowledge_graph_async(
         concurrency: 并发抽取的 chunk 数（Semaphore 控制）。默认 4。
             1 = 串行（等价于同步版本）；>1 = 并发，显著加速大文档抽取。
             注意：并发过高可能触发 LLM API 限流，建议 2-8。
+        chunk_strategy: 分块策略 fixed/recursive/paragraph/semantic（对标 LightRAG 2026.05）
     """
     import asyncio
 
@@ -1039,7 +1197,7 @@ async def extract_knowledge_graph_async(
     if not text or not text.strip():
         return result
 
-    chunks = semantic_chunk_text(text, max_chunk_size=chunk_size)
+    chunks = chunk_with_strategy(text, strategy=chunk_strategy, chunk_size=chunk_size)
     if verbose:
         print(f"[1/5] 文本已切分为 {len(chunks)} 个语义块（并发度 {concurrency}）")
 
@@ -1477,6 +1635,7 @@ def extract_knowledge_graph(
     verbose: bool = True,
     schema=None,
     gleaning_steps: int = 0,
+    chunk_strategy: str = "semantic",
 ) -> ExtractionResult:
     """完整的知识图谱抽取流程
 
@@ -1490,6 +1649,7 @@ def extract_knowledge_graph(
         schema: RelationSchema 实例，约束 LLM 抽取 + 归一化关系名。None 不约束
         gleaning_steps: Gleaning 轮数（参考 microsoft/graphrag）。0=单轮（默认），
             N=首轮+N轮追问补漏。提升召回率但增加 LLM 调用次数。
+        chunk_strategy: 分块策略 fixed/recursive/paragraph/semantic（对标 LightRAG 2026.05）
 
     Returns:
         ExtractionResult 抽取结果
@@ -1499,8 +1659,8 @@ def extract_knowledge_graph(
     if not text or not text.strip():
         return result
 
-    # Step 1: 语义切分
-    chunks = semantic_chunk_text(text, max_chunk_size=chunk_size)
+    # Step 1: 分块（支持 4 种策略）
+    chunks = chunk_with_strategy(text, strategy=chunk_strategy, chunk_size=chunk_size)
     if verbose:
         print(f"[1/5] 文本已切分为 {len(chunks)} 个语义块")
 
@@ -1579,6 +1739,7 @@ def extract_knowledge_graph_stream(
     chunk_size: int = 1200,
     temperature: float = 0.1,
     schema=None,
+    chunk_strategy: str = "semantic",
 ):
     """知识图谱抽取流式生成器（Web UI 进度显示用）。
 
@@ -1605,8 +1766,8 @@ def extract_knowledge_graph_stream(
         }
         return
 
-    # Step 1: 语义切分
-    chunks = semantic_chunk_text(text, max_chunk_size=chunk_size)
+    # Step 1: 分块（支持 4 种策略）
+    chunks = chunk_with_strategy(text, strategy=chunk_strategy, chunk_size=chunk_size)
     yield {
         "phase": "chunk",
         "message": (
@@ -1753,6 +1914,13 @@ def main():
         "--chunk-size", type=int, default=1200, help="文本块大小（字符数，默认 1200）"
     )
     parser.add_argument(
+        "--chunk-strategy",
+        type=str,
+        default="semantic",
+        choices=["fixed", "recursive", "paragraph", "semantic"],
+        help="分块策略: fixed(固定大小) / recursive(递归字符) / paragraph(按段落) / semantic(语义切分，默认)",
+    )
+    parser.add_argument(
         "--temperature", type=float, default=0.1, help="LLM 温度 (默认 0.1)"
     )
     parser.add_argument(
@@ -1814,6 +1982,7 @@ def main():
         temperature=args.temperature,
         verbose=True,
         schema=schema,
+        chunk_strategy=args.chunk_strategy,
     )
 
     if not result.triples:

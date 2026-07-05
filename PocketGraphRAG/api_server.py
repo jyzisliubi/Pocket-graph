@@ -202,6 +202,7 @@ class Source(BaseModel):
     entity: str
     text: str
     score: float
+    citation_id: Optional[int] = None  # 引用编号 [1] [2] ...，与 answer 中的标注对应
 
 
 class KGPathInfo(BaseModel):

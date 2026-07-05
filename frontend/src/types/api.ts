@@ -24,6 +24,7 @@ export interface Source {
   entity: string
   text: string
   score: number
+  citation_id?: number  // 引用编号 [1] [2] ...，与 answer 中的标注对应
 }
 
 /** 知识图谱检索路径信息 */

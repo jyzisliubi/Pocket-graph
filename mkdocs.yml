@@ -1,8 +1,8 @@
 site_name: PocketGraphRAG Docs
-site_description: A lightweight, local-first GraphRAG framework for vertical domains.
-site_url: https://JayZ.github.io/PocketGraphRAG/
-repo_url: https://github.com/JayZ/PocketGraphRAG
-repo_name: JayZ/PocketGraphRAG
+site_description: Local-first GraphRAG with Multi-Model KG Fusion, Zero-LLM Query, and 2.7x LightRAG MRR on HotpotQA.
+site_url: https://jyzisliubi.github.io/Pocket-graph/
+repo_url: https://github.com/jyzisliubi/Pocket-graph
+repo_name: jyzisliubi/Pocket-graph
 edit_uri: edit/main/docs/
 
 docs_dir: docs
@@ -16,9 +16,12 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.indexes
     - content.code.copy
     - content.code.annotate
     - toc.follow
+    - search.suggest
+    - search.highlight
   palette:
     - scheme: default
       primary: indigo
@@ -34,6 +37,9 @@ theme:
         name: Switch to light mode
   icon:
     repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 markdown_extensions:
   - admonition
@@ -41,6 +47,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
@@ -48,28 +56,35 @@ markdown_extensions:
       permalink: true
   - attr_list
   - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Home: index.md
   - Getting Started:
       - Installation: getting-started.md
       - Quick Start: quickstart.md
+      - Data Import: data-import.md
   - Concepts:
       - Architecture: architecture.md
       - Search Modes: search-modes.md
+      - GraphRAG Gap Analysis: graphrag_gap_analysis.md
   - Usage:
       - Python API: python-api.md
       - REST API: rest-api.md
       - CLI: cli.md
   - Evaluation: evaluation.md
+  - FAQ: faq.md
   - Changelog: changelog.md
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/JayZ/PocketGraphRAG
+      link: https://github.com/jyzisliubi/Pocket-graph
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/pocketgraphrag/
+  generator: false
 
 plugins:
   - search

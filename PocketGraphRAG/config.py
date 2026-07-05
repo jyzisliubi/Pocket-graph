@@ -176,6 +176,17 @@ ENTITY_SIMILARITY_THRESHOLD = float(os.environ.get("POCKET_ENTITY_THRESHOLD", "0
 # KG 局部检索 BFS 跳数
 KG_SEARCH_HOPS = 2
 
+# 文本分块策略（对标 LightRAG 2026.05 四种分块策略）
+# fixed      - 固定大小切分（按字符数等分，简单快速）
+# recursive  - 递归字符切分（按 \n\n → \n → 句号 → 空格 逐级递归，保持语义完整性）
+# paragraph  - 按段落切分（每个段落一个 chunk，不合并，适合结构化文档）
+# semantic   - 语义切分（段落+句子混合，自动合并小块，默认推荐）
+CHUNK_STRATEGY = os.environ.get("POCKET_CHUNK_STRATEGY", "semantic").lower()
+# 分块最大字符数
+CHUNK_SIZE = int(os.environ.get("POCKET_CHUNK_SIZE", "1200"))
+# 分块最小字符数（太小的块会合并到相邻块）
+CHUNK_MIN_SIZE = int(os.environ.get("POCKET_CHUNK_MIN_SIZE", "200"))
+
 # 融合策略: "weighted" (简单加权) 或 "rrf" (Reciprocal Rank Fusion)
 FUSION_STRATEGY = os.environ.get("POCKET_FUSION_STRATEGY", "rrf").lower()
 

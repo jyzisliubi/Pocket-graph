@@ -1893,8 +1893,9 @@ class PocketGraphRAG:
                 "score": float(score),
                 "text": text,
                 "source_type": meta.get("source_type", "vector"),
+                "citation_id": idx + 1,  # 引用编号 [1] [2] ...，与 answer 中的标注对应
             }
-            for text, score, meta in results
+            for idx, (text, score, meta) in enumerate(results)
         ]
 
         return {
@@ -2091,8 +2092,9 @@ class PocketGraphRAG:
                 "score": float(score),
                 "text": text,
                 "source_type": meta.get("source_type", "vector"),
+                "citation_id": idx + 1,
             }
-            for text, score, meta in results
+            for idx, (text, score, meta) in enumerate(results)
         ]
 
         yield {

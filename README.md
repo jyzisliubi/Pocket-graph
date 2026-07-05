@@ -421,6 +421,7 @@ For vertical-domain KGs, `kg_only` often gives the highest MRR because entity-le
 | `KG_SEARCH_HOPS` | BFS expansion depth | `2` |
 | `TOP_K` | Number of retrieved results | `5` |
 | `POCKET_EMBEDDING_MODEL` | Embedding model (supports aliases: `bge-small-zh`, `bge-m3`, `bge-large-zh`) | `BAAI/bge-small-zh-v1.5` |
+| `POCKET_CHUNK_STRATEGY` | Text chunking strategy: `fixed` / `recursive` / `paragraph` / `semantic` (aligns with LightRAG 2026.05) | `semantic` |
 | `POCKET_API_KEYS` | API auth keys (comma-separated). Empty = auth disabled | empty |
 | `POCKET_EXTRACT_LLM` | KG extraction LLM `<provider>::<model>` | falls back to default |
 | `POCKET_QUERY_LLM` | Q&A generation LLM `<provider>::<model>` | falls back to default |
@@ -674,6 +675,9 @@ A: The modern Typer CLI requires the `[cli]` extra: `pip install "pocketgraphrag
 - [x] **API Key authentication**: multi-key + Bearer + public path whitelist
 - [x] **Role-based LLM config**: 4 roles (extract/query/keywords/vlm), `<provider>::<model>` switching
 - [x] **PyPI release ready**: `pocketgraphrag` wheel + sdist, `twine check` PASSED
+- [x] **Multi-strategy chunking**: fixed / recursive / paragraph / semantic (aligns with LightRAG 2026.05)
+- [x] **Citation traceability**: `Source.citation_id` field + `[1][2]` annotation in answers (aligns with LightRAG 2025.03)
+- [x] **mkdocs documentation site**: Material theme + GitHub Actions auto-deploy to GitHub Pages
 - [ ] **Hugging Face Space** one-click online demo
 - [ ] **DRIFT Search** (Microsoft GraphRAG-style iterative retrieval)
 - [ ] **bge-m3 phase 2**: sparse + ColBERT multi-vector hybrid retrieval

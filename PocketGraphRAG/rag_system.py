@@ -1600,6 +1600,37 @@ class PocketGraphRAG:
     # 核心问答
     # ======================
 
+    def _cross_lingual_hint(self, question: str) -> Optional[str]:
+        """检测跨语言 query 并给出建议（仅当当前 embedding 模型为中文单语时）。
+
+        场景：用户用英文/日文提问，但当前用 bge-small-zh（中文单语），
+        向量空间不匹配会显著降低检索质量。
+
+        Returns:
+            提示字符串（仅警告，不阻塞）；None 表示无需提示。
+        """
+        if not question:
+            return None
+        # 当前模型是否为中文单语（bge-small-zh / bge-large-zh）
+        model_name = (EMBEDDING_MODEL or "").lower()
+        is_zh_only = "bge-small-zh" in model_name or "bge-large-zh" in model_name
+        if not is_zh_only:
+            return None
+        # 统计非中文字符比例（字母+空格视为拉丁语系）
+        cjk = sum(1 for c in question if "\u4e00" <= c <= "\u9fff")
+        letters = sum(1 for c in question if c.isascii() and c.isalpha())
+        total = cjk + letters
+        if total < 5:  # 太短不判断
+            return None
+        if letters / total >= 0.5:  # 拉丁字符占主导
+            return (
+                f"检测到非中文 query，当前 embedding 模型 ({EMBEDDING_MODEL}) "
+                f"为中文单语，跨语言检索质量可能下降。"
+                f"建议：export POCKET_EMBEDDING_MODEL=bge-m3 后重建索引，"
+                f"可获得 100+ 语言跨语言检索能力。"
+            )
+        return None
+
     def answer(
         self,
         question: str,
@@ -1675,6 +1706,14 @@ class PocketGraphRAG:
             if vector_weight is None
             else max(0.0, min(1.0, float(vector_weight)))
         )
+
+        # 跨语言 query 检测（仅警告，不阻塞）
+        try:
+            hint = self._cross_lingual_hint(question)
+            if hint:
+                logger.warning("[cross-lingual] %s", hint)
+        except Exception:
+            pass
 
         pipeline_info: dict[str, Any] = {
             "multihop_used": False,
@@ -1905,6 +1944,14 @@ class PocketGraphRAG:
             if vector_weight is None
             else max(0.0, min(1.0, float(vector_weight)))
         )
+
+        # 跨语言 query 检测（仅警告，不阻塞）
+        try:
+            hint = self._cross_lingual_hint(question)
+            if hint:
+                logger.warning("[cross-lingual] %s", hint)
+        except Exception:
+            pass
 
         pipeline_info: dict[str, Any] = {
             "multihop_used": False,

@@ -298,6 +298,22 @@ class FAISSIndex:
         # 保存 embeddings 缓存，使增量操作在 reload 后仍可用
         if self._embeddings is not None:
             np.save(os.path.join(index_dir, "embeddings.npy"), self._embeddings)
+        # 写入 embedding 模型指纹，load 时校验防维度错配
+        try:
+            from .config import EMBEDDING_MODEL
+
+            fingerprint = {
+                "model": EMBEDDING_MODEL,
+                "dimension": int(self.dimension) if self.dimension else None,
+            }
+            with open(
+                os.path.join(index_dir, "embedding_model.json"),
+                "w",
+                encoding="utf-8",
+            ) as f:
+                json.dump(fingerprint, f, ensure_ascii=False, indent=2)
+        except Exception as e:  # 指纹写入失败不阻塞保存
+            logger.warning("写入 embedding 模型指纹失败（不影响索引）: %s", e)
         logger.info("索引已保存到: %s", index_dir)
 
     @classmethod
@@ -306,6 +322,11 @@ class FAISSIndex:
 
         向后兼容：若 embeddings.npy 不存在（旧索引），用 reconstruct_n
         从 FAISS 索引还原缓存，使后续增量操作可用。
+
+        模型指纹校验：若索引目录含 embedding_model.json，校验当前 EMBEDDING_MODEL
+        与索引构建时使用的模型一致；不一致则抛错，提示用户重建索引。
+        维度不一致（如 bge-small 512 维 vs bge-m3 1024 维）必然导致检索质量崩塌，
+        不能静默放行。
         """
         # 友好校验：索引文件缺失时给出可操作提示，而非原始 faiss C++ 报错（BUG #9）
         index_path = os.path.join(index_dir, "faiss.index")
@@ -315,6 +336,44 @@ class FAISSIndex:
                 f"请先构建索引: pocketgraphrag build\n"
                 f"或: python -m PocketGraphRAG.build_index"
             )
+        # 模型指纹校验（防维度错配）
+        fingerprint_path = os.path.join(index_dir, "embedding_model.json")
+        if os.path.exists(fingerprint_path):
+            try:
+                with open(fingerprint_path, encoding="utf-8") as f:
+                    fingerprint = json.load(f)
+                from .config import EMBEDDING_MODEL
+
+                indexed_model = fingerprint.get("model", "")
+                indexed_dim = fingerprint.get("dimension")
+                # 维度优先校验（最可靠的硬性指标）
+                if indexed_dim is not None:
+                    try:
+                        cur_dim = int(model.get_sentence_embedding_dimension())
+                    except Exception:
+                        cur_dim = None
+                    if cur_dim is not None and cur_dim != int(indexed_dim):
+                        raise RuntimeError(
+                            f"索引维度与当前 embedding 模型不匹配："
+                            f"索引构建时为 {indexed_dim} 维，"
+                            f"当前模型 {EMBEDDING_MODEL} 为 {cur_dim} 维。\n"
+                            f"请删除 {index_dir} 后重建索引：\n"
+                            f"  pocketgraphrag build\n"
+                            f"或切换回原模型：\n"
+                            f"  POCKET_EMBEDDING_MODEL={indexed_model}"
+                        )
+                # 模型名不一致但维度一致时仅警告（同维度不同模型仍可用）
+                if indexed_model and indexed_model != EMBEDDING_MODEL:
+                    logger.warning(
+                        "Embedding 模型切换：索引构建用 %s，当前为 %s。"
+                        "维度一致可继续，但语义空间不同，建议重建索引以获得最佳效果。",
+                        indexed_model,
+                        EMBEDDING_MODEL,
+                    )
+            except RuntimeError:
+                raise
+            except Exception as e:  # 指纹读取失败不阻塞加载
+                logger.warning("读取 embedding 模型指纹失败（跳过校验）: %s", e)
         instance = cls()
         instance.model = model
         instance.index = faiss.read_index(index_path)

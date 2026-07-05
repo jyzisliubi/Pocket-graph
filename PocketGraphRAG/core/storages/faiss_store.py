@@ -1,11 +1,11 @@
-"""FAISS 向量存储后端（默认实现）
+﻿"""FAISS 向量存储后端（默认实现）
 
 包装 PocketGraphRAG.build_index.FAISSIndex，使其满足 VectorStore 抽象接口。
 保留向后兼容：原有 FAISSIndex 的所有方法（build/add_chunks/search/save/load）继续可用。
 
 新代码推荐：
   from PocketGraphRAG.core.storages import FAISSVectorStore
-  store = FAISSVectorStore(model=model, dimension=512)
+  store = FAISSVectorStore(model=model)  # 维度从 model 自动推断
   store.add([("text", {"entity": "E1"})], embeddings)
   results = store.search(query_vec, top_k=5)
 
@@ -16,7 +16,7 @@
 
 from __future__ import annotations
 
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 import numpy as np
 
@@ -30,12 +30,13 @@ class FAISSVectorStore(VectorStore):
     的 embeddings 缓存机制），通过适配器模式暴露 VectorStore 接口。
     """
 
-    def __init__(self, model=None, dimension: int = 512, _delegate=None):
+    def __init__(self, model=None, dimension: Optional[int] = None, _delegate=None):
         """
         Args:
             model: SentenceTransformer 模型实例，用于 search(query_str) 时编码查询文本；
                    若调用方只传 query_vec（已编码向量），可不传 model
-            dimension: 向量维度，仅在 _delegate 未提供时用作初始 FAISS 索引维度
+            dimension: 向量维度，None 表示懒加载（从首次 add 的 embeddings 或 model 推断）；
+                       仅在 _delegate 未提供时用作初始 FAISS 索引维度
             _delegate: 已存在的 FAISSIndex 实例（用于包装存量索引），不传则创建新的
         """
         if _delegate is not None:

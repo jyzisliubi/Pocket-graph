@@ -23,7 +23,7 @@ from .json_kv_store import JsonKVStorage
 def get_vector_store(
     backend: Optional[str] = None,
     model=None,
-    dimension: int = 512,
+    dimension: Optional[int] = None,
     **kwargs,
 ) -> VectorStore:
     """按 backend 名称创建向量存储实例。
@@ -31,7 +31,7 @@ def get_vector_store(
     Args:
         backend: 后端名称，None 则读 POCKET_VECTOR_BACKEND 环境变量，默认 "faiss"
         model: SentenceTransformer 模型实例（FAISS 检索文本时需要）
-        dimension: 向量维度（FAISS 初始化用）
+        dimension: 向量维度，None 表示从 model 自动推断
         **kwargs: 透传给具体后端的参数
 
     Returns:
@@ -48,6 +48,17 @@ def get_vector_store(
     elif backend == "pgvector":
         from .pgvector_store import PgVectorStore
 
+        # pgvector 建表时必须固定维度；None 时从 model 推断，仍 None 则报错
+        if dimension is None and model is not None:
+            try:
+                dimension = model.get_sentence_embedding_dimension()
+            except Exception:
+                pass
+        if dimension is None:
+            raise ValueError(
+                "pgvector 后端需要明确维度：请传 dimension= 或 model= 参数，"
+                "或设置 POCKET_EMBEDDING_MODEL 环境变量。"
+            )
         return PgVectorStore(embedding_dim=dimension, **kwargs)
     else:
         raise ValueError(f"未知向量后端: {backend}。可选: faiss / chroma / pgvector")

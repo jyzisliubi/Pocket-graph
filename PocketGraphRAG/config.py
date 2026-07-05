@@ -96,13 +96,56 @@ USER_TRIPLES_PATH = os.path.join(USER_DOCS_DIR, "triples.txt")
 # ========================
 # Embedding 模型
 # ========================
-# BAAI/bge-small-zh-v1.5: 中文轻量级 embedding 模型，512 维，效果好且速度快
+# 内置可选 embedding 模型（均开源免费，对标 LightRAG 的 OpenAI embedding）
+#   bge-small-zh-v1.5 : 512 维，中文轻量，速度快（默认）
+#   bge-m3            : 1024 维，多语言（100+ 语言），支持 8192 长上下文，跨语言检索首选
+#   bge-large-zh-v1.5 : 1024 维，中文效果更好但更慢
+# 切换模型后必须删除 INDEX_DIR 并重建索引（维度不一致会无法加载旧索引）。
+EMBEDDING_MODEL_ALIASES = {
+    "bge-small": "BAAI/bge-small-zh-v1.5",
+    "bge-small-zh": "BAAI/bge-small-zh-v1.5",
+    "bge-m3": "BAAI/bge-m3",
+    "bge-large": "BAAI/bge-large-zh-v1.5",
+    "bge-large-zh": "BAAI/bge-large-zh-v1.5",
+}
+
+
+def _resolve_embedding_model(name: str) -> str:
+    """解析 embedding 模型别名，返回标准 HuggingFace 名称。
+
+    支持别名（bge-m3 等）和完整名称（BAAI/bge-m3）。
+    本地缓存路径优先：若 models/<org>/<model> 存在则用本地路径。
+    """
+    if not name:
+        return name
+    # 别名展开
+    resolved = EMBEDDING_MODEL_ALIASES.get(name.lower(), name)
+    # 本地缓存优先（HF 标准下载命名：把 '/' 换成 '___'，'-' 换成 '_'
+    # 仅当本地目录确实存在时启用，避免误判）
+    local_path = os.path.join(
+        _PROJECT_ROOT, "models", resolved.replace("/", os.sep)
+    )
+    if os.path.exists(local_path):
+        return local_path
+    # 兼容 HF cache 命名风格 models--<org>--<model>
+    hf_cache_style = os.path.join(
+        _PROJECT_ROOT,
+        "models",
+        resolved.replace("/", "---").replace("-", "_"),
+    )
+    if os.path.exists(hf_cache_style):
+        return hf_cache_style
+    return resolved
+
+
+# BAAI/bge-small-zh-v1.5: 中文轻量级 embedding 模型，512 维，速度快（默认）
 # 优先使用本地已下载的模型，若不存在则从 HuggingFace 下载
 _LOCAL_MODEL_PATH = os.path.join(_PROJECT_ROOT, "models", "BAAI", "bge-small-zh-v1___5")
 _DEFAULT_EMBEDDING_MODEL = (
     _LOCAL_MODEL_PATH if os.path.exists(_LOCAL_MODEL_PATH) else "BAAI/bge-small-zh-v1.5"
 )
-EMBEDDING_MODEL = _env("POCKET_EMBEDDING_MODEL", default=_DEFAULT_EMBEDDING_MODEL)
+_raw_embedding_model = _env("POCKET_EMBEDDING_MODEL", default=_DEFAULT_EMBEDDING_MODEL)
+EMBEDDING_MODEL = _resolve_embedding_model(_raw_embedding_model)
 # 运行时由 SentenceTransformer.get_sentence_embedding_dimension() 推断；
 # 此处留 None 以避免与实际加载的模型维度不一致（如换用其他模型时 512 维硬编码会出错）。
 EMBEDDING_DIM = None

@@ -1,0 +1,21 @@
+# CODEOWNERS — GitHub 自动请求 review 规则
+# https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# 默认：所有文件由仓库所有者 review
+* @jyzisliubi
+
+# 核心引擎
+/PocketGraphRAG/rag_system.py   @jyzisliubi
+/PocketGraphRAG/kg_reasoning.py @jyzisliubi
+/PocketGraphRAG/api_server.py   @jyzisliubi
+
+# 存储后端
+/PocketGraphRAG/core/storages/  @jyzisliubi
+
+# 前端
+/frontend/src/                  @jyzisliubi
+
+# 部署
+/Dockerfile                     @jyzisliubi
+/deploy/                        @jyzisliubi
+/.github/workflows/             @jyzisliubi

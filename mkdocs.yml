@@ -63,7 +63,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started:
-      - Installation: getting-started.md
+      - Installation: installation.md
       - Quick Start: quickstart.md
       - Data Import: data-import.md
   - Concepts:
@@ -74,6 +74,7 @@ nav:
       - Python API: python-api.md
       - REST API: rest-api.md
       - CLI: cli.md
+  - Deployment: deployment.md
   - Evaluation: evaluation.md
   - FAQ: faq.md
   - Changelog: changelog.md

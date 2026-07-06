@@ -163,3 +163,13 @@ pet_tauri/**/build/
 
 # HuggingFace cache (large files)
 bench_data/hf_cache/
+
+# 根目录个人文档与生成脚本（不应入库）
+/*.doc
+/*.docx
+/resume*
+/interview*
+/crawler_crash_course*
+/react_crash_course*
+/gen_*.py
+/.git_commit_msg.txt

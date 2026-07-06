@@ -18,6 +18,8 @@ import {
   Network,
   Sparkles,
   Trash2,
+  Copy,
+  Check,
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -310,6 +312,17 @@ function PipelineBadges({ info }: { info: PipelineInfo }) {
 function MessageBubble({ message }: { message: ChatMessage }) {
   const isUser = message.role === 'user'
   const showTyping = !isUser && message.streaming && !message.content
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(message.content)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // 剪贴板被禁用时静默失败
+    }
+  }
 
   return (
     <div
@@ -356,6 +369,23 @@ function MessageBubble({ message }: { message: ChatMessage }) {
             )}
           </div>
         ) : null}
+
+        {/* 操作按钮：复制（仅 assistant 完成后显示） */}
+        {!isUser && !message.streaming && message.content && (
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="flex w-fit items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            aria-label={copied ? '已复制' : '复制答案'}
+          >
+            {copied ? (
+              <Check className="h-3 w-3" />
+            ) : (
+              <Copy className="h-3 w-3" />
+            )}
+            {copied ? '已复制' : '复制'}
+          </button>
+        )}
 
         {/* 错误提示 */}
         {message.error && (

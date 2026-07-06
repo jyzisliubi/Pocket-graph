@@ -1,0 +1,118 @@
+name: Build and Sign Docker Image
+
+# 对标 LightRAG 供应链安全：Docker 镜像构建 + Cosign 签名
+# 需要配置以下 Secrets：
+#   - COSIGN_PRIVATE_KEY: cosign 私钥（cosign generate-key-pair 生成）
+#   - COSIGN_PASSWORD: cosign 私钥密码
+# 可选：
+#   - REGISTRY_TOKEN: 推送到 GHCR 的 PAT（默认用 GITHUB_TOKEN）
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本号（如 0.3.7）'
+        required: false
+        default: 'latest'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-sign:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write  # OIDC for cosign keyless signing
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up QEMU (for multi-arch)
+        uses: docker/setup-qemu-action@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=tag
+            type=raw,value=latest
+            type=raw,value=${{ github.event.inputs.version || 'latest' }}
+
+      - name: Build and push (multi-arch)
+        id: build
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3
+        with:
+          cosign-release: 'v2.2.0'
+
+      - name: Sign image with Cosign (keyless, OIDC)
+        # Keyless signing: 使用 GitHub OIDC token，无需管理私钥
+        # 对标 LightRAG Cosign + GitHub OIDC
+        env:
+          COSIGN_EXPERIMENTAL: 1
+        run: |
+          echo "Signing images with Cosign keyless (OIDC)..."
+          for tag in ${{ steps.meta.outputs.tags }}; do
+            echo "Signing: $tag@${{ steps.build.outputs.digest }}"
+            cosign sign --yes "$tag@${{ steps.build.outputs.digest }}"
+          done
+
+      - name: Verify signature
+        env:
+          COSIGN_EXPERIMENTAL: 1
+        run: |
+          echo "Verifying signature..."
+          cosign verify --yes \
+            --certificate-identity-regexp "https://github.com/${{ github.repository }}/.github/.+" \
+            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          format: spdx-json
+          output-file: sbom.spdx.json
+
+      - name: Attach SBOM to image
+        env:
+          COSIGN_EXPERIMENTAL: 1
+        run: |
+          cosign attach sbom --sbom sbom.spdx.json \
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest@${{ steps.build.outputs.digest }}
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-spdx
+          path: sbom.spdx.json
+          retention-days: 90

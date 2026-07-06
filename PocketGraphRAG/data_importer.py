@@ -154,6 +154,269 @@ class DataImporter:
             print(f"[ERROR] 导入网页失败 {url}: {e}")
             return None
 
+    def import_sitemap(
+        self,
+        sitemap_url: str,
+        max_urls: int = 50,
+        use_playwright: bool = False,
+    ) -> List[ExtractedDocument]:
+        """从 sitemap.xml 批量导入网页（对标 RAGFlow 多数据源）
+
+        解析标准 sitemap.xml（含 ``<urlset>`` / ``<sitemap index>``），
+        逐个抓取 ``<loc>`` 指向的页面并提取文本。
+
+        Args:
+            sitemap_url: sitemap.xml 的 URL
+            max_urls: 最多抓取的 URL 数量（防止超大站点失控，默认 50）
+            use_playwright: 是否用 Playwright 渲染（默认关闭，sitemap 通常静态）
+
+        Returns:
+            成功导入的文档列表
+        """
+        try:
+            urls = self._parse_sitemap(sitemap_url, max_urls=max_urls)
+        except Exception as e:
+            print(f"[ERROR] 解析 sitemap 失败 {sitemap_url}: {e}")
+            return []
+
+        if not urls:
+            print(f"[WARN] sitemap 中未找到 URL: {sitemap_url}")
+            return []
+
+        print(f"[INFO] sitemap 解析到 {len(urls)} 个 URL，开始批量抓取…")
+        results: List[ExtractedDocument] = []
+        for i, url in enumerate(urls, 1):
+            doc = self.import_url(url, use_playwright=use_playwright)
+            if doc is not None:
+                results.append(doc)
+            if i % 10 == 0:
+                print(f"[INFO] sitemap 进度: {i}/{len(urls)}")
+        print(f"[INFO] sitemap 导入完成: {len(results)}/{len(urls)} 成功")
+        return results
+
+    def import_rss(
+        self,
+        rss_url: str,
+        max_items: int = 50,
+        use_playwright: bool = False,
+    ) -> List[ExtractedDocument]:
+        """从 RSS/Atom feed 批量导入文章（对标 RAGFlow 多数据源）
+
+        支持 RSS 2.0（``<item>`` / ``<link>``）和 Atom 1.0（``<entry>`` / ``<link href>``）。
+        优先使用 feed 自带的 ``<content:encoded>`` / ``<description>`` / ``<summary>``，
+        缺失时回退到抓取 ``<link>`` 指向的网页。
+
+        Args:
+            rss_url: RSS/Atom feed 的 URL
+            max_items: 最多导入的条目数（默认 50）
+            use_playwright: 是否用 Playwright 渲染（默认关闭）
+
+        Returns:
+            成功导入的文档列表
+        """
+        try:
+            items = self._parse_rss(rss_url, max_items=max_items)
+        except Exception as e:
+            print(f"[ERROR] 解析 RSS 失败 {rss_url}: {e}")
+            return []
+
+        if not items:
+            print(f"[WARN] RSS 中未找到条目: {rss_url}")
+            return []
+
+        print(f"[INFO] RSS 解析到 {len(items)} 个条目，开始导入…")
+        results: List[ExtractedDocument] = []
+        for item in items:
+            # 优先用 feed 自带内容，避免逐页抓取
+            if item.get("content"):
+                results.append(
+                    ExtractedDocument(
+                        source=item.get("link", item.get("title", "rss-item")),
+                        source_type="rss",
+                        title=item.get("title", "Untitled"),
+                        content=item["content"],
+                        metadata={
+                            "link": item.get("link", ""),
+                            "published": item.get("published", ""),
+                        },
+                    )
+                )
+            elif item.get("link"):
+                # 内容缺失，回退到抓取链接
+                doc = self.import_url(item["link"], use_playwright=use_playwright)
+                if doc is not None:
+                    # 用 RSS 条目的标题覆盖（更准确）
+                    if item.get("title"):
+                        doc.title = item["title"]
+                    doc.source_type = "rss"
+                    doc.metadata = doc.metadata or {}
+                    doc.metadata["published"] = item.get("published", "")
+                    results.append(doc)
+        print(f"[INFO] RSS 导入完成: {len(results)}/{len(items)} 成功")
+        return results
+
+    def _parse_sitemap(
+        self, sitemap_url: str, max_urls: int = 50
+    ) -> List[str]:
+        """解析 sitemap.xml，返回 URL 列表
+
+        支持：
+        - ``<urlset>`` (标准 sitemap)
+        - ``<sitemapindex>`` (sitemap 索引，递归解析子 sitemap)
+        """
+        import requests
+        from xml.etree import ElementTree as ET
+
+        resp = requests.get(
+            sitemap_url,
+            headers={"User-Agent": "PocketGraphRAG-SitemapBot/1.0"},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        root = ET.fromstring(resp.content)
+
+        # 处理 XML namespace（sitemap.xml 常带 xmlns）
+        ns = ""
+        if root.tag.startswith("{"):
+            ns = root.tag.split("}")[0] + "}"
+
+        urls: List[str] = []
+
+        # sitemapindex：递归解析子 sitemap
+        sitemap_tags = root.findall(f"{ns}sitemap")
+        if sitemap_tags:
+            for sm in sitemap_tags:
+                loc = sm.find(f"{ns}loc")
+                if loc is not None and loc.text and len(urls) < max_urls:
+                    sub_urls = self._parse_sitemap(
+                        loc.text.strip(), max_urls=max_urls - len(urls)
+                    )
+                    urls.extend(sub_urls)
+                    if len(urls) >= max_urls:
+                        break
+            return urls[:max_urls]
+
+        # 标准 urlset
+        for url_tag in root.findall(f"{ns}url"):
+            loc = url_tag.find(f"{ns}loc")
+            if loc is not None and loc.text:
+                urls.append(loc.text.strip())
+                if len(urls) >= max_urls:
+                    break
+
+        return urls[:max_urls]
+
+    def _parse_rss(
+        self, rss_url: str, max_items: int = 50
+    ) -> List[dict]:
+        """解析 RSS/Atom feed，返回条目列表
+
+        每个条目：{"title", "link", "content", "published"}
+        支持 RSS 2.0 和 Atom 1.0。
+        """
+        import requests
+        from xml.etree import ElementTree as ET
+
+        resp = requests.get(
+            rss_url,
+            headers={"User-Agent": "PocketGraphRAG-RSSBot/1.0"},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        root = ET.fromstring(resp.content)
+
+        # 处理 namespace
+        ns = ""
+        if root.tag.startswith("{"):
+            ns = root.tag.split("}")[0] + "}"
+
+        items: List[dict] = []
+
+        # RSS 2.0: <item> under <channel>
+        if root.tag.endswith("rss") or ns:
+            channel = root.find(f"{ns}channel")
+            item_parent = channel if channel is not None else root
+            for item in item_parent.findall(f"{ns}item"):
+                title_el = item.find(f"{ns}title")
+                link_el = item.find(f"{ns}link")
+                desc_el = item.find(f"{ns}description")
+                pub_el = item.find(f"{ns}pubDate")
+                # content:encoded (RSS 2.0 with content module)
+                content_el = item.find(
+                    "{http://purl.org/rss/1.0/modules/content/}encoded"
+                )
+
+                content = ""
+                if content_el is not None and content_el.text:
+                    content = self._html_to_text(content_el.text)
+                elif desc_el is not None and desc_el.text:
+                    content = self._html_to_text(desc_el.text)
+
+                items.append(
+                    {
+                        "title": title_el.text.strip() if title_el is not None and title_el.text else "",
+                        "link": link_el.text.strip() if link_el is not None and link_el.text else "",
+                        "content": content,
+                        "published": pub_el.text.strip() if pub_el is not None and pub_el.text else "",
+                    }
+                )
+                if len(items) >= max_items:
+                    return items
+
+        # Atom 1.0: <entry>
+        atom_ns = "{http://www.w3.org/2005/Atom}"
+        for entry in root.findall(f"{atom_ns}entry"):
+            title_el = entry.find(f"{atom_ns}title")
+            # Atom link: <link href="..." rel="alternate"/>
+            link_el = entry.find(f"{atom_ns}link[@rel='alternate']")
+            if link_el is None:
+                link_el = entry.find(f"{atom_ns}link")
+            link = link_el.get("href", "") if link_el is not None else ""
+            summary_el = entry.find(f"{atom_ns}summary")
+            content_el = entry.find(f"{atom_ns}content")
+            pub_el = entry.find(f"{atom_ns}published")
+            if pub_el is None:
+                pub_el = entry.find(f"{atom_ns}updated")
+
+            content = ""
+            if content_el is not None and content_el.text:
+                content = self._html_to_text(content_el.text)
+            elif summary_el is not None and summary_el.text:
+                content = self._html_to_text(summary_el.text)
+
+            items.append(
+                {
+                    "title": title_el.text.strip() if title_el is not None and title_el.text else "",
+                    "link": link,
+                    "content": content,
+                    "published": pub_el.text.strip() if pub_el is not None and pub_el.text else "",
+                }
+            )
+            if len(items) >= max_items:
+                return items
+
+        return items
+
+    @staticmethod
+    def _html_to_text(html: str) -> str:
+        """简单 HTML → 纯文本转换（避免引入 bs4 依赖时的兜底）"""
+        try:
+            from bs4 import BeautifulSoup
+
+            soup = BeautifulSoup(html, "html.parser")
+            return soup.get_text(separator="\n", strip=True)
+        except ImportError:
+            # 无 bs4 时用正则粗略清理
+            import re
+
+            text = re.sub(r"<[^>]+>", " ", html)
+            text = re.sub(r"&nbsp;", " ", text)
+            text = re.sub(r"&amp;", "&", text)
+            text = re.sub(r"&lt;", "<", text)
+            text = re.sub(r"&gt;", ">", text)
+            text = re.sub(r"\s+", " ", text)
+            return text.strip()
+
     def import_batch(
         self,
         file_paths: List[str] = None,

@@ -25,11 +25,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **mkdocs 文档完善**：architecture / installation / deployment 实际内容 + nav 重构
 - **前端复制答案按钮**：Chat 消息操作 UX（对标 ChatGPT/Claude/LightRAG WebUI）
 - **Issue 模板**：.yml 格式（bug / feature / question）
+- **API OpenAPI tags 分组**：Swagger UI `/docs` 按 5 分组（QA / Graph / Documents / Settings / System）展示路由，对标 LightRAG/microsoft graphrag 文档专业度
+- **文档预览**：`GET /api/documents/{filename}/raw` 端点 + 前端 Modal，支持 txt/md/pdf/docx 多格式纯文本预览（对标 ChatGPT/Claude 文件预览），超大文件自动截断到 50,000 字符
+- **Sitemap / RSS 数据导入**：`POST /api/documents/import-url` 端点 + 前端 Dialog，支持 sitemap.xml（含 sitemapindex 递归）/ RSS 2.0 / Atom 1.0 批量导入（对标 RAGFlow 多数据源），feed 自带 `content:encoded` 优先避免逐页抓取
 
 ### Fixed
 - `/api/retrieve` 端点 `citation_id` 为 null → 现在正确返回 1/2/3
 - `/api/graph/subgraph` POST 端点 422 错误（前端用 JSON body，后端期望 query param）→ 改用 `Body(...)` 接受 JSON
 - `/api/qa/stream` 的 `done` 事件 `answer` 字段为空（rag_system yield `"answer"` 键，api_server 读 `"full_answer"`）→ 键名对齐
+- 版本号不一致 bug：`__init__.py` 仍是 `0.3.2`，与 `pyproject.toml`/`api_server.py` 的 `0.3.7` 不一致 → 单源版本号（`pyproject.toml` 用 `dynamic = ["version"]` 从 `__init__.py` 读取，`api_server.py` 用 `from . import __version__`）
 
 ## [0.3.6] - 2026-07-05
 

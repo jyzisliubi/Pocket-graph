@@ -12,6 +12,9 @@ import {
   Inbox,
   X,
   Sparkles,
+  Eye,
+  Globe,
+  Rss,
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -37,12 +40,17 @@ import {
   getDocuments,
   uploadDocument,
   deleteDocument,
+  previewDocument,
+  importUrl,
   extractTriples,
   extractMultiModel,
   buildIndex,
 } from '@/lib/api'
 import type {
   DocumentInfo,
+  DocumentPreview,
+  ImportSourceType,
+  ImportUrlResponse,
   ExtractPhase,
   BuildIndexStats,
   MultiModelExtractResponse,
@@ -149,6 +157,25 @@ export default function DocumentsPage() {
   // ===== 删除确认 =====
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null)
   const [deleting, setDeleting] = useState(false)
+
+  // ===== 文档预览 =====
+  const [preview, setPreview] = useState<{
+    open: boolean
+    loading: boolean
+    error: string | null
+    data: DocumentPreview | null
+  }>({ open: false, loading: false, error: null, data: null })
+
+  // ===== URL / sitemap / RSS 导入 =====
+  const [urlImport, setUrlImport] = useState<{
+    open: boolean
+    loading: boolean
+    error: string | null
+    result: ImportUrlResponse | null
+  }>({ open: false, loading: false, error: null, result: null })
+  const [importUrlValue, setImportUrlValue] = useState('')
+  const [importType, setImportType] = useState<ImportSourceType>('url')
+  const [importMaxItems, setImportMaxItems] = useState(20)
 
   // ===== 构建索引 =====
   const [building, setBuilding] = useState(false)
@@ -400,6 +427,79 @@ export default function DocumentsPage() {
     }
   }
 
+  /** 打开文档预览 */
+  const handlePreview = async (filename: string) => {
+    setPreview({ open: true, loading: true, error: null, data: null })
+    try {
+      const data = await previewDocument(filename)
+      setPreview({ open: true, loading: false, error: null, data })
+    } catch (err) {
+      setPreview({
+        open: true,
+        loading: false,
+        error: (err as Error).message || '预览加载失败',
+        data: null,
+      })
+    }
+  }
+
+  /** 关闭文档预览 */
+  const closePreview = () => {
+    setPreview((prev) => ({ ...prev, open: false }))
+  }
+
+  /** 打开 URL 导入对话框 */
+  const openUrlImport = () => {
+    setUrlImport({ open: true, loading: false, error: null, result: null })
+    setImportUrlValue('')
+    setImportType('url')
+    setImportMaxItems(20)
+  }
+
+  /** 执行 URL 导入 */
+  const handleUrlImport = async () => {
+    const url = importUrlValue.trim()
+    if (!url) {
+      setUrlImport((prev) => ({ ...prev, error: '请输入 URL' }))
+      return
+    }
+    if (!/^https?:\/\//i.test(url)) {
+      setUrlImport((prev) => ({
+        ...prev,
+        error: 'URL 必须以 http:// 或 https:// 开头',
+      }))
+      return
+    }
+    setUrlImport({ open: true, loading: true, error: null, result: null })
+    try {
+      const result = await importUrl({
+        url,
+        source_type: importType,
+        max_items: importMaxItems,
+      })
+      setUrlImport({ open: true, loading: false, error: null, result })
+      if (result.imported > 0) {
+        showNotice(
+          'success',
+          `成功导入 ${result.imported} 篇文档（${result.source_type}）`,
+        )
+        await fetchDocuments()
+      } else {
+        showNotice('error', result.message || '未导入任何文档')
+      }
+    } catch (err) {
+      const msg = (err as Error).message || 'URL 导入失败'
+      setUrlImport({ open: true, loading: false, error: msg, result: null })
+      showNotice('error', msg)
+    }
+  }
+
+  /** 关闭 URL 导入对话框 */
+  const closeUrlImport = () => {
+    if (urlImport.loading) return // 导入中不允许关闭
+    setUrlImport((prev) => ({ ...prev, open: false }))
+  }
+
   return (
     <div className="flex h-[calc(100vh-6rem)] flex-col gap-4 md:h-[calc(100vh-7rem)]">
       {/* 顶部提示 */}
@@ -435,6 +535,17 @@ export default function DocumentsPage() {
           <CardTitle className="flex items-center gap-2 text-base">
             <UploadCloud className="h-4 w-4" />
             上传文档
+            <Button
+              variant="outline"
+              size="sm"
+              className="ml-auto h-7 gap-1.5 px-2 text-xs"
+              onClick={openUrlImport}
+              disabled={urlImport.loading}
+              title="从 URL / sitemap / RSS 批量导入"
+            >
+              <Globe className="h-3.5 w-3.5" />
+              <span>导入 URL</span>
+            </Button>
           </CardTitle>
         </CardHeader>
         <CardContent className="pt-0">
@@ -538,8 +649,8 @@ export default function DocumentsPage() {
             </div>
           ) : (
             /* 列表表头 */
-            <div className="min-w-[520px] overflow-x-auto rounded-md border">
-              <div className="grid grid-cols-[1fr_90px_140px_180px] items-center gap-2 border-b bg-muted/50 px-3 py-2 text-xs font-medium text-muted-foreground">
+            <div className="min-w-[600px] overflow-x-auto rounded-md border">
+              <div className="grid grid-cols-[1fr_90px_140px_240px] items-center gap-2 border-b bg-muted/50 px-3 py-2 text-xs font-medium text-muted-foreground">
                 <span>文件名</span>
                 <span className="text-right">大小</span>
                 <span>上传时间</span>
@@ -551,7 +662,7 @@ export default function DocumentsPage() {
                   return (
                     <div
                       key={doc.filename}
-                      className="grid grid-cols-[1fr_90px_140px_180px] items-center gap-2 px-3 py-2.5 text-sm transition-colors hover:bg-accent/40"
+                      className="grid grid-cols-[1fr_90px_140px_240px] items-center gap-2 px-3 py-2.5 text-sm transition-colors hover:bg-accent/40"
                     >
                       {/* 文件名 */}
                       <div className="flex min-w-0 items-center gap-2">
@@ -578,6 +689,17 @@ export default function DocumentsPage() {
                       </span>
                       {/* 操作 */}
                       <div className="flex items-center justify-end gap-1.5">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="h-7 gap-1.5 px-2 text-xs"
+                          onClick={() => handlePreview(doc.filename)}
+                          disabled={preview.loading}
+                          title="预览文档内容"
+                        >
+                          <Eye className="h-3.5 w-3.5" />
+                          <span>预览</span>
+                        </Button>
                         <Button
                           variant="outline"
                           size="sm"
@@ -890,6 +1012,264 @@ export default function DocumentsPage() {
                 <Button onClick={handleMultiExtract}>
                   <Sparkles className="mr-1 h-3.5 w-3.5" />
                   开始融合抽取
+                </Button>
+              </>
+            )}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* 文档预览对话框 */}
+      <Dialog
+        open={preview.open}
+        onOpenChange={(open) => {
+          if (!open) closePreview()
+        }}
+      >
+        <DialogContent className="max-h-[85vh] max-w-3xl overflow-hidden flex flex-col">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Eye className="h-4 w-4" />
+              文档预览
+              {preview.data && (
+                <Badge
+                  variant="outline"
+                  className="ml-1 px-1.5 py-0 text-[10px] uppercase"
+                >
+                  {preview.data.source_type}
+                </Badge>
+              )}
+            </DialogTitle>
+            <DialogDescription className="truncate">
+              {preview.data?.filename || '加载中…'}
+            </DialogDescription>
+          </DialogHeader>
+
+          {/* 主体内容 */}
+          <div className="min-h-0 flex-1 overflow-hidden">
+            {preview.loading ? (
+              <div className="flex h-40 items-center justify-center text-sm text-muted-foreground">
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                正在提取文档内容…
+              </div>
+            ) : preview.error ? (
+              <div className="flex h-40 items-center justify-center rounded-md border border-destructive/40 bg-destructive/10 px-3 text-center text-sm text-destructive">
+                <AlertCircle className="mr-2 h-4 w-4 shrink-0" />
+                {preview.error}
+              </div>
+            ) : preview.data ? (
+              <>
+                {/* 元信息条 */}
+                <div className="mb-2 flex flex-wrap items-center gap-2 border-b pb-2 text-xs text-muted-foreground">
+                  <span className="font-medium text-foreground">
+                    {preview.data.title}
+                  </span>
+                  <span>·</span>
+                  <span className="font-mono">
+                    {preview.data.total_chars.toLocaleString()} 字符
+                  </span>
+                  {preview.data.truncated && (
+                    <Badge
+                      variant="outline"
+                      className="px-1.5 py-0 text-[10px] text-amber-600 border-amber-400/50"
+                    >
+                      已截断（仅显示前 50,000 字符）
+                    </Badge>
+                  )}
+                </div>
+                {/* 内容区 */}
+                <pre className="max-h-[55vh] min-h-[200px] overflow-auto whitespace-pre-wrap break-words rounded-md border bg-muted/30 p-3 text-xs leading-relaxed">
+                  {preview.data.content || '（文档内容为空）'}
+                </pre>
+              </>
+            ) : null}
+          </div>
+
+          <DialogFooter>
+            <Button onClick={closePreview}>关闭</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* URL 导入对话框 */}
+      <Dialog
+        open={urlImport.open}
+        onOpenChange={(open) => {
+          if (!open) closeUrlImport()
+        }}
+      >
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Globe className="h-4 w-4" />
+              从 URL 导入文档
+              <Badge
+                variant="outline"
+                className="ml-1 px-1.5 py-0 text-[10px] uppercase text-primary"
+              >
+                多数据源
+              </Badge>
+            </DialogTitle>
+            <DialogDescription>
+              支持 sitemap.xml / RSS feed / 单个网页，批量导入为本地 .txt 文件
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4">
+            {/* 配置区 */}
+            {!urlImport.result && (
+              <>
+                <div className="space-y-2">
+                  <label className="text-xs font-medium text-muted-foreground">
+                    数据源 URL
+                  </label>
+                  <Input
+                    value={importUrlValue}
+                    onChange={(e) => setImportUrlValue(e.target.value)}
+                    placeholder="https://example.com/sitemap.xml"
+                    disabled={urlImport.loading}
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium text-muted-foreground">
+                      数据源类型
+                    </label>
+                    <Select
+                      value={importType}
+                      onValueChange={(v) =>
+                        setImportType(v as ImportSourceType)
+                      }
+                      disabled={urlImport.loading}
+                    >
+                      <SelectTrigger className="h-9">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="url">
+                          url — 单个网页
+                        </SelectItem>
+                        <SelectItem value="sitemap">
+                          sitemap — 站点地图（批量）
+                        </SelectItem>
+                        <SelectItem value="rss">
+                          rss — RSS/Atom feed（批量）
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium text-muted-foreground">
+                      最大条目数
+                    </label>
+                    <Input
+                      type="number"
+                      min={1}
+                      max={500}
+                      value={importMaxItems}
+                      onChange={(e) =>
+                        setImportMaxItems(
+                          Math.max(1, Math.min(500, Number(e.target.value) || 20)),
+                        )
+                      }
+                      disabled={urlImport.loading}
+                    />
+                  </div>
+                </div>
+                <p className="text-[11px] text-muted-foreground">
+                  {importType === 'sitemap' && (
+                    <span className="flex items-center gap-1">
+                      <Globe className="h-3 w-3" />
+                      解析 sitemap.xml，逐个抓取页面文本。适合博客/文档站全量导入。
+                    </span>
+                  )}
+                  {importType === 'rss' && (
+                    <span className="flex items-center gap-1">
+                      <Rss className="h-3 w-3" />
+                      解析 RSS/Atom feed，优先用 feed 自带内容。适合新闻/博客订阅。
+                    </span>
+                  )}
+                  {importType === 'url' && (
+                    <span className="flex items-center gap-1">
+                      <Globe className="h-3 w-3" />
+                      抓取单个网页，提取正文（Playwright 渲染失败时回退到 requests）。
+                    </span>
+                  )}
+                </p>
+              </>
+            )}
+
+            {/* 加载中 */}
+            {urlImport.loading && (
+              <div className="flex items-center gap-2 text-sm">
+                <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                <span className="text-muted-foreground">
+                  正在抓取并导入…（sitemap/rss 可能需要几分钟）
+                </span>
+              </div>
+            )}
+
+            {/* 错误 */}
+            {urlImport.error && (
+              <div className="flex items-start gap-2 rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>{urlImport.error}</span>
+              </div>
+            )}
+
+            {/* 结果 */}
+            {urlImport.result && (
+              <div className="space-y-3">
+                <div className="flex flex-col items-center gap-2 py-2 text-center">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-success/15 text-success">
+                    <CheckCircle2 className="h-6 w-6" />
+                  </div>
+                  <p className="text-sm font-medium">导入完成</p>
+                  <p className="text-xs text-muted-foreground">
+                    共导入{' '}
+                    <span className="font-mono font-semibold text-success">
+                      {urlImport.result.imported}
+                    </span>{' '}
+                    篇文档（来源：{urlImport.result.source_type}）
+                  </p>
+                </div>
+                {urlImport.result.filenames.length > 0 && (
+                  <div className="max-h-40 overflow-auto rounded-md border bg-muted/30 p-3">
+                    <p className="mb-2 text-xs font-medium text-muted-foreground">
+                      生成的文件
+                    </p>
+                    <div className="space-y-1">
+                      {urlImport.result.filenames.map((f) => (
+                        <div
+                          key={f}
+                          className="flex items-center gap-1.5 text-xs"
+                        >
+                          <FileCheck2 className="h-3 w-3 shrink-0 text-muted-foreground" />
+                          <span className="truncate font-mono" title={f}>
+                            {f}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          <DialogFooter>
+            {urlImport.loading ? (
+              <Button disabled>导入中…</Button>
+            ) : urlImport.result ? (
+              <Button onClick={closeUrlImport}>完成</Button>
+            ) : (
+              <>
+                <Button variant="outline" onClick={closeUrlImport}>
+                  取消
+                </Button>
+                <Button onClick={handleUrlImport}>
+                  <Globe className="mr-1 h-3.5 w-3.5" />
+                  开始导入
                 </Button>
               </>
             )}

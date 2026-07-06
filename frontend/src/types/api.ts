@@ -211,6 +211,34 @@ export interface BuildIndexResponse {
   stats: BuildIndexStats
 }
 
+/** 文档预览响应（对标 ChatGPT/Claude 文件预览） */
+export interface DocumentPreview {
+  filename: string
+  source_type: string
+  title: string
+  content: string
+  total_chars: number
+  truncated: boolean
+}
+
+/** URL 导入请求数据源类型 */
+export type ImportSourceType = 'url' | 'sitemap' | 'rss'
+
+/** URL 导入请求 */
+export interface ImportUrlRequest {
+  url: string
+  source_type: ImportSourceType
+  max_items: number
+}
+
+/** URL 导入响应 */
+export interface ImportUrlResponse {
+  imported: number
+  filenames: string[]
+  message: string
+  source_type: string
+}
+
 /** 三元组抽取 SSE 阶段 */
 export type ExtractPhase = 'extracting' | 'done' | 'error'
 

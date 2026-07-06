@@ -171,11 +171,27 @@ async def lifespan(app: FastAPI):
     logger.info("Shutting down...")
 
 
+# OpenAPI tag 分组（Swagger UI /docs 页面按分组展示路由）
+# 对标 LightRAG / microsoft graphrag 的 Swagger 文档专业度
+_OPENAPI_TAGS = [
+    {"name": "QA", "description": "问答与检索（核心 RAG 能力，含流式 SSE）"},
+    {"name": "Graph", "description": "知识图谱查询（实体 / 子图 / PageRank / 社区 / 路径）"},
+    {"name": "Documents", "description": "文档上传 / 删除 / 三元组抽取 / 索引构建"},
+    {"name": "Settings", "description": "LLM 配置管理（provider / model / api_key 热更新）"},
+    {"name": "System", "description": "健康检查 / LLM 后端状态 / 版本信息"},
+]
+
 app = FastAPI(
     title="PocketGraphRAG API",
-    description="Lightweight GraphRAG API for vertical domains",
-    version="0.3.7",
+    description=(
+        "Lightweight GraphRAG API for vertical domains.\n\n"
+        "所有路由默认经 `_verify_api_key` 鉴权；未配置 `POCKET_API_KEY` 时为本地开发模式（直接放行），"
+        "配置后请通过 `X-API-Key` 或 `Authorization: Bearer` 头携带 key。"
+    ),
+    # 单源版本号：从 PocketGraphRAG.__version__ 读取，避免与 pyproject.toml/__init__.py 不一致
+    version=_APP_VERSION,
     lifespan=lifespan,
+    openapi_tags=_OPENAPI_TAGS,
     # 全局鉴权：所有路由自动经过 _verify_api_key。
     # 若 POCKET_API_KEY 未设置则直接放行（本地开发模式）。
     dependencies=[Depends(_verify_api_key)],
@@ -424,7 +440,7 @@ def _write_triples(path: str, triples: List, append: bool = True) -> int:
 # ==========================
 
 
-@app.get("/api/health", summary="健康检查")
+@app.get("/api/health", summary="健康检查", tags=["System"])
 async def health_check():
     """检查 API 服务、RAG 系统、LLM 后端三者的就绪状态。
 
@@ -465,7 +481,7 @@ async def health_check():
     }
 
 
-@app.get("/api/llm/status", summary="LLM 后端详细状态")
+@app.get("/api/llm/status", summary="LLM 后端详细状态", tags=["System"])
 async def llm_status():
     """返回当前 LLM 配置的详细信息（与 Web UI 状态灯一致）。
 
@@ -530,7 +546,7 @@ async def llm_status():
 # ==========================
 
 
-@app.post("/api/qa", response_model=QAResponse, summary="问答（非流式）")
+@app.post("/api/qa", response_model=QAResponse, summary="问答（非流式）", tags=["QA"])
 async def qa(request: QARequest):
     """Answer a question using GraphRAG (non-streaming)."""
     rag = _get_rag()
@@ -652,6 +668,7 @@ async def qa(request: QARequest):
     "/api/retrieve",
     response_model=RetrieveResponse,
     summary="只检索不生成（不调用 LLM）",
+    tags=["QA"],
 )
 async def retrieve(request: QARequest):
     """只跑检索层，返回 sources + kg_path，不调用 LLM 生成回答。
@@ -690,7 +707,7 @@ async def retrieve(request: QARequest):
     )
 
 
-@app.post("/api/qa/stream", summary="问答（流式，SSE）")
+@app.post("/api/qa/stream", summary="问答（流式，SSE）", tags=["QA"])
 async def qa_stream(request: QARequest):
     """Answer a question using GraphRAG with Server-Sent Events streaming."""
     rag = _get_rag()
@@ -769,7 +786,7 @@ async def qa_stream(request: QARequest):
 # ==========================
 
 
-@app.get("/api/graph/stats", response_model=GraphStats, summary="图谱统计信息")
+@app.get("/api/graph/stats", response_model=GraphStats, summary="图谱统计信息", tags=["Graph"])
 async def graph_stats():
     """Get knowledge graph statistics."""
     rag = _get_rag()
@@ -781,6 +798,7 @@ async def graph_stats():
     "/api/graph/entities",
     response_model=List[EntitySearchResult],
     summary="Top N 实体列表",
+    tags=["Graph"],
 )
 async def top_entities(
     limit: int = Query(default=50, ge=1, le=500, description="返回数量"),
@@ -795,7 +813,10 @@ async def top_entities(
 
 
 @app.get(
-    "/api/graph/search", response_model=List[EntitySearchResult], summary="搜索实体"
+    "/api/graph/search",
+    response_model=List[EntitySearchResult],
+    summary="搜索实体",
+    tags=["Graph"],
 )
 async def search_entities(
     q: str = Query(..., description="搜索关键词"),
@@ -815,6 +836,7 @@ async def search_entities(
     "/api/graph/entity/{name}/subgraph",
     response_model=SubgraphResponse,
     summary="获取实体邻域子图",
+    tags=["Graph"],
 )
 async def entity_subgraph(
     name: str,
@@ -836,7 +858,10 @@ async def entity_subgraph(
 
 
 @app.post(
-    "/api/graph/subgraph", response_model=SubgraphResponse, summary="获取多实体子图"
+    "/api/graph/subgraph",
+    response_model=SubgraphResponse,
+    summary="获取多实体子图",
+    tags=["Graph"],
 )
 async def multi_entity_subgraph(
     entities: List[str] = Body(..., description="种子实体名列表"),
@@ -879,6 +904,7 @@ class ShortestPathResponse(BaseModel):
     "/api/graph/pagerank",
     response_model=List[PagerankResponse],
     summary="Pagerank 实体重要性排序",
+    tags=["Graph"],
 )
 async def graph_pagerank(
     top_n: int = Query(default=50, ge=1, le=500, description="返回前 N 个实体"),
@@ -896,7 +922,10 @@ async def graph_pagerank(
 
 
 @app.get(
-    "/api/graph/communities", response_model=List[CommunityResponse], summary="社区发现"
+    "/api/graph/communities",
+    response_model=List[CommunityResponse],
+    summary="社区发现",
+    tags=["Graph"],
 )
 async def graph_communities():
     """Detect communities in the knowledge graph using label propagation."""
@@ -913,7 +942,7 @@ async def graph_communities():
     ]
 
 
-@app.get("/api/graph/path", response_model=ShortestPathResponse, summary="最短路径")
+@app.get("/api/graph/path", response_model=ShortestPathResponse, summary="最短路径", tags=["Graph"])
 async def graph_shortest_path(
     start: str = Query(..., description="起始实体"),
     end: str = Query(..., description="目标实体"),
@@ -936,6 +965,7 @@ _ALLOWED_UPLOAD_EXTS = {".txt", ".md", ".markdown", ".pdf", ".docx"}
     "/api/documents/upload",
     response_model=UploadResponse,
     summary="上传文档（multipart/form-data）",
+    tags=["Documents"],
 )
 async def upload_document(file: UploadFile = File(...)):
     """接收前端上传的文档，保存到 user_docs 目录。
@@ -974,6 +1004,7 @@ async def upload_document(file: UploadFile = File(...)):
     "/api/documents",
     response_model=List[DocumentInfo],
     summary="列出已上传文档",
+    tags=["Documents"],
 )
 async def list_documents():
     """列出 user_docs 目录下已上传的文档。"""
@@ -1002,7 +1033,7 @@ async def list_documents():
     return results
 
 
-@app.delete("/api/documents/{filename}", summary="删除指定文档")
+@app.delete("/api/documents/{filename}", summary="删除指定文档", tags=["Documents"])
 async def delete_document(filename: str):
     """删除 user_docs 目录下的指定文档。"""
     target = _safe_doc_path(filename)
@@ -1016,7 +1047,173 @@ async def delete_document(filename: str):
     return {"message": "删除成功"}
 
 
-@app.post("/api/documents/extract", summary="三元组抽取（SSE 流式进度）")
+# 文档预览内容长度上限（避免单次响应过大，前端按需截断展示）
+_PREVIEW_MAX_CHARS = 50_000
+
+
+class DocumentPreviewResponse(BaseModel):
+    """文档预览响应（对标 ChatGPT/Claude 文件预览）"""
+
+    filename: str
+    source_type: str = Field(..., description="文件类型：txt / md / pdf / docx")
+    title: str = ""
+    content: str = Field(..., description="提取的纯文本内容（已截断到 _PREVIEW_MAX_CHARS）")
+    total_chars: int = Field(..., description="原始文本总字符数")
+    truncated: bool = Field(..., description="content 是否被截断")
+
+
+@app.get(
+    "/api/documents/{filename}/raw",
+    response_model=DocumentPreviewResponse,
+    summary="预览文档原始文本",
+    tags=["Documents"],
+)
+async def preview_document(filename: str):
+    """提取并返回文档的纯文本内容，用于前端预览。
+
+    复用 ``DataImporter`` 的多格式解析能力（txt / md / pdf / docx），
+    超过 50_000 字符时自动截断并标记 ``truncated=true``。
+    """
+    from .data_importer import DataImporter
+
+    target = _safe_doc_path(filename)
+    if not os.path.exists(target):
+        raise HTTPException(status_code=404, detail=f"文件不存在: {filename}")
+
+    importer = DataImporter()
+    doc = importer.import_file(target)
+    if doc is None:
+        raise HTTPException(
+            status_code=422,
+            detail=f"无法提取文档内容（不支持的格式或解析失败）：{filename}",
+        )
+
+    full_content = doc.content or ""
+    total = len(full_content)
+    truncated = total > _PREVIEW_MAX_CHARS
+    content = full_content[:_PREVIEW_MAX_CHARS] if truncated else full_content
+
+    return DocumentPreviewResponse(
+        filename=filename,
+        source_type=doc.source_type,
+        title=doc.title or os.path.splitext(filename)[0],
+        content=content,
+        total_chars=total,
+        truncated=truncated,
+    )
+
+
+class ImportUrlRequest(BaseModel):
+    """URL 导入请求（对标 RAGFlow 多数据源）"""
+
+    url: str = Field(..., description="sitemap.xml / RSS feed / 网页 URL")
+    source_type: str = Field(
+        default="url",
+        description="数据源类型: url (单页) / sitemap (站点地图) / rss (RSS/Atom feed)",
+    )
+    max_items: int = Field(
+        default=50, ge=1, le=500, description="sitemap/rss 最多导入条目数"
+    )
+
+
+class ImportUrlResponse(BaseModel):
+    """URL 导入响应"""
+
+    imported: int = Field(..., description="成功导入的文档数")
+    filenames: List[str] = Field(default=[], description="生成的本地文件名列表")
+    message: str = ""
+    source_type: str = ""
+
+
+def _sanitize_filename(name: str, fallback: str = "imported") -> str:
+    """把任意字符串清理成合法的文件名（不含路径分隔符 / 特殊字符）"""
+    import re
+
+    # 取最后一段路径（如果是 URL）
+    name = name.rstrip("/").split("/")[-1] if "/" in name else name
+    # 移除查询参数和锚点
+    name = re.split(r"[?#]", name)[0]
+    # 只保留字母数字中文下划线连字符点
+    name = re.sub(r'[^\w\u4e00-\u9fff.\-]', "_", name)
+    name = name.strip("._") or fallback
+    # 限制长度
+    return name[:80] if len(name) > 80 else name
+
+
+@app.post(
+    "/api/documents/import-url",
+    response_model=ImportUrlResponse,
+    summary="从 URL / sitemap / RSS 导入文档",
+    tags=["Documents"],
+)
+async def import_url_endpoint(req: ImportUrlRequest):
+    """从 sitemap / RSS / 单个 URL 批量导入文档（对标 RAGFlow 多数据源）。
+
+    导入的文档会保存为 ``.txt`` 文件到 ``user_docs`` 目录，
+    后续可走标准的"三元组抽取 → 构建索引"流程。
+
+    - ``source_type=url``：抓取单个网页
+    - ``source_type=sitemap``：解析 sitemap.xml，批量抓取
+    - ``source_type=rss``：解析 RSS/Atom feed，优先用 feed 自带内容
+    """
+    from .data_importer import DataImporter
+
+    importer = DataImporter()
+    source_type = (req.source_type or "url").strip().lower()
+    if source_type not in {"url", "sitemap", "rss"}:
+        raise HTTPException(
+            status_code=400,
+            detail=f"不支持的 source_type: {source_type}，可选: url / sitemap / rss",
+        )
+
+    try:
+        if source_type == "sitemap":
+            docs = importer.import_sitemap(req.url, max_urls=req.max_items)
+        elif source_type == "rss":
+            docs = importer.import_rss(req.url, max_items=req.max_items)
+        else:
+            doc = importer.import_url(req.url)
+            docs = [doc] if doc else []
+    except Exception as e:
+        logger.exception("URL 导入失败: %s", req.url)
+        raise HTTPException(status_code=502, detail=f"导入失败: {e}")
+
+    if not docs:
+        return ImportUrlResponse(
+            imported=0,
+            filenames=[],
+            message="未导入任何文档（URL 无效或内容为空）",
+            source_type=source_type,
+        )
+
+    # 保存为本地 .txt 文件
+    os.makedirs(USER_DOCS_DIR, exist_ok=True)
+    filenames: List[str] = []
+    existing = set(os.listdir(USER_DOCS_DIR))
+    for i, doc in enumerate(docs, 1):
+        base = _sanitize_filename(doc.title or doc.source or f"imported_{i}")
+        # 避免重名
+        candidate = f"{base}.txt"
+        counter = 1
+        while candidate in existing:
+            candidate = f"{base}_{counter}.txt"
+            counter += 1
+        existing.add(candidate)
+        path = _safe_doc_path(candidate)
+        with open(path, "w", encoding="utf-8") as f:
+            # 写入标题 + 内容，便于后续三元组抽取时保留上下文
+            f.write(f"# {doc.title}\n\n来源：{doc.source}\n\n{doc.content}")
+        filenames.append(candidate)
+
+    return ImportUrlResponse(
+        imported=len(filenames),
+        filenames=filenames,
+        message=f"成功从 {source_type} 导入 {len(filenames)} 篇文档",
+        source_type=source_type,
+    )
+
+
+@app.post("/api/documents/extract", summary="三元组抽取（SSE 流式进度）", tags=["Documents"])
 async def extract_document(req: ExtractRequest):
     """对指定文档执行三元组抽取，返回 SSE 流式进度。
 
@@ -1101,6 +1298,7 @@ async def extract_document(req: ExtractRequest):
 @app.post(
     "/api/documents/extract-multi",
     summary="多模型 KG 融合抽取（PocketGraphRAG 独有）",
+    tags=["Documents"],
 )
 async def extract_multi_document(req: MultiModelExtractRequest):
     """用多个 LLM 抽取同一份文档并融合，覆盖每个模型的盲点。
@@ -1193,6 +1391,7 @@ async def extract_multi_document(req: MultiModelExtractRequest):
     "/api/documents/build-index",
     response_model=BuildIndexResponse,
     summary="构建向量索引",
+    tags=["Documents"],
 )
 async def build_index_endpoint():
     """触发索引构建。
@@ -1273,7 +1472,7 @@ async def build_index_endpoint():
 # ==========================
 
 
-@app.get("/api/settings", summary="获取当前 LLM 配置")
+@app.get("/api/settings", summary="获取当前 LLM 配置", tags=["Settings"])
 async def get_settings():
     """返回当前 LLM 配置（API Key 脱敏，仅返回是否已配置 + 掩码前缀）。"""
     settings = load_llm_settings()
@@ -1334,7 +1533,7 @@ async def get_settings():
     }
 
 
-@app.post("/api/settings", summary="保存 LLM 配置")
+@app.post("/api/settings", summary="保存 LLM 配置", tags=["Settings"])
 async def save_settings(req: SettingsRequest):
     """保存 LLM 配置到 .env 并热同步到 config 模块。
 
@@ -1407,6 +1606,7 @@ async def save_settings(req: SettingsRequest):
 @app.get(
     "/api/settings/ollama-models",
     summary="列出 Ollama 已下载的模型",
+    tags=["Settings"],
 )
 async def list_ollama_models_endpoint():
     """列出本地 Ollama 已下载的模型。"""

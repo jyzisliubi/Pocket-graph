@@ -15,6 +15,9 @@ import type {
   DocumentInfo,
   UploadResponse,
   BuildIndexResponse,
+  DocumentPreview,
+  ImportUrlRequest,
+  ImportUrlResponse,
   ExtractSSEEvent,
   MultiModelExtractResponse,
   SettingsResponse,
@@ -283,6 +286,20 @@ export function uploadDocument(
 export const deleteDocument = (filename: string) =>
   apiClient
     .delete(`/api/documents/${encodeURIComponent(filename)}`)
+    .then((r) => r.data)
+
+/** 预览文档原始文本（对标 ChatGPT/Claude 文件预览） */
+export const previewDocument = (filename: string) =>
+  apiClient
+    .get<DocumentPreview>(`/api/documents/${encodeURIComponent(filename)}/raw`)
+    .then((r) => r.data)
+
+/** 从 URL / sitemap / RSS 导入文档（对标 RAGFlow 多数据源） */
+export const importUrl = (req: ImportUrlRequest) =>
+  apiClient
+    .post<ImportUrlResponse>('/api/documents/import-url', req, {
+      timeout: 600_000, // sitemap/rss 批量抓取可能很久
+    })
     .then((r) => r.data)
 
 /** 构建索引，返回 {message, stats:{entities, relations}} */

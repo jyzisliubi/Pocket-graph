@@ -1,78 +1,72 @@
 # PocketGraphRAG Docker Compose
-# 一键启动：docker compose up -d
-# 含 API + WebUI + Ollama 本地模型
+# 一键启动：docker-compose up -d
+# 对标 LightRAG docker-compose-full.yml，支持 Ollama 外部连接
+
+version: "3.8"
 
 services:
-  # --- Ollama 本地 LLM（可选，云端 API 可省略此服务）---
-  ollama:
-    image: ollama/ollama:latest
-    container_name: pocketgraphrag-ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama-models:/root/.ollama
-    # GPU 支持：取消注释以下行（需 nvidia-container-toolkit）
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           count: all
-    #           capabilities: [gpu]
-    restart: unless-stopped
-    # 首次启动后手动拉模型：docker exec pocketgraphrag-ollama ollama pull qwen2.5:7b
-
-  # --- PocketGraphRAG API 服务 ---
-  api:
+  pocketgraphrag:
     build: .
-    container_name: pocketgraphrag-api
-    command: >
-      python -m uvicorn PocketGraphRAG.api_server:app
-      --host 0.0.0.0 --port 8000
+    image: pocketgraphrag:latest
+    container_name: pocketgraphrag
     ports:
       - "8000:8000"
     volumes:
-      - ./PocketGraphRAG:/app/PocketGraphRAG
-      - ./examples:/app/examples
-      - pocketgraphrag-index:/app/index
+      # 数据持久化：索引、文档、模型缓存
+      - ./index:/app/index
+      - ./user_docs:/app/user_docs
+      - ./data:/app/data
+      - ./models:/app/models
+      # .env 配置（可选）
+      - ./.env:/app/.env:ro
     environment:
-      - POCKET_OLLAMA_MODEL=qwen2.5:7b
-      - POCKET_OLLAMA_API_BASE=http://ollama:11434/v1
-      - POCKET_DATA_PATH=/app/examples/rice_disease/data/rice_knowledge_graph_triples.txt
+      - POCKET_DATA_PATH=/app/data/triples.txt
       - POCKET_INDEX_DIR=/app/index
-      # 云端 API（二选一，取消注释并填入 key）
-      # - POCKET_SILICONFLOW_API_KEY=sk-your-key
-      # - POCKET_DEEPSEEK_API_KEY=sk-your-key
-      # API 安全（生产环境建议启用）
-      # - POCKET_API_KEY=your-secret-key
-      # - POCKET_CORS_ORIGINS=https://your-frontend.com
-    depends_on:
-      - ollama
+      - POCKET_USER_DOCS_DIR=/app/user_docs
+      - POCKET_SEARCH_MODE=mix
+      # Ollama 连接（host.docker.internal 访问宿主机服务）
+      - OLLAMA_API_BASE=http://host.docker.internal:11434/v1
+      - OLLAMA_MODEL=qwen2.5:7b
+      # Embedding 模型本地缓存路径
+      - POCKET_EMBEDDING_MODEL=BAAI/bge-small-zh-v1.5
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/api/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
 
-  # --- PocketGraphRAG Web UI（Gradio）---
-  webui:
-    build: .
-    container_name: pocketgraphrag-webui
-    command: >
-      python -m PocketGraphRAG.webapp
-      --host 0.0.0.0 --port 7860
+  # 可选：Redis 用于 LLM Cache（对标 LightRAG v1.4.3）
+  redis:
+    image: redis:7-alpine
+    container_name: pocketgraphrag-redis
     ports:
-      - "7860:7860"
+      - "6379:6379"
     volumes:
-      - ./PocketGraphRAG:/app/PocketGraphRAG
-      - ./examples:/app/examples
-      - pocketgraphrag-index:/app/index
-    environment:
-      - POCKET_OLLAMA_MODEL=qwen2.5:7b
-      - POCKET_OLLAMA_API_BASE=http://ollama:11434/v1
-      - POCKET_DATA_PATH=/app/examples/rice_disease/data/rice_knowledge_graph_triples.txt
-      - POCKET_INDEX_DIR=/app/index
-    depends_on:
-      - ollama
-      - api
+      - redis-data:/data
     restart: unless-stopped
+    profiles:
+      - cache  # docker-compose --profile cache up 启用
+
+  # 可选：Neo4j 图存储后端
+  neo4j:
+    image: neo4j:5-community
+    container_name: pocketgraphrag-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/pocketgraphrag
+      - NEO4J_PLUGINS=["graph-data-science"]
+    volumes:
+      - neo4j-data:/data
+    restart: unless-stopped
+    profiles:
+      - graph  # docker-compose --profile graph up 启用
 
 volumes:
-  ollama-models:
-  pocketgraphrag-index:
+  redis-data:
+  neo4j-data:

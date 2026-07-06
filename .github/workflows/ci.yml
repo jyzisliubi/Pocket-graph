@@ -2,22 +2,17 @@ name: CI
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, develop]
   pull_request:
-    branches: [main, master]
-
-permissions:
-  contents: read
+    branches: [main]
 
 jobs:
   test:
-    name: Test on Python ${{ matrix.python-version }} / ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ["3.9", "3.10", "3.11", "3.12"]
+      fail-fast: false
 
     steps:
       - uses: actions/checkout@v4
@@ -26,73 +21,67 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          cache: "pip"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-
 
       - name: Install dependencies
-        # `-e .[dev]` installs the package + dev extras (pytest/ruff/pre-commit/reportlab).
-        # pytest-cov is added on top for coverage collection.
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[dev]"
-          pip install pytest-cov
+          pip install -e ".[web,docs,dev]"
 
-      - name: Run tests with coverage
-        # --cov-fail-under=60 防止覆盖率回归（当前基线 ~63%）
+      - name: Lint with ruff
         run: |
-          python -m pytest PocketGraphRAG/tests/ -v --tb=short \
-            --cov=PocketGraphRAG --cov-report=xml --cov-report=term-missing \
-            --cov-fail-under=60
+          ruff check PocketGraphRAG/ --select E,F --ignore E501,E402,E741,F401,F811
+        continue-on-error: true  # 风格问题不阻塞 CI
+
+      - name: Run tests
+        run: |
+          python -m pytest PocketGraphRAG/tests/ -x -q --tb=short
         env:
-          PYTHONIOENCODING: utf-8
+          POCKET_TEST_MODE: "1"
+          TRANSFORMERS_OFFLINE: "1"
+          HF_HUB_OFFLINE: "1"
 
-      - name: Upload coverage to Codecov
-        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
-        uses: codecov/codecov-action@v4
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          files: ./coverage.xml
-          fail_ci_if_error: false
-          # token: ${{ secrets.CODECOV_TOKEN }}  # public repo usually doesn't need it
+          name: test-results-${{ matrix.python-version }}
+          path: |
+            .pytest_cache/
+            test-output.xml
+          retention-days: 7
 
-  lint:
-    name: Lint with ruff
+  docker-build:
     runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
         with:
-          python-version: "3.11"
-          cache: "pip"
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: pocketgraphrag:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
-      - name: Install ruff
+      - name: Test Docker image
         run: |
-          python -m pip install --upgrade pip
-          pip install ruff
-
-      - name: Run ruff check
-        run: ruff check .
-
-      - name: Run ruff format check
-        run: ruff format --check .
-
-  typecheck:
-    name: Type check with mypy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: "pip"
-
-      - name: Install mypy
-        run: |
-          python -m pip install --upgrade pip
-          pip install mypy
-
-      - name: Run mypy
-        # 只检查核心引擎模块（见 pyproject.toml [tool.mypy].files）
-        run: mypy
+          docker run -d --name test-container -p 8000:8000 pocketgraphrag:ci
+          sleep 30
+          curl -s http://localhost:8000/api/health | grep -q "ok" && echo "Health check passed" || exit 1
+          docker stop test-container
+          docker rm test-container

@@ -18,7 +18,7 @@ from contextlib import asynccontextmanager
 from datetime import datetime
 from typing import List, Optional
 
-from fastapi import Depends, FastAPI, File, HTTPException, Query, Request, UploadFile, status
+from fastapi import Body, Depends, FastAPI, File, HTTPException, Query, Request, UploadFile, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.security import APIKeyHeader
@@ -142,7 +142,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="PocketGraphRAG API",
     description="Lightweight GraphRAG API for vertical domains",
-    version="0.3.3",
+    version="0.3.7",
     lifespan=lifespan,
     # 全局鉴权：所有路由自动经过 _verify_api_key。
     # 若 POCKET_API_KEY 未设置则直接放行（本地开发模式）。
@@ -631,8 +631,9 @@ async def retrieve(request: QARequest):
                 entity=(m or {}).get("entity", ""),
                 text=text,
                 score=float(score),
+                citation_id=idx + 1,  # 引用编号 [1][2] ...，与 QA 端点保持一致
             )
-            for text, score, m in results
+            for idx, (text, score, m) in enumerate(results)
         ],
         kg_path=KGPathInfo(
             search_type=kg_path.get("search_type", ""),
@@ -691,7 +692,13 @@ async def qa_stream(request: QARequest):
                         data = {"type": "status", "status": step["status"]}
                         yield f"data: {json.dumps(data, ensure_ascii=False)}\n\n"
                 elif step.get("done"):
-                    data = {"type": "done", "answer": step.get("full_answer", "")}
+                    # rag_system.answer_stream 的 done 事件用 "answer" 键（非 full_answer）
+                    data = {
+                        "type": "done",
+                        "answer": step.get("answer", "") or step.get("full_answer", ""),
+                        "sources": step.get("sources", []),
+                        "pipeline_info": step.get("pipeline_info", {}),
+                    }
                     yield f"data: {json.dumps(data, ensure_ascii=False)}\n\n"
         except Exception as e:
             # M28：SSE 流中途异常时发 error 事件，避免客户端只看到"流断开"
@@ -787,10 +794,14 @@ async def entity_subgraph(
     "/api/graph/subgraph", response_model=SubgraphResponse, summary="获取多实体子图"
 )
 async def multi_entity_subgraph(
-    entities: List[str],
+    entities: List[str] = Body(..., description="种子实体名列表"),
     hops: int = Query(default=1, ge=1, le=3, description="邻域扩展跳数"),
 ):
-    """Get the subgraph around multiple seed entities."""
+    """Get the subgraph around multiple seed entities.
+
+    前端用 POST body 传 JSON 数组（如 ["霸王别姬","剧情"]），
+    hops 通过 query parameter 传递。
+    """
     rag = _get_rag()
     subgraph = rag.kg_retriever.get_subgraph(entities, max_hops=hops)
     return SubgraphResponse(

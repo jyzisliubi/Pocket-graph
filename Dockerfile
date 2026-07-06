@@ -1,57 +1,65 @@
 # PocketGraphRAG Dockerfile
-# 轻量级 GraphRAG 框架 - 支持 Web UI 和 REST API
-# 多阶段构建：先构建前端，再打包 Python 后端
+# 多阶段构建：builder 阶段安装依赖 + 构建前端，runtime 阶段仅复制产物
+# 对标 LightRAG 的 Docker 实践，支持 clone-and-run
 
 # ==========================
-# 阶段1：构建前端（React + Vite）
+# Stage 1: Builder
 # ==========================
-FROM node:18-slim AS frontend-builder
-WORKDIR /app/frontend
-# 先复制 package 元信息以利用 Docker 层缓存
-COPY frontend/package*.json ./
-RUN npm ci --registry=https://registry.npmmirror.com
-# 再复制源码并构建
-COPY frontend/ .
-RUN npm run build
+FROM python:3.10-slim AS builder
 
-# ==========================
-# 阶段2：Python 后端
-# ==========================
-FROM python:3.11-slim
-
-LABEL maintainer="PocketGraphRAG Team"
-LABEL description="PocketGraphRAG - Lightweight GraphRAG Framework for Vertical Domains"
-
-# 设置工作目录
-WORKDIR /app
-
-# 环境变量
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
-
-# 安装系统依赖（sentence-transformers 和 faiss 需要的编译/运行依赖）
+# 系统依赖（编译 faiss/torch 需要）
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# 先复制依赖文件，利用 Docker 缓存层
+COPY pyproject.toml README.md ./
+COPY PocketGraphRAG/ ./PocketGraphRAG/
+
+# 安装核心 + web + docs 依赖（不装 dev/eval 减小体积）
+RUN pip install --no-cache-dir -e ".[web,docs]"
+
+# ==========================
+# Stage 2: Runtime
+# ==========================
+FROM python:3.10-slim AS runtime
+
+# 仅安装运行时必要的系统库
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-# 复制前端构建产物
-COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
+WORKDIR /app
 
-# 复制项目代码（含 pyproject.toml / requirements.txt）
-COPY . .
+# 从 builder 复制已安装的 Python 包
+COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
 
-# 安装 Python 依赖：核心 + web(fastapi/uvicorn) + docs(pdf/docx 解析)
-RUN pip install --no-cache-dir -e ".[web,docs]"
+# 复制项目代码
+COPY --from=builder /app /app
 
-# 暴露端口
-# - 8000: FastAPI REST API + 前端静态托管
+# 复制前端预构建产物
+COPY frontend/dist /app/frontend/dist
+
+# 创建数据目录
+RUN mkdir -p /app/index /app/user_docs /app/data
+
+# 环境变量默认值
+ENV POCKET_DATA_PATH=/app/data/triples.txt \
+    POCKET_INDEX_DIR=/app/index \
+    POCKET_USER_DOCS_DIR=/app/user_docs \
+    POCKET_SEARCH_MODE=mix \
+    POCKET_HOST=0.0.0.0 \
+    POCKET_PORT=8000
+
 EXPOSE 8000
 
-# 数据卷：挂载自定义数据和索引
-VOLUME ["/app/data", "/app/index"]
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD python -c "import requests; requests.get('http://localhost:8000/api/health', timeout=5)" || exit 1
 
-# 启动 API 服务（同时托管前端）
-CMD ["uvicorn", "PocketGraphRAG.api_server:app", "--host", "0.0.0.0", "--port", "8000"]
+# 启动命令
+CMD ["python", "-m", "PocketGraphRAG.api_server", "--host", "0.0.0.0", "--port", "8000"]

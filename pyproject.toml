@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pocketgraphrag"
-version = "0.3.3"
-description = "Local-first GraphRAG with Multi-Model KG Fusion, Zero-LLM Query, and 2.7x LightRAG MRR on HotpotQA"
+version = "0.3.7"
+description = "Local-first GraphRAG with WORKSPACE isolation, LLM Cache, Entity Locks, Multi-Model KG Fusion, and 2.7x LightRAG MRR on HotpotQA"
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
@@ -123,9 +123,14 @@ pgvector = [
     "psycopg[binary]>=3.1.0",
     "pgvector>=0.2.0",
 ]
+# Optional: Redis LLM Cache 后端（跨进程共享缓存，对标 LightRAG v1.4.3）
+# 安装后设置 POCKET_LLM_CACHE=1 + POCKET_LLM_CACHE_BACKEND=redis
+redis = [
+    "redis>=4.5.0",
+]
 # 一键安装全部可选依赖（开发/演示用）
 all = [
-    "pocketgraphrag[web,docs,playwright,dev,eval,cli,graph,langfuse,neo4j,pgvector]",
+    "pocketgraphrag[web,docs,playwright,dev,eval,cli,graph,langfuse,neo4j,pgvector,redis]",
 ]
 
 [project.urls]

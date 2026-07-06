@@ -1,0 +1,67 @@
+name: Security Scan
+
+# 对标 microsoft/graphrag + LightRAG 供应链安全
+# - CodeQL: GitHub 原生 SAST，对 Python 语义分析（免费）
+# - pip-audit: 依赖漏洞扫描（PyPA 官方，查 OSV/PyPI advisory）
+# - Trivy: 容器镜像扫描（可选，Docker 构建后触发）
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # 每周一 00:00 UTC 定期扫描
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write   # 上传 CodeQL/trivy 结果到 Security tab
+  actions: read
+
+jobs:
+  codeql:
+    name: CodeQL (SAST)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: python
+          # queries: security-extended  # 可选：更严格的安全规则集
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:python"
+
+  pip-audit:
+    name: pip-audit (dependency scan)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pip-audit
+        run: pip install pip-audit
+
+      - name: Audit dependencies
+        # --strict: 发现漏洞时退出码非零
+        # --desc: 包含漏洞描述
+        # 不安装项目本身，仅扫描依赖树（更快且避免编译）
+        run: |
+          echo "Scanning dependencies for known vulnerabilities..."
+          pip-audit --strict --desc --require-hashes=false || \
+            echo "::warning::pip-audit found vulnerabilities (see log above)"

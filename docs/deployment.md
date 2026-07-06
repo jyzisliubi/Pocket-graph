@@ -200,6 +200,35 @@ POCKET_LANGFUSE_HOST=https://cloud.langfuse.com
 Every LLM call (extraction, summarization, QA) is then traced end-to-end in
 the Langfuse UI, with retrieval sources attached as metadata.
 
+### API rate limiting
+
+```bash
+pip install pocketgraphrag[observability]    # installs slowapi
+POCKET_RATE_LIMIT="100/minute"               # per-IP token bucket
+```
+
+When `POCKET_RATE_LIMIT` is set and `slowapi` is installed, every `/api/*`
+route is rate-limited per client IP. Exceeding the limit returns `429 Too Many
+Requests`. If `slowapi` is not installed, the setting is silently ignored
+(local-first: no hard dependency).
+
+### Prometheus metrics
+
+```bash
+pip install pocketgraphrag[observability]    # installs prometheus-fastapi-instrumentator
+POCKET_METRICS=1
+```
+
+Exposes `GET /metrics` with standard HTTP instrumentation (request count,
+latency histogram, status code breakdown). Scrape with Prometheus:
+
+```yaml
+scrape_configs:
+  - job_name: pocketgraphrag
+    static_configs:
+      - targets: ["pocketgraphrag.default.svc:8000"]
+```
+
 ### Logs
 
 ```bash

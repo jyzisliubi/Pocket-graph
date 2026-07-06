@@ -128,9 +128,15 @@ pgvector = [
 redis = [
     "redis>=4.5.0",
 ]
+# Optional: 生产级可观测性（API 限流 + Prometheus 指标，对标 LightRAG/RAGFlow）
+# 安装后设置 POCKET_RATE_LIMIT="100/minute" + POCKET_METRICS=1 启用
+observability = [
+    "slowapi>=0.1.9",
+    "prometheus-fastapi-instrumentator>=6.0.0",
+]
 # 一键安装全部可选依赖（开发/演示用）
 all = [
-    "pocketgraphrag[web,docs,playwright,dev,eval,cli,graph,langfuse,neo4j,pgvector,redis]",
+    "pocketgraphrag[web,docs,playwright,dev,eval,cli,graph,langfuse,neo4j,pgvector,redis,observability]",
 ]
 
 [project.urls]

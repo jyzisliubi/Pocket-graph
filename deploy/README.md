@@ -128,6 +128,8 @@ helm uninstall my-release
 | `POCKET_LLM_CACHE_BACKEND` | memory | memory / redis |
 | `POCKET_API_KEYS` | (空) | API Key 认证（逗号分隔多 key） |
 | `POCKET_API_AUTH_ENABLED` | (空) | 设为 1 启用 API 认证 |
+| `POCKET_RATE_LIMIT` | (空) | API 限流（如 `100/minute`），需 `pip install pocketgraphrag[observability]` |
+| `POCKET_METRICS` | (空) | 设为 1 暴露 Prometheus `/metrics` 端点 |
 
 ### 4.2 健康检查
 

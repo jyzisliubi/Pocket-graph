@@ -59,6 +59,35 @@ from .settings_manager import (
 logger = get_logger(__name__)
 
 
+# ------------------------------
+# 软依赖：API 限流 + Prometheus 指标（可选，未安装则跳过）
+# 对标 LightRAG/RAGFlow 生产级可观测性
+# ------------------------------
+try:
+    from slowapi import Limiter, _rate_limit_exceeded_handler
+    from slowapi.errors import RateLimitExceeded
+    from slowapi.util import get_remote_address
+
+    _RATE_LIMIT_CFG = os.environ.get("POCKET_RATE_LIMIT", "").strip()  # e.g. "100/minute"
+    limiter: Optional[Limiter] = (
+        Limiter(key_func=get_remote_address, default_limits=[_RATE_LIMIT_CFG])
+        if _RATE_LIMIT_CFG
+        else None
+    )
+except ImportError:
+    limiter = None
+    RateLimitExceeded = Exception  # type: ignore[assignment,misc]
+
+try:
+    from prometheus_fastapi_instrumentator import Instrumentator
+
+    _METRICS_ENABLED = (
+        os.environ.get("POCKET_METRICS", "").lower() in ("1", "true", "yes")
+    )
+except ImportError:
+    _METRICS_ENABLED = False
+
+
 _rag: PocketGraphRAG = None
 _kg_retriever: KGDualRetriever = None
 
@@ -157,6 +186,19 @@ app.add_middleware(
     allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
+
+# 限流中间件（软依赖：仅当 slowapi 已安装且 POCKET_RATE_LIMIT 配置时启用）
+# 对标 LightRAG/RAGFlow 生产级 API 防护
+if limiter is not None:
+    app.state.limiter = limiter
+    app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+    logger.info("API rate limit enabled: %s", _RATE_LIMIT_CFG)
+
+# Prometheus 指标（软依赖：仅当 prometheus-fastapi-instrumentator 已安装且 POCKET_METRICS=1 时启用）
+# 暴露 GET /metrics 端点，自动采集 HTTP QPS/延迟/错误率
+if _METRICS_ENABLED:
+    Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+    logger.info("Prometheus metrics exposed at /metrics")
 
 
 # ==========================

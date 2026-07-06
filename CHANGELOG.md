@@ -14,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Docker 部署**：多阶段 `Dockerfile` + `docker-compose.yml`（含可选 Redis/Neo4j profiles）
 - **GitHub Actions CI**：4 版本 Python 矩阵测试 + Docker 构建验证
 - **SECURITY.md** 安全策略
+- **K8s + Helm Chart**：`deploy/k8s/` manifests（Deployment/Service/Ingress/PVC/probes）+ `deploy/helm/` 模板化部署
+- **多架构 Docker 构建**：linux/amd64 + linux/arm64，`docker-build-push.sh` 一键构建推送
+- **Cosign 镜像签名 + SBOM**（对标 LightRAG 供应链安全）：`docker-publish.yml` GitHub OIDC keyless 签名 + SBOM 生成
+- **CodeQL + pip-audit 安全扫描 CI**（对标 microsoft/graphrag）：`.github/workflows/security.yml` Python SAST + 依赖漏洞扫描
+- **API 限流**（对标 LightRAG/RAGFlow）：slowapi 软依赖，`POCKET_RATE_LIMIT="100/minute"` 启用，未安装自动跳过
+- **Prometheus 指标**：`prometheus-fastapi-instrumentator` 软依赖，`POCKET_METRICS=1` 暴露 `/metrics` 端点
+- **中文 README**：`README-zh.md` 双语文档
+- **CONTRIBUTING.md + CODEOWNERS + .editorconfig**：开源社区标配
+- **mkdocs 文档完善**：architecture / installation / deployment 实际内容 + nav 重构
+- **前端复制答案按钮**：Chat 消息操作 UX（对标 ChatGPT/Claude/LightRAG WebUI）
+- **Issue 模板**：.yml 格式（bug / feature / question）
 
 ### Fixed
 - `/api/retrieve` 端点 `citation_id` 为 null → 现在正确返回 1/2/3

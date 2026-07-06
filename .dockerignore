@@ -1,60 +1,65 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.so
-.eggs/
-*.egg-info/
-dist/
-build/
+# PocketGraphRAG .dockerignore
+# 减小构建上下文体积，加速构建
 
-# Frontend（在镜像内构建，避免把本地依赖/产物打包进来）
-frontend/node_modules/
-frontend/dist/
-frontend/dist-ssr/
-
-# Virtual Env
-venv/
-.env/
-.venv/
+# 版本控制
+.git
+.gitignore
 
 # IDE
-.vscode/
+.vscode
 .idea
 *.swp
-*.swo
-*~
 
-# OS
-.DS_Store
-Thumbs.db
+# Python 缓存
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+.pytest_cache
+.mypy_cache
+.ruff_cache
 
-# Data & Index (挂载到 volume，不打包进镜像)
-data/
-index/
-*.index
-*.faiss
+# 虚拟环境
+venv/
+env/
+.venv/
 
-# Test & Coverage
-.pytest_cache/
-.coverage
-htmlcov/
-benchmark_results/
-
-# Git
-.git/
-.gitignore
-.github/
-
-# Docs
+# 测试和文档
+PocketGraphRAG/tests/
+docs/
 *.md
 !README.md
+!CHANGELOG.md
 
-# Logs
+# 构建产物
+dist/
+build/
+*.egg
+
+# 数据和模型（用户运行时挂载）
+index/
+user_docs/
+data/
+models/
+
+# 前端源码（仅保留 dist）
+frontend/node_modules/
+frontend/src/
+frontend/package.json
+frontend/package-lock.json
+frontend/tsconfig*.json
+frontend/vite.config.ts
+frontend/tailwind.config.js
+frontend/postcss.config.js
+
+# 临时文件
 *.log
-logs/
+*.tmp
+.tmp_*
+.git_commit_msg.txt
 
-# Config
-.env
+# 简历/面试等无关文件
+resume*
+interview*
+*_crash_course*
+gen_*.py

@@ -1,0 +1,97 @@
+# PocketGraphRAG Helm Chart Values
+# 对标 LightRAG Helm Chart，支持可配置部署
+
+# 镜像配置
+image:
+  repository: pocketgraphrag
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# 副本数（注意：多副本需要共享存储 + Redis cache）
+replicaCount: 1
+
+# 服务配置
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+# 资源限制
+resources:
+  requests:
+    memory: "2Gi"
+    cpu: "1000m"
+  limits:
+    memory: "4Gi"
+    cpu: "2000m"
+
+# 环境变量
+env:
+  POCKET_SEARCH_MODE: "mix"
+  POCKET_WORKSPACE: "default"
+  POCKET_EMBEDDING_MODEL: "BAAI/bge-small-zh-v1.5"
+  OLLAMA_API_BASE: "http://ollama-service:11434/v1"
+  OLLAMA_MODEL: "qwen2.5:7b"
+  # LLM Cache
+  POCKET_LLM_CACHE: "1"
+  POCKET_LLM_CACHE_BACKEND: "redis"
+  POCKET_LLM_CACHE_REDIS_URL: "redis://redis-service:6379/0"
+
+# 持久化存储
+persistence:
+  index:
+    enabled: true
+    size: 5Gi
+    storageClass: ""
+  docs:
+    enabled: true
+    size: 1Gi
+    storageClass: ""
+  models:
+    enabled: true
+    size: 2Gi
+    storageClass: ""
+
+# 健康检查
+healthCheck:
+  liveness:
+    path: /api/health
+    initialDelaySeconds: 60
+    periodSeconds: 30
+  readiness:
+    path: /api/health
+    initialDelaySeconds: 30
+    periodSeconds: 10
+
+# Ingress 配置
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: pocketgraphrag.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+# Redis 依赖（LLM Cache 后端）
+redis:
+  enabled: false
+  image: redis:7-alpine
+  port: 6379
+
+# Neo4j 依赖（图存储后端）
+neo4j:
+  enabled: false
+  image: neo4j:5-community
+  port: 7687
+
+# 节点选择器
+nodeSelector: {}
+
+# 容忍度
+tolerations: []
+
+# 亲和性
+affinity: {}

@@ -1,0 +1,24 @@
+# PocketGraphRAG K8s Ingress
+# 对外暴露服务，需先安装 Ingress Controller（如 nginx-ingress）
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pocketgraphrag
+  labels:
+    app: pocketgraphrag
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+spec:
+  rules:
+    - host: pocketgraphrag.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pocketgraphrag
+                port:
+                  number: 80

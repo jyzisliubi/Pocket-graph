@@ -14,7 +14,7 @@ Upload docs → extract triples → build a private graph → ask with citations
 [![Ollama Support](https://img.shields.io/badge/Ollama-Supported-orange.svg)](https://ollama.com/)
 [![UI: React](https://img.shields.io/badge/UI-React%2018%20%2B%20Vite-61DAFB.svg)](https://react.dev/)
 [![Docker](https://img.shields.io/badge/Docker-Supported-blue.svg)](https://www.docker.com/)
-[![Docs](https://img.shields.io/badge/docs-mkdocs%20material-526CFE.svg)](https://pocketgraphrag.github.io/PocketGraphRAG/)
+[![Docs](https://img.shields.io/badge/docs-mkdocs%20material-526CFE.svg)](https://jyzisliubi.github.io/Pocket-graph/)
 
 [English](#) | [中文](./README-zh.md) | [News](#news) | [Change Log](./CHANGELOG.md) | [Contributing](./CONTRIBUTING.md)
 
@@ -244,9 +244,30 @@ python -m PocketGraphRAG.build_index      # build FAISS index (auto-downloads BG
 python -m PocketGraphRAG.api_server       # React Web UI on :8000 (or webapp.py for legacy Gradio on :7860)
 ```
 
-Then open **http://localhost:7860**. The repo ships with a rice-disease demo dataset, so no data prep is needed. Docker: `docker-compose up -d`.
+Then open **http://localhost:7860**. The repo ships with a rice-disease demo dataset, so no data prep is needed.
 
 > New here? Start with the bundled movie KG demo. The Web UI starts even without an LLM configured, so you can verify retrieval, sources, and graph state before wiring up generation.
+
+### 🐳 Docker Deployment (v0.3.7+)
+
+```bash
+# Quick start (Web UI + API on port 8000)
+docker-compose up -d
+
+# With Redis LLM Cache + Neo4j graph backend
+docker-compose --profile cache --profile graph up -d
+
+# Build from source
+docker build -t pocketgraphrag .
+docker run -p 8000:8000 -v ./index:/app/index pocketgraphrag
+```
+
+**Features**:
+- Multi-stage build (builder + runtime) for smaller image
+- Health check built-in
+- `host.docker.internal` connects to host Ollama
+- Optional Redis (LLM Cache) and Neo4j (graph backend) via Docker Compose profiles
+- Data persistence via volumes (`./index`, `./user_docs`, `./data`, `./models`)
 
 ### 3-Minute Demo Path
 

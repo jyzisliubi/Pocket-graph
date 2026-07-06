@@ -149,6 +149,11 @@ Changelog = "https://github.com/jyzisliubi/Pocket-graph/blob/main/CHANGELOG.md"
 [project.scripts]
 pocketgraphrag = "PocketGraphRAG.cli:main"
 
+[tool.setuptools.dynamic]
+# 单源版本：从 PocketGraphRAG/__init__.py 的 __version__ 读取
+# 改版本只需改 __init__.py 一处，pyproject.toml / api_server 自动同步
+version = {attr = "PocketGraphRAG.__version__"}
+
 [tool.setuptools.packages.find]
 include = ["PocketGraphRAG*"]
 exclude = ["PocketGraphRAG.tests*", "tests*"]

@@ -33,7 +33,7 @@ warnings.filterwarnings("ignore", message=".*tokenizers.*parallelism.*", categor
 warnings.filterwarnings("ignore", message=".*resume_download.*deprecated.*", category=FutureWarning)
 warnings.filterwarnings("ignore", message=".*weights_only.*", category=FutureWarning)
 
-__version__ = "0.3.2"
+__version__ = "0.3.7"
 __author__ = "PocketGraphRAG Team"
 __license__ = "MIT"
 

@@ -56,6 +56,9 @@ from .settings_manager import (
     save_llm_settings,
 )
 
+# 单源版本号：从 PocketGraphRAG.__version__ 读取，避免与 pyproject.toml/__init__.py 不一致
+from . import __version__ as _APP_VERSION
+
 logger = get_logger(__name__)
 
 

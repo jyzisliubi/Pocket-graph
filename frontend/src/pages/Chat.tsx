@@ -20,6 +20,7 @@ import {
   Trash2,
   Copy,
   Check,
+  Download,
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -490,6 +491,45 @@ export default function ChatPage() {
     }
   }
 
+  /** 导出对话为 Markdown 文件（对标 RAGFlow/LightRAG 对话导出） */
+  const handleExport = () => {
+    if (messages.length === 0) return
+    const lines: string[] = ['# PocketGraphRAG 对话记录', '']
+    const ts = new Date().toISOString().slice(0, 19).replace('T', ' ')
+    lines.push(`> 导出时间：${ts}`, '')
+    for (const m of messages) {
+      if (m.role === 'user') {
+        lines.push('## 🧑 用户', '')
+        lines.push(m.content)
+      } else {
+        lines.push('## 🤖 助手', '')
+        lines.push(m.content || '（无内容）')
+        if (m.sources && m.sources.length > 0) {
+          lines.push('', '**来源引用：**')
+          m.sources.forEach((s, i) => {
+            const snippet =
+              s.text.length > 100 ? s.text.slice(0, 100) + '…' : s.text
+            lines.push(
+              `${i + 1}. [${s.entity}] ${snippet} (score: ${s.score.toFixed(3)})`,
+            )
+          })
+        }
+      }
+      lines.push('', '---', '')
+    }
+    const blob = new Blob([lines.join('\n')], {
+      type: 'text/markdown;charset=utf-8',
+    })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `pocketgraphrag-chat-${ts.replace(/[: ]/g, '-')}.md`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+  }
+
   /** 局部更新某条消息 */
   const patchMsg = (id: string, patch: Partial<ChatMessage>) => {
     setMessages((prev) =>
@@ -693,7 +733,17 @@ export default function ChatPage() {
     <div className="flex h-[calc(100vh-6rem)] flex-col gap-3 md:h-[calc(100vh-7rem)]">
       {/* 顶部工具栏：仅有消息时显示清空按钮 */}
       {messages.length > 0 && !isLoading && (
-        <div className="flex justify-end">
+        <div className="flex justify-end gap-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleExport}
+            className="h-7 gap-1.5 text-xs text-muted-foreground hover:text-foreground"
+            aria-label="导出对话为 Markdown"
+          >
+            <Download className="h-3.5 w-3.5" />
+            导出对话
+          </Button>
           <Button
             variant="ghost"
             size="sm"
